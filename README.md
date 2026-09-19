@@ -1,10 +1,8 @@
-# JW TIZI — Apple Glass
+# JW TIZI — Functional Minimal
 
-Versione basata su **AUDIT CORRETTO**, con grafica Apple Glass / Liquid Glass.
+Versione grafica ispirata ai principi di design funzionale di Dieter Rams/Braun.
 
-- Nessuna immagine decorativa nella pagina
-- Nessuna scrittura o frase motivazionale aggiunta
-- Funzioni e dati della versione originale mantenuti
-- Ottimizzata per GitHub Pages e installazione PWA
+Tutte le funzioni della versione AUDIT CORRETTO sono mantenute. La modifica riguarda principalmente la presentazione: griglia rigorosa, tipografia semplice, superfici piatte, linee sottili, colori ridotti e assenza di decorazioni superflue.
 
-Carica tutti i file nella root del repository GitHub e abilita GitHub Pages.
+## GitHub Pages
+Caricare tutti i file di questa cartella nella root del repository.
