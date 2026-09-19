@@ -1,3 +1,3 @@
-JW TIZI — Dieter Rams V3
+JW TIZI — Dieter Rams V4
 
-Questa versione corregge gli accenti dorati rimasti nelle schede dinamiche e uniforma Parti, Attività, GDP e Routine allo stesso stile monocromatico dell'app.
+Correzione sezione Parti: rimosse tutte le strisce dorate/laterali e ridotte le dimensioni delle schede, dei badge, del timer e dei comandi su mobile.
