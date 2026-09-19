@@ -945,6 +945,49 @@ body:before{display:none!important}
   }
 }
 
+
+/* GDP — selezione e prenotazione esplicita */
+.speaker-booking-panel{
+  margin:0 20px 16px;
+  padding:16px;
+  border-radius:20px;
+  background:#fff;
+  border:1px solid #e4e4e7;
+}
+.speaker-booking-panel[hidden]{display:none!important}
+.speaker-booking-panel-head{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:13px
+}
+.speaker-booking-panel-head strong{
+  display:block;font-size:17px;color:#111
+}
+.speaker-booking-panel-head small{
+  display:block;margin-top:3px;color:#8c8c91
+}
+.speaker-booking-fields{
+  display:grid;grid-template-columns:minmax(160px,.8fr) minmax(220px,1.2fr) auto;gap:10px;align-items:end
+}
+.speaker-selected{
+  background:#fffaf0!important;
+}
+.speaker-selected:before{
+  background:#a68b3f!important;
+}
+.speaker-select-btn{
+  min-width:92px
+}
+@media(max-width:720px){
+  .speaker-booking-panel{margin:0 16px 14px}
+  .speaker-booking-fields{grid-template-columns:1fr}
+  .speaker-booking-fields .btn{width:100%}
+}
+
+
+/* PlayStation-like section symbols */
+#showPartsBtn:before{content:"□"!important;font-size:23px!important;top:6px!important}
+#showActivitiesBtn:before{content:"✕"!important;font-size:22px!important;top:7px!important}
+#showGdpBtn:before{content:"◯"!important;font-size:23px!important;top:6px!important}
+
 </style>
 
 <style>
@@ -1208,12 +1251,35 @@ select { -webkit-appearance: auto; appearance: auto; }
         <div class="tasks-head">
           <div>
             <h3>Da invitare</h3>
-            <div class="muted">Oratori consigliati che non hai ancora invitato.</div>
+            <div class="muted">Seleziona un oratore, indica la data e spostalo in Prenotati.</div>
           </div>
           <div class="summary">
             <span class="pill">Da invitare <strong id="speakerRecommendedCount">0</strong></span>
           </div>
         </div>
+
+        <div id="speakerBookingInlinePanel" class="speaker-booking-panel" hidden>
+          <div class="speaker-booking-panel-head">
+            <div>
+              <span class="muted">Oratore selezionato</span>
+              <strong id="speakerBookingSelectedName">—</strong>
+              <small id="speakerBookingSelectedMeta"></small>
+            </div>
+            <button type="button" class="iconbtn" id="cancelSpeakerInlineSelection" title="Annulla selezione">✕</button>
+          </div>
+          <div class="speaker-booking-fields">
+            <div class="field">
+              <label>Data in cui verrà</label>
+              <input id="speakerInlineBookingDate" type="date" />
+            </div>
+            <div class="field">
+              <label>Nota prenotazione</label>
+              <input id="speakerInlineBookingNote" placeholder="Facoltativo" />
+            </div>
+            <button type="button" class="btn btn-primary" id="confirmSpeakerInlineBooking">Prenota</button>
+          </div>
+        </div>
+
         <div class="gdp-list" id="speakerList"></div>
       </section>
 
@@ -2048,6 +2114,7 @@ $('activityForm').addEventListener('submit',e=>{
 
 
 let activeSpeakerId=null;
+let selectedSpeakerBookingId=null;
 
 function speakerLastVisit(s){
   return s.lastVisitDate || (Array.isArray(s.visits) && s.visits.length
@@ -2086,16 +2153,16 @@ function renderSpeakers(filter=''){
   $('speakerArchiveCount').textContent=archived.length;
 
   $('speakerList').innerHTML=recommended.length?recommended.map(s=>`
-    <div class="speaker-item">
+    <div class="speaker-item ${selectedSpeakerBookingId===s.id?'speaker-selected':''}">
       <div class="speaker-icon">◉</div>
       <div>
         <div class="speaker-name">${esc(s.name)}</div>
         <div class="speaker-sub">${esc(s.note||'Nessuna nota')}</div>
       </div>
       <div class="speaker-cong">${s.congregation?esc(s.congregation):'—'}</div>
-      <div class="speaker-last"><span class="never-tag">Mai invitato</span></div>
+      <div class="speaker-last"><span class="never-tag">Da invitare</span></div>
       <div class="speaker-actions">
-        <button class="btn btn-soft" style="padding:8px 10px" onclick="openSpeakerBooking('${s.id}')">Prenota</button>
+        <button class="btn btn-soft speaker-select-btn" style="padding:8px 10px" onclick="selectSpeakerForBooking('${s.id}')">${selectedSpeakerBookingId===s.id?'Selezionato ✓':'Seleziona'}</button>
         <button class="iconbtn" title="Modifica" onclick="editSpeaker('${s.id}')">✎</button>
         <button class="iconbtn" title="Elimina" onclick="deleteSpeaker('${s.id}')">🗑</button>
       </div>
@@ -2179,6 +2246,57 @@ $('speakerForm').addEventListener('submit',e=>{
   renderSpeakers();
   toast('Oratore aggiunto');
 });
+
+
+window.selectSpeakerForBooking=id=>{
+  const s=speakers.find(x=>x.id===id);
+  if(!s)return;
+  selectedSpeakerBookingId=id;
+  $('speakerBookingSelectedName').textContent=s.name;
+  $('speakerBookingSelectedMeta').textContent=s.congregation||'Congregazione non indicata';
+  $('speakerInlineBookingDate').value='';
+  $('speakerInlineBookingNote').value=s.bookingNote||'';
+  $('speakerBookingInlinePanel').hidden=false;
+  renderSpeakers($('globalSearch').value);
+  requestAnimationFrame(()=>{
+    $('speakerBookingInlinePanel').scrollIntoView({behavior:'smooth',block:'center'});
+    $('speakerInlineBookingDate').focus();
+  });
+};
+
+function clearSpeakerInlineSelection(){
+  selectedSpeakerBookingId=null;
+  $('speakerBookingInlinePanel').hidden=true;
+  $('speakerInlineBookingDate').value='';
+  $('speakerInlineBookingNote').value='';
+  renderSpeakers($('globalSearch').value);
+}
+
+$('cancelSpeakerInlineSelection').onclick=clearSpeakerInlineSelection;
+
+$('confirmSpeakerInlineBooking').onclick=()=>{
+  const s=speakers.find(x=>x.id===selectedSpeakerBookingId);
+  if(!s)return toast('Seleziona prima un oratore');
+  const date=$('speakerInlineBookingDate').value;
+  const note=$('speakerInlineBookingNote').value.trim();
+  if(!date)return toast('Indica la data in cui verrà');
+
+  s.bookedDate=date;
+  s.bookingNote=note;
+  s.status='booked';
+  s.followUp=false;
+
+  save();
+
+  selectedSpeakerBookingId=null;
+  $('speakerBookingInlinePanel').hidden=true;
+  $('speakerInlineBookingDate').value='';
+  $('speakerInlineBookingNote').value='';
+
+  renderSpeakers($('globalSearch').value);
+  if(currentSection==='home')renderDashboard();
+  toast('Oratore spostato in “Prenotati”');
+};
 
 window.openSpeakerBooking=id=>{
   activeSpeakerId=id;
@@ -2274,6 +2392,7 @@ window.editSpeaker=id=>{
 
 window.deleteSpeaker=id=>{
   if(!confirm('Eliminare questo oratore e il suo storico visite?'))return;
+  if(selectedSpeakerBookingId===id){selectedSpeakerBookingId=null;$('speakerBookingInlinePanel').hidden=true;}
   speakers=speakers.filter(s=>s.id!==id);
   save();renderSpeakers($('globalSearch').value);toast('Oratore eliminato');
 };
