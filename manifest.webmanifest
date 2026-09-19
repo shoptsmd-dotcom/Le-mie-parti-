@@ -1,12 +1,12 @@
 {
-  "name": "JW Tiziano",
-  "short_name": "JW Tiziano",
+  "name": "JW TIZI",
+  "short_name": "JW TIZI",
   "description": "Parti, attività di congregazione, GDP e report personali.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#321435",
-  "theme_color": "#321435",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "icon-192.png",
