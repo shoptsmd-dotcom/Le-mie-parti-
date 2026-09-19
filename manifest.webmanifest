@@ -1,13 +1,12 @@
 {
-  "name": "Le mie parti - Congregazione",
-  "short_name": "Le mie parti",
-  "description": "Gestione delle parti, preparazione, timer e report annuali.",
+  "name": "JW Tiziano",
+  "short_name": "JW Tiziano",
+  "description": "Parti, attività di congregazione, GDP e report personali.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f6f9fe",
-  "theme_color": "#1a73e8",
-  "orientation": "any",
+  "background_color": "#321435",
+  "theme_color": "#321435",
   "icons": [
     {
       "src": "icon-192.png",
