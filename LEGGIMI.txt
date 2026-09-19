@@ -1,0 +1,17 @@
+LE MIE PARTI - VERSIONE PWA PER IPHONE
+
+CONTENUTO
+- index.html
+- manifest.webmanifest
+- service-worker.js
+- icone PNG
+
+COME USARLA
+1. Pubblica l'intera cartella su un hosting HTTPS (es. GitHub Pages, Netlify, Cloudflare Pages o altro hosting statico).
+2. Apri l'indirizzo pubblicato con Safari su iPhone.
+3. Tocca Condividi / menu pagina > Aggiungi alla schermata Home.
+4. Attiva "Apri come app web", quindi tocca Aggiungi.
+
+DATI
+I dati dell'app rimangono salvati localmente nel browser/web app tramite localStorage.
+Usa periodicamente la funzione Esporta dell'app per creare un backup JSON.

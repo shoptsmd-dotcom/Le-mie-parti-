@@ -178,7 +178,9 @@ select { -webkit-appearance: auto; appearance: auto; }
       <div class="search">⌕ <input id="globalSearch" placeholder="Cerca parti, luoghi, date..." /></div>
       <button class="quiet-prompt-btn" id="quietPromptBtn" aria-label="Apri pannello secondario" title="">◇</button>
       <button class="btn btn-soft" id="reportBtn">▥ Report annuale</button>
-      <button class="iconbtn" title="Esporta" id="exportBtn">⇩</button>
+      <button class="btn btn-soft" id="importBackupBtn" title="Importa un backup JSON">↥ Importa backup</button>
+      <input id="importBackupFile" type="file" accept="application/json,.json" style="display:none" />
+      <button class="iconbtn" title="Esporta backup" id="exportBtn">⇩</button>
       <div class="avatar">MP</div>
     </div>
 
@@ -917,7 +919,82 @@ window.openTaskPrompt=id=>{activeTaskId=id;const t=getTask(id);if(!t)return;$('t
 $('closeTaskPrompt').onclick=()=>$('taskPromptDialog').close();
 $('copyTaskPrompt').onclick=async()=>{const x=$('taskPromptText').value.trim();if(!x)return toast('Nessun prompt');await navigator.clipboard.writeText(x);toast('Prompt copiato')};
 $('saveTaskPrompt').onclick=()=>{const t=getTask(activeTaskId);if(!t)return;t.promptOverride=$('taskPromptText').value.trim();save();renderTasks($('globalSearch').value);$('taskPromptDialog').close();toast('Prompt personale salvato')};
-$('exportBtn').onclick=()=>{const blob=new Blob([JSON.stringify({exportedAt:new Date().toISOString(),tasks,prompts,savedTypes,scrumConfig,reportHistory},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='parti-congregazione-backup.json';a.click();URL.revokeObjectURL(url)};
+
+function validateBackupPayload(data){
+  if(!data || typeof data!=='object') return 'Il file non contiene un backup valido.';
+  if(!Array.isArray(data.tasks)) return 'Nel backup manca l’elenco delle parti.';
+  if(data.prompts!==undefined && !Array.isArray(data.prompts)) return 'La sezione prompt del backup non è valida.';
+  if(data.savedTypes!==undefined && !Array.isArray(data.savedTypes)) return 'La sezione tipologie del backup non è valida.';
+  if(data.reportHistory!==undefined && !Array.isArray(data.reportHistory)) return 'La sezione report del backup non è valida.';
+  if(data.scrumConfig!==undefined && (typeof data.scrumConfig!=='object' || Array.isArray(data.scrumConfig))) return 'La configurazione Scrum del backup non è valida.';
+  return '';
+}
+
+async function importBackupFile(file){
+  try{
+    const text=await file.text();
+    const data=JSON.parse(text);
+    const error=validateBackupPayload(data);
+    if(error){toast(error);return;}
+
+    const importedTasks=data.tasks;
+    const importedPrompts=Array.isArray(data.prompts)?data.prompts:defaultPrompts;
+    const importedTypes=Array.isArray(data.savedTypes)?data.savedTypes:[...new Set(importedPrompts.map(p=>p.type).filter(Boolean))];
+    const importedScrum=data.scrumConfig && typeof data.scrumConfig==='object'
+      ? {...defaultScrum,...data.scrumConfig}
+      : {...defaultScrum};
+    const importedReport=Array.isArray(data.reportHistory)?data.reportHistory:[];
+
+    const taskCount=importedTasks.length;
+    const sessionCount=importedTasks.reduce((n,t)=>n+(Array.isArray(t.sessions)?t.sessions.length:0),0);
+    const reportCount=importedReport.length;
+
+    const ok=confirm(
+      `Ripristinare questo backup?\n\n`+
+      `Parti: ${taskCount}\n`+
+      `Sessioni: ${sessionCount}\n`+
+      `Voci report: ${reportCount}\n\n`+
+      `I dati attualmente presenti nell’app verranno sostituiti.`
+    );
+    if(!ok)return;
+
+    tasks=importedTasks.map(t=>({
+      ...t,
+      sessions:Array.isArray(t.sessions)?t.sessions:[],
+      timerStartedAt:null,
+      completedAt:t.completedAt||null
+    }));
+    prompts=importedPrompts;
+    savedTypes=importedTypes;
+    scrumConfig=importedScrum;
+    reportHistory=importedReport;
+
+    save();
+    migrateTasks();
+    migrateReportHistory();
+    renderPrompts();
+    renderTypeOptions();
+    renderScrumLegend();
+    updateLocationField();
+    renderTasks();
+    toast('Backup ripristinato');
+
+    setTimeout(()=>location.reload(),700);
+  }catch(err){
+    console.error(err);
+    toast('Impossibile leggere questo file di backup');
+  }
+}
+
+$('importBackupBtn').onclick=()=>$('importBackupFile').click();
+$('importBackupFile').addEventListener('change',async e=>{
+  const file=e.target.files?.[0];
+  if(file)await importBackupFile(file);
+  e.target.value='';
+});
+
+
+$('exportBtn').onclick=()=>{const blob=new Blob([JSON.stringify({backupVersion:2,exportedAt:new Date().toISOString(),tasks,prompts,savedTypes,scrumConfig,reportHistory},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='parti-congregazione-backup.json';a.click();URL.revokeObjectURL(url)};
 
 setInterval(()=>{
   document.querySelectorAll('[data-live-id]').forEach(el=>{const t=getTask(el.dataset.liveId);if(t&&t.timerStartedAt)el.textContent='● '+durationText(currentTimerMs(t),true)});
