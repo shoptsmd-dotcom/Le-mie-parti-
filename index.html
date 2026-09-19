@@ -988,6 +988,84 @@ body:before{display:none!important}
 #showActivitiesBtn:before{content:"✕"!important;font-size:22px!important;top:7px!important}
 #showGdpBtn:before{content:"◯"!important;font-size:23px!important;top:6px!important}
 
+
+/* =========================================================
+   LISTE MOBILE — comandi chiaramente a destra della barra
+   ========================================================= */
+@media(max-width:820px){
+  .activity-item,.activity-completed,.activity-waiting,
+  .speaker-item,.speaker-booked,.speaker-archive{
+    display:grid!important;
+    grid-template-columns:42px minmax(0,1fr)!important;
+    column-gap:12px!important;
+    row-gap:8px!important;
+    align-items:start!important;
+    padding-left:28px!important;
+    padding-right:12px!important;
+  }
+
+  .activity-item .activity-icon,
+  .activity-completed .activity-icon,
+  .activity-waiting .activity-icon,
+  .speaker-item .speaker-icon,
+  .speaker-booked .speaker-icon,
+  .speaker-archive .speaker-icon{
+    grid-column:1!important;
+    grid-row:1!important;
+  }
+
+  .activity-item > div:not(.activity-icon):not(.activity-actions),
+  .activity-completed > div:not(.activity-icon):not(.activity-actions),
+  .activity-waiting > div:not(.activity-icon):not(.activity-actions),
+  .speaker-item > div:not(.speaker-icon):not(.speaker-actions),
+  .speaker-booked > div:not(.speaker-icon):not(.speaker-actions),
+  .speaker-archive > div:not(.speaker-icon):not(.speaker-actions){
+    grid-column:2!important;
+    min-width:0!important;
+  }
+
+  .activity-actions,
+  .speaker-actions{
+    grid-column:2!important;
+    grid-row:auto!important;
+    justify-self:end!important;
+    align-self:center!important;
+    display:flex!important;
+    flex-wrap:wrap!important;
+    justify-content:flex-end!important;
+    gap:7px!important;
+    width:auto!important;
+    margin-top:8px!important;
+    padding-left:8px!important;
+  }
+
+  .activity-actions .iconbtn,
+  .speaker-actions .iconbtn{
+    width:38px!important;
+    height:38px!important;
+    min-width:38px!important;
+    display:grid!important;
+    place-items:center!important;
+    border-radius:19px!important;
+    background:#ffffff!important;
+    border:1px solid #dedee1!important;
+    font-size:17px!important;
+    line-height:1!important;
+  }
+
+  .activity-actions .btn,
+  .speaker-actions .btn{
+    min-height:38px!important;
+  }
+
+  .activity-actions .iconbtn[title="Elimina"],
+  .speaker-actions .iconbtn[title="Elimina"]{
+    font-size:20px!important;
+    font-weight:500!important;
+    color:#57575b!important;
+  }
+}
+
 </style>
 
 <style>
@@ -1695,7 +1773,7 @@ function renderTasks(filter=''){
           <button class="mini-btn btn-soft" onclick="openTimeDialog('${t.id}')">Dettagli</button>
         </div>
       </div>
-      <div class="actions"><button class="iconbtn" title="Segna come completata" onclick="completeTask('${t.id}')">✓</button><button class="iconbtn" title="Prompt" onclick="openTaskPrompt('${t.id}')">✦</button><button class="iconbtn" title="Elimina" onclick="deleteTask('${t.id}')">🗑</button></div>
+      <div class="actions"><button class="iconbtn" title="Segna come completata" onclick="completeTask('${t.id}')">✓</button><button class="iconbtn" title="Prompt" onclick="openTaskPrompt('${t.id}')">✦</button><button class="iconbtn" title="Elimina" onclick="deleteTask('${t.id}')">✕</button></div>
     </div>`
   }).join(''):'<div class="empty">Nessuna parte trovata.</div>';
 
@@ -1732,7 +1810,7 @@ function renderCompletedTasks(filter=''){
         <button class="iconbtn" title="Ripristina tra le parti attive" onclick="restoreTask('${t.id}')">↺</button>
         <button class="iconbtn" title="Dettagli tempo" onclick="openTimeDialog('${t.id}')">◷</button>
         <button class="iconbtn" title="Prompt" onclick="openTaskPrompt('${t.id}')">✦</button>
-        <button class="iconbtn" title="Elimina" onclick="deleteTask('${t.id}')">🗑</button>
+        <button class="iconbtn" title="Elimina" onclick="deleteTask('${t.id}')">✕</button>
       </div>
     </div>`).join(''):'<div class="empty">Nessuna parte completata.</div>';
 }
@@ -1921,7 +1999,7 @@ function renderActivities(filter=''){
       <div class="activity-actions">
         <button class="iconbtn" title="Delega e metti in attesa" onclick="openDelegateActivity('${a.id}')">⇢</button>
         <button class="iconbtn" title="Completa" onclick="completeActivity('${a.id}')">✓</button>
-        <button class="iconbtn" title="Elimina" onclick="deleteActivity('${a.id}')">🗑</button>
+        <button class="iconbtn" title="Elimina" onclick="deleteActivity('${a.id}')">✕</button>
       </div>
     </div>`;
   }).join(''):'<div class="empty">Nessuna attività da fare.</div>';
@@ -1946,7 +2024,7 @@ function renderActivities(filter=''){
       <div class="activity-actions">
         <button class="iconbtn" title="Segna come completata" onclick="completeActivity('${a.id}')">✓</button>
         <button class="iconbtn" title="Riprendi tra le attività da fare" onclick="resumeActivity('${a.id}')">↺</button>
-        <button class="iconbtn" title="Elimina" onclick="deleteActivity('${a.id}')">🗑</button>
+        <button class="iconbtn" title="Elimina" onclick="deleteActivity('${a.id}')">✕</button>
       </div>
     </div>`;
   }).join(''):'<div class="empty">Nessuna attività in attesa.</div>';
@@ -1974,7 +2052,7 @@ function renderCompletedActivities(filter=''){
       <div class="activity-actions">
         <span class="activity-done-tag">Completata</span>
         <button class="iconbtn" title="Ripristina" onclick="restoreActivity('${a.id}')">↺</button>
-        <button class="iconbtn" title="Elimina" onclick="deleteActivity('${a.id}')">🗑</button>
+        <button class="iconbtn" title="Elimina" onclick="deleteActivity('${a.id}')">✕</button>
       </div>
     </div>`).join(''):'<div class="empty">Nessuna attività completata.</div>';
 }
@@ -2164,7 +2242,7 @@ function renderSpeakers(filter=''){
       <div class="speaker-actions">
         <button class="btn btn-soft speaker-select-btn" style="padding:8px 10px" onclick="selectSpeakerForBooking('${s.id}')">${selectedSpeakerBookingId===s.id?'Selezionato ✓':'Seleziona'}</button>
         <button class="iconbtn" title="Modifica" onclick="editSpeaker('${s.id}')">✎</button>
-        <button class="iconbtn" title="Elimina" onclick="deleteSpeaker('${s.id}')">🗑</button>
+        <button class="iconbtn" title="Elimina" onclick="deleteSpeaker('${s.id}')">✕</button>
       </div>
     </div>`).join(''):'<div class="empty">Nessun oratore da invitare.</div>';
 
@@ -2203,7 +2281,7 @@ function renderSpeakers(filter=''){
       <div class="speaker-actions">
         <button class="btn btn-soft" style="padding:8px 10px" onclick="openSpeakerBooking('${s.id}')">Prenota di nuovo</button>
         <button class="iconbtn" title="Modifica" onclick="editSpeaker('${s.id}')">✎</button>
-        <button class="iconbtn" title="Elimina" onclick="deleteSpeaker('${s.id}')">🗑</button>
+        <button class="iconbtn" title="Elimina" onclick="deleteSpeaker('${s.id}')">✕</button>
       </div>
     </div>`;
   }).join(''):'<div class="empty">Nessun oratore da richiamare.</div>';
@@ -2224,7 +2302,7 @@ function renderSpeakers(filter=''){
       <div class="speaker-actions">
         <button class="iconbtn" title="Sposta tra Da richiamare" onclick="restoreSpeaker('${s.id}')">↺</button>
         <button class="iconbtn" title="Modifica" onclick="editSpeaker('${s.id}')">✎</button>
-        <button class="iconbtn" title="Elimina" onclick="deleteSpeaker('${s.id}')">🗑</button>
+        <button class="iconbtn" title="Elimina" onclick="deleteSpeaker('${s.id}')">✕</button>
       </div>
     </div>`;
   }).join(''):'<div class="empty">Nessun oratore in “Non da richiamare”.</div>';
@@ -2434,7 +2512,7 @@ function renderTimeDialog(){
   $('sessionList').innerHTML=sessions.length?sessions.map(s=>`<div class="session">
     <div><strong>${s.source==='manual'?'Inserimento manuale':'Sessione timer'}</strong><small>${s.source==='manual'?esc(s.note||'Tempo aggiunto manualmente'):`${fmtDateTime(s.start)} → ${fmtDateTime(s.end)}`}</small></div>
     <div class="session-duration">${durationText(s.durationMs)}</div>
-    <button class="iconbtn" title="Elimina sessione" onclick="deleteSession('${t.id}','${s.id}')">🗑</button>
+    <button class="iconbtn" title="Elimina sessione" onclick="deleteSession('${t.id}','${s.id}')">✕</button>
   </div>`).join(''):'<div class="empty" style="padding:20px">Nessuna sessione registrata.</div>';
 }
 window.deleteSession=(taskId,sessionId)=>{
@@ -2511,7 +2589,7 @@ function renderReportEditor(year){
       </div>
       <div class="report-entry-actions">
         <button class="small" onclick="saveReportEntry('${esc(x.key)}',this)">Salva</button>
-        <button class="iconbtn" title="Elimina" onclick="deleteReportEntry('${esc(x.key)}')">🗑</button>
+        <button class="iconbtn" title="Elimina" onclick="deleteReportEntry('${esc(x.key)}')">✕</button>
       </div>
     </div>`).join(''):`<div class="report-empty">Nessuna registrazione storica da modificare per il ${year}.</div>`;
 }

@@ -1,4 +1,4 @@
-const CACHE = 'jw-tiziano-v18';
+const CACHE = 'jw-tiziano-v19';
 const ASSETS = [
   './',
   './index.html',
