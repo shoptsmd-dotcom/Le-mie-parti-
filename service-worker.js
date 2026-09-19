@@ -1,4 +1,4 @@
-const CACHE = 'jw-tizi-rams-v4';
+const CACHE = 'jw-tizi-rams-v7';
 const ASSETS = [
   './',
   './index.html',

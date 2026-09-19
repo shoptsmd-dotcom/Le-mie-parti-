@@ -2552,6 +2552,328 @@ button,input,select,textarea{font:inherit;color:inherit}
 }
 </style>
 
+
+<style id="rams-v5-topbar-prompts">
+/* ==========================================================
+   JW TIZI — RAMS V5
+   1) Rimuove il comando Importa backup dalla barra superiore.
+   2) Uniforma tutto l'archivio Prompt GPT al bianco/nero Rams.
+   ========================================================== */
+
+/* Il caricamento resta nelle Azioni rapide della Home. */
+.topbar #importBackupBtn{display:none!important}
+
+/* Ridistribuzione della testata senza il pulsante rimosso */
+.topbar{
+  grid-template-columns:auto minmax(180px,1fr) auto auto auto!important;
+}
+
+/* ===== Archivio Prompt GPT: stesso linguaggio della dashboard ===== */
+.mobile-prompt-dialog,
+#promptDialog,
+#taskPromptDialog{
+  border:1px solid var(--r-line-strong)!important;
+  border-radius:0!important;
+  background:var(--r-paper)!important;
+  color:var(--r-ink)!important;
+  box-shadow:0 12px 34px rgba(18,18,15,.12)!important;
+}
+.mobile-prompt-dialog::backdrop,
+#promptDialog::backdrop,
+#taskPromptDialog::backdrop{
+  background:rgba(18,18,15,.28)!important;
+  backdrop-filter:none!important;
+}
+.mobile-prompt-shell{
+  background:var(--r-paper)!important;
+  color:var(--r-ink)!important;
+}
+.mobile-prompt-head,
+.mobile-prompt-footer,
+#promptDialog .modal-head,
+#taskPromptDialog .modal-head{
+  background:var(--r-paper)!important;
+  color:var(--r-ink)!important;
+  border-color:var(--r-line)!important;
+  box-shadow:none!important;
+}
+.mobile-prompt-head strong,
+#promptDialog .modal-head strong,
+#taskPromptDialog .modal-head strong{
+  color:var(--r-ink)!important;
+  font-weight:700!important;
+  letter-spacing:-.01em!important;
+}
+.mobile-prompt-body{background:var(--r-paper)!important}
+.mobile-prompt-search,
+.prompt-search{
+  padding:0!important;
+  border:1px solid var(--r-line-strong)!important;
+  border-radius:0!important;
+  background:var(--r-white)!important;
+  box-shadow:none!important;
+}
+.mobile-prompt-search input,
+.prompt-search input{
+  min-height:39px!important;
+  padding:8px 10px!important;
+  background:transparent!important;
+  color:var(--r-ink)!important;
+  font-size:12px!important;
+}
+.mobile-prompt-search input::placeholder,
+.prompt-search input::placeholder{color:var(--r-muted)!important}
+
+/* Ogni prompt diventa una semplice riga bianca/nera */
+#mobilePromptList,
+#promptList{display:grid!important;gap:0!important}
+.prompt-card{
+  margin:0!important;
+  padding:13px 2px!important;
+  border:0!important;
+  border-bottom:1px solid var(--r-line)!important;
+  border-radius:0!important;
+  background:transparent!important;
+  color:var(--r-ink)!important;
+  box-shadow:none!important;
+}
+.prompt-card:first-child{border-top:1px solid var(--r-line)!important}
+.prompt-card .top{gap:10px!important}
+.prompt-name{
+  color:var(--r-ink)!important;
+  font-size:13px!important;
+  line-height:1.25!important;
+  font-weight:700!important;
+}
+.prompt-text{
+  margin-top:5px!important;
+  color:var(--r-muted)!important;
+  font-size:11px!important;
+  line-height:1.45!important;
+}
+.prompt-actions{gap:5px!important;margin-top:9px!important}
+.prompt-card .small,
+.prompt-card .iconbtn,
+.mobile-prompt-footer .btn{
+  border:1px solid var(--r-line-strong)!important;
+  border-radius:0!important;
+  background:transparent!important;
+  color:var(--r-ink)!important;
+  box-shadow:none!important;
+}
+.prompt-card .small{
+  min-height:30px!important;
+  padding:5px 8px!important;
+  font-size:10px!important;
+}
+.prompt-card .iconbtn{
+  width:31px!important;
+  height:31px!important;
+  min-width:31px!important;
+}
+.prompt-card .small:hover,
+.prompt-card .iconbtn:hover,
+.mobile-prompt-footer .btn:hover{background:#e9e9e3!important}
+
+/* Finestre di modifica/copia del prompt */
+#promptDialog .modal-body,
+#taskPromptDialog .modal-body,
+#promptDialog .modal-actions,
+#taskPromptDialog .modal-actions{
+  background:var(--r-paper)!important;
+  border-color:var(--r-line)!important;
+}
+#promptDialog textarea,
+#promptDialog input,
+#taskPromptDialog textarea,
+#taskPromptDialog input{
+  border-radius:0!important;
+  background:var(--r-white)!important;
+  color:var(--r-ink)!important;
+}
+#promptDialog .btn-primary,
+#taskPromptDialog .btn-primary{
+  background:var(--r-ink)!important;
+  color:#fff!important;
+  border-color:var(--r-ink)!important;
+}
+#promptDialog .btn-soft,
+#taskPromptDialog .btn-soft{
+  background:transparent!important;
+  color:var(--r-ink)!important;
+  border-color:var(--r-line-strong)!important;
+}
+
+/* Il pulsante ◇ resta volutamente discreto e monocromatico */
+.topbar #quietPromptBtn{
+  background:transparent!important;
+  color:var(--r-ink)!important;
+  border-color:var(--r-line)!important;
+}
+
+@media(max-width:900px){
+  .topbar{
+    grid-template-columns:auto 1fr auto auto!important;
+  }
+  .topbar #importBackupBtn{display:none!important}
+  .mobile-prompt-dialog{
+    width:min(680px,calc(100vw - 18px))!important;
+    max-height:90dvh!important;
+  }
+  .mobile-prompt-head{padding:13px 14px!important}
+  .mobile-prompt-body{padding:12px 14px!important}
+  .mobile-prompt-footer{padding:10px 14px 13px!important;gap:6px!important}
+}
+
+@media(max-width:560px){
+  .topbar{grid-template-columns:auto 1fr auto auto!important}
+  .mobile-prompt-dialog{width:calc(100vw - 14px)!important}
+  .prompt-card{padding:11px 1px!important}
+  .prompt-text{font-size:10.5px!important}
+  .mobile-prompt-footer .btn{min-height:35px!important;padding:7px 9px!important;font-size:10px!important}
+}
+</style>
+
+
+<style id="rams-v6-gdp-patch">
+/* GDP V6 — rubriche coerenti con il sistema Rams */
+#localSpeakersCard .local-speaker-list-head{border-top:1px solid var(--r-line)!important;margin-top:2px!important}
+#localSpeakersCard .local-speaker-form{grid-template-columns:minmax(180px,1fr) minmax(150px,.8fr) minmax(240px,1.4fr) auto!important}
+#localSpeakersCard .local-speaker-item{box-shadow:none!important;border-left:0!important}
+#localSpeakersCard .local-speaker-item:before{display:none!important}
+#localSpeakersCard .speaker-sub{max-width:520px!important}
+#gdpSection .callback-tag,#gdpSection .archive-tag,#gdpSection .booked-tag,#gdpSection .never-tag{
+  color:var(--r-ink)!important;background:transparent!important;border-color:var(--r-line)!important;
+}
+@media(max-width:900px){
+  #localSpeakersCard .local-speaker-form{grid-template-columns:1fr!important}
+  #localSpeakersCard .local-speaker-item{padding-left:2px!important}
+  #localSpeakersCard .local-speaker-item .speaker-cong,
+  #localSpeakersCard .local-speaker-item .speaker-last{grid-column:2/-1!important}
+}
+</style>
+
+
+<style id="rams-v7-parts-service">
+/* ==========================================================
+   JW TIZI — RAMS V7
+   Parti molto più compatte + nuova sezione Servizio.
+   ========================================================== */
+
+/* PARTI — ogni elemento è una riga compatta separata da una fascia grigia */
+#partsSection .tasks{padding:0 14px 0!important}
+#partsSection .compact-task{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto auto!important;
+  gap:10px!important;
+  align-items:center!important;
+  margin:0!important;
+  padding:11px 4px!important;
+  border:0!important;
+  border-bottom:4px solid #d7d7d1!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  min-height:0!important;
+}
+#partsSection .compact-task:last-child{border-bottom:0!important}
+#partsSection .compact-task:before,#partsSection .compact-task:after{display:none!important}
+#partsSection .compact-task-main{min-width:0!important}
+#partsSection .compact-task-titleline{display:flex!important;align-items:center!important;gap:7px!important;margin-bottom:4px!important}
+#partsSection .compact-task .task-title{font-size:14px!important;line-height:1.15!important;font-weight:700!important;min-width:0!important}
+#partsSection .compact-task .badge{
+  flex:0 0 auto!important;min-width:26px!important;padding:2px 5px!important;
+  font-size:9px!important;line-height:1.2!important;border:1px solid var(--r-line)!important;
+  background:transparent!important;color:var(--r-ink)!important;border-radius:0!important;
+}
+#partsSection .compact-task-meta{display:flex!important;align-items:center!important;gap:6px!important;flex-wrap:wrap!important;color:var(--r-muted)!important;font-size:10px!important;line-height:1.25!important}
+#partsSection .compact-task-meta strong{color:var(--r-ink)!important;font-size:10.5px!important}
+#partsSection .compact-task .days{padding:2px 4px!important;font-size:9px!important;line-height:1.1!important;border:1px solid var(--r-line)!important}
+#partsSection .compact-location{white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;max-width:250px!important}
+#partsSection .compact-task-stats{display:flex!important;gap:10px!important;margin-top:5px!important;color:var(--r-muted)!important;font-size:10px!important}
+#partsSection .compact-task-stats strong{color:var(--r-ink)!important;font-size:10.5px!important}
+#partsSection .compact-task-controls{display:flex!important;gap:5px!important;align-items:center!important}
+#partsSection .compact-task-controls .mini-btn{min-height:29px!important;padding:4px 7px!important;font-size:9.5px!important;white-space:nowrap!important}
+#partsSection .compact-task-actions{display:flex!important;gap:0!important;align-items:center!important}
+#partsSection .compact-task-actions .iconbtn{width:29px!important;height:29px!important;min-width:29px!important;font-size:15px!important;border:0!important}
+#partsSection .timer-live{margin:0!important;font-size:9px!important;color:var(--r-ink)!important}
+
+/* Anche le completate restano compatte e ben separate */
+#partsSection .completed-task{
+  margin:0!important;padding:10px 4px!important;border:0!important;border-bottom:3px solid #deded8!important;
+  box-shadow:none!important;background:transparent!important;min-height:0!important;
+}
+#partsSection .completed-task:last-child{border-bottom:0!important}
+#partsSection .completed-task:before,#partsSection .completed-task:after{display:none!important}
+
+/* SERVIZIO */
+.service-hero{margin:0 0 18px!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+.service-hero .eyebrow{margin:0 0 6px!important;color:var(--r-muted)!important;font-size:10px!important;font-weight:700!important;letter-spacing:.16em!important}
+.service-hero h2{margin:0!important;color:var(--r-ink)!important;font-size:29px!important;line-height:1.04!important;font-weight:500!important;letter-spacing:-.035em!important}
+.service-total-card{
+  margin-bottom:18px!important;padding:18px!important;border:1px solid var(--r-ink)!important;
+  background:var(--r-paper)!important;color:var(--r-ink)!important;
+}
+.service-total-main{display:flex!important;align-items:flex-end!important;justify-content:space-between!important;gap:20px!important}
+.service-kicker{display:block!important;margin-bottom:3px!important;color:var(--r-muted)!important;font-size:9px!important;font-weight:700!important;letter-spacing:.13em!important}
+#serviceMonthTotal{display:block!important;font-size:34px!important;line-height:1!important;font-weight:500!important;letter-spacing:-.045em!important}
+.service-month-field{width:170px!important}
+.service-month-field input{min-height:36px!important}
+.service-total-meta{display:flex!important;gap:18px!important;margin-top:14px!important;padding-top:10px!important;border-top:1px solid var(--r-line)!important;color:var(--r-muted)!important;font-size:10px!important}
+.service-total-meta strong{color:var(--r-ink)!important;font-size:11px!important}
+.service-form{display:grid!important;grid-template-columns:minmax(180px,1.4fr) 150px 110px 95px 95px auto auto!important;gap:8px!important;align-items:end!important}
+.service-form .field input{min-height:38px!important}
+.service-list{padding:0 14px!important}
+.service-entry{
+  display:grid!important;grid-template-columns:minmax(0,1fr) 90px auto!important;gap:12px!important;align-items:center!important;
+  padding:11px 3px!important;border-bottom:3px solid #d7d7d1!important;background:transparent!important;
+}
+.service-entry:last-child{border-bottom:0!important}
+.service-person{display:block!important;font-size:13px!important;line-height:1.2!important}
+.service-entry-meta{display:flex!important;gap:8px!important;flex-wrap:wrap!important;margin-top:3px!important;color:var(--r-muted)!important;font-size:10px!important}
+.service-entry-duration span{display:block!important;color:var(--r-muted)!important;font-size:9px!important;text-transform:uppercase!important;letter-spacing:.08em!important}
+.service-entry-duration strong{display:block!important;margin-top:2px!important;font-size:14px!important}
+.service-entry-actions{display:flex!important;align-items:center!important;gap:4px!important}
+.service-entry-actions .small{min-height:30px!important;padding:5px 7px!important;font-size:9.5px!important}
+.service-entry-actions .iconbtn{width:30px!important;height:30px!important;min-width:30px!important}
+
+@media(max-width:900px){
+  /* sei tab nella barra: restano tutti visibili senza scorrimento */
+  .section-switch{overflow:visible!important}
+  .section-switch button{flex:1 1 0!important;min-width:0!important;padding:9px 4px 10px!important;font-size:10.5px!important}
+  #partsSection .compact-task{grid-template-columns:minmax(0,1fr) auto!important;gap:6px 8px!important;padding:9px 2px!important}
+  #partsSection .compact-task-main{grid-column:1/-1!important}
+  #partsSection .compact-task-controls{grid-column:1!important}
+  #partsSection .compact-task-actions{grid-column:2!important;justify-content:flex-end!important}
+  #partsSection .compact-location{max-width:210px!important}
+  #partsSection .completed-task{padding:9px 2px!important}
+  .service-hero h2{font-size:26px!important}
+  .service-total-card{padding:14px!important}
+  #serviceMonthTotal{font-size:30px!important}
+  .service-form{grid-template-columns:1fr 1fr!important}
+  .service-person-field{grid-column:1/-1!important}
+  .service-form .btn{width:100%!important}
+  .service-list{padding:0 12px!important}
+  .service-entry{grid-template-columns:minmax(0,1fr) auto!important;gap:7px!important;padding:10px 1px!important}
+  .service-entry-duration{grid-column:1!important}
+  .service-entry-actions{grid-column:2!important;grid-row:1/3!important;align-self:center!important}
+}
+@media(max-width:560px){
+  .section-switch button{font-size:9.5px!important;padding-left:2px!important;padding-right:2px!important}
+  #partsSection .tasks{padding-left:10px!important;padding-right:10px!important}
+  #partsSection .compact-task{padding:8px 1px!important;border-bottom-width:3px!important}
+  #partsSection .compact-task .task-title{font-size:13px!important}
+  #partsSection .compact-task-meta,#partsSection .compact-task-stats{font-size:9.5px!important;gap:5px!important}
+  #partsSection .compact-task-controls .mini-btn{min-height:27px!important;padding:3px 6px!important;font-size:9px!important}
+  #partsSection .compact-task-actions .iconbtn{width:27px!important;height:27px!important;min-width:27px!important;font-size:14px!important}
+  .service-total-main{align-items:flex-start!important;gap:10px!important}
+  .service-month-field{width:145px!important}
+  #serviceMonthTotal{font-size:28px!important}
+  .service-total-meta{gap:10px!important;flex-wrap:wrap!important}
+  .service-form{grid-template-columns:1fr 1fr!important}
+  .service-entry{padding:9px 0!important}
+}
+</style>
+
 </head>
 <body>
 <div class="shell">
@@ -2571,6 +2893,7 @@ button,input,select,textarea{font:inherit;color:inherit}
       <button type="button" id="showHomeBtn" class="active">Home</button>
       <button type="button" id="showPartsBtn">Parti</button>
       <button type="button" id="showActivitiesBtn">Attività</button>
+      <button type="button" id="showServiceBtn">Servizio</button>
       <button type="button" id="showGdpBtn">GDP</button>
       <button type="button" id="showRoutineBtn">Routine</button>
     </div>
@@ -2636,7 +2959,7 @@ button,input,select,textarea{font:inherit;color:inherit}
           <div class="dash-stats">
             <div class="dash-stat"><span>Da invitare</span><strong id="dashGdpInvite">0</strong></div>
             <div class="dash-stat"><span>Prenotati</span><strong id="dashGdpBooked">0</strong></div>
-            <div class="dash-stat"><span>Da richiamare</span><strong id="dashGdpRecall">0</strong></div>
+            <div class="dash-stat"><span>Graditi</span><strong id="dashGdpRecall">0</strong></div>
           </div>
           <div id="dashNextSpeaker" style="margin-top:10px"></div>
         </section>
@@ -2774,6 +3097,74 @@ button,input,select,textarea{font:inherit;color:inherit}
     </div>
 
 
+    <div id="serviceSection" style="display:none">
+      <section class="service-hero">
+        <div class="eyebrow">SERVIZIO</div>
+        <h2>Servizio del mese</h2>
+      </section>
+
+      <section class="service-total-card">
+        <div class="service-total-main">
+          <div>
+            <span class="service-kicker">TOTALE DEL MESE</span>
+            <strong id="serviceMonthTotal">0h 0m</strong>
+          </div>
+          <div class="field service-month-field">
+            <label>Mese</label>
+            <input id="serviceMonth" type="month" />
+          </div>
+        </div>
+        <div class="service-total-meta">
+          <span>Appuntamenti <strong id="serviceAppointmentCount">0</strong></span>
+          <span>Con tempo registrato <strong id="serviceTimedCount">0</strong></span>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h3>＋ Appuntamento di servizio</h3>
+          <p>Segna con chi hai appuntamento, quando e il tempo svolto.</p>
+        </div>
+        <div class="add-wrap">
+          <form id="serviceForm" class="service-form">
+            <div class="field service-person-field">
+              <label>Con chi</label>
+              <input id="servicePerson" required placeholder="Nome o gruppo" />
+            </div>
+            <div class="field">
+              <label>Data</label>
+              <input id="serviceDate" type="date" required />
+            </div>
+            <div class="field">
+              <label>Ora</label>
+              <input id="serviceTime" type="time" />
+            </div>
+            <div class="field service-duration-field">
+              <label>Ore svolte</label>
+              <input id="serviceHours" type="number" min="0" max="24" step="1" inputmode="numeric" placeholder="0" />
+            </div>
+            <div class="field service-duration-field">
+              <label>Minuti</label>
+              <input id="serviceMinutes" type="number" min="0" max="59" step="1" inputmode="numeric" placeholder="0" />
+            </div>
+            <button class="btn btn-primary" id="serviceSubmitBtn" type="submit">＋ Salva</button>
+            <button class="btn btn-ghost" id="serviceCancelEdit" type="button" hidden>Annulla</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="tasks-head">
+          <div>
+            <h3>Appuntamenti del mese</h3>
+            <div class="muted">Il tempo inserito viene sommato automaticamente al totale in alto.</div>
+          </div>
+        </div>
+        <div class="service-list" id="serviceList"></div>
+      </section>
+    </div>
+
+
     <div id="gdpSection" style="display:none">
       <section class="gdp-hero">
         <div class="eyebrow">GDP</div>
@@ -2856,11 +3247,11 @@ button,input,select,textarea{font:inherit;color:inherit}
       <section class="card">
         <div class="tasks-head">
           <div>
-            <h3>Da richiamare</h3>
-            <div class="muted">Oratori già venuti che vuoi invitare nuovamente.</div>
+            <h3>Oratori graditi</h3>
+            <div class="muted">Gli oratori che vuoi invitare ancora. Sono ordinati da chi non viene da più tempo.</div>
           </div>
           <div class="summary">
-            <span class="pill">Da richiamare <strong id="speakerCallbackCount">0</strong></span>
+            <span class="pill">Graditi <strong id="speakerCallbackCount">0</strong></span>
           </div>
         </div>
         <div class="gdp-list" id="speakerCallbackList"></div>
@@ -2869,12 +3260,46 @@ button,input,select,textarea{font:inherit;color:inherit}
       <section class="card completed-card">
         <div class="completed-head">
           <div>
-            <h3>Non da richiamare</h3>
-            <div class="muted">Oratori già venuti che non vuoi richiamare per ora.</div>
+            <h3>Non chiamare più</h3>
+            <div class="muted">Oratori che hai già ascoltato e che non vuoi invitare nuovamente.</div>
           </div>
-          <span class="pill">Non da richiamare <strong id="speakerArchiveCount">0</strong></span>
+          <span class="pill">Non chiamare <strong id="speakerArchiveCount">0</strong></span>
         </div>
         <div class="gdp-list" id="speakerArchiveList"></div>
+      </section>
+
+      <section class="card" id="localSpeakersCard">
+        <div class="card-head">
+          <h3>Elenco oratori della congregazione</h3>
+          <p>Registra gli oratori locali, la data dell’ultimo discorso e le preferenze per lo schema del prossimo discorso.</p>
+        </div>
+        <div class="add-wrap">
+          <form id="localSpeakerForm" class="gdp-form local-speaker-form">
+            <div class="field">
+              <label>Nome oratore</label>
+              <input id="localSpeakerName" required placeholder="Nome e cognome" />
+            </div>
+            <div class="field">
+              <label>Ultimo discorso</label>
+              <input id="localSpeakerLastTalk" type="date" />
+            </div>
+            <div class="field gdp-wide">
+              <label>Preferenze prossimo schema</label>
+              <input id="localSpeakerPreference" placeholder="Es. schema, argomento o preferenza" />
+            </div>
+            <button class="btn btn-primary" type="submit">＋ Aggiungi</button>
+          </form>
+        </div>
+        <div class="tasks-head local-speaker-list-head">
+          <div>
+            <h3>Oratori locali</h3>
+            <div class="muted">Ordinati dall’ultimo discorso meno recente al più recente.</div>
+          </div>
+          <div class="summary">
+            <span class="pill">Oratori <strong id="localSpeakerCount">0</strong></span>
+          </div>
+        </div>
+        <div class="gdp-list" id="localSpeakerList"></div>
       </section>
     </div>
 
@@ -3040,10 +3465,10 @@ button,input,select,textarea{font:inherit;color:inherit}
       <input id="speakerVisitDate" type="date" required />
     </div>
     <div class="field">
-      <label>È da richiamare?</label>
+      <label>Vuoi tenerlo tra gli oratori graditi?</label>
       <select id="speakerRecall">
-        <option value="yes">Sì, spostalo in “Da richiamare”</option>
-        <option value="no">No, spostalo in “Non da richiamare”</option>
+        <option value="yes">Sì, aggiungilo agli “Oratori graditi”</option>
+        <option value="no">No, spostalo in “Non chiamare più”</option>
       </select>
     </div>
     <div class="field">
@@ -3058,6 +3483,34 @@ button,input,select,textarea{font:inherit;color:inherit}
   <div class="modal-actions">
     <button class="btn btn-ghost" id="cancelSpeakerVisit">Annulla</button>
     <button class="btn btn-primary" id="saveSpeakerVisit">Salva visita</button>
+  </div>
+</dialog>
+
+<dialog id="localSpeakerEditDialog" class="modal">
+  <div class="modal-head">
+    <div>
+      <strong>Modifica oratore della congregazione</strong>
+      <div class="muted">Aggiorna ultimo discorso e preferenze per il prossimo schema.</div>
+    </div>
+    <button class="iconbtn" id="closeLocalSpeakerEdit">✕</button>
+  </div>
+  <div class="modal-body">
+    <div class="field">
+      <label>Nome oratore</label>
+      <input id="localSpeakerEditName" />
+    </div>
+    <div class="field">
+      <label>Ultimo discorso</label>
+      <input id="localSpeakerEditLastTalk" type="date" />
+    </div>
+    <div class="field">
+      <label>Preferenze prossimo schema</label>
+      <input id="localSpeakerEditPreference" placeholder="Nessuna preferenza indicata" />
+    </div>
+  </div>
+  <div class="modal-actions">
+    <button class="btn btn-ghost" id="cancelLocalSpeakerEdit">Annulla</button>
+    <button class="btn btn-primary" id="saveLocalSpeakerEdit">Salva modifiche</button>
   </div>
 </dialog>
 
@@ -3230,7 +3683,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 <div class="toast" id="toast">Salvato</div>
 
 <script>
-const STORAGE_TASKS='congregazione_tasks_v1', STORAGE_PROMPTS='congregazione_prompts_v1', STORAGE_TYPES='congregazione_types_v1', STORAGE_SCRUM='congregazione_scrum_v1', STORAGE_REPORT='congregazione_report_history_v1', STORAGE_ACTIVITIES='congregazione_activities_v1', STORAGE_GDP='congregazione_gdp_v1', STORAGE_ROUTINES='congregazione_routines_v1';
+const STORAGE_TASKS='congregazione_tasks_v1', STORAGE_PROMPTS='congregazione_prompts_v1', STORAGE_TYPES='congregazione_types_v1', STORAGE_SCRUM='congregazione_scrum_v1', STORAGE_REPORT='congregazione_report_history_v1', STORAGE_ACTIVITIES='congregazione_activities_v1', STORAGE_SERVICE='congregazione_service_v1', STORAGE_GDP='congregazione_gdp_v1', STORAGE_GDP_LOCAL='congregazione_gdp_local_v1', STORAGE_ROUTINES='congregazione_routines_v1';
 const defaultPrompts=[
 {type:'Discorso pubblico',prompt:'Aiutami a preparare un discorso pubblico chiaro e coinvolgente. Organizza il materiale in introduzione, punti principali, illustrazioni pratiche e conclusione. Mantieni uno stile naturale e semplice da esporre.'},
 {type:"Parte all'adunanza infrasettimanale",prompt:"Aiutami a preparare questa parte per l'adunanza infrasettimanale. Crea una scaletta breve, fedele al materiale di partenza, con un'apertura efficace, passaggi logici e una conclusione pratica."},
@@ -3241,7 +3694,7 @@ function loadObject(k,f={}){try{const x=JSON.parse(localStorage.getItem(k)||'{}'
 let scrumConfig={...defaultScrum,...loadObject(STORAGE_SCRUM,{})};
 const $=id=>document.getElementById(id);
 function load(k,f){try{const x=JSON.parse(localStorage.getItem(k));return Array.isArray(x)?x:f}catch{return f}}
-let tasks=load(STORAGE_TASKS,[]),prompts=load(STORAGE_PROMPTS,defaultPrompts),savedTypes=load(STORAGE_TYPES,defaultPrompts.map(p=>p.type)),reportHistory=load(STORAGE_REPORT,[]),activities=load(STORAGE_ACTIVITIES,[]),speakers=load(STORAGE_GDP,[]),routines=load(STORAGE_ROUTINES,[]),editingPromptIndex=null,activeTaskId=null,activeTimeTaskId=null,currentSection='parts';
+let tasks=load(STORAGE_TASKS,[]),prompts=load(STORAGE_PROMPTS,defaultPrompts),savedTypes=load(STORAGE_TYPES,defaultPrompts.map(p=>p.type)),reportHistory=load(STORAGE_REPORT,[]),activities=load(STORAGE_ACTIVITIES,[]),serviceEntries=load(STORAGE_SERVICE,[]),speakers=load(STORAGE_GDP,[]),congregationSpeakers=load(STORAGE_GDP_LOCAL,[]),routines=load(STORAGE_ROUTINES,[]),editingPromptIndex=null,editingServiceId=null,activeTaskId=null,activeTimeTaskId=null,currentSection='parts';
 
 function migrateTasks(){
   tasks=tasks
@@ -3256,12 +3709,18 @@ function migrateSectionData(){
   speakers=speakers
     .filter(s=>s && typeof s==='object' && typeof s.name==='string' && s.name.trim() && !('title' in s && 'dueDate' in s))
     .map(s=>({...s,recordType:'speaker',visits:Array.isArray(s.visits)?s.visits:[],status:s.status||'recommended',followUp:!!s.followUp,lastVisitDate:s.lastVisitDate||'',bookedDate:s.bookedDate||'',bookingNote:s.bookingNote||''}));
+  congregationSpeakers=congregationSpeakers
+    .filter(s=>s && typeof s==='object' && typeof s.name==='string' && s.name.trim())
+    .map(s=>({...s,recordType:'localSpeaker',lastTalkDate:s.lastTalkDate||'',preference:String(s.preference||''),createdAt:Number(s.createdAt||Date.now()),updatedAt:Number(s.updatedAt||s.createdAt||Date.now())}));
+  serviceEntries=serviceEntries
+    .filter(e=>e && typeof e==='object' && typeof e.person==='string' && e.person.trim() && typeof e.date==='string' && e.date)
+    .map(e=>({...e,recordType:'service',time:String(e.time||''),durationMinutes:Math.max(0,Number(e.durationMinutes||0)),createdAt:Number(e.createdAt||Date.now()),updatedAt:Number(e.updatedAt||e.createdAt||Date.now())}));
   routines=routines
     .filter(r=>r && typeof r==='object' && typeof r.name==='string' && r.name.trim())
     .map(r=>({...r,recordType:'routine',text:String(r.text||''),dueDate:r.dueDate||'',createdAt:Number(r.createdAt||Date.now()),updatedAt:Number(r.updatedAt||r.createdAt||Date.now())}));
   save();
 }
-function save(){localStorage.setItem(STORAGE_TASKS,JSON.stringify(tasks));localStorage.setItem(STORAGE_PROMPTS,JSON.stringify(prompts));localStorage.setItem(STORAGE_TYPES,JSON.stringify(savedTypes));localStorage.setItem(STORAGE_SCRUM,JSON.stringify(scrumConfig));localStorage.setItem(STORAGE_REPORT,JSON.stringify(reportHistory));localStorage.setItem(STORAGE_ACTIVITIES,JSON.stringify(activities));localStorage.setItem(STORAGE_GDP,JSON.stringify(speakers));localStorage.setItem(STORAGE_ROUTINES,JSON.stringify(routines))}
+function save(){localStorage.setItem(STORAGE_TASKS,JSON.stringify(tasks));localStorage.setItem(STORAGE_PROMPTS,JSON.stringify(prompts));localStorage.setItem(STORAGE_TYPES,JSON.stringify(savedTypes));localStorage.setItem(STORAGE_SCRUM,JSON.stringify(scrumConfig));localStorage.setItem(STORAGE_REPORT,JSON.stringify(reportHistory));localStorage.setItem(STORAGE_ACTIVITIES,JSON.stringify(activities));localStorage.setItem(STORAGE_SERVICE,JSON.stringify(serviceEntries));localStorage.setItem(STORAGE_GDP,JSON.stringify(speakers));localStorage.setItem(STORAGE_GDP_LOCAL,JSON.stringify(congregationSpeakers));localStorage.setItem(STORAGE_ROUTINES,JSON.stringify(routines))}
 
 function historyKey(taskId,sessionId){return `${taskId}::${sessionId}`}
 function sessionToHistory(t,s){
@@ -3327,22 +3786,33 @@ function renderTasks(filter=''){
   const activeTasks=tasks.filter(t=>!t.completedAt);
   const shown=activeTasks.filter(t=>!q||[t.type,t.location,t.date,String(t.hours)].join(' ').toLowerCase().includes(q));
   $('taskList').innerHTML=shown.length?shown.map(t=>{
-    const [cls,label,dcls]=taskStatus(t),p=t.promptOverride||promptForType(t.type),running=!!t.timerStartedAt;
-    return `<div class="task ${cls} ${running?'running':''}">
-      <div class="task-icon">${isPublicTalk(t.type)?'🎤':'◉'}</div>
-      <div><div class="task-title">${esc(t.type)}</div><div class="muted">${p?'Prompt disponibile':'Nessun prompt associato'}</div></div>
-      <div class="location">${t.location?`📍 ${esc(t.location)}`:'—'}</div>
-      <div class="datebox"><strong>${esc(fmt(t.date))}</strong><div class="muted"><span class="days ${dcls}">${esc(label)}</span></div></div>
-      <div class="estimate"><span class="badge ${effortClass(t.hours)}">${effort(t.hours)}</span><div class="muted">prev. ${Number(t.hours).toLocaleString('it-IT')} h</div></div>
-      <div class="timebox">
-        <div class="time-top"><span class="muted" style="margin:0">Effettive</span><strong class="actual-time ${running?'running':''}" data-actual-id="${t.id}">${durationText(actualTotalMs(t))}</strong></div>
-        ${running?`<div class="timer-live" data-live-id="${t.id}">● ${durationText(currentTimerMs(t),true)}</div>`:`<div class="muted">Δ ${esc(deltaText(t))}</div>`}
-        <div class="time-actions">
-          <button class="mini-btn ${running?'btn-stop':'btn-start'}" onclick="${running?'stopTimer':'startTimer'}('${t.id}')">${running?'■ Stop':'▶ Start'}</button>
-          <button class="mini-btn btn-soft" onclick="openTimeDialog('${t.id}')">Dettagli</button>
+    const [cls,label,dcls]=taskStatus(t),running=!!t.timerStartedAt;
+    return `<div class="task compact-task ${cls} ${running?'running':''}">
+      <div class="compact-task-main">
+        <div class="compact-task-titleline">
+          <div class="task-title">${esc(t.type)}</div>
+          <span class="badge ${effortClass(t.hours)}">${effort(t.hours)}</span>
+        </div>
+        <div class="compact-task-meta">
+          <strong>${esc(fmt(t.date))}</strong>
+          <span class="days ${dcls}">${esc(label)}</span>
+          ${t.location?`<span class="compact-location">${esc(t.location)}</span>`:''}
+        </div>
+        <div class="compact-task-stats">
+          <span>Prev. <strong>${Number(t.hours).toLocaleString('it-IT')} h</strong></span>
+          <span>Eff. <strong class="actual-time ${running?'running':''}" data-actual-id="${t.id}">${durationText(actualTotalMs(t))}</strong></span>
+          ${running?`<span class="timer-live" data-live-id="${t.id}">● ${durationText(currentTimerMs(t),true)}</span>`:''}
         </div>
       </div>
-      <div class="actions"><button class="iconbtn" title="Segna come completata" onclick="completeTask('${t.id}')">✓</button><button class="iconbtn" title="Prompt" onclick="openTaskPrompt('${t.id}')">✦</button><button class="iconbtn" title="Elimina" onclick="deleteTask('${t.id}')">✕</button></div>
+      <div class="compact-task-controls">
+        <button class="mini-btn ${running?'btn-stop':'btn-start'}" onclick="${running?'stopTimer':'startTimer'}('${t.id}')">${running?'■ Stop':'▶ Start'}</button>
+        <button class="mini-btn btn-soft" onclick="openTimeDialog('${t.id}')">Dettagli</button>
+      </div>
+      <div class="actions compact-task-actions">
+        <button class="iconbtn" title="Segna come completata" onclick="completeTask('${t.id}')">✓</button>
+        <button class="iconbtn" title="Prompt" onclick="openTaskPrompt('${t.id}')">✦</button>
+        <button class="iconbtn" title="Elimina" onclick="deleteTask('${t.id}')">✕</button>
+      </div>
     </div>`
   }).join(''):'<div class="empty">Nessuna parte trovata.</div>';
 
@@ -3521,10 +3991,10 @@ function renderDashboard(){
   // GDP
   const toInvite=validSpeakers.filter(s=>(!s.status||s.status==='recommended')&&!s.followUp&&!speakerLastVisit(s)).length;
   const booked=validSpeakers.filter(s=>s.status==='booked');
-  const toRecall=validSpeakers.filter(s=>s.status==='recommended'&&s.followUp).length;
+  const liked=validSpeakers.filter(s=>s.status==='recommended'&&s.followUp).length;
   $('dashGdpInvite').textContent=toInvite;
   $('dashGdpBooked').textContent=booked.length;
-  $('dashGdpRecall').textContent=toRecall;
+  $('dashGdpRecall').textContent=liked;
 
   const nextSpeaker=[...booked].filter(s=>s.bookedDate).sort((a,b)=>a.bookedDate.localeCompare(b.bookedDate))[0];
   $('dashNextSpeaker').innerHTML=nextSpeaker
@@ -3715,23 +4185,27 @@ function switchSection(section){
   const isHome=section==='home',
         isParts=section==='parts',
         isActivities=section==='activities',
+        isService=section==='service',
         isGdp=section==='gdp',
         isRoutine=section==='routine';
 
   $('dashboardSection').style.display=isHome?'block':'none';
   $('partsSection').style.display=isParts?'block':'none';
   $('activitiesSection').style.display=isActivities?'block':'none';
+  $('serviceSection').style.display=isService?'block':'none';
   $('gdpSection').style.display=isGdp?'block':'none';
   $('routineSection').style.display=isRoutine?'block':'none';
 
   $('showHomeBtn').classList.toggle('active',isHome);
   $('showPartsBtn').classList.toggle('active',isParts);
   $('showActivitiesBtn').classList.toggle('active',isActivities);
+  $('showServiceBtn').classList.toggle('active',isService);
   $('showGdpBtn').classList.toggle('active',isGdp);
   $('showRoutineBtn').classList.toggle('active',isRoutine);
 
   document.body.classList.toggle('home-mode',isHome);
   document.body.classList.toggle('activities-mode',isActivities);
+  document.body.classList.toggle('service-mode',isService);
   document.body.classList.toggle('gdp-mode',isGdp);
   document.body.classList.toggle('routine-mode',isRoutine);
 
@@ -3739,6 +4213,8 @@ function switchSection(section){
   $('globalSearch').disabled=isHome;
   $('globalSearch').placeholder=isActivities
     ?'Cerca attività, persone, scadenze...'
+    :isService
+      ?'Cerca appuntamenti di servizio...'
     :isGdp
       ?'Cerca oratori, congregazioni, note...'
       :isRoutine
@@ -3747,6 +4223,7 @@ function switchSection(section){
 
   if(isHome)renderDashboard();
   else if(isActivities)renderActivities();
+  else if(isService)renderService();
   else if(isGdp)renderSpeakers();
   else if(isRoutine)renderRoutines();
   else renderTasks();
@@ -3754,6 +4231,7 @@ function switchSection(section){
 $('showHomeBtn').onclick=()=>switchSection('home');
 $('showPartsBtn').onclick=()=>switchSection('parts');
 $('showActivitiesBtn').onclick=()=>switchSection('activities');
+$('showServiceBtn').onclick=()=>switchSection('service');
 $('showGdpBtn').onclick=()=>switchSection('gdp');
 $('showRoutineBtn').onclick=()=>switchSection('routine');
 
@@ -3924,7 +4402,7 @@ function renderSpeakers(filter=''){
     .filter(s=>!q||[s.name,s.congregation,s.note,s.bookedDate].join(' ').toLowerCase().includes(q))
     .sort((a,b)=>(a.bookedDate||'9999-12-31').localeCompare(b.bookedDate||'9999-12-31'));
 
-  const callbacks=validSpeakers
+  const likedSpeakers=validSpeakers
     .filter(s=>s.status==='recommended' && s.followUp)
     .filter(s=>!q||[s.name,s.congregation,s.note,s.lastVisitDate].join(' ').toLowerCase().includes(q))
     .sort((a,b)=>{
@@ -3939,7 +4417,7 @@ function renderSpeakers(filter=''){
 
   $('speakerRecommendedCount').textContent=recommended.length;
   $('speakerBookedCount').textContent=booked.length;
-  $('speakerCallbackCount').textContent=callbacks.length;
+  $('speakerCallbackCount').textContent=likedSpeakers.length;
   $('speakerArchiveCount').textContent=archived.length;
 
   $('speakerList').innerHTML=recommended.length?recommended.map(s=>`
@@ -3977,10 +4455,10 @@ function renderSpeakers(filter=''){
       </div>
     </div>`).join(''):'<div class="empty">Nessun oratore prenotato.</div>';
 
-  $('speakerCallbackList').innerHTML=callbacks.length?callbacks.map(s=>{
+  $('speakerCallbackList').innerHTML=likedSpeakers.length?likedSpeakers.map(s=>{
     const last=speakerLastVisit(s);
     return `<div class="speaker-item">
-      <div class="speaker-icon">↺</div>
+      <div class="speaker-icon">★</div>
       <div>
         <div class="speaker-name">${esc(s.name)}</div>
         <div class="speaker-sub">${esc(s.note||'Nessuna nota')}</div>
@@ -3988,15 +4466,15 @@ function renderSpeakers(filter=''){
       <div class="speaker-cong">${s.congregation?esc(s.congregation):'—'}</div>
       <div class="speaker-last">
         ${last?`Ultima volta: <strong>${esc(fmt(last))}</strong>`:'—'}
-        <div style="margin-top:6px"><span class="callback-tag">Da richiamare</span></div>
+        <div style="margin-top:6px"><span class="callback-tag">Gradito</span></div>
       </div>
       <div class="speaker-actions">
-        <button class="btn btn-soft" style="padding:8px 10px" onclick="openSpeakerBooking('${s.id}')">Prenota di nuovo</button>
+        <button class="btn btn-soft" style="padding:8px 10px" onclick="openSpeakerBooking('${s.id}')">Prenota</button>
         <button class="iconbtn" title="Modifica" onclick="editSpeaker('${s.id}')">✎</button>
         <button class="iconbtn" title="Elimina" onclick="deleteSpeaker('${s.id}')">✕</button>
       </div>
     </div>`;
-  }).join(''):'<div class="empty">Nessun oratore da richiamare.</div>';
+  }).join(''):'<div class="empty">Nessun oratore gradito ancora registrato.</div>';
 
   $('speakerArchiveList').innerHTML=archived.length?archived.map(s=>{
     const last=speakerLastVisit(s);
@@ -4009,15 +4487,43 @@ function renderSpeakers(filter=''){
       <div class="speaker-cong">${s.congregation?esc(s.congregation):'—'}</div>
       <div class="speaker-last">
         ${last?`Ultima volta: <strong>${esc(fmt(last))}</strong>`:'—'}
-        <div style="margin-top:6px"><span class="archive-tag">Non da richiamare</span></div>
+        <div style="margin-top:6px"><span class="archive-tag">Non chiamare più</span></div>
       </div>
       <div class="speaker-actions">
-        <button class="iconbtn" title="Sposta tra Da richiamare" onclick="restoreSpeaker('${s.id}')">↺</button>
+        <button class="iconbtn" title="Sposta tra Oratori graditi" onclick="restoreSpeaker('${s.id}')">↺</button>
         <button class="iconbtn" title="Modifica" onclick="editSpeaker('${s.id}')">✎</button>
         <button class="iconbtn" title="Elimina" onclick="deleteSpeaker('${s.id}')">✕</button>
       </div>
     </div>`;
-  }).join(''):'<div class="empty">Nessun oratore in “Non da richiamare”.</div>';
+  }).join(''):'<div class="empty">Nessun oratore in “Non chiamare più”.</div>';
+
+  renderCongregationSpeakers(q);
+}
+
+function renderCongregationSpeakers(filter=''){
+  const q=String(filter||'').trim().toLowerCase();
+  const rows=congregationSpeakers
+    .filter(s=>s && typeof s.name==='string' && s.name.trim())
+    .filter(s=>!q||[s.name,s.lastTalkDate,s.preference].join(' ').toLowerCase().includes(q))
+    .sort((a,b)=>{
+      const ad=a.lastTalkDate||'9999-12-31', bd=b.lastTalkDate||'9999-12-31';
+      return ad.localeCompare(bd) || a.name.localeCompare(b.name,'it');
+    });
+  $('localSpeakerCount').textContent=rows.length;
+  $('localSpeakerList').innerHTML=rows.length?rows.map(s=>`
+    <div class="speaker-item local-speaker-item">
+      <div class="speaker-icon">⌂</div>
+      <div>
+        <div class="speaker-name">${esc(s.name)}</div>
+        <div class="speaker-sub">${s.preference?`Preferenza: ${esc(s.preference)}`:'Nessuna preferenza indicata'}</div>
+      </div>
+      <div class="speaker-cong">Congregazione locale</div>
+      <div class="speaker-last">${s.lastTalkDate?`Ultimo discorso: <strong>${esc(fmt(s.lastTalkDate))}</strong>`:'Ultimo discorso: —'}</div>
+      <div class="speaker-actions">
+        <button class="iconbtn" title="Modifica" onclick="editLocalSpeaker('${s.id}')">✎</button>
+        <button class="iconbtn" title="Elimina" onclick="deleteLocalSpeaker('${s.id}')">✕</button>
+      </div>
+    </div>`).join(''):'<div class="empty">Nessun oratore della congregazione registrato.</div>';
 }
 
 $('speakerForm').addEventListener('submit',e=>{
@@ -4037,6 +4543,55 @@ $('speakerForm').addEventListener('submit',e=>{
   renderSpeakers();
   toast('Oratore aggiunto');
 });
+
+
+let activeLocalSpeakerId=null;
+
+$('localSpeakerForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const name=$('localSpeakerName').value.trim();
+  const lastTalkDate=$('localSpeakerLastTalk').value;
+  const preference=$('localSpeakerPreference').value.trim();
+  if(!name)return;
+  congregationSpeakers.push({
+    id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),
+    recordType:'localSpeaker',name,lastTalkDate,preference,createdAt:Date.now(),updatedAt:Date.now()
+  });
+  save();
+  $('localSpeakerName').value='';
+  $('localSpeakerLastTalk').value='';
+  $('localSpeakerPreference').value='';
+  renderCongregationSpeakers($('globalSearch').value);
+  toast('Oratore della congregazione aggiunto');
+});
+
+window.editLocalSpeaker=id=>{
+  const s=congregationSpeakers.find(x=>x.id===id);if(!s)return;
+  activeLocalSpeakerId=id;
+  $('localSpeakerEditName').value=s.name||'';
+  $('localSpeakerEditLastTalk').value=s.lastTalkDate||'';
+  $('localSpeakerEditPreference').value=s.preference||'';
+  $('localSpeakerEditDialog').showModal();
+};
+$('closeLocalSpeakerEdit').onclick=$('cancelLocalSpeakerEdit').onclick=()=>$('localSpeakerEditDialog').close();
+$('saveLocalSpeakerEdit').onclick=()=>{
+  const s=congregationSpeakers.find(x=>x.id===activeLocalSpeakerId);if(!s)return;
+  const name=$('localSpeakerEditName').value.trim();
+  if(!name)return toast('Il nome non può essere vuoto');
+  s.name=name;
+  s.lastTalkDate=$('localSpeakerEditLastTalk').value;
+  s.preference=$('localSpeakerEditPreference').value.trim();
+  s.updatedAt=Date.now();
+  save();
+  $('localSpeakerEditDialog').close();
+  renderCongregationSpeakers($('globalSearch').value);
+  toast('Oratore della congregazione aggiornato');
+};
+window.deleteLocalSpeaker=id=>{
+  if(!confirm('Eliminare questo oratore dall’elenco della congregazione?'))return;
+  congregationSpeakers=congregationSpeakers.filter(s=>s.id!==id);
+  save();renderCongregationSpeakers($('globalSearch').value);toast('Oratore della congregazione eliminato');
+};
 
 
 window.selectSpeakerForBooking=id=>{
@@ -4122,7 +4677,7 @@ window.cancelSpeakerBookingEntry=id=>{
   s.bookingNote='';
   save();
   renderSpeakers($('globalSearch').value);
-  toast(hadPreviousVisit?'Prenotazione annullata: torna in Da richiamare':'Prenotazione annullata: torna in Da invitare');
+  toast(hadPreviousVisit?'Prenotazione annullata: torna in Oratori graditi':'Prenotazione annullata: torna in Da invitare');
 };
 
 window.openSpeakerVisit=id=>{
@@ -4157,7 +4712,7 @@ $('saveSpeakerVisit').onclick=()=>{
   save();
   $('speakerVisitDialog').close();
   renderSpeakers($('globalSearch').value);
-  toast(recall?'Oratore spostato in “Da richiamare”':'Oratore spostato in “Non da richiamare”');
+  toast(recall?'Oratore aggiunto agli “Oratori graditi”':'Oratore spostato in “Non chiamare più”');
 };
 
 window.restoreSpeaker=id=>{
@@ -4168,7 +4723,7 @@ window.restoreSpeaker=id=>{
   s.bookingNote='';
   save();
   renderSpeakers($('globalSearch').value);
-  toast('Oratore spostato in “Da richiamare”');
+  toast('Oratore spostato in “Oratori graditi”');
 };
 
 window.editSpeaker=id=>{
@@ -4500,7 +5055,114 @@ $('taskForm').addEventListener('submit',e=>{
   save();renderTasks();$('taskType').value='';$('taskDate').value='';$('taskHours').value='';$('taskLocation').value='';updateLocationField();toast('Parte aggiunta')
 });
 window.deleteTask=id=>{const t=getTask(id);if(t?.timerStartedAt&&!confirm('Il timer di questa parte è attivo. Eliminare comunque la parte?'))return;tasks=tasks.filter(t=>t.id!==id);save();renderTasks($('globalSearch').value);toast('Parte eliminata')};
-$('globalSearch').addEventListener('input',e=>{if(currentSection==='activities')renderActivities(e.target.value);else if(currentSection==='gdp')renderSpeakers(e.target.value);else if(currentSection==='routine')renderRoutines(e.target.value);else if(currentSection==='parts')renderTasks(e.target.value)});$('promptSearch').addEventListener('input',e=>renderPrompts(e.target.value));
+
+function localTodayISO(){
+  const d=new Date(),y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0'),day=String(d.getDate()).padStart(2,'0');
+  return `${y}-${m}-${day}`;
+}
+function currentMonthISO(){return localTodayISO().slice(0,7)}
+function serviceDurationLabel(minutes){
+  minutes=Math.max(0,Math.round(Number(minutes)||0));
+  const h=Math.floor(minutes/60),m=minutes%60;
+  if(h&&m)return `${h}h ${m}m`;
+  if(h)return `${h}h`;
+  return `${m}m`;
+}
+function ensureServiceDefaults(){
+  if(!$('serviceMonth').value)$('serviceMonth').value=currentMonthISO();
+  if(!$('serviceDate').value)$('serviceDate').value=localTodayISO();
+}
+function resetServiceForm(){
+  editingServiceId=null;
+  $('servicePerson').value='';
+  $('serviceTime').value='';
+  $('serviceHours').value='';
+  $('serviceMinutes').value='';
+  const month=$('serviceMonth').value||currentMonthISO();
+  const today=localTodayISO();
+  $('serviceDate').value=today.startsWith(month)?today:`${month}-01`;
+  $('serviceSubmitBtn').textContent='＋ Salva';
+  $('serviceCancelEdit').hidden=true;
+}
+function renderService(filter=''){
+  ensureServiceDefaults();
+  const month=$('serviceMonth').value||currentMonthISO();
+  const q=String(filter||'').trim().toLowerCase();
+  const monthEntries=serviceEntries
+    .filter(e=>String(e.date||'').slice(0,7)===month)
+    .sort((a,b)=>(a.date+' '+(a.time||'')).localeCompare(b.date+' '+(b.time||'')));
+  const shown=monthEntries.filter(e=>!q||[e.person,e.date,e.time,serviceDurationLabel(e.durationMinutes)].join(' ').toLowerCase().includes(q));
+  const total=monthEntries.reduce((s,e)=>s+Number(e.durationMinutes||0),0);
+  $('serviceMonthTotal').textContent=serviceDurationLabel(total);
+  $('serviceAppointmentCount').textContent=monthEntries.length;
+  $('serviceTimedCount').textContent=monthEntries.filter(e=>Number(e.durationMinutes||0)>0).length;
+  $('serviceList').innerHTML=shown.length?shown.map(e=>`
+    <div class="service-entry">
+      <div class="service-entry-main">
+        <strong class="service-person">${esc(e.person)}</strong>
+        <div class="service-entry-meta">
+          <span>${esc(fmt(e.date))}</span>
+          ${e.time?`<span>${esc(e.time)}</span>`:''}
+        </div>
+      </div>
+      <div class="service-entry-duration">
+        <span>Tempo</span>
+        <strong>${esc(serviceDurationLabel(e.durationMinutes))}</strong>
+      </div>
+      <div class="service-entry-actions">
+        <button class="small" onclick="editServiceEntry('${e.id}')">Modifica</button>
+        <button class="iconbtn" title="Elimina" onclick="deleteServiceEntry('${e.id}')">✕</button>
+      </div>
+    </div>`).join(''):'<div class="empty">Nessun appuntamento in questo mese.</div>';
+}
+
+$('serviceMonth').addEventListener('change',()=>{
+  const month=$('serviceMonth').value||currentMonthISO();
+  if(!editingServiceId)$('serviceDate').value=`${month}-01`;
+  renderService($('globalSearch').value);
+});
+$('serviceCancelEdit').onclick=()=>resetServiceForm();
+$('serviceForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const person=$('servicePerson').value.trim(),date=$('serviceDate').value,time=$('serviceTime').value;
+  const hours=Math.max(0,Number($('serviceHours').value||0));
+  const mins=Math.max(0,Math.min(59,Number($('serviceMinutes').value||0)));
+  if(!person||!date)return;
+  const durationMinutes=Math.round(hours*60+mins);
+  const wasEditing=!!editingServiceId;
+  if(editingServiceId){
+    const item=serviceEntries.find(x=>x.id===editingServiceId);
+    if(item)Object.assign(item,{person,date,time,durationMinutes,updatedAt:Date.now()});
+  }else{
+    serviceEntries.push({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),recordType:'service',person,date,time,durationMinutes,createdAt:Date.now(),updatedAt:Date.now()});
+  }
+  $('serviceMonth').value=date.slice(0,7);
+  save();
+  resetServiceForm();
+  renderService();
+  toast(wasEditing?'Appuntamento aggiornato':'Appuntamento salvato');
+});
+window.editServiceEntry=id=>{
+  const item=serviceEntries.find(x=>x.id===id);if(!item)return;
+  editingServiceId=id;
+  $('serviceMonth').value=item.date.slice(0,7);
+  $('servicePerson').value=item.person||'';
+  $('serviceDate').value=item.date||'';
+  $('serviceTime').value=item.time||'';
+  $('serviceHours').value=Math.floor(Number(item.durationMinutes||0)/60)||'';
+  $('serviceMinutes').value=Number(item.durationMinutes||0)%60||'';
+  $('serviceSubmitBtn').textContent='Salva modifiche';
+  $('serviceCancelEdit').hidden=false;
+  $('servicePerson').focus();
+};
+window.deleteServiceEntry=id=>{
+  if(!confirm('Eliminare questo appuntamento di servizio?'))return;
+  serviceEntries=serviceEntries.filter(x=>x.id!==id);
+  if(editingServiceId===id)resetServiceForm();
+  save();renderService($('globalSearch').value);toast('Appuntamento eliminato');
+};
+
+$('globalSearch').addEventListener('input',e=>{if(currentSection==='activities')renderActivities(e.target.value);else if(currentSection==='service')renderService(e.target.value);else if(currentSection==='gdp')renderSpeakers(e.target.value);else if(currentSection==='routine')renderRoutines(e.target.value);else if(currentSection==='parts')renderTasks(e.target.value)});$('promptSearch').addEventListener('input',e=>renderPrompts(e.target.value));
 
 
 function hideQuietPromptPanel(){
@@ -4552,7 +5214,9 @@ function validateBackupPayload(data){
   if(data.savedTypes!==undefined && !Array.isArray(data.savedTypes)) return 'La sezione tipologie del backup non è valida.';
   if(data.reportHistory!==undefined && !Array.isArray(data.reportHistory)) return 'La sezione report del backup non è valida.';
   if(data.activities!==undefined && !Array.isArray(data.activities)) return 'La sezione attività del backup non è valida.';
+  if(data.serviceEntries!==undefined && !Array.isArray(data.serviceEntries)) return 'La sezione Servizio del backup non è valida.';
   if(data.speakers!==undefined && !Array.isArray(data.speakers)) return 'La sezione GDP del backup non è valida.';
+  if(data.congregationSpeakers!==undefined && !Array.isArray(data.congregationSpeakers)) return 'L’elenco oratori della congregazione nel backup non è valido.';
   if(data.routines!==undefined && !Array.isArray(data.routines)) return 'La sezione Routine del backup non è valida.';
   if(data.scrumConfig!==undefined && (typeof data.scrumConfig!=='object' || Array.isArray(data.scrumConfig))) return 'La configurazione Scrum del backup non è valida.';
   return '';
@@ -4573,14 +5237,18 @@ async function importBackupFile(file){
       : {...defaultScrum};
     const importedReport=Array.isArray(data.reportHistory)?data.reportHistory:[];
     const importedActivities=Array.isArray(data.activities)?data.activities:[];
+    const importedService=Array.isArray(data.serviceEntries)?data.serviceEntries:[];
     const importedSpeakers=Array.isArray(data.speakers)?data.speakers:[];
+    const importedCongregationSpeakers=Array.isArray(data.congregationSpeakers)?data.congregationSpeakers:[];
     const importedRoutines=Array.isArray(data.routines)?data.routines:[];
 
     const taskCount=importedTasks.length;
     const sessionCount=importedTasks.reduce((n,t)=>n+(Array.isArray(t.sessions)?t.sessions.length:0),0);
     const reportCount=importedReport.length;
     const activityCount=importedActivities.length;
+    const serviceCount=importedService.length;
     const speakerCount=importedSpeakers.length;
+    const localSpeakerCount=importedCongregationSpeakers.length;
     const routineCount=importedRoutines.length;
 
     const ok=confirm(
@@ -4589,7 +5257,9 @@ async function importBackupFile(file){
       `Sessioni: ${sessionCount}\n`+
       `Voci report: ${reportCount}\n`+
       `Attività: ${activityCount}\n`+
+      `Appuntamenti servizio: ${serviceCount}\n`+
       `Oratori GDP: ${speakerCount}\n`+
+      `Oratori congregazione: ${localSpeakerCount}\n`+
       `Routine: ${routineCount}\n\n`+
       `I dati attualmente presenti nell’app verranno sostituiti.`
     );
@@ -4606,7 +5276,9 @@ async function importBackupFile(file){
     scrumConfig=importedScrum;
     reportHistory=importedReport;
     activities=importedActivities.map(a=>({...a,completedAt:a.completedAt||null,status:a.status||'open',delegatedTo:a.delegatedTo||'',delegatedAt:a.delegatedAt||'',delegateNote:a.delegateNote||''}));
+    serviceEntries=importedService.map(e=>({...e,recordType:'service',person:String(e.person||''),date:String(e.date||''),time:String(e.time||''),durationMinutes:Math.max(0,Number(e.durationMinutes||0)),createdAt:Number(e.createdAt||Date.now()),updatedAt:Number(e.updatedAt||e.createdAt||Date.now())})).filter(e=>e.person.trim()&&e.date);
     speakers=importedSpeakers.map(s=>({...s,visits:Array.isArray(s.visits)?s.visits:[],status:s.status||'recommended',followUp:!!s.followUp,lastVisitDate:s.lastVisitDate||'',bookedDate:s.bookedDate||'',bookingNote:s.bookingNote||''}));
+    congregationSpeakers=importedCongregationSpeakers.map(s=>({...s,recordType:'localSpeaker',name:String(s.name||''),lastTalkDate:s.lastTalkDate||'',preference:String(s.preference||''),createdAt:Number(s.createdAt||Date.now()),updatedAt:Number(s.updatedAt||s.createdAt||Date.now())})).filter(s=>s.name.trim());
     routines=importedRoutines.map(r=>({...r,recordType:'routine',name:String(r.name||''),text:String(r.text||''),dueDate:r.dueDate||'',createdAt:Number(r.createdAt||Date.now()),updatedAt:Number(r.updatedAt||r.createdAt||Date.now())}));
 
     save();
@@ -4618,7 +5290,9 @@ async function importBackupFile(file){
     updateLocationField();
     renderTasks();
     renderActivities();
+    renderService();
     renderSpeakers();
+    renderCongregationSpeakers();
     renderRoutines();
     renderDashboard();
     toast('Backup ripristinato');
@@ -4639,7 +5313,7 @@ $('importBackupFile').addEventListener('change',async e=>{
 });
 
 
-$('exportBtn').onclick=()=>{const blob=new Blob([JSON.stringify({backupVersion:7,exportedAt:new Date().toISOString(),tasks,prompts,savedTypes,scrumConfig,reportHistory,activities,speakers,routines},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='jw-tizi-backup.json';a.click();URL.revokeObjectURL(url)};
+$('exportBtn').onclick=()=>{const blob=new Blob([JSON.stringify({backupVersion:9,exportedAt:new Date().toISOString(),tasks,prompts,savedTypes,scrumConfig,reportHistory,activities,serviceEntries,speakers,congregationSpeakers,routines},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='jw-tizi-backup.json';a.click();URL.revokeObjectURL(url)};
 $('dashExportBackup').onclick=()=>$('exportBtn').click();
 
 setInterval(()=>{
@@ -4649,7 +5323,7 @@ setInterval(()=>{
   $('actualHours').textContent=durationText(tasks.reduce((s,t)=>s+actualTotalMs(t),0));
 },1000);
 
-migrateTasks();migrateSectionData();migrateReportHistory();renderPrompts();renderTypeOptions();updateLocationField();renderScrumLegend();renderTasks();renderActivities();renderSpeakers();renderRoutines();renderDashboard();switchSection('home');
+migrateTasks();migrateSectionData();migrateReportHistory();renderPrompts();renderTypeOptions();updateLocationField();renderScrumLegend();renderTasks();renderActivities();ensureServiceDefaults();renderService();renderSpeakers();renderRoutines();renderDashboard();switchSection('home');
 </script>
 
 <script>
