@@ -1249,6 +1249,258 @@ body:before{display:none!important}
   }
 }
 
+
+/* =========================================================
+   TIPOGRAFIA iPHONE GRANDE — proporzioni come riferimento
+   ========================================================= */
+body{
+  font-size:17px!important;
+  line-height:1.34!important;
+}
+
+/* Titoli principali */
+.hero h2,
+.dashboard-hero h2,
+.activity-hero h2,
+.gdp-hero h2{
+  font-size:38px!important;
+  line-height:1.03!important;
+  letter-spacing:-.045em!important;
+}
+.eyebrow,
+.hero .eyebrow,
+.dashboard-hero .eyebrow,
+.activity-hero .eyebrow,
+.gdp-hero .eyebrow{
+  font-size:14px!important;
+}
+
+/* Titoli delle rubriche */
+.card-head h3,
+.tasks-head h3,
+.completed-head h3,
+.dash-head h3{
+  font-size:24px!important;
+  line-height:1.08!important;
+  letter-spacing:-.025em!important;
+}
+.card-head p,
+.tasks-head .muted,
+.completed-head .muted,
+.dash-sub{
+  font-size:16px!important;
+  line-height:1.35!important;
+}
+
+/* Contenuti delle righe */
+.task-title,
+.activity-title,
+.speaker-name{
+  font-size:20px!important;
+  line-height:1.14!important;
+  font-weight:800!important;
+}
+.task .muted,
+.activity-item .muted,
+.activity-waiting .muted,
+.activity-completed .muted,
+.speaker-sub,
+.speaker-cong,
+.speaker-last,
+.waiting-meta{
+  font-size:16px!important;
+  line-height:1.28!important;
+}
+.datebox{
+  font-size:16px!important;
+  line-height:1.25!important;
+}
+.datebox strong{
+  font-size:18px!important;
+}
+.actual-time{
+  font-size:18px!important;
+}
+
+/* Form */
+.field label{
+  font-size:15px!important;
+}
+.field input,
+.field select,
+.field textarea{
+  font-size:17px!important;
+  min-height:50px!important;
+}
+.btn{
+  font-size:16px!important;
+}
+.iconbtn{
+  font-size:18px!important;
+}
+
+/* Badge e contatori */
+.pill{
+  font-size:15px!important;
+}
+.pill strong{
+  font-size:19px!important;
+}
+.badge,
+.days,
+.callback-tag,
+.never-tag,
+.archive-tag,
+.booked-tag,
+.waiting-tag,
+.activity-done-tag,
+.completed-badge{
+  font-size:14px!important;
+}
+
+/* Dashboard */
+.dash-row strong{
+  font-size:17px!important;
+}
+.dash-row small{
+  font-size:14px!important;
+}
+.dash-date{
+  font-size:14px!important;
+}
+.dash-stat span{
+  font-size:12px!important;
+}
+.dash-stat strong{
+  font-size:18px!important;
+}
+.dash-big{
+  font-size:32px!important;
+}
+
+/* Timer / report */
+.timer-display{
+  font-size:36px!important;
+}
+.report-kpi span,
+.month-card span{
+  font-size:14px!important;
+}
+.report-kpi strong,
+.month-value,
+.type-hours{
+  font-size:20px!important;
+}
+
+/* Navigazione inferiore: leggibile come nell'app di riferimento */
+.section-switch button{
+  font-size:13px!important;
+  font-weight:650!important;
+}
+
+/* Mantiene le righe compatte pur aumentando il carattere */
+#gdpSection .speaker-item,
+#gdpSection .speaker-booked,
+#gdpSection .speaker-archive,
+#activitiesSection .activity-item,
+#activitiesSection .activity-waiting,
+#activitiesSection .activity-completed{
+  padding-top:12px!important;
+  padding-bottom:12px!important;
+}
+
+@media(max-width:560px){
+  body{
+    font-size:17px!important;
+  }
+  .hero h2,
+  .dashboard-hero h2,
+  .activity-hero h2,
+  .gdp-hero h2{
+    font-size:35px!important;
+  }
+  .card-head h3,
+  .tasks-head h3,
+  .completed-head h3,
+  .dash-head h3{
+    font-size:23px!important;
+  }
+  .card-head p,
+  .tasks-head .muted,
+  .completed-head .muted,
+  .dash-sub{
+    font-size:15px!important;
+  }
+  .task-title,
+  .activity-title,
+  .speaker-name{
+    font-size:19px!important;
+  }
+  .task .muted,
+  .activity-item .muted,
+  .activity-waiting .muted,
+  .activity-completed .muted,
+  .speaker-sub,
+  .speaker-cong,
+  .speaker-last,
+  .waiting-meta{
+    font-size:15px!important;
+  }
+  .field input,
+  .field select,
+  .field textarea{
+    font-size:16px!important;
+  }
+  .section-switch button{
+    font-size:12.5px!important;
+  }
+}
+
+
+/* =========================================================
+   GDP — contatori identici a quelli della sezione Attività
+   ========================================================= */
+#gdpSection .tasks-head .summary .pill,
+#gdpSection .completed-head > .pill{
+  width:auto!important;
+  height:auto!important;
+  min-width:0!important;
+  min-height:42px!important;
+  padding:8px 13px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:7px!important;
+  border-radius:999px!important;
+  background:#ecebef!important;
+  color:#77777c!important;
+  font-size:15px!important;
+  line-height:1!important;
+  text-align:center!important;
+  white-space:nowrap!important;
+}
+#gdpSection .tasks-head .summary .pill strong,
+#gdpSection .completed-head > .pill strong{
+  display:inline!important;
+  margin:0!important;
+  color:#111!important;
+  font-size:19px!important;
+  font-weight:800!important;
+  line-height:1!important;
+}
+@media(max-width:560px){
+  #gdpSection .tasks-head .summary .pill,
+  #gdpSection .completed-head > .pill{
+    min-height:40px!important;
+    padding:7px 12px!important;
+    font-size:15px!important;
+  }
+  #gdpSection .tasks-head .summary .pill strong,
+  #gdpSection .completed-head > .pill strong{
+    font-size:19px!important;
+  }
+}
+
 </style>
 
 <style>
@@ -1576,7 +1828,7 @@ select { -webkit-appearance: auto; appearance: auto; }
             <h3>Non da richiamare</h3>
             <div class="muted">Oratori già venuti che non vuoi richiamare per ora.</div>
           </div>
-          <span class="pill">Già invitati <strong id="speakerArchiveCount">0</strong></span>
+          <span class="pill">Non da richiamare <strong id="speakerArchiveCount">0</strong></span>
         </div>
         <div class="gdp-list" id="speakerArchiveList"></div>
       </section>
