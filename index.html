@@ -6,7 +6,7 @@
 <title>JW TIZI</title>
 
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#f5f5f7">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -1782,19 +1782,130 @@ select { -webkit-appearance: auto; appearance: auto; }
 }
 </style>
 
+
+<style id="chatgpt-faithful-theme">
+:root{
+  --bg:#f5f5f7!important;
+  --surface:#ffffff!important;
+  --surface2:#f7f7f8!important;
+  --blue:#2f6fed!important;
+  --blue-dark:#2457c8!important;
+  --blue2:#eaf1ff!important;
+  --text:#111111!important;
+  --muted:#8f9198!important;
+  --line:#e9e9ed!important;
+  --gold:#2f6fed!important;
+  --gold-soft:#eaf1ff!important;
+  --shadow:0 6px 24px rgba(15,23,42,.045)!important;
+}
+html{background:#f5f5f7!important}
+body{background:#f5f5f7!important;color:#111!important;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,Arial,sans-serif!important}
+.rightbar{display:none!important}
+.shell{max-width:900px!important;display:block!important;padding:calc(12px + env(safe-area-inset-top)) 16px calc(28px + env(safe-area-inset-bottom))!important}
+.main{width:100%!important;min-width:0!important}
+.section-switch{display:none!important}
+
+.chat-shell-topbar{display:flex!important;justify-content:space-between!important;align-items:flex-start!important;margin:0 0 12px!important;padding:0 2px!important;background:transparent!important;border:0!important;box-shadow:none!important;min-height:52px!important}
+.topbar-kicker{font-size:11px!important;text-transform:uppercase!important;letter-spacing:.08em!important;color:#999ca4!important;font-weight:700!important;margin-bottom:4px!important}
+#topbarHeading{font-size:24px!important;line-height:1.05!important;margin:0!important;color:#111!important;letter-spacing:-.035em!important}
+.topbar-actions-row{display:flex!important;gap:10px!important}
+.chat-shell-btn{width:50px!important;height:50px!important;display:grid!important;place-items:center!important;border-radius:50%!important;border:1px solid #ececf0!important;background:rgba(255,255,255,.94)!important;color:#202124!important;font-size:20px!important;box-shadow:0 4px 16px rgba(15,23,42,.04)!important;cursor:pointer!important}
+.search-panel{display:none!important;margin-bottom:12px!important}.search-panel.open{display:block!important}
+.search{background:#fff!important;border:1px solid #e9e9ed!important;border-radius:20px!important;box-shadow:none!important;min-height:48px!important}
+.search input{font-size:14px!important;color:#111!important}
+
+.drawer-overlay{position:fixed!important;inset:0!important;background:rgba(255,255,255,.56)!important;backdrop-filter:blur(5px)!important;-webkit-backdrop-filter:blur(5px)!important;opacity:0!important;pointer-events:none!important;transition:opacity .2s ease!important;z-index:199!important}
+.app-drawer{position:fixed!important;left:0!important;top:0!important;width:min(372px,86vw)!important;height:100dvh!important;z-index:200!important;transform:translateX(-103%)!important;transition:transform .22s ease!important;background:#f6f6f7!important;border-right:1px solid #ececf0!important;box-shadow:24px 0 70px rgba(15,23,42,.08)!important;padding:calc(20px + env(safe-area-inset-top)) 18px calc(18px + env(safe-area-inset-bottom))!important;display:flex!important;flex-direction:column!important;gap:18px!important;overflow:auto!important}
+body.drawer-open .drawer-overlay{opacity:1!important;pointer-events:auto!important}
+body.drawer-open .app-drawer{transform:translateX(0)!important}
+.drawer-top-row{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important}.drawer-brand{font-size:28px!important;font-weight:800!important;letter-spacing:-.035em!important;color:#111!important}.drawer-top-actions{display:flex!important;gap:10px!important}.drawer-round-btn{width:52px!important;height:52px!important;border-radius:50%!important;border:1px solid #ececf0!important;background:#fff!important;font-size:20px!important;color:#1c1d20!important;display:grid!important;place-items:center!important;cursor:pointer!important}
+.drawer-nav{display:grid!important;gap:6px!important}.drawer-nav-btn{width:100%!important;border:0!important;background:transparent!important;border-radius:20px!important;padding:14px 16px!important;display:flex!important;align-items:center!important;gap:15px!important;color:#111!important;font-size:17px!important;font-weight:700!important;text-align:left!important;cursor:pointer!important}.drawer-nav-btn.active{background:#ededf0!important}.drawer-nav-ico{width:25px!important;text-align:center!important;font-size:20px!important;color:#111!important}
+.drawer-section h3{font-size:15px!important;margin:0 2px 9px!important;color:#151515!important}.drawer-list{display:grid!important;gap:5px!important}.drawer-item{padding:10px 12px!important;border-radius:16px!important;background:transparent!important;border:0!important}.drawer-item:hover{background:#ededf0!important}.drawer-item small{display:block!important;color:#9a9da4!important;font-size:11px!important;margin-bottom:3px!important}.drawer-item strong{display:block!important;color:#171717!important;font-size:15px!important;line-height:1.25!important;font-weight:700!important}.drawer-item span{display:block!important;color:#7e828b!important;font-size:12px!important;margin-top:3px!important;line-height:1.3!important}.drawer-empty{padding:10px 12px!important;color:#9a9da4!important;font-size:13px!important}
+.drawer-tools-section{margin-top:auto!important}.drawer-tools-list{display:grid!important;gap:6px!important}.drawer-tool-btn{display:flex!important;align-items:center!important;gap:12px!important;width:100%!important;border:0!important;background:transparent!important;border-radius:16px!important;padding:11px 12px!important;color:#171717!important;font-size:14px!important;font-weight:650!important;text-align:left!important;cursor:pointer!important}.drawer-tool-btn:hover{background:#ededf0!important}
+.drawer-footer{display:flex!important;align-items:center!important;gap:12px!important;margin-top:4px!important}.drawer-primary-btn{flex:1!important;border:0!important;border-radius:999px!important;background:linear-gradient(180deg,#4595ff,#2f6fed)!important;color:white!important;padding:15px 18px!important;font-size:17px!important;font-weight:800!important;cursor:pointer!important;box-shadow:0 14px 28px rgba(47,111,237,.22)!important}.drawer-primary-btn span{font-size:24px!important;vertical-align:-1px!important;margin-right:5px!important}.drawer-settings-btn{width:56px!important;height:56px!important;border-radius:50%!important;border:1px solid #ececf0!important;background:#fff!important;color:#111!important;font-size:20px!important;cursor:pointer!important}
+
+.chat-home-head{padding:8px 2px 12px!important}.chat-home-head h2{margin:0!important;font-size:36px!important;line-height:1.05!important;letter-spacing:-.045em!important;color:#111!important}.chat-home-head p{margin:6px 0 0!important;color:#8f9198!important;font-size:16px!important}
+.chat-metric-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important;margin:8px 0 24px!important}.chat-metric-card{appearance:none!important;border:1px solid #ececf0!important;background:#fff!important;border-radius:24px!important;padding:16px!important;text-align:left!important;box-shadow:0 4px 16px rgba(15,23,42,.035)!important;cursor:pointer!important;color:#111!important}.metric-icon{width:44px!important;height:44px!important;border-radius:14px!important;display:grid!important;place-items:center!important;font-size:19px!important;font-weight:800!important;margin-bottom:11px!important}.metric-blue{background:#eaf1ff!important;color:#2f6fed!important}.metric-green{background:#eaf8ef!important;color:#3aa86a!important}.metric-gray{background:#f1f1f3!important;color:#5f6368!important}.metric-violet{background:#f0ecff!important;color:#7658d8!important}.metric-label{display:block!important;color:#8c8f96!important;font-size:14px!important;margin-bottom:5px!important}.chat-metric-card strong{display:block!important;font-size:29px!important;line-height:1!important;color:#111!important}
+.chat-home-section{margin-bottom:24px!important}.chat-home-section-head{display:flex!important;align-items:center!important;justify-content:space-between!important;margin:0 2px 10px!important}.chat-home-section-head h3{margin:0!important;font-size:22px!important;letter-spacing:-.03em!important;color:#111!important}
+.chat-upcoming-list{background:#fff!important;border:1px solid #ececf0!important;border-radius:26px!important;overflow:hidden!important;box-shadow:0 4px 18px rgba(15,23,42,.035)!important}.chat-upcoming-row{width:100%!important;border:0!important;border-bottom:1px solid #f0f0f2!important;background:#fff!important;padding:14px 16px!important;display:grid!important;grid-template-columns:28px minmax(0,1fr) auto!important;gap:12px!important;align-items:center!important;text-align:left!important;cursor:pointer!important}.chat-upcoming-row:last-child{border-bottom:0!important}.upcoming-check{width:21px!important;height:21px!important;border-radius:50%!important;border:2px solid #d7d9de!important;background:#fff!important}.upcoming-copy{min-width:0!important}.upcoming-copy strong{display:block!important;color:#111!important;font-size:16px!important;line-height:1.2!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}.upcoming-copy small{display:block!important;color:#9699a0!important;font-size:12px!important;line-height:1.25!important;margin-top:3px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}.upcoming-date{text-align:right!important;white-space:nowrap!important}.upcoming-date strong{display:block!important;color:#686c74!important;font-size:12px!important;font-weight:650!important}.upcoming-date small{display:block!important;color:#9699a0!important;font-size:11px!important;margin-top:3px!important}.upcoming-date small.overdue{color:#c54d4d!important}.upcoming-date small.urgent{color:#a26b17!important}.chat-home-empty{padding:24px!important;text-align:center!important;color:#9699a0!important;font-size:14px!important}
+.chat-quick-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}.chat-quick-card{appearance:none!important;border:1px solid #ececf0!important;background:#fff!important;border-radius:22px!important;padding:16px!important;display:flex!important;align-items:center!important;gap:12px!important;min-height:82px!important;color:#171717!important;font-size:15px!important;font-weight:700!important;text-align:left!important;cursor:pointer!important;box-shadow:0 4px 16px rgba(15,23,42,.03)!important}.chat-quick-card.wide{grid-column:1/-1!important}.quick-icon{width:40px!important;height:40px!important;border-radius:13px!important;background:#f1f1f3!important;color:#303238!important;display:grid!important;place-items:center!important;font-size:18px!important;flex:0 0 auto!important}
+
+.card,.dashboard-card,.hero,.activity-hero,.gdp-hero,.routine-hero,.modal,.mobile-prompt-dialog{background:#fff!important;border:1px solid #ececf0!important;border-radius:26px!important;box-shadow:0 4px 18px rgba(15,23,42,.035)!important}.hero,.activity-hero,.gdp-hero,.routine-hero{padding:17px 18px 15px!important;margin-bottom:14px!important}.hero:before,.hero:after,.activity-hero:before,.activity-hero:after,.gdp-hero:before,.gdp-hero:after,.routine-hero:before,.routine-hero:after{display:none!important}.eyebrow,.hero .eyebrow,.activity-hero .eyebrow,.gdp-hero .eyebrow,.routine-hero .eyebrow{color:#9a9da4!important;font-size:10.5px!important;letter-spacing:.08em!important}.hero h2,.activity-hero h2,.gdp-hero h2,.routine-hero h2{font-size:25px!important;line-height:1.08!important;color:#111!important;margin:5px 0 0!important}.tasks-head,.completed-head,.card-head{padding:17px 18px 10px!important}.tasks-head h3,.completed-head h3,.card-head h3{font-size:19px!important;color:#111!important}.card-head p,.muted{color:#92959d!important}.field input,.field select,.field textarea{border-radius:15px!important;border:1px solid #e7e8ec!important;background:#fff!important}.field input:focus,.field select:focus,.field textarea:focus{border-color:#2f6fed!important;box-shadow:0 0 0 3px rgba(47,111,237,.10)!important}.btn{border-radius:14px!important}.btn-primary{background:#2f6fed!important;color:#fff!important}.btn-soft,.small{background:#eaf1ff!important;color:#2457c8!important}.pill{background:#f1f1f3!important;color:#777b84!important}.pill strong{color:#111!important}.task,.completed-task,.activity-item,.activity-completed,.activity-waiting,.speaker-item,.speaker-booked,.speaker-archive,.routine-item{background:#fff!important;border:1px solid #eeeeef!important;border-radius:20px!important;box-shadow:none!important}.task-title,.activity-title,.speaker-name,.routine-name{color:#111!important}.toast{background:#111!important;color:#fff!important;border-radius:14px!important}
+
+@media(max-width:640px){
+  .shell{padding:calc(10px + env(safe-area-inset-top)) 12px calc(24px + env(safe-area-inset-bottom))!important}
+  .chat-home-head h2{font-size:31px!important}
+  .chat-metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+  .chat-metric-card{padding:14px!important;border-radius:21px!important}.chat-metric-card strong{font-size:27px!important}.metric-label{font-size:13px!important}
+  .chat-upcoming-row{grid-template-columns:25px minmax(0,1fr) auto!important;padding:13px 14px!important}.upcoming-copy strong{font-size:15px!important}.upcoming-date strong{font-size:11.5px!important}
+  .chat-quick-grid{gap:10px!important}.chat-quick-card{padding:14px!important;min-height:76px!important;border-radius:20px!important;font-size:14px!important}
+  .app-drawer{width:min(350px,88vw)!important;padding-left:16px!important;padding-right:16px!important}.drawer-brand{font-size:26px!important}.drawer-nav-btn{font-size:16px!important;padding:13px 14px!important}.drawer-section h3{font-size:14px!important}.drawer-primary-btn{font-size:16px!important}
+}
+</style>
+
 </head>
 <body>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="app-drawer" id="appDrawer" aria-label="Menu principale">
+  <div class="drawer-top-row">
+    <div class="drawer-brand">JW Tizi</div>
+    <div class="drawer-top-actions">
+      <button class="drawer-round-btn" id="drawerSearchBtn" aria-label="Cerca">⌕</button>
+      <button class="drawer-round-btn" id="closeDrawerBtn" aria-label="Chiudi menu">☰</button>
+    </div>
+  </div>
+
+  <nav class="drawer-nav" aria-label="Sezioni app">
+    <button type="button" class="drawer-nav-btn active" data-section="home"><span class="drawer-nav-ico">⌂</span><span>Home</span></button>
+    <button type="button" class="drawer-nav-btn" data-section="parts"><span class="drawer-nav-ico">▤</span><span>Parti</span></button>
+    <button type="button" class="drawer-nav-btn" data-section="activities"><span class="drawer-nav-ico">☑</span><span>Attività</span></button>
+    <button type="button" class="drawer-nav-btn" data-section="gdp"><span class="drawer-nav-ico">◎</span><span>GDP</span></button>
+    <button type="button" class="drawer-nav-btn" data-section="routine"><span class="drawer-nav-ico">△</span><span>Routine</span></button>
+  </nav>
+
+  <section class="drawer-section">
+    <h3>Elementi fissati</h3>
+    <div class="drawer-list" id="drawerPinned"></div>
+  </section>
+
+  <section class="drawer-section drawer-recent-section">
+    <h3>Recenti</h3>
+    <div class="drawer-list" id="drawerRecent"></div>
+  </section>
+
+  <section class="drawer-section drawer-tools-section">
+    <h3>Strumenti</h3>
+    <div class="drawer-tools-list">
+      <button class="drawer-tool-btn" id="reportBtn"><span>▥</span> Report annuale</button>
+      <button class="drawer-tool-btn" id="quietPromptBtn"><span>◇</span> Archivio prompt</button>
+      <button class="drawer-tool-btn" id="importBackupBtn"><span>↥</span> Importa backup</button>
+      <button class="drawer-tool-btn" id="exportBtn"><span>⇩</span> Esporta backup</button>
+      <input id="importBackupFile" type="file" accept="application/json,.json" style="display:none" />
+    </div>
+  </section>
+
+  <div class="drawer-footer">
+    <button class="drawer-primary-btn" id="drawerPrimaryAction"><span>＋</span> Nuova voce</button>
+    <button class="drawer-settings-btn" id="drawerHomeShortcut" aria-label="Home">⌂</button>
+  </div>
+</aside>
 <div class="shell">
   <main class="main">
-    <div class="topbar">
-      <div class="search">⌕ <input id="globalSearch" placeholder="Cerca parti, luoghi, date..." /></div>
-      <button class="quiet-prompt-btn" id="quietPromptBtn" aria-label="Apri pannello secondario" title="">◇</button>
-      <button class="btn btn-soft" id="reportBtn">▥ Report annuale</button>
-      <button class="btn btn-soft" id="importBackupBtn" title="Importa un backup JSON">↥ Importa backup</button>
-      <input id="importBackupFile" type="file" accept="application/json,.json" style="display:none" />
-      <button class="iconbtn" title="Esporta backup" id="exportBtn">⇩</button>
-</div>
 
+    <div class="topbar chat-shell-topbar">
+      <div class="topbar-title-wrap">
+        <div class="topbar-kicker" id="topbarKicker">JW TIZI</div>
+        <h1 id="topbarHeading">Home</h1>
+      </div>
+      <div class="topbar-actions-row">
+        <button class="chat-shell-btn" id="searchToggleBtn" aria-label="Cerca" title="Cerca">⌕</button>
+        <button class="chat-shell-btn" id="drawerToggleBtn" aria-label="Apri menu" title="Apri menu">☰</button>
+      </div>
+    </div>
+
+    <div class="search-panel" id="searchPanel">
+      <div class="search">⌕ <input id="globalSearch" placeholder="Cerca parti, luoghi, date..." /></div>
+    </div>
 
     <div class="section-switch" aria-label="Sezioni">
       <button type="button" id="showHomeBtn" class="active">Home</button>
@@ -1806,84 +1917,53 @@ select { -webkit-appearance: auto; appearance: auto; }
 
 
     <div id="dashboardSection">
-      <section class="dashboard-hero">
-        <div class="eyebrow">BENVENUTO TIZIANO</div>
-        <h2>Organizza le tue parti</h2>
+      <section class="chat-home-head">
+        <h2 id="dashboardGreeting">Buonasera</h2>
+        <p>Ecco il tuo riepilogo di oggi.</p>
       </section>
 
-      <div class="dashboard-grid">
-        <section class="dashboard-card" id="dashNextPartCard">
-          <div class="dash-head">
-            <div><h3>Prossima parte</h3><div class="dash-sub">La prossima assegnazione da preparare.</div></div>
-            <div class="dash-ico">◉</div>
-          </div>
-          <div id="dashNextPart"></div>
-        </section>
+      <section class="chat-metric-grid">
+        <button class="chat-metric-card" type="button" onclick="switchSection('activities')">
+          <span class="metric-icon metric-blue">▣</span>
+          <span class="metric-label">Attività di oggi</span>
+          <strong id="homeTodayCount">0</strong>
+        </button>
+        <button class="chat-metric-card" type="button" onclick="switchSection('activities')">
+          <span class="metric-icon metric-green">✓</span>
+          <span class="metric-label">Completate</span>
+          <strong id="homeCompletedCount">0</strong>
+        </button>
+        <button class="chat-metric-card" type="button" onclick="switchSection('parts')">
+          <span class="metric-icon metric-gray">▤</span>
+          <span class="metric-label">Parti aperte</span>
+          <strong id="homePartsCount">0</strong>
+        </button>
+        <button class="chat-metric-card" type="button" onclick="switchSection('gdp')">
+          <span class="metric-icon metric-violet">◎</span>
+          <span class="metric-label">GDP prenotati</span>
+          <strong id="homeBookedCount">0</strong>
+        </button>
+      </section>
 
-        <section class="dashboard-card">
-          <div class="dash-head">
-            <div><h3>Tempo questo mese</h3><div class="dash-sub" id="dashMonthLabel">Tempo effettivo registrato.</div></div>
-            <div class="dash-ico">◷</div>
-          </div>
-          <div class="dash-big" id="dashMonthActual">0 h</div>
-          <div class="dash-stats">
-            <div class="dash-stat"><span>Previsto</span><strong id="dashMonthPlanned">0 h</strong></div>
-            <div class="dash-stat"><span>Differenza</span><strong id="dashMonthDelta">0 h</strong></div>
-            <div class="dash-stat"><span>Sessioni</span><strong id="dashMonthSessions">0</strong></div>
-          </div>
-        </section>
+      <section class="chat-home-section">
+        <div class="chat-home-section-head">
+          <h3>Prossime attività</h3>
+        </div>
+        <div class="chat-upcoming-list" id="homeUpcomingList"></div>
+      </section>
 
-        <section class="dashboard-card">
-          <div class="dash-head">
-            <div><h3>Attività urgenti</h3><div class="dash-sub">Le scadenze più vicine ancora da gestire.</div></div>
-            <div class="dash-ico">!</div>
-          </div>
-          <div id="dashUrgentActivities"></div>
-        </section>
-
-        <section class="dashboard-card">
-          <div class="dash-head">
-            <div><h3>In attesa</h3><div class="dash-sub">Attività delegate ad altre persone.</div></div>
-            <div class="dash-ico">⇢</div>
-          </div>
-          <div id="dashWaitingActivities"></div>
-        </section>
-
-        <section class="dashboard-card">
-          <div class="dash-head">
-            <div><h3>Routine in scadenza</h3><div class="dash-sub">Routine con una data da tenere sotto controllo.</div></div>
-            <div class="dash-ico">△</div>
-          </div>
-          <div id="dashRoutinesDue"></div>
-        </section>
-
-        <section class="dashboard-card wide">
-          <div class="dash-head">
-            <div><h3>GDP</h3><div class="dash-sub">Situazione degli oratori e prossime prenotazioni.</div></div>
-            <div class="dash-ico">G</div>
-          </div>
-          <div class="dash-stats">
-            <div class="dash-stat"><span>Da invitare</span><strong id="dashGdpInvite">0</strong></div>
-            <div class="dash-stat"><span>Prenotati</span><strong id="dashGdpBooked">0</strong></div>
-            <div class="dash-stat"><span>Da richiamare</span><strong id="dashGdpRecall">0</strong></div>
-          </div>
-          <div id="dashNextSpeaker" style="margin-top:10px"></div>
-        </section>
-
-        <section class="dashboard-card wide">
-          <div class="dash-head">
-            <div><h3>Azioni rapide</h3><div class="dash-sub">Vai direttamente alla sezione che ti serve.</div></div>
-            <div class="dash-ico">＋</div>
-          </div>
-          <div class="quick-actions">
-            <button class="btn btn-soft" id="dashAddPart">＋ Nuova parte</button>
-            <button class="btn btn-soft" id="dashAddActivity">＋ Nuova attività</button>
-            <button class="btn btn-soft" id="dashAddSpeaker">＋ Nuovo oratore</button>
-            <button class="btn btn-soft" id="dashAddRoutine">＋ Nuova routine</button>
-            <button class="btn btn-ghost" id="dashOpenReport">▥ Report annuale</button>
-          </div>
-        </section>
-      </div>
+      <section class="chat-home-section">
+        <div class="chat-home-section-head">
+          <h3>Accesso rapido</h3>
+        </div>
+        <div class="chat-quick-grid">
+          <button class="chat-quick-card" id="dashAddPart"><span class="quick-icon">▤</span><span>Nuova parte</span></button>
+          <button class="chat-quick-card" id="dashAddActivity"><span class="quick-icon">☑</span><span>Nuova attività</span></button>
+          <button class="chat-quick-card" id="dashAddSpeaker"><span class="quick-icon">◎</span><span>Nuovo oratore</span></button>
+          <button class="chat-quick-card" id="dashAddRoutine"><span class="quick-icon">△</span><span>Nuova routine</span></button>
+          <button class="chat-quick-card wide" id="dashOpenReport"><span class="quick-icon">▥</span><span>Report annuale</span></button>
+        </div>
+      </section>
     </div>
 
     <div id="partsSection" style="display:none">
@@ -2659,108 +2739,55 @@ function dashDateLabel(dateStr){
 }
 function renderDashboard(){
   const now=new Date();
+  const hour=now.getHours();
+  $('dashboardGreeting').textContent=hour<12?'Buongiorno':hour<18?'Buon pomeriggio':'Buonasera';
+
   const validActivities=activities.filter(a=>a && typeof a==='object' && typeof a.title==='string' && a.title.trim() && typeof a.dueDate==='string' && a.dueDate);
   const validSpeakers=speakers.filter(s=>s && typeof s==='object' && typeof s.name==='string' && s.name.trim() && !('title' in s && 'dueDate' in s));
-  const year=now.getFullYear(),month=now.getMonth();
+  const validRoutines=routines.filter(r=>r && typeof r==='object' && typeof r.name==='string' && r.name.trim());
 
-  // Prossima parte
-  const active=tasks.filter(t=>!t.completedAt).sort((a,b)=>a.date.localeCompare(b.date));
-  const future=active.find(t=>daysUntil(t.date)>=0);
-  const nextPart=future||active[0];
-
-  if(nextPart){
-    $('dashNextPart').innerHTML=`
-      <div class="dash-row">
-        <div>
-          <strong>${esc(nextPart.type)}</strong>
-          <small>${nextPart.location?'📍 '+esc(nextPart.location):'Tempo previsto: '+Number(nextPart.hours).toLocaleString('it-IT')+' h'}</small>
-        </div>
-        <div class="dash-date ${dashDateClass(nextPart.date)}">${esc(dashDateLabel(nextPart.date))}</div>
-      </div>
-      <div class="dash-stats">
-        <div class="dash-stat"><span>Data</span><strong style="font-size:14px">${esc(fmt(nextPart.date))}</strong></div>
-        <div class="dash-stat"><span>Previsto</span><strong>${Number(nextPart.hours).toLocaleString('it-IT')} h</strong></div>
-        <div class="dash-stat"><span>Effettivo</span><strong>${durationText(actualTotalMs(nextPart))}</strong></div>
-      </div>`;
-  }else{
-    $('dashNextPart').innerHTML='<div class="dash-empty">Nessuna parte in programma.</div>';
-  }
-
-  // Tempo del mese
-  const monthHistory=reportHistory.filter(x=>{
-    const d=new Date(Number(x.start));
-    return d.getFullYear()===year && d.getMonth()===month;
-  });
-  const actualMs=monthHistory.reduce((s,x)=>s+Number(x.durationMs||0),0);
-  const plannedHours=tasks.filter(t=>{
-    const d=dObj(t.date);
-    return d.getFullYear()===year && d.getMonth()===month;
-  }).reduce((s,t)=>s+Number(t.hours||0),0);
-  const plannedMs=plannedHours*3600000;
-  const delta=actualMs-plannedMs;
-  $('dashMonthLabel').textContent=`${now.toLocaleDateString('it-IT',{month:'long',year:'numeric'})}`;
-  $('dashMonthActual').textContent=dashDuration(actualMs);
-  $('dashMonthPlanned').textContent=`${plannedHours.toLocaleString('it-IT',{maximumFractionDigits:1})} h`;
-  $('dashMonthDelta').textContent=(delta>0?'+':delta<0?'−':'')+dashDuration(Math.abs(delta));
-  $('dashMonthSessions').textContent=monthHistory.length;
-
-  // Attività urgenti
-  const urgent=validActivities
-    .filter(a=>!a.completedAt && a.status!=='waiting')
-    .sort((a,b)=>a.dueDate.localeCompare(b.dueDate))
-    .slice(0,3);
-  $('dashUrgentActivities').innerHTML=urgent.length
-    ? `<div class="dash-list">${urgent.map(a=>`
-      <div class="dash-row">
-        <div><strong>${esc(a.title)}</strong><small>${a.person?'Con '+esc(a.person):'Da gestire personalmente'}</small></div>
-        <div class="dash-date ${dashDateClass(a.dueDate)}">${esc(dashDateLabel(a.dueDate))}</div>
-      </div>`).join('')}</div>`
-    : '<div class="dash-empty">Nessuna attività aperta.</div>';
-
-  // In attesa
-  const waiting=validActivities
-    .filter(a=>!a.completedAt && a.status==='waiting')
-    .sort((a,b)=>a.dueDate.localeCompare(b.dueDate))
-    .slice(0,3);
-  $('dashWaitingActivities').innerHTML=waiting.length
-    ? `<div class="dash-list">${waiting.map(a=>`
-      <div class="dash-row">
-        <div><strong>${esc(a.title)}</strong><small>${a.delegatedTo?'Delegata a '+esc(a.delegatedTo):'Delegata'}</small></div>
-        <div class="dash-date ${dashDateClass(a.dueDate)}">${esc(dashDateLabel(a.dueDate))}</div>
-      </div>`).join('')}</div>`
-    : '<div class="dash-empty">Nessuna attività in attesa.</div>';
-
-  // Routine con scadenza
-  const dueRoutines=routines
-    .filter(r=>r && typeof r.name==='string' && r.name.trim() && r.dueDate)
-    .sort((a,b)=>a.dueDate.localeCompare(b.dueDate))
-    .slice(0,3);
-
-  $('dashRoutinesDue').innerHTML=dueRoutines.length
-    ? `<div class="dash-list">${dueRoutines.map(r=>`
-      <div class="dash-row">
-        <div><strong>${esc(r.name)}</strong><small>${esc((r.text||'').slice(0,90))}${(r.text||'').length>90?'…':''}</small></div>
-        <div class="dash-date ${dashDateClass(r.dueDate)}">${esc(dashDateLabel(r.dueDate))}</div>
-      </div>`).join('')}</div>`
-    : '<div class="dash-empty">Nessuna routine con scadenza.</div>';
-
-  // GDP
-  const toInvite=validSpeakers.filter(s=>(!s.status||s.status==='recommended')&&!s.followUp&&!speakerLastVisit(s)).length;
+  const todayISO=now.toISOString().slice(0,10);
+  const todayActivities=validActivities.filter(a=>!a.completedAt && a.dueDate===todayISO).length;
+  const completedActivities=validActivities.filter(a=>!!a.completedAt).length;
+  const openParts=tasks.filter(t=>!t.completedAt).length;
   const booked=validSpeakers.filter(s=>s.status==='booked');
-  const toRecall=validSpeakers.filter(s=>s.status==='recommended'&&s.followUp).length;
-  $('dashGdpInvite').textContent=toInvite;
-  $('dashGdpBooked').textContent=booked.length;
-  $('dashGdpRecall').textContent=toRecall;
 
-  const nextSpeaker=[...booked].filter(s=>s.bookedDate).sort((a,b)=>a.bookedDate.localeCompare(b.bookedDate))[0];
-  $('dashNextSpeaker').innerHTML=nextSpeaker
-    ? `<div class="dash-row">
-        <div><strong>Prossimo prenotato: ${esc(nextSpeaker.name)}</strong><small>${nextSpeaker.congregation?esc(nextSpeaker.congregation):'Congregazione non indicata'}</small></div>
-        <div class="dash-date ${dashDateClass(nextSpeaker.bookedDate)}">${esc(fmt(nextSpeaker.bookedDate))}</div>
-      </div>`
-    : '<div class="dash-empty">Nessun oratore prenotato.</div>';
+  $('homeTodayCount').textContent=todayActivities;
+  $('homeCompletedCount').textContent=completedActivities;
+  $('homePartsCount').textContent=openParts;
+  $('homeBookedCount').textContent=booked.length;
+
+  const items=[];
+  tasks.filter(t=>!t.completedAt && t.date).forEach(t=>items.push({
+    kind:'Parte',title:t.type,sub:t.location||`${Number(t.hours||0).toLocaleString('it-IT')} h previste`,date:t.date,section:'parts',icon:'▤'
+  }));
+  validActivities.filter(a=>!a.completedAt).forEach(a=>items.push({
+    kind:a.status==='waiting'?'In attesa':'Attività',title:a.title,sub:a.status==='waiting'?(a.delegatedTo?`Delegata a ${a.delegatedTo}`:'Attività delegata'):(a.person?`Con ${a.person}`:'Da fare'),date:a.dueDate,section:'activities',icon:'☑'
+  }));
+  validRoutines.filter(r=>r.dueDate).forEach(r=>items.push({
+    kind:'Routine',title:r.name,sub:(r.text||'').slice(0,70),date:r.dueDate,section:'routine',icon:'△'
+  }));
+  booked.filter(s=>s.bookedDate).forEach(s=>items.push({
+    kind:'GDP',title:s.name,sub:s.congregation||'Oratore prenotato',date:s.bookedDate,section:'gdp',icon:'◎'
+  }));
+
+  items.sort((a,b)=>String(a.date).localeCompare(String(b.date)));
+  const upcoming=items.filter(x=>daysUntil(x.date)>=0).slice(0,7);
+  $('homeUpcomingList').innerHTML=upcoming.length
+    ? upcoming.map(x=>`
+      <button class="chat-upcoming-row" type="button" onclick="switchSection('${x.section}')">
+        <span class="upcoming-check"></span>
+        <span class="upcoming-copy">
+          <strong>${esc(x.title)}</strong>
+          <small>${esc(x.kind)}${x.sub?' · '+esc(x.sub):''}</small>
+        </span>
+        <span class="upcoming-date">
+          <strong>${esc(fmt(x.date))}</strong>
+          <small class="${dashDateClass(x.date)}">${esc(dashDateLabel(x.date))}</small>
+        </span>
+      </button>`).join('')
+    : '<div class="chat-home-empty">Nessuna scadenza programmata.</div>';
 }
-
 
 function activityStatus(a){
   const d=daysUntil(a.dueDate);
@@ -3869,6 +3896,101 @@ setInterval(()=>{
 },1000);
 
 migrateTasks();migrateSectionData();migrateReportHistory();renderPrompts();renderTypeOptions();updateLocationField();renderScrumLegend();renderTasks();renderActivities();renderSpeakers();renderRoutines();renderDashboard();switchSection('home');
+</script>
+
+
+<script>
+(function(){
+  const overlay=document.getElementById('drawerOverlay');
+  const openBtn=document.getElementById('drawerToggleBtn');
+  const closeBtn=document.getElementById('closeDrawerBtn');
+  const drawerSearchBtn=document.getElementById('drawerSearchBtn');
+  const searchToggleBtn=document.getElementById('searchToggleBtn');
+  const searchPanel=document.getElementById('searchPanel');
+  const searchInput=document.getElementById('globalSearch');
+  const heading=document.getElementById('topbarHeading');
+  const kicker=document.getElementById('topbarKicker');
+  const primaryBtn=document.getElementById('drawerPrimaryAction');
+  const homeShortcut=document.getElementById('drawerHomeShortcut');
+  const pinned=document.getElementById('drawerPinned');
+  const recent=document.getElementById('drawerRecent');
+
+  const META={
+    home:{kicker:'JW TIZI',title:'Home'},parts:{kicker:'Parti',title:'Parti'},activities:{kicker:'Attività',title:'Attività'},gdp:{kicker:'GDP',title:'GDP'},routine:{kicker:'Routine',title:'Routine'}
+  };
+
+  function openDrawer(){document.body.classList.add('drawer-open');}
+  function closeDrawer(){document.body.classList.remove('drawer-open');}
+  function openSearch(){
+    if(currentSection==='home' && typeof switchSection==='function') switchSection('parts');
+    searchPanel.classList.add('open');
+    setTimeout(()=>searchInput.focus(),40);
+  }
+  if(openBtn)openBtn.addEventListener('click',openDrawer);
+  if(closeBtn)closeBtn.addEventListener('click',closeDrawer);
+  if(overlay)overlay.addEventListener('click',closeDrawer);
+  if(drawerSearchBtn)drawerSearchBtn.addEventListener('click',()=>{closeDrawer();openSearch();});
+  if(searchToggleBtn)searchToggleBtn.addEventListener('click',()=>{if(searchPanel.classList.contains('open'))searchPanel.classList.remove('open');else openSearch();});
+  if(homeShortcut)homeShortcut.addEventListener('click',()=>{switchSection('home');closeDrawer();});
+
+  function dateValue(v){if(!v)return Infinity;const t=new Date(v).getTime();return Number.isFinite(t)?t:Infinity;}
+  function drawerRow(icon,title,sub){return `<div class="drawer-item"><small>${icon}</small><strong>${esc(title)}</strong><span>${esc(sub||'')}</span></div>`;}
+
+  function updateDrawer(){
+    document.querySelectorAll('.drawer-nav-btn').forEach(btn=>btn.classList.toggle('active',btn.dataset.section===currentSection));
+    const meta=META[currentSection]||META.home;
+    if(heading)heading.textContent=meta.title;
+    if(kicker)kicker.textContent=meta.kicker;
+    if(primaryBtn)primaryBtn.innerHTML=currentSection==='home'?'<span>＋</span> Nuova voce':currentSection==='parts'?'<span>＋</span> Nuova parte':currentSection==='activities'?'<span>＋</span> Nuova attività':currentSection==='gdp'?'<span>＋</span> Nuovo oratore':'<span>＋</span> Nuova routine';
+
+    if(!pinned||!recent||typeof tasks==='undefined')return;
+    const openTasks=(tasks||[]).filter(t=>!t.completedAt);
+    const openActivities=(activities||[]).filter(a=>!a.completedAt && (a.status||'open')==='open');
+    const booked=(speakers||[]).filter(s=>s.status==='booked');
+    const dueRoutines=(routines||[]).filter(r=>r.dueDate);
+
+    const fixed=[
+      ['▤',`Parti aperte: ${openTasks.length}`, openTasks.length?'Prossima: '+fmt([...openTasks].sort((a,b)=>dateValue(a.date)-dateValue(b.date))[0].date):'Nessuna parte aperta'],
+      ['☑',`Attività da fare: ${openActivities.length}`, openActivities.length?'Prossima: '+fmt([...openActivities].sort((a,b)=>dateValue(a.dueDate)-dateValue(b.dueDate))[0].dueDate):'Nessuna attività aperta'],
+      ['◎',`GDP prenotati: ${booked.length}`, booked.length?'Prossimo: '+fmt([...booked].sort((a,b)=>dateValue(a.bookedDate)-dateValue(b.bookedDate))[0].bookedDate):'Nessun prenotato'],
+      ['△',`Routine: ${dueRoutines.length}`, dueRoutines.length?'Prossima: '+fmt([...dueRoutines].sort((a,b)=>dateValue(a.dueDate)-dateValue(b.dueDate))[0].dueDate):'Nessuna scadenza']
+    ];
+    pinned.innerHTML=fixed.map(x=>drawerRow(x[0],x[1],x[2])).join('');
+
+    const rows=[];
+    openTasks.forEach(t=>rows.push({icon:'▤',title:t.type||'Parte',sub:t.location||'Parte',date:t.date,time:dateValue(t.date)}));
+    openActivities.forEach(a=>rows.push({icon:'☑',title:a.title||'Attività',sub:a.person||'Attività',date:a.dueDate,time:dateValue(a.dueDate)}));
+    booked.forEach(s=>rows.push({icon:'◎',title:s.name||'Oratore',sub:s.congregation||'GDP',date:s.bookedDate,time:dateValue(s.bookedDate)}));
+    dueRoutines.forEach(r=>rows.push({icon:'△',title:r.name||'Routine',sub:'Routine',date:r.dueDate,time:dateValue(r.dueDate)}));
+    const ordered=rows.filter(x=>Number.isFinite(x.time)).sort((a,b)=>a.time-b.time).slice(0,5);
+    recent.innerHTML=ordered.length?ordered.map(x=>drawerRow(x.icon,x.title,`${x.sub} · ${fmt(x.date)}`)).join(''):'<div class="drawer-empty">Nessuna voce da mostrare.</div>';
+  }
+
+  function primaryAction(){
+    closeDrawer();
+    let section=currentSection==='home'?'parts':currentSection;
+    switchSection(section);
+    const ids={parts:'taskType',activities:'activityTitle',gdp:'speakerName',routine:'routineName'};
+    const id=ids[section];
+    if(id)setTimeout(()=>{const el=document.getElementById(id);if(el){el.scrollIntoView({behavior:'smooth',block:'center'});el.focus();}},80);
+  }
+  if(primaryBtn)primaryBtn.addEventListener('click',primaryAction);
+  document.querySelectorAll('.drawer-nav-btn').forEach(btn=>btn.addEventListener('click',()=>{switchSection(btn.dataset.section);closeDrawer();}));
+
+  const originalSwitch=window.switchSection;
+  if(typeof originalSwitch==='function'){
+    window.switchSection=function(section){const result=originalSwitch(section);updateDrawer();if(section==='home')searchPanel.classList.remove('open');return result;};
+  }
+  const originalSave=window.save;
+  if(typeof originalSave==='function'){
+    window.save=function(){const result=originalSave();updateDrawer();return result;};
+  }
+  ['renderDashboard','renderTasks','renderActivities','renderSpeakers','renderRoutines'].forEach(name=>{
+    const fn=window[name];
+    if(typeof fn==='function')window[name]=function(){const result=fn.apply(this,arguments);updateDrawer();return result;};
+  });
+  updateDrawer();
+})();
 </script>
 
 <script>
