@@ -171,6 +171,136 @@ button,input,select,textarea{font:inherit}
   z-index: 1;
 }
 
+
+.section-switch{
+  display:flex;gap:6px;padding:5px;background:#eef3f8;border-radius:14px;
+  width:max-content;max-width:100%;margin:0 0 18px
+}
+.section-switch button{
+  border:0;background:transparent;color:#5f6368;padding:9px 14px;border-radius:10px;
+  font-weight:700;cursor:pointer;white-space:nowrap
+}
+.section-switch button.active{background:#fff;color:#0b57d0;box-shadow:0 1px 4px rgba(60,64,67,.12)}
+body.activities-mode .rightbar{display:none}
+body.activities-mode .shell{grid-template-columns:minmax(0,1fr)}
+.activity-hero{
+  padding:24px 28px;margin-bottom:18px;background:linear-gradient(135deg,#fff7ed,#ffedd5);
+  border:1px solid #f3dfc7;border-radius:22px;box-shadow:var(--shadow)
+}
+.activity-hero .eyebrow{color:#b45309}
+.activity-hero h2{margin:9px 0 0;font-size:34px}
+.activity-form{
+  display:grid;grid-template-columns:minmax(220px,1.5fr) minmax(150px,.75fr) minmax(190px,1fr) auto;
+  gap:12px;align-items:end
+}
+.activity-list{padding:0 14px 14px}
+.activity-item{
+  display:grid;grid-template-columns:46px minmax(180px,1.3fr) minmax(150px,.85fr) minmax(145px,.75fr) auto;
+  gap:12px;align-items:center;border:1px solid #e4e8ee;border-left:4px solid #8ab4f8;
+  border-radius:15px;padding:14px;margin-bottom:10px;background:#fff
+}
+.activity-item.overdue{border-left-color:#ea4335}
+.activity-item.soon{border-left-color:#f9ab00}
+.activity-icon{
+  width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+  background:#fff3e0;color:#b45309;font-weight:900
+}
+.activity-title{font-weight:800}
+.activity-person{font-size:13px;color:#425466}
+.activity-actions{display:flex;gap:4px;justify-content:flex-end}
+.activity-completed{
+  display:grid;grid-template-columns:42px minmax(180px,1.3fr) minmax(150px,.9fr) minmax(145px,.8fr) auto;
+  gap:12px;align-items:center;border:1px solid #e4e8ee;border-left:4px solid #34a853;
+  border-radius:15px;padding:13px;margin-bottom:9px;background:#fbfffc
+}
+.activity-completed .activity-icon{background:#e6f4ea;color:#137333}
+.activity-done-tag{
+  display:inline-flex;align-items:center;background:#e6f4ea;color:#137333;border-radius:999px;
+  padding:5px 8px;font-size:11px;font-weight:800
+}
+@media(max-width:980px){
+  .activity-form{grid-template-columns:1fr 1fr}
+  .activity-form .activity-wide{grid-column:1/-1}
+  .activity-form .btn{grid-column:1/-1}
+  .activity-item,.activity-completed{grid-template-columns:42px 1fr auto}
+  .activity-item .activity-person,.activity-item .datebox,
+  .activity-completed .activity-person,.activity-completed .datebox{grid-column:2/-1}
+}
+@media(max-width:620px){
+  .section-switch{width:100%}
+  .section-switch button{flex:1;padding:9px 7px;font-size:12px}
+  .activity-form{grid-template-columns:1fr}
+  .activity-form .activity-wide,.activity-form .btn{grid-column:auto}
+  .activity-hero h2{font-size:29px}
+}
+
+
+body.gdp-mode .rightbar{display:none}
+body.gdp-mode .shell{grid-template-columns:minmax(0,1fr)}
+.gdp-hero{
+  padding:24px 28px;margin-bottom:18px;background:linear-gradient(135deg,#f5f3ff,#ede9fe);
+  border:1px solid #e2dcf7;border-radius:22px;box-shadow:var(--shadow)
+}
+.gdp-hero .eyebrow{color:#6d28d9}
+.gdp-hero h2{margin:9px 0 0;font-size:34px}
+.gdp-form{
+  display:grid;grid-template-columns:minmax(190px,1.1fr) minmax(170px,.9fr) minmax(220px,1.2fr) auto;
+  gap:12px;align-items:end
+}
+.gdp-list{padding:0 14px 14px}
+.speaker-item{
+  display:grid;grid-template-columns:46px minmax(180px,1.15fr) minmax(150px,.8fr) minmax(170px,.9fr) auto;
+  gap:12px;align-items:center;border:1px solid #e4e8ee;border-left:4px solid #8b5cf6;
+  border-radius:15px;padding:14px;margin-bottom:10px;background:#fff
+}
+.speaker-icon{
+  width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+  background:#f3e8ff;color:#6d28d9;font-weight:900;font-size:17px
+}
+.speaker-name{font-weight:800}
+.speaker-sub{font-size:12px;color:var(--muted);margin-top:4px}
+.speaker-last{font-size:13px;color:#425466}
+.speaker-actions{display:flex;gap:4px;justify-content:flex-end;align-items:center}
+.callback-tag{
+  display:inline-flex;align-items:center;gap:5px;background:#fff3cd;color:#8a5b00;
+  border-radius:999px;padding:5px 8px;font-size:11px;font-weight:800
+}
+.never-tag{
+  display:inline-flex;align-items:center;background:#eef3f8;color:#5f6368;
+  border-radius:999px;padding:5px 8px;font-size:11px;font-weight:800
+}
+.speaker-archive{
+  display:grid;grid-template-columns:42px minmax(180px,1.15fr) minmax(150px,.8fr) minmax(170px,.9fr) auto;
+  gap:12px;align-items:center;border:1px solid #e4e8ee;border-left:4px solid #9aa0a6;
+  border-radius:15px;padding:13px;margin-bottom:9px;background:#fbfcfd
+}
+.speaker-archive .speaker-icon{background:#f1f3f4;color:#5f6368}
+.archive-tag{
+  display:inline-flex;align-items:center;background:#f1f3f4;color:#5f6368;
+  border-radius:999px;padding:5px 8px;font-size:11px;font-weight:800
+}
+.visit-summary{
+  display:grid;grid-template-columns:1fr 1fr;gap:10px
+}
+.visit-card{
+  background:#f8fafd;border:1px solid #e4e8ee;border-radius:13px;padding:12px
+}
+.visit-card span{display:block;color:var(--muted);font-size:11px}
+.visit-card strong{display:block;margin-top:4px}
+@media(max-width:980px){
+  .gdp-form{grid-template-columns:1fr 1fr}
+  .gdp-form .gdp-wide{grid-column:1/-1}
+  .gdp-form .btn{grid-column:1/-1}
+  .speaker-item,.speaker-archive{grid-template-columns:42px 1fr auto}
+  .speaker-item .speaker-last,.speaker-item .speaker-cong,
+  .speaker-archive .speaker-last,.speaker-archive .speaker-cong{grid-column:2/-1}
+}
+@media(max-width:620px){
+  .gdp-form{grid-template-columns:1fr}
+  .gdp-form .gdp-wide,.gdp-form .btn{grid-column:auto}
+  .gdp-hero h2{font-size:29px}
+}
+
 </style>
 
 <style>
@@ -204,6 +334,14 @@ select { -webkit-appearance: auto; appearance: auto; }
       <button class="iconbtn" title="Esporta backup" id="exportBtn">⇩</button>
 </div>
 
+
+    <div class="section-switch" aria-label="Sezioni">
+      <button type="button" id="showPartsBtn" class="active">Parti</button>
+      <button type="button" id="showActivitiesBtn">Attività di congregazione</button>
+      <button type="button" id="showGdpBtn">GDP</button>
+    </div>
+
+    <div id="partsSection">
     <section class="hero">
       <div class="eyebrow">BENVENUTO TIZIANO</div>
       <h2>Organizza le tue parti</h2>
@@ -245,6 +383,122 @@ select { -webkit-appearance: auto; appearance: auto; }
       </div>
       <div class="completed-list" id="completedList"></div>
     </section>
+
+    </div>
+
+    <div id="activitiesSection" style="display:none">
+      <section class="activity-hero">
+        <div class="eyebrow">ATTIVITÀ DI CONGREGAZIONE</div>
+        <h2>Cose da fare</h2>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h3>＋ Aggiungi un'attività</h3>
+          <p>Segna cosa devi fare, entro quando e con chi devi eventualmente parlarne.</p>
+        </div>
+        <div class="add-wrap">
+          <form id="activityForm" class="activity-form">
+            <div class="field activity-wide">
+              <label>Cosa devi fare</label>
+              <input id="activityTitle" required placeholder="Es. Organizzare la manutenzione della Sala..." />
+            </div>
+            <div class="field">
+              <label>Scadenza</label>
+              <input id="activityDate" type="date" required />
+            </div>
+            <div class="field">
+              <label>Persona con cui parlarne</label>
+              <input id="activityPerson" placeholder="Facoltativo" />
+            </div>
+            <button class="btn btn-primary" type="submit">＋ Aggiungi</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="tasks-head">
+          <div>
+            <h3>Attività da fare</h3>
+            <div class="muted">ordinate automaticamente per scadenza</div>
+          </div>
+          <div class="summary">
+            <span class="pill">Da fare <strong id="activityOpenCount">0</strong></span>
+            <span class="pill">Prossima <strong id="activityNextDue">—</strong></span>
+          </div>
+        </div>
+        <div class="activity-list" id="activityList"></div>
+      </section>
+
+      <section class="card completed-card">
+        <div class="completed-head">
+          <div>
+            <h3>✓ Attività completate</h3>
+            <div class="muted">Rimangono qui per consultazione e possono essere ripristinate.</div>
+          </div>
+          <span class="pill">Completate <strong id="activityCompletedCount">0</strong></span>
+        </div>
+        <div class="activity-list" id="activityCompletedList"></div>
+      </section>
+    </div>
+
+
+    <div id="gdpSection" style="display:none">
+      <section class="gdp-hero">
+        <div class="eyebrow">GDP</div>
+        <h2>Oratori consigliati</h2>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h3>＋ Aggiungi un oratore</h3>
+          <p>Crea la tua lista di oratori consigliati e tieni traccia di chi hai già invitato.</p>
+        </div>
+        <div class="add-wrap">
+          <form id="speakerForm" class="gdp-form">
+            <div class="field">
+              <label>Nome oratore</label>
+              <input id="speakerName" required placeholder="Nome e cognome" />
+            </div>
+            <div class="field">
+              <label>Congregazione</label>
+              <input id="speakerCongregation" placeholder="Facoltativo" />
+            </div>
+            <div class="field gdp-wide">
+              <label>Nota</label>
+              <input id="speakerNote" placeholder="Facoltativo" />
+            </div>
+            <button class="btn btn-primary" type="submit">＋ Aggiungi</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="tasks-head">
+          <div>
+            <h3>Da invitare / richiamare</h3>
+            <div class="muted">Gli oratori da richiamare tornano automaticamente qui dopo la visita.</div>
+          </div>
+          <div class="summary">
+            <span class="pill">In lista <strong id="speakerRecommendedCount">0</strong></span>
+            <span class="pill">Da richiamare <strong id="speakerCallbackCount">0</strong></span>
+          </div>
+        </div>
+        <div class="gdp-list" id="speakerList"></div>
+      </section>
+
+      <section class="card completed-card">
+        <div class="completed-head">
+          <div>
+            <h3>Oratori già invitati</h3>
+            <div class="muted">Qui trovi quelli segnati come non da richiamare.</div>
+          </div>
+          <span class="pill">Archivio <strong id="speakerArchiveCount">0</strong></span>
+        </div>
+        <div class="gdp-list" id="speakerArchiveList"></div>
+      </section>
+    </div>
+
   </main>
 
   <aside class="rightbar">
@@ -263,6 +517,42 @@ select { -webkit-appearance: auto; appearance: auto; }
   </aside>
 </div>
 
+
+
+<dialog id="speakerVisitDialog" class="modal">
+  <div class="modal-head">
+    <div>
+      <strong>Registra visita</strong>
+      <div class="muted" id="speakerVisitSubtitle"></div>
+    </div>
+    <button class="iconbtn" id="closeSpeakerVisit">✕</button>
+  </div>
+  <div class="modal-body">
+    <div class="field">
+      <label>Quando è venuto?</label>
+      <input id="speakerVisitDate" type="date" required />
+    </div>
+    <div class="field">
+      <label>È da richiamare?</label>
+      <select id="speakerRecall">
+        <option value="yes">Sì, rimettilo nella lista</option>
+        <option value="no">No, spostalo nell'archivio</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Nota sulla visita</label>
+      <input id="speakerVisitNote" placeholder="Facoltativo" />
+    </div>
+    <div class="visit-summary">
+      <div class="visit-card"><span>Ultima visita registrata</span><strong id="speakerPreviousVisit">—</strong></div>
+      <div class="visit-card"><span>Numero visite registrate</span><strong id="speakerVisitCount">0</strong></div>
+    </div>
+  </div>
+  <div class="modal-actions">
+    <button class="btn btn-ghost" id="cancelSpeakerVisit">Annulla</button>
+    <button class="btn btn-primary" id="saveSpeakerVisit">Salva visita</button>
+  </div>
+</dialog>
 
 <dialog id="mobilePromptDialog" class="mobile-prompt-dialog">
   <div class="mobile-prompt-shell">
@@ -432,7 +722,7 @@ select { -webkit-appearance: auto; appearance: auto; }
 <div class="toast" id="toast">Salvato</div>
 
 <script>
-const STORAGE_TASKS='congregazione_tasks_v1', STORAGE_PROMPTS='congregazione_prompts_v1', STORAGE_TYPES='congregazione_types_v1', STORAGE_SCRUM='congregazione_scrum_v1', STORAGE_REPORT='congregazione_report_history_v1';
+const STORAGE_TASKS='congregazione_tasks_v1', STORAGE_PROMPTS='congregazione_prompts_v1', STORAGE_TYPES='congregazione_types_v1', STORAGE_SCRUM='congregazione_scrum_v1', STORAGE_REPORT='congregazione_report_history_v1', STORAGE_ACTIVITIES='congregazione_activities_v1', STORAGE_GDP='congregazione_gdp_v1';
 const defaultPrompts=[
 {type:'Discorso pubblico',prompt:'Aiutami a preparare un discorso pubblico chiaro e coinvolgente. Organizza il materiale in introduzione, punti principali, illustrazioni pratiche e conclusione. Mantieni uno stile naturale e semplice da esporre.'},
 {type:"Parte all'adunanza infrasettimanale",prompt:"Aiutami a preparare questa parte per l'adunanza infrasettimanale. Crea una scaletta breve, fedele al materiale di partenza, con un'apertura efficace, passaggi logici e una conclusione pratica."},
@@ -442,13 +732,13 @@ const defaultScrum={XS:1,S:2,M:4,L:6};
 let scrumConfig={...defaultScrum,...(JSON.parse(localStorage.getItem(STORAGE_SCRUM)||'{}'))};
 const $=id=>document.getElementById(id);
 function load(k,f){try{const x=JSON.parse(localStorage.getItem(k));return Array.isArray(x)?x:f}catch{return f}}
-let tasks=load(STORAGE_TASKS,[]),prompts=load(STORAGE_PROMPTS,defaultPrompts),savedTypes=load(STORAGE_TYPES,defaultPrompts.map(p=>p.type)),reportHistory=load(STORAGE_REPORT,[]),editingPromptIndex=null,activeTaskId=null,activeTimeTaskId=null;
+let tasks=load(STORAGE_TASKS,[]),prompts=load(STORAGE_PROMPTS,defaultPrompts),savedTypes=load(STORAGE_TYPES,defaultPrompts.map(p=>p.type)),reportHistory=load(STORAGE_REPORT,[]),activities=load(STORAGE_ACTIVITIES,[]),speakers=load(STORAGE_GDP,[]),editingPromptIndex=null,activeTaskId=null,activeTimeTaskId=null,currentSection='parts';
 
 function migrateTasks(){
   tasks=tasks.map(t=>({...t,sessions:Array.isArray(t.sessions)?t.sessions:[],timerStartedAt:t.timerStartedAt||null,completedAt:t.completedAt||null}));
   save();
 }
-function save(){localStorage.setItem(STORAGE_TASKS,JSON.stringify(tasks));localStorage.setItem(STORAGE_PROMPTS,JSON.stringify(prompts));localStorage.setItem(STORAGE_TYPES,JSON.stringify(savedTypes));localStorage.setItem(STORAGE_SCRUM,JSON.stringify(scrumConfig));localStorage.setItem(STORAGE_REPORT,JSON.stringify(reportHistory))}
+function save(){localStorage.setItem(STORAGE_TASKS,JSON.stringify(tasks));localStorage.setItem(STORAGE_PROMPTS,JSON.stringify(prompts));localStorage.setItem(STORAGE_TYPES,JSON.stringify(savedTypes));localStorage.setItem(STORAGE_SCRUM,JSON.stringify(scrumConfig));localStorage.setItem(STORAGE_REPORT,JSON.stringify(reportHistory));localStorage.setItem(STORAGE_ACTIVITIES,JSON.stringify(activities));localStorage.setItem(STORAGE_GDP,JSON.stringify(speakers))}
 
 function historyKey(taskId,sessionId){return `${taskId}::${sessionId}`}
 function sessionToHistory(t,s){
@@ -597,6 +887,261 @@ function promptCardsHtml(filter=''){
   const shown=prompts.filter(p=>!q||p.type.toLowerCase().includes(q)||p.prompt.toLowerCase().includes(q));
   return shown.length?shown.map(p=>{const i=prompts.indexOf(p);return `<div class="prompt-card"><div class="top"><div><div class="prompt-name">${esc(p.type)}</div><div class="prompt-text">${esc(p.prompt)}</div></div><button class="iconbtn" onclick="copyPrompt(${i})">⧉</button></div><div class="prompt-actions"><button class="small" onclick="editPrompt(${i})">Modifica</button><button class="small" onclick="removePrompt(${i})">Elimina</button></div></div>`}).join(''):'<div class="empty">Nessun elemento trovato.</div>';
 }
+
+function activityStatus(a){
+  const d=daysUntil(a.dueDate);
+  if(d<0)return ['overdue',`Scaduta da ${Math.abs(d)}g`,'red'];
+  if(d===0)return ['soon','Oggi','amber'];
+  if(d===1)return ['soon','Domani','amber'];
+  if(d<=7)return ['soon',`Tra ${d} giorni`,'amber'];
+  return ['',`Tra ${d} giorni`,''];
+}
+function renderActivities(filter=''){
+  const q=String(filter||'').trim().toLowerCase();
+  const open=activities
+    .filter(a=>!a.completedAt)
+    .filter(a=>!q||[a.title,a.person,a.dueDate].join(' ').toLowerCase().includes(q))
+    .sort((a,b)=>a.dueDate.localeCompare(b.dueDate)||Number(a.createdAt)-Number(b.createdAt));
+
+  $('activityOpenCount').textContent=activities.filter(a=>!a.completedAt).length;
+  const next=activities.filter(a=>!a.completedAt).sort((a,b)=>a.dueDate.localeCompare(b.dueDate))[0];
+  $('activityNextDue').textContent=next?fmt(next.dueDate):'—';
+
+  $('activityList').innerHTML=open.length?open.map(a=>{
+    const [cls,label,dcls]=activityStatus(a);
+    return `<div class="activity-item ${cls}">
+      <div class="activity-icon">✓</div>
+      <div>
+        <div class="activity-title">${esc(a.title)}</div>
+        <div class="muted">${a.person?'Da confrontare con '+esc(a.person):'Nessuna persona indicata'}</div>
+      </div>
+      <div class="activity-person">${a.person?'👤 '+esc(a.person):'—'}</div>
+      <div class="datebox">
+        <strong>${esc(fmt(a.dueDate))}</strong>
+        <div class="muted"><span class="days ${dcls}">${esc(label)}</span></div>
+      </div>
+      <div class="activity-actions">
+        <button class="iconbtn" title="Completa" onclick="completeActivity('${a.id}')">✓</button>
+        <button class="iconbtn" title="Elimina" onclick="deleteActivity('${a.id}')">🗑</button>
+      </div>
+    </div>`;
+  }).join(''):'<div class="empty">Nessuna attività da fare.</div>';
+
+  renderCompletedActivities(q);
+}
+function renderCompletedActivities(filter=''){
+  const q=String(filter||'').trim().toLowerCase();
+  const completed=activities
+    .filter(a=>a.completedAt)
+    .filter(a=>!q||[a.title,a.person,a.dueDate].join(' ').toLowerCase().includes(q))
+    .sort((a,b)=>Number(b.completedAt)-Number(a.completedAt));
+
+  $('activityCompletedCount').textContent=activities.filter(a=>a.completedAt).length;
+  $('activityCompletedList').innerHTML=completed.length?completed.map(a=>`
+    <div class="activity-completed">
+      <div class="activity-icon">✓</div>
+      <div>
+        <div class="activity-title">${esc(a.title)}</div>
+        <div class="muted">Completata il ${fmtDateTime(a.completedAt)}</div>
+      </div>
+      <div class="activity-person">${a.person?'👤 '+esc(a.person):'—'}</div>
+      <div class="datebox"><strong>${esc(fmt(a.dueDate))}</strong><div class="muted">scadenza</div></div>
+      <div class="activity-actions">
+        <span class="activity-done-tag">Completata</span>
+        <button class="iconbtn" title="Ripristina" onclick="restoreActivity('${a.id}')">↺</button>
+        <button class="iconbtn" title="Elimina" onclick="deleteActivity('${a.id}')">🗑</button>
+      </div>
+    </div>`).join(''):'<div class="empty">Nessuna attività completata.</div>';
+}
+window.completeActivity=id=>{
+  const a=activities.find(x=>x.id===id);if(!a)return;
+  a.completedAt=Date.now();save();renderActivities($('globalSearch').value);toast('Attività completata');
+};
+window.restoreActivity=id=>{
+  const a=activities.find(x=>x.id===id);if(!a)return;
+  a.completedAt=null;save();renderActivities($('globalSearch').value);toast('Attività ripristinata');
+};
+window.deleteActivity=id=>{
+  if(!confirm('Eliminare questa attività?'))return;
+  activities=activities.filter(a=>a.id!==id);save();renderActivities($('globalSearch').value);toast('Attività eliminata');
+};
+function switchSection(section){
+  currentSection=section;
+  const isParts=section==='parts', isActivities=section==='activities', isGdp=section==='gdp';
+  $('partsSection').style.display=isParts?'block':'none';
+  $('activitiesSection').style.display=isActivities?'block':'none';
+  $('gdpSection').style.display=isGdp?'block':'none';
+  $('showPartsBtn').classList.toggle('active',isParts);
+  $('showActivitiesBtn').classList.toggle('active',isActivities);
+  $('showGdpBtn').classList.toggle('active',isGdp);
+  document.body.classList.toggle('activities-mode',isActivities);
+  document.body.classList.toggle('gdp-mode',isGdp);
+  $('globalSearch').value='';
+  $('globalSearch').placeholder=isActivities?'Cerca attività, persone, scadenze...':isGdp?'Cerca oratori, congregazioni, note...':'Cerca parti, luoghi, date...';
+  if(isActivities)renderActivities();
+  else if(isGdp)renderSpeakers();
+  else renderTasks();
+}
+$('showPartsBtn').onclick=()=>switchSection('parts');
+$('showActivitiesBtn').onclick=()=>switchSection('activities');
+$('showGdpBtn').onclick=()=>switchSection('gdp');
+$('activityForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const title=$('activityTitle').value.trim(),dueDate=$('activityDate').value,person=$('activityPerson').value.trim();
+  if(!title||!dueDate)return;
+  activities.push({
+    id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),
+    title,dueDate,person,completedAt:null,createdAt:Date.now()
+  });
+  save();
+  $('activityTitle').value='';$('activityDate').value='';$('activityPerson').value='';
+  renderActivities();
+  toast('Attività aggiunta');
+});
+
+
+let activeSpeakerId=null;
+
+function speakerLastVisit(s){
+  return s.lastVisitDate || (Array.isArray(s.visits) && s.visits.length
+    ? [...s.visits].sort((a,b)=>String(b.date).localeCompare(String(a.date)))[0].date
+    : '');
+}
+function renderSpeakers(filter=''){
+  const q=String(filter||'').trim().toLowerCase();
+  const recommended=speakers
+    .filter(s=>s.status!=='archived')
+    .filter(s=>!q||[s.name,s.congregation,s.note,s.lastVisitDate].join(' ').toLowerCase().includes(q))
+    .sort((a,b)=>{
+      const ar=a.followUp?0:1, br=b.followUp?0:1;
+      if(ar!==br)return ar-br;
+      const ad=speakerLastVisit(a)||'0000-00-00', bd=speakerLastVisit(b)||'0000-00-00';
+      return ad.localeCompare(bd) || a.name.localeCompare(b.name,'it');
+    });
+
+  $('speakerRecommendedCount').textContent=speakers.filter(s=>s.status!=='archived').length;
+  $('speakerCallbackCount').textContent=speakers.filter(s=>s.status!=='archived'&&s.followUp).length;
+
+  $('speakerList').innerHTML=recommended.length?recommended.map(s=>{
+    const last=speakerLastVisit(s);
+    return `<div class="speaker-item">
+      <div class="speaker-icon">◉</div>
+      <div>
+        <div class="speaker-name">${esc(s.name)}</div>
+        <div class="speaker-sub">${esc(s.note||'Nessuna nota')}</div>
+      </div>
+      <div class="speaker-cong">${s.congregation?esc(s.congregation):'—'}</div>
+      <div class="speaker-last">
+        ${last?`Ultima volta: <strong>${esc(fmt(last))}</strong>`:'<span class="never-tag">Mai invitato</span>'}
+        ${s.followUp?'<div style="margin-top:6px"><span class="callback-tag">Da richiamare</span></div>':''}
+      </div>
+      <div class="speaker-actions">
+        <button class="btn btn-soft" style="padding:8px 10px" onclick="openSpeakerVisit('${s.id}')">Registra visita</button>
+        <button class="iconbtn" title="Modifica" onclick="editSpeaker('${s.id}')">✎</button>
+        <button class="iconbtn" title="Elimina" onclick="deleteSpeaker('${s.id}')">🗑</button>
+      </div>
+    </div>`;
+  }).join(''):'<div class="empty">Nessun oratore nella lista.</div>';
+
+  renderSpeakerArchive(q);
+}
+
+function renderSpeakerArchive(filter=''){
+  const q=String(filter||'').trim().toLowerCase();
+  const archived=speakers
+    .filter(s=>s.status==='archived')
+    .filter(s=>!q||[s.name,s.congregation,s.note,s.lastVisitDate].join(' ').toLowerCase().includes(q))
+    .sort((a,b)=>(speakerLastVisit(b)||'').localeCompare(speakerLastVisit(a)||''));
+
+  $('speakerArchiveCount').textContent=speakers.filter(s=>s.status==='archived').length;
+  $('speakerArchiveList').innerHTML=archived.length?archived.map(s=>{
+    const last=speakerLastVisit(s);
+    return `<div class="speaker-archive">
+      <div class="speaker-icon">✓</div>
+      <div>
+        <div class="speaker-name">${esc(s.name)}</div>
+        <div class="speaker-sub">${esc(s.note||'Nessuna nota')}</div>
+      </div>
+      <div class="speaker-cong">${s.congregation?esc(s.congregation):'—'}</div>
+      <div class="speaker-last">${last?`Ultima volta: <strong>${esc(fmt(last))}</strong>`:'—'}<div style="margin-top:6px"><span class="archive-tag">Non da richiamare</span></div></div>
+      <div class="speaker-actions">
+        <button class="iconbtn" title="Rimetti in lista" onclick="restoreSpeaker('${s.id}')">↺</button>
+        <button class="iconbtn" title="Modifica" onclick="editSpeaker('${s.id}')">✎</button>
+        <button class="iconbtn" title="Elimina" onclick="deleteSpeaker('${s.id}')">🗑</button>
+      </div>
+    </div>`;
+  }).join(''):'<div class="empty">Nessun oratore archiviato.</div>';
+}
+
+$('speakerForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const name=$('speakerName').value.trim();
+  const congregation=$('speakerCongregation').value.trim();
+  const note=$('speakerNote').value.trim();
+  if(!name)return;
+  speakers.push({
+    id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),
+    name,congregation,note,status:'recommended',followUp:false,lastVisitDate:'',
+    visits:[],createdAt:Date.now()
+  });
+  save();
+  $('speakerName').value='';$('speakerCongregation').value='';$('speakerNote').value='';
+  renderSpeakers();
+  toast('Oratore aggiunto');
+});
+
+window.openSpeakerVisit=id=>{
+  activeSpeakerId=id;
+  const s=speakers.find(x=>x.id===id);if(!s)return;
+  $('speakerVisitSubtitle').textContent=s.name+(s.congregation?' · '+s.congregation:'');
+  $('speakerVisitDate').value=new Date().toISOString().slice(0,10);
+  $('speakerRecall').value='yes';
+  $('speakerVisitNote').value='';
+  const last=speakerLastVisit(s);
+  $('speakerPreviousVisit').textContent=last?fmt(last):'Mai';
+  $('speakerVisitCount').textContent=Array.isArray(s.visits)?s.visits.length:0;
+  $('speakerVisitDialog').showModal();
+};
+$('closeSpeakerVisit').onclick=$('cancelSpeakerVisit').onclick=()=>$('speakerVisitDialog').close();
+$('saveSpeakerVisit').onclick=()=>{
+  const s=speakers.find(x=>x.id===activeSpeakerId);if(!s)return;
+  const date=$('speakerVisitDate').value;
+  const recall=$('speakerRecall').value==='yes';
+  const note=$('speakerVisitNote').value.trim();
+  if(!date)return toast('Inserisci la data della visita');
+  if(!Array.isArray(s.visits))s.visits=[];
+  s.visits.push({
+    id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),
+    date,recall,note,recordedAt:Date.now()
+  });
+  s.lastVisitDate=date;
+  s.followUp=recall;
+  s.status=recall?'recommended':'archived';
+  save();
+  $('speakerVisitDialog').close();
+  renderSpeakers($('globalSearch').value);
+  toast(recall?'Oratore rimesso nella lista':'Oratore spostato nell’archivio');
+};
+
+window.restoreSpeaker=id=>{
+  const s=speakers.find(x=>x.id===id);if(!s)return;
+  s.status='recommended';s.followUp=true;save();renderSpeakers($('globalSearch').value);toast('Oratore rimesso nella lista');
+};
+
+window.editSpeaker=id=>{
+  const s=speakers.find(x=>x.id===id);if(!s)return;
+  const name=prompt('Nome oratore:',s.name);if(name===null)return;
+  const congregation=prompt('Congregazione:',s.congregation||'');if(congregation===null)return;
+  const note=prompt('Nota:',s.note||'');if(note===null)return;
+  if(!name.trim())return toast('Il nome non può essere vuoto');
+  s.name=name.trim();s.congregation=congregation.trim();s.note=note.trim();save();renderSpeakers($('globalSearch').value);toast('Oratore aggiornato');
+};
+
+window.deleteSpeaker=id=>{
+  if(!confirm('Eliminare questo oratore e il suo storico visite?'))return;
+  speakers=speakers.filter(s=>s.id!==id);save();renderSpeakers($('globalSearch').value);toast('Oratore eliminato');
+};
+
 function renderPrompts(filter=''){
   const desktop=$('promptList');
   if(desktop)desktop.innerHTML=promptCardsHtml(filter);
@@ -909,7 +1454,7 @@ $('taskForm').addEventListener('submit',e=>{
   save();renderTasks();$('taskType').value='';$('taskDate').value='';$('taskHours').value='';$('taskLocation').value='';updateLocationField();toast('Parte aggiunta')
 });
 window.deleteTask=id=>{const t=getTask(id);if(t?.timerStartedAt&&!confirm('Il timer di questa parte è attivo. Eliminare comunque la parte?'))return;tasks=tasks.filter(t=>t.id!==id);save();renderTasks($('globalSearch').value);toast('Parte eliminata')};
-$('globalSearch').addEventListener('input',e=>renderTasks(e.target.value));$('promptSearch').addEventListener('input',e=>renderPrompts(e.target.value));
+$('globalSearch').addEventListener('input',e=>currentSection==='activities'?renderActivities(e.target.value):currentSection==='gdp'?renderSpeakers(e.target.value):renderTasks(e.target.value));$('promptSearch').addEventListener('input',e=>renderPrompts(e.target.value));
 
 
 function hideQuietPromptPanel(){
@@ -955,6 +1500,8 @@ function validateBackupPayload(data){
   if(data.prompts!==undefined && !Array.isArray(data.prompts)) return 'La sezione prompt del backup non è valida.';
   if(data.savedTypes!==undefined && !Array.isArray(data.savedTypes)) return 'La sezione tipologie del backup non è valida.';
   if(data.reportHistory!==undefined && !Array.isArray(data.reportHistory)) return 'La sezione report del backup non è valida.';
+  if(data.activities!==undefined && !Array.isArray(data.activities)) return 'La sezione attività del backup non è valida.';
+  if(data.speakers!==undefined && !Array.isArray(data.speakers)) return 'La sezione GDP del backup non è valida.';
   if(data.scrumConfig!==undefined && (typeof data.scrumConfig!=='object' || Array.isArray(data.scrumConfig))) return 'La configurazione Scrum del backup non è valida.';
   return '';
 }
@@ -973,16 +1520,22 @@ async function importBackupFile(file){
       ? {...defaultScrum,...data.scrumConfig}
       : {...defaultScrum};
     const importedReport=Array.isArray(data.reportHistory)?data.reportHistory:[];
+    const importedActivities=Array.isArray(data.activities)?data.activities:[];
+    const importedSpeakers=Array.isArray(data.speakers)?data.speakers:[];
 
     const taskCount=importedTasks.length;
     const sessionCount=importedTasks.reduce((n,t)=>n+(Array.isArray(t.sessions)?t.sessions.length:0),0);
     const reportCount=importedReport.length;
+    const activityCount=importedActivities.length;
+    const speakerCount=importedSpeakers.length;
 
     const ok=confirm(
       `Ripristinare questo backup?\n\n`+
       `Parti: ${taskCount}\n`+
       `Sessioni: ${sessionCount}\n`+
-      `Voci report: ${reportCount}\n\n`+
+      `Voci report: ${reportCount}\n`+
+      `Attività: ${activityCount}\n`+
+      `Oratori GDP: ${speakerCount}\n\n`+
       `I dati attualmente presenti nell’app verranno sostituiti.`
     );
     if(!ok)return;
@@ -997,6 +1550,8 @@ async function importBackupFile(file){
     savedTypes=importedTypes;
     scrumConfig=importedScrum;
     reportHistory=importedReport;
+    activities=importedActivities.map(a=>({...a,completedAt:a.completedAt||null}));
+    speakers=importedSpeakers.map(s=>({...s,visits:Array.isArray(s.visits)?s.visits:[],status:s.status||'recommended',followUp:!!s.followUp,lastVisitDate:s.lastVisitDate||''}));
 
     save();
     migrateTasks();
@@ -1006,6 +1561,8 @@ async function importBackupFile(file){
     renderScrumLegend();
     updateLocationField();
     renderTasks();
+    renderActivities();
+    renderSpeakers();
     toast('Backup ripristinato');
 
     setTimeout(()=>location.reload(),700);
@@ -1023,7 +1580,7 @@ $('importBackupFile').addEventListener('change',async e=>{
 });
 
 
-$('exportBtn').onclick=()=>{const blob=new Blob([JSON.stringify({backupVersion:2,exportedAt:new Date().toISOString(),tasks,prompts,savedTypes,scrumConfig,reportHistory},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='parti-congregazione-backup.json';a.click();URL.revokeObjectURL(url)};
+$('exportBtn').onclick=()=>{const blob=new Blob([JSON.stringify({backupVersion:4,exportedAt:new Date().toISOString(),tasks,prompts,savedTypes,scrumConfig,reportHistory,activities,speakers},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='parti-congregazione-backup.json';a.click();URL.revokeObjectURL(url)};
 
 setInterval(()=>{
   document.querySelectorAll('[data-live-id]').forEach(el=>{const t=getTask(el.dataset.liveId);if(t&&t.timerStartedAt)el.textContent='● '+durationText(currentTimerMs(t),true)});
@@ -1032,7 +1589,7 @@ setInterval(()=>{
   $('actualHours').textContent=durationText(tasks.reduce((s,t)=>s+actualTotalMs(t),0));
 },1000);
 
-migrateTasks();migrateReportHistory();renderPrompts();renderTypeOptions();updateLocationField();renderScrumLegend();renderTasks();
+migrateTasks();migrateReportHistory();renderPrompts();renderTypeOptions();updateLocationField();renderScrumLegend();renderTasks();renderActivities();renderSpeakers();switchSection('parts');
 </script>
 
 <script>
