@@ -1,0 +1,27 @@
+GITHUB PAGES - CHECKLIST
+
+Repository consigliato:
+  le-mie-parti
+
+Carica nella radice:
+  index.html
+  manifest.webmanifest
+  service-worker.js
+  icon-180.png
+  icon-192.png
+  icon-512.png
+  .nojekyll
+
+Poi:
+  Settings > Pages
+  Source: Deploy from a branch
+  Branch: main
+  Folder: /(root)
+  Save
+
+Apri l'URL GitHub Pages con Safari su iPhone:
+  Condividi > Aggiungi alla schermata Home > Apri come app web > Aggiungi
+
+IMPORTANTE
+I dati dell'app restano sul dispositivo/browser, non dentro GitHub.
+Fai periodicamente un backup con la funzione Esporta dell'app.
