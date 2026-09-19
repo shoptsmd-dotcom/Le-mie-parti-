@@ -6,3 +6,7 @@ Tutte le funzioni della versione AUDIT CORRETTO sono mantenute. La modifica rigu
 
 ## GitHub Pages
 Caricare tutti i file di questa cartella nella root del repository.
+
+
+## Rams V2
+Interfaccia uniformata in tutte le sezioni. Ripristinato il caricamento dei salvataggi dalla Home e mantenuto anche il comando nella testata.
