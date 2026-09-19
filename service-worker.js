@@ -1,4 +1,4 @@
-const CACHE = 'le-mie-parti-v2';
+const CACHE = 'le-mie-parti-v6';
 const ASSETS = [
   './',
   './index.html',
