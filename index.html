@@ -1205,6 +1205,50 @@ body:before{display:none!important}
   }
 }
 
+
+/* =========================================================
+   CONTATORI UNIFORMI — stile come “Cose da fare”
+   ========================================================= */
+.tasks-head .summary,
+.completed-head .summary,
+.completed-head{
+  gap:10px!important;
+}
+.tasks-head .summary .pill,
+.completed-head .pill{
+  min-height:42px!important;
+  width:auto!important;
+  height:auto!important;
+  min-width:unset!important;
+  padding:8px 13px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:6px!important;
+  border-radius:999px!important;
+  font-size:13px!important;
+  text-align:center!important;
+  white-space:nowrap!important;
+}
+.tasks-head .summary .pill strong,
+.completed-head .pill strong{
+  font-size:18px!important;
+  line-height:1!important;
+  margin:0!important;
+}
+@media(max-width:820px){
+  .tasks-head .summary .pill,
+  .completed-head .pill{
+    min-height:40px!important;
+    padding:7px 12px!important;
+    font-size:12px!important;
+  }
+  .tasks-head .summary .pill strong,
+  .completed-head .pill strong{
+    font-size:17px!important;
+  }
+}
+
 </style>
 
 <style>
@@ -1471,7 +1515,7 @@ select { -webkit-appearance: auto; appearance: auto; }
             <div class="muted">Seleziona un oratore, indica la data e spostalo in Prenotati.</div>
           </div>
           <div class="summary">
-            <span class="pill" title="Da invitare"><strong id="speakerRecommendedCount">0</strong></span>
+            <span class="pill">Da invitare <strong id="speakerRecommendedCount">0</strong></span>
           </div>
         </div>
 
@@ -1507,7 +1551,7 @@ select { -webkit-appearance: auto; appearance: auto; }
             <div class="muted">Oratori già invitati che devono ancora venire.</div>
           </div>
           <div class="summary">
-            <span class="pill" title="Prenotati"><strong id="speakerBookedCount">0</strong></span>
+            <span class="pill">Prenotati <strong id="speakerBookedCount">0</strong></span>
           </div>
         </div>
         <div class="gdp-list" id="speakerBookedList"></div>
@@ -1520,7 +1564,7 @@ select { -webkit-appearance: auto; appearance: auto; }
             <div class="muted">Oratori già venuti che vuoi invitare nuovamente.</div>
           </div>
           <div class="summary">
-            <span class="pill" title="Da richiamare"><strong id="speakerCallbackCount">0</strong></span>
+            <span class="pill">Da richiamare <strong id="speakerCallbackCount">0</strong></span>
           </div>
         </div>
         <div class="gdp-list" id="speakerCallbackList"></div>
@@ -1532,7 +1576,7 @@ select { -webkit-appearance: auto; appearance: auto; }
             <h3>Non da richiamare</h3>
             <div class="muted">Oratori già venuti che non vuoi richiamare per ora.</div>
           </div>
-          <span class="pill" title="Non da richiamare"><strong id="speakerArchiveCount">0</strong></span>
+          <span class="pill">Già invitati <strong id="speakerArchiveCount">0</strong></span>
         </div>
         <div class="gdp-list" id="speakerArchiveList"></div>
       </section>
