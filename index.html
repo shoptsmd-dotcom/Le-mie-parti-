@@ -2874,6 +2874,77 @@ button,input,select,textarea{font:inherit;color:inherit}
 }
 </style>
 
+
+<style id="rams-v8-gdp-service">
+/* V8 — GDP: inserimento diretto graditi; Servizio: tempo dall'appuntamento */
+.gdp-liked-summary{display:flex!important;align-items:center!important;gap:6px!important}
+.gdp-liked-add{
+  width:30px!important;height:30px!important;min-width:30px!important;min-height:30px!important;
+  border:1px solid var(--r-line-strong)!important;border-radius:0!important;
+  background:transparent!important;color:var(--r-ink)!important;font-size:18px!important;line-height:1!important;
+}
+.gdp-liked-add:hover{background:#e9e9e3!important}
+
+/* Il form appuntamento contiene solo chi/data/ora */
+.service-form{grid-template-columns:minmax(200px,1.5fr) 160px 120px auto auto!important}
+.service-entry{grid-template-columns:minmax(0,1.25fr) minmax(210px,.95fr) auto!important}
+.service-entry-time-editor{
+  display:grid!important;grid-template-columns:58px 58px auto!important;gap:5px!important;align-items:end!important;
+  padding-left:12px!important;border-left:1px solid var(--r-line)!important;
+}
+.service-time-mini{display:flex!important;flex-direction:column!important;gap:3px!important}
+.service-time-mini label{
+  color:var(--r-muted)!important;font-size:8px!important;font-weight:700!important;letter-spacing:.07em!important;text-transform:uppercase!important;
+}
+.service-time-mini input{
+  width:58px!important;min-height:30px!important;height:30px!important;padding:4px 6px!important;
+  border:1px solid var(--r-line-strong)!important;border-radius:0!important;background:#fff!important;
+  color:var(--r-ink)!important;font-size:12px!important;box-shadow:none!important;
+}
+.service-time-mini input:focus{outline:0!important;border-color:var(--r-ink)!important}
+.service-save-time{min-height:30px!important;height:30px!important;padding:4px 7px!important;font-size:9px!important;white-space:nowrap!important}
+.service-entry-duration-inline{
+  grid-column:1/-1!important;margin-top:4px!important;color:var(--r-muted)!important;font-size:9px!important;
+}
+.service-entry-duration-inline strong{color:var(--r-ink)!important;font-size:10px!important}
+
+@media(max-width:900px){
+  .service-form{grid-template-columns:1fr 1fr!important}
+  .service-person-field{grid-column:1/-1!important}
+  .service-form .btn{width:100%!important}
+  .service-entry{grid-template-columns:minmax(0,1fr) auto!important}
+  .service-entry-time-editor{grid-column:1/-1!important;grid-row:auto!important;padding:8px 0 0!important;border-left:0!important;border-top:1px solid var(--r-line)!important;justify-content:start!important}
+  .service-entry-actions{grid-column:2!important;grid-row:1!important;align-self:start!important}
+  .service-entry-duration-inline{grid-column:1/-1!important}
+}
+@media(max-width:480px){
+  .gdp-liked-summary{margin-top:9px!important}
+  .service-entry-time-editor{grid-template-columns:52px 52px auto!important}
+  .service-time-mini input{width:52px!important}
+  .service-save-time{padding-left:6px!important;padding-right:6px!important}
+}
+</style>
+
+
+<style id="rams-v9-blue-active-nav">
+/* Menu sezione: la voce attiva usa un solo accento blu */
+.section-switch button.active{
+  color:#0a64d8!important;
+  border-bottom-color:#0a64d8!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.section-switch button.active:before{
+  color:#0a64d8!important;
+}
+@media(max-width:900px){
+  .section-switch button.active{
+    color:#0a64d8!important;
+    border-bottom-color:#0a64d8!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="shell">
@@ -3123,7 +3194,7 @@ button,input,select,textarea{font:inherit;color:inherit}
       <section class="card">
         <div class="card-head">
           <h3>＋ Appuntamento di servizio</h3>
-          <p>Segna con chi hai appuntamento, quando e il tempo svolto.</p>
+          <p>Segna con chi hai appuntamento, la data e l’ora. Il tempo svolto si registra direttamente dall’appuntamento.</p>
         </div>
         <div class="add-wrap">
           <form id="serviceForm" class="service-form">
@@ -3139,14 +3210,6 @@ button,input,select,textarea{font:inherit;color:inherit}
               <label>Ora</label>
               <input id="serviceTime" type="time" />
             </div>
-            <div class="field service-duration-field">
-              <label>Ore svolte</label>
-              <input id="serviceHours" type="number" min="0" max="24" step="1" inputmode="numeric" placeholder="0" />
-            </div>
-            <div class="field service-duration-field">
-              <label>Minuti</label>
-              <input id="serviceMinutes" type="number" min="0" max="59" step="1" inputmode="numeric" placeholder="0" />
-            </div>
             <button class="btn btn-primary" id="serviceSubmitBtn" type="submit">＋ Salva</button>
             <button class="btn btn-ghost" id="serviceCancelEdit" type="button" hidden>Annulla</button>
           </form>
@@ -3157,7 +3220,7 @@ button,input,select,textarea{font:inherit;color:inherit}
         <div class="tasks-head">
           <div>
             <h3>Appuntamenti del mese</h3>
-            <div class="muted">Il tempo inserito viene sommato automaticamente al totale in alto.</div>
+            <div class="muted">Inserisci il tempo direttamente su ogni appuntamento: il totale del mese si aggiorna automaticamente.</div>
           </div>
         </div>
         <div class="service-list" id="serviceList"></div>
@@ -3250,8 +3313,9 @@ button,input,select,textarea{font:inherit;color:inherit}
             <h3>Oratori graditi</h3>
             <div class="muted">Gli oratori che vuoi invitare ancora. Sono ordinati da chi non viene da più tempo.</div>
           </div>
-          <div class="summary">
+          <div class="summary gdp-liked-summary">
             <span class="pill">Graditi <strong id="speakerCallbackCount">0</strong></span>
+            <button type="button" class="iconbtn gdp-liked-add" id="addLikedSpeakerBtn" title="Aggiungi direttamente un oratore gradito" aria-label="Aggiungi direttamente un oratore gradito">＋</button>
           </div>
         </div>
         <div class="gdp-list" id="speakerCallbackList"></div>
@@ -3424,6 +3488,38 @@ button,input,select,textarea{font:inherit;color:inherit}
   <div class="modal-actions">
     <button class="btn btn-ghost" id="cancelDelegateActivity">Annulla</button>
     <button class="btn btn-primary" id="saveDelegateActivity">Metti in attesa</button>
+  </div>
+</dialog>
+
+<dialog id="likedSpeakerDialog" class="modal">
+  <div class="modal-head">
+    <div>
+      <strong>Aggiungi oratore gradito</strong>
+      <div class="muted">Inseriscilo direttamente nella rubrica, anche se non è ancora passato dall’elenco degli oratori ascoltati.</div>
+    </div>
+    <button class="iconbtn" id="closeLikedSpeaker">✕</button>
+  </div>
+  <div class="modal-body">
+    <div class="field">
+      <label>Nome oratore</label>
+      <input id="likedSpeakerName" placeholder="Nome e cognome" />
+    </div>
+    <div class="field">
+      <label>Congregazione</label>
+      <input id="likedSpeakerCongregation" placeholder="Facoltativo" />
+    </div>
+    <div class="field">
+      <label>Ultima volta che è venuto</label>
+      <input id="likedSpeakerLastVisit" type="date" />
+    </div>
+    <div class="field">
+      <label>Nota</label>
+      <input id="likedSpeakerNote" placeholder="Facoltativo" />
+    </div>
+  </div>
+  <div class="modal-actions">
+    <button class="btn btn-ghost" id="cancelLikedSpeaker">Annulla</button>
+    <button class="btn btn-primary" id="saveLikedSpeaker">Aggiungi ai graditi</button>
   </div>
 </dialog>
 
@@ -4465,7 +4561,7 @@ function renderSpeakers(filter=''){
       </div>
       <div class="speaker-cong">${s.congregation?esc(s.congregation):'—'}</div>
       <div class="speaker-last">
-        ${last?`Ultima volta: <strong>${esc(fmt(last))}</strong>`:'—'}
+        ${last?`Ultima volta: <strong>${esc(fmt(last))}</strong>`:'Ultima volta non registrata'}
         <div style="margin-top:6px"><span class="callback-tag">Gradito</span></div>
       </div>
       <div class="speaker-actions">
@@ -4668,16 +4764,44 @@ $('saveSpeakerBooking').onclick=()=>{
   toast('Oratore spostato in Prenotati');
 };
 
+$('addLikedSpeakerBtn').onclick=()=>{
+  $('likedSpeakerName').value='';
+  $('likedSpeakerCongregation').value='';
+  $('likedSpeakerLastVisit').value='';
+  $('likedSpeakerNote').value='';
+  $('likedSpeakerDialog').showModal();
+  setTimeout(()=>$('likedSpeakerName').focus(),0);
+};
+$('closeLikedSpeaker').onclick=$('cancelLikedSpeaker').onclick=()=>$('likedSpeakerDialog').close();
+$('saveLikedSpeaker').onclick=()=>{
+  const name=$('likedSpeakerName').value.trim();
+  const congregation=$('likedSpeakerCongregation').value.trim();
+  const lastVisitDate=$('likedSpeakerLastVisit').value;
+  const note=$('likedSpeakerNote').value.trim();
+  if(!name){toast('Inserisci il nome dell’oratore');$('likedSpeakerName').focus();return;}
+  speakers.push({
+    id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),
+    name,congregation,note,
+    status:'recommended',followUp:true,manualLiked:true,
+    lastVisitDate:lastVisitDate||'',visits:[],bookedDate:'',bookingNote:'',createdAt:Date.now()
+  });
+  save();
+  $('likedSpeakerDialog').close();
+  renderSpeakers($('globalSearch').value);
+  toast('Oratore aggiunto direttamente ai graditi');
+};
+
 window.cancelSpeakerBookingEntry=id=>{
   const s=speakers.find(x=>x.id===id);if(!s)return;
   const hadPreviousVisit=!!speakerLastVisit(s);
+  const returnToLiked=hadPreviousVisit || !!s.manualLiked;
   s.status='recommended';
-  s.followUp=hadPreviousVisit;
+  s.followUp=returnToLiked;
   s.bookedDate='';
   s.bookingNote='';
   save();
   renderSpeakers($('globalSearch').value);
-  toast(hadPreviousVisit?'Prenotazione annullata: torna in Oratori graditi':'Prenotazione annullata: torna in Da invitare');
+  toast(returnToLiked?'Prenotazione annullata: torna in Oratori graditi':'Prenotazione annullata: torna in Da invitare');
 };
 
 window.openSpeakerVisit=id=>{
@@ -5076,8 +5200,6 @@ function resetServiceForm(){
   editingServiceId=null;
   $('servicePerson').value='';
   $('serviceTime').value='';
-  $('serviceHours').value='';
-  $('serviceMinutes').value='';
   const month=$('serviceMonth').value||currentMonthISO();
   const today=localTodayISO();
   $('serviceDate').value=today.startsWith(month)?today:`${month}-01`;
@@ -5105,9 +5227,17 @@ function renderService(filter=''){
           ${e.time?`<span>${esc(e.time)}</span>`:''}
         </div>
       </div>
-      <div class="service-entry-duration">
-        <span>Tempo</span>
-        <strong>${esc(serviceDurationLabel(e.durationMinutes))}</strong>
+      <div class="service-entry-time-editor">
+        <div class="service-time-mini">
+          <label>Ore</label>
+          <input id="serviceRowHours_${e.id}" type="number" min="0" max="24" step="1" inputmode="numeric" value="${Math.floor(Number(e.durationMinutes||0)/60)||''}" placeholder="0" />
+        </div>
+        <div class="service-time-mini">
+          <label>Min</label>
+          <input id="serviceRowMinutes_${e.id}" type="number" min="0" max="59" step="1" inputmode="numeric" value="${Number(e.durationMinutes||0)%60||''}" placeholder="0" />
+        </div>
+        <button class="small service-save-time" onclick="saveServiceTime('${e.id}')">${Number(e.durationMinutes||0)>0?'Aggiorna':'Registra'}</button>
+        <div class="service-entry-duration-inline">Registrato: <strong>${esc(serviceDurationLabel(e.durationMinutes))}</strong></div>
       </div>
       <div class="service-entry-actions">
         <button class="small" onclick="editServiceEntry('${e.id}')">Modifica</button>
@@ -5125,16 +5255,13 @@ $('serviceCancelEdit').onclick=()=>resetServiceForm();
 $('serviceForm').addEventListener('submit',e=>{
   e.preventDefault();
   const person=$('servicePerson').value.trim(),date=$('serviceDate').value,time=$('serviceTime').value;
-  const hours=Math.max(0,Number($('serviceHours').value||0));
-  const mins=Math.max(0,Math.min(59,Number($('serviceMinutes').value||0)));
   if(!person||!date)return;
-  const durationMinutes=Math.round(hours*60+mins);
   const wasEditing=!!editingServiceId;
   if(editingServiceId){
     const item=serviceEntries.find(x=>x.id===editingServiceId);
-    if(item)Object.assign(item,{person,date,time,durationMinutes,updatedAt:Date.now()});
+    if(item)Object.assign(item,{person,date,time,updatedAt:Date.now()});
   }else{
-    serviceEntries.push({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),recordType:'service',person,date,time,durationMinutes,createdAt:Date.now(),updatedAt:Date.now()});
+    serviceEntries.push({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),recordType:'service',person,date,time,durationMinutes:0,createdAt:Date.now(),updatedAt:Date.now()});
   }
   $('serviceMonth').value=date.slice(0,7);
   save();
@@ -5149,12 +5276,22 @@ window.editServiceEntry=id=>{
   $('servicePerson').value=item.person||'';
   $('serviceDate').value=item.date||'';
   $('serviceTime').value=item.time||'';
-  $('serviceHours').value=Math.floor(Number(item.durationMinutes||0)/60)||'';
-  $('serviceMinutes').value=Number(item.durationMinutes||0)%60||'';
   $('serviceSubmitBtn').textContent='Salva modifiche';
   $('serviceCancelEdit').hidden=false;
   $('servicePerson').focus();
 };
+window.saveServiceTime=id=>{
+  const item=serviceEntries.find(x=>x.id===id);if(!item)return;
+  const hEl=document.getElementById(`serviceRowHours_${id}`),mEl=document.getElementById(`serviceRowMinutes_${id}`);
+  const hours=Math.max(0,Math.min(24,Number(hEl?.value||0)));
+  const minutes=Math.max(0,Math.min(59,Number(mEl?.value||0)));
+  item.durationMinutes=Math.round(hours*60+minutes);
+  item.updatedAt=Date.now();
+  save();
+  renderService($('globalSearch').value);
+  toast(item.durationMinutes>0?'Tempo servizio registrato':'Tempo azzerato');
+};
+
 window.deleteServiceEntry=id=>{
   if(!confirm('Eliminare questo appuntamento di servizio?'))return;
   serviceEntries=serviceEntries.filter(x=>x.id!==id);
