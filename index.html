@@ -6,7 +6,7 @@
 <title>JW TIZI</title>
 
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#f8fbff">
+<meta name="theme-color" content="#ffffff">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -1695,211 +1695,6 @@ body.routine-mode .rightbar{display:none!important}
   }
 }
 
-
-/* =========================================================
-   JW TIZI — AZZURRO / BLU, stile app pulita
-   ========================================================= */
-:root{
-  --blue:#0a84ff!important;
-  --blue-dark:#006edc!important;
-  --blue2:#eaf5ff!important;
-  --text:#0b1f44!important;
-  --muted:#7180a0!important;
-  --line:#dcecff!important;
-  --surface2:#f6faff!important;
-  --gold:#0a84ff!important;
-  --gold-soft:#eaf5ff!important;
-}
-html,body{background:#f8fbff!important}
-body{color:#0b1f44!important}
-.shell{
-  max-width:980px!important;
-  padding:calc(14px + env(safe-area-inset-top)) 18px calc(112px + env(safe-area-inset-bottom))!important;
-}
-body.home-mode .topbar{display:none!important}
-
-.chat-brand-row{
-  display:flex;align-items:center;justify-content:space-between;gap:16px;
-  margin:2px 4px 18px;
-}
-.chat-brand{
-  font-size:28px;font-weight:900;letter-spacing:-.04em;color:#0b1f44;
-}
-.chat-brand span{color:#0a84ff}
-.chat-brand-avatar{
-  width:50px;height:50px;border-radius:50%;object-fit:cover;
-  box-shadow:0 8px 20px rgba(10,132,255,.14);
-}
-.chat-dashboard-title{margin:0 4px 18px}
-.chat-dashboard-title h2{
-  margin:0;font-size:38px;line-height:1.02;letter-spacing:-.05em;color:#0b1f44;
-}
-.chat-dashboard-title p{margin:7px 0 0;color:#7180a0;font-size:17px}
-
-.chat-week-card{
-  display:grid;grid-template-columns:58px 1fr;gap:16px;align-items:center;
-  padding:18px 20px;margin-bottom:26px;
-  background:linear-gradient(135deg,#f7fbff,#eef7ff);
-  border:1px solid #d9ecff;border-radius:24px;
-  box-shadow:0 10px 28px rgba(24,88,160,.06);
-}
-.chat-week-icon,.chat-list-icon{
-  display:grid;place-items:center;
-  background:#e1f1ff;color:#0a84ff;
-}
-.chat-week-icon{
-  width:56px;height:56px;border-radius:50%;font-size:24px;font-weight:800;
-}
-.chat-week-card strong{font-size:18px;color:#0b1f44}
-.chat-week-card p{margin:5px 0 0;color:#5f7196;line-height:1.35}
-
-.chat-section{margin-bottom:28px}
-.chat-section-head{
-  display:flex;align-items:end;justify-content:space-between;gap:12px;
-  margin:0 4px 12px;
-}
-.chat-section-head h3{
-  margin:0;font-size:29px;letter-spacing:-.04em;color:#0b1f44;
-}
-.chat-section-head p{margin:4px 0 0;color:#7180a0;font-size:15px}
-
-.chat-today-list{display:grid;gap:10px}
-.chat-today-card,.chat-upcoming-row{
-  appearance:none;width:100%;border:1px solid #e4effb;background:#fff;color:inherit;text-align:left;
-  cursor:pointer;
-}
-.chat-today-card{
-  display:grid;grid-template-columns:58px minmax(0,1fr) auto;
-  gap:14px;align-items:center;padding:16px;border-radius:22px;
-  box-shadow:0 10px 24px rgba(24,88,160,.055);
-}
-.chat-list-icon{width:48px;height:48px;border-radius:50%;font-size:21px;font-weight:800}
-.chat-list-copy{min-width:0}
-.chat-list-copy em{
-  display:block;font-style:normal;color:#0a84ff;font-size:12px;font-weight:800;margin-bottom:2px
-}
-.chat-list-copy strong{
-  display:block;color:#0b1f44;font-size:17px;line-height:1.18;
-}
-.chat-list-copy small{
-  display:block;color:#7180a0;font-size:14px;line-height:1.25;margin-top:3px;
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-}
-.chat-today-badge{
-  background:#e7f4ff;color:#0a84ff;border-radius:999px;padding:7px 11px;font-weight:750;font-size:13px
-}
-.chat-empty-card{
-  padding:20px;border:1px dashed #dbe9f7;background:#fff;border-radius:20px;
-  color:#7180a0;text-align:center;
-}
-
-.chat-summary-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
-}
-.chat-summary-card{
-  appearance:none;border:1px solid #e3eef9;background:#fff;border-radius:20px;
-  padding:14px;text-align:left;cursor:pointer;
-  box-shadow:0 9px 22px rgba(24,88,160,.05);
-}
-.chat-summary-icon{
-  display:grid;place-items:center;width:42px;height:42px;border-radius:50%;
-  background:#e7f4ff;color:#0a84ff;font-size:20px;font-weight:800;margin-bottom:12px;
-}
-.chat-summary-card strong{
-  display:block;font-size:26px;line-height:1;color:#0b1f44;margin-bottom:5px;
-}
-.chat-summary-card>span:last-child{color:#5f7196;font-size:14px}
-
-.chat-upcoming{
-  overflow:hidden;background:#fff;border:1px solid #e3eef9;border-radius:24px;
-  box-shadow:0 10px 26px rgba(24,88,160,.05);
-}
-.chat-upcoming-row{
-  display:grid;grid-template-columns:48px minmax(0,1fr) auto 18px;
-  gap:12px;align-items:center;padding:14px 16px;border:0;border-bottom:1px solid #edf3f9;
-  border-radius:0;background:#fff;
-}
-.chat-upcoming-row:last-child{border-bottom:0}
-.chat-upcoming-date{text-align:right;white-space:nowrap}
-.chat-upcoming-date strong{display:block;font-size:13px;color:#344b72}
-.chat-upcoming-date small{display:block;color:#0a84ff;font-size:12px;margin-top:3px}
-.chat-chevron{font-size:28px;color:#7fa3cf;line-height:1}
-
-.chat-actions{margin:10px 0 8px}
-.chat-primary-action{
-  width:100%;padding:15px 18px!important;background:#0a84ff!important;color:#fff!important;
-  border-radius:18px!important;box-shadow:0 12px 24px rgba(10,132,255,.22)!important;font-size:17px!important;
-}
-.chat-secondary-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.chat-secondary-actions .btn-soft{
-  background:#eaf5ff!important;color:#006edc!important;
-}
-.chat-secondary-actions .btn-ghost{
-  background:#fff!important;border:1px solid #dcecff!important;color:#5c7199!important;
-}
-
-.card,.dashboard-card,.rightbar,.speaker-booking-panel,.legend{
-  background:#fff!important;border:1px solid #e3eef9!important;
-  box-shadow:0 9px 24px rgba(24,88,160,.05)!important;
-}
-.card,.dashboard-card,.rightbar{border-radius:24px!important}
-.activity-hero,.gdp-hero,.routine-hero,.hero{
-  background:linear-gradient(135deg,#f7fbff,#eef7ff)!important;
-  border:1px solid #dcecff!important;border-radius:24px!important;
-  color:#0b1f44!important;box-shadow:0 9px 24px rgba(24,88,160,.05)!important;
-}
-.eyebrow,.activity-hero .eyebrow,.gdp-hero .eyebrow,.routine-hero .eyebrow,.hero .eyebrow{color:#0a84ff!important}
-.hero h2,.activity-hero h2,.gdp-hero h2,.routine-hero h2{color:#0b1f44!important}
-.field input,.field select,.field textarea{
-  border:1px solid #dbe8f5!important;background:#fff!important;
-}
-.field input:focus,.field select:focus,.field textarea:focus{
-  border-color:#0a84ff!important;box-shadow:0 0 0 4px rgba(10,132,255,.10)!important;
-}
-.btn-primary{background:#0a84ff!important;color:#fff!important}
-.btn-soft,.small{background:#eaf5ff!important;color:#006edc!important}
-.pill{background:#eef6ff!important;color:#5f7196!important}
-.pill strong{color:#0b1f44!important}
-.bar-fill{background:#0a84ff!important}
-.type-rank{background:#eaf5ff!important;color:#006edc!important}
-.report-note{background:#eef7ff!important;color:#46688e!important}
-.actual-time,.session-duration,.month-value,.type-hours,.report-kpi strong{color:#0a84ff!important}
-
-.section-switch{
-  background:rgba(255,255,255,.96)!important;border:1px solid #e5eef8!important;
-  box-shadow:0 14px 34px rgba(31,72,124,.12)!important;
-}
-.section-switch button{color:#6d7f9f!important}
-.section-switch button.active{
-  color:#0a84ff!important;background:#eaf5ff!important;
-}
-.section-switch button.active:before{color:#0a84ff!important}
-
-.task:before,.activity-item:before,.speaker-item:before,.routine-item:before{background:#79aef8!important}
-.task.soon:before,.activity-item.soon:before,.routine-item.soon:before{background:#ffb020!important}
-.task.overdue:before,.activity-item.overdue:before,.routine-item.overdue:before{background:#ef5b5b!important}
-.task.running:before{background:#0a84ff!important}
-.completed-task:before,.activity-completed:before{background:#55b07c!important}
-.activity-waiting:before{background:#8b7cf6!important}
-.speaker-booked:before{background:#0a84ff!important}
-.speaker-archive:before{background:#9aa9bd!important}
-
-@media(max-width:720px){
-  .chat-summary-grid{grid-template-columns:1fr 1fr}
-  .chat-dashboard-title h2{font-size:34px}
-  .chat-section-head h3{font-size:27px}
-  .chat-upcoming-row{grid-template-columns:44px minmax(0,1fr) auto 14px;padding:13px}
-}
-@media(max-width:480px){
-  .shell{padding-left:12px!important;padding-right:12px!important}
-  .chat-brand{font-size:26px}
-  .chat-brand-avatar{width:46px;height:46px}
-  .chat-week-card{grid-template-columns:50px 1fr;padding:16px}
-  .chat-week-icon{width:48px;height:48px}
-  .chat-upcoming-date strong{font-size:12px}
-  .chat-upcoming-date small{font-size:11px}
-}
-
 </style>
 
 <style>
@@ -1944,78 +1739,84 @@ select { -webkit-appearance: auto; appearance: auto; }
 
 
     <div id="dashboardSection">
-      <div class="chat-brand-row">
-        <div class="chat-brand">JW <span>TIZI</span></div>
-        <img class="chat-brand-avatar" src="icon-180.png" alt="JW TIZI" />
-      </div>
-
-      <section class="chat-dashboard-title">
-        <h2>Dashboard</h2>
-        <p>Panoramica delle tue attività</p>
+      <section class="dashboard-hero">
+        <div class="eyebrow">BENVENUTO TIZIANO</div>
+        <h2>Organizza le tue parti</h2>
       </section>
 
-      <section class="chat-week-card">
-        <div class="chat-week-icon">▥</div>
-        <div>
-          <strong>Panoramica settimanale</strong>
-          <p id="dashWeekOverview">Nessuna scadenza nei prossimi 7 giorni.</p>
-        </div>
-      </section>
-
-      <section class="chat-section">
-        <div class="chat-section-head">
-          <div>
-            <h3>Oggi</h3>
-            <p id="dashTodayDate"></p>
+      <div class="dashboard-grid">
+        <section class="dashboard-card" id="dashNextPartCard">
+          <div class="dash-head">
+            <div><h3>Prossima parte</h3><div class="dash-sub">La prossima assegnazione da preparare.</div></div>
+            <div class="dash-ico">◉</div>
           </div>
-        </div>
-        <div id="dashToday"></div>
-      </section>
+          <div id="dashNextPart"></div>
+        </section>
 
-      <section class="chat-section">
-        <div class="chat-section-head">
-          <h3>Riepilogo</h3>
-        </div>
-        <div class="chat-summary-grid">
-          <button class="chat-summary-card" type="button" onclick="switchSection('activities')">
-            <span class="chat-summary-icon">✕</span>
-            <strong id="dashSummaryActivities">0</strong>
-            <span>Cose da fare</span>
-          </button>
-          <button class="chat-summary-card" type="button" onclick="switchSection('gdp')">
-            <span class="chat-summary-icon">◯</span>
-            <strong id="dashSummaryGdp">0</strong>
-            <span>GDP</span>
-          </button>
-          <button class="chat-summary-card" type="button" onclick="switchSection('parts')">
-            <span class="chat-summary-icon">□</span>
-            <strong id="dashSummaryParts">0</strong>
-            <span>Parti</span>
-          </button>
-          <button class="chat-summary-card" type="button" onclick="switchSection('routine')">
-            <span class="chat-summary-icon">△</span>
-            <strong id="dashSummaryRoutines">0</strong>
-            <span>Routine</span>
-          </button>
-        </div>
-      </section>
+        <section class="dashboard-card">
+          <div class="dash-head">
+            <div><h3>Tempo questo mese</h3><div class="dash-sub" id="dashMonthLabel">Tempo effettivo registrato.</div></div>
+            <div class="dash-ico">◷</div>
+          </div>
+          <div class="dash-big" id="dashMonthActual">0 h</div>
+          <div class="dash-stats">
+            <div class="dash-stat"><span>Previsto</span><strong id="dashMonthPlanned">0 h</strong></div>
+            <div class="dash-stat"><span>Differenza</span><strong id="dashMonthDelta">0 h</strong></div>
+            <div class="dash-stat"><span>Sessioni</span><strong id="dashMonthSessions">0</strong></div>
+          </div>
+        </section>
 
-      <section class="chat-section">
-        <div class="chat-section-head">
-          <h3>Prossime scadenze</h3>
-        </div>
-        <div class="chat-upcoming" id="dashUpcoming"></div>
-      </section>
+        <section class="dashboard-card">
+          <div class="dash-head">
+            <div><h3>Attività urgenti</h3><div class="dash-sub">Le scadenze più vicine ancora da gestire.</div></div>
+            <div class="dash-ico">!</div>
+          </div>
+          <div id="dashUrgentActivities"></div>
+        </section>
 
-      <section class="chat-actions">
-        <button class="btn chat-primary-action" id="dashAddActivity">＋ Nuova attività</button>
-        <div class="chat-secondary-actions">
-          <button class="btn btn-soft" id="dashAddPart">＋ Parte</button>
-          <button class="btn btn-soft" id="dashAddSpeaker">＋ Oratore</button>
-          <button class="btn btn-soft" id="dashAddRoutine">＋ Routine</button>
-          <button class="btn btn-ghost" id="dashOpenReport">▥ Report annuale</button>
-        </div>
-      </section>
+        <section class="dashboard-card">
+          <div class="dash-head">
+            <div><h3>In attesa</h3><div class="dash-sub">Attività delegate ad altre persone.</div></div>
+            <div class="dash-ico">⇢</div>
+          </div>
+          <div id="dashWaitingActivities"></div>
+        </section>
+
+        <section class="dashboard-card">
+          <div class="dash-head">
+            <div><h3>Routine in scadenza</h3><div class="dash-sub">Routine con una data da tenere sotto controllo.</div></div>
+            <div class="dash-ico">△</div>
+          </div>
+          <div id="dashRoutinesDue"></div>
+        </section>
+
+        <section class="dashboard-card wide">
+          <div class="dash-head">
+            <div><h3>GDP</h3><div class="dash-sub">Situazione degli oratori e prossime prenotazioni.</div></div>
+            <div class="dash-ico">G</div>
+          </div>
+          <div class="dash-stats">
+            <div class="dash-stat"><span>Da invitare</span><strong id="dashGdpInvite">0</strong></div>
+            <div class="dash-stat"><span>Prenotati</span><strong id="dashGdpBooked">0</strong></div>
+            <div class="dash-stat"><span>Da richiamare</span><strong id="dashGdpRecall">0</strong></div>
+          </div>
+          <div id="dashNextSpeaker" style="margin-top:10px"></div>
+        </section>
+
+        <section class="dashboard-card wide">
+          <div class="dash-head">
+            <div><h3>Azioni rapide</h3><div class="dash-sub">Vai direttamente alla sezione che ti serve.</div></div>
+            <div class="dash-ico">＋</div>
+          </div>
+          <div class="quick-actions">
+            <button class="btn btn-soft" id="dashAddPart">＋ Nuova parte</button>
+            <button class="btn btn-soft" id="dashAddActivity">＋ Nuova attività</button>
+            <button class="btn btn-soft" id="dashAddSpeaker">＋ Nuovo oratore</button>
+            <button class="btn btn-soft" id="dashAddRoutine">＋ Nuova routine</button>
+            <button class="btn btn-ghost" id="dashOpenReport">▥ Report annuale</button>
+          </div>
+        </section>
+      </div>
     </div>
 
     <div id="partsSection" style="display:none">
@@ -2793,107 +2594,106 @@ function renderDashboard(){
   const now=new Date();
   const validActivities=activities.filter(a=>a && typeof a==='object' && typeof a.title==='string' && a.title.trim() && typeof a.dueDate==='string' && a.dueDate);
   const validSpeakers=speakers.filter(s=>s && typeof s==='object' && typeof s.name==='string' && s.name.trim() && !('title' in s && 'dueDate' in s));
-  const validRoutines=routines.filter(r=>r && typeof r==='object' && typeof r.name==='string' && r.name.trim());
+  const year=now.getFullYear(),month=now.getMonth();
 
-  const items=[];
+  // Prossima parte
+  const active=tasks.filter(t=>!t.completedAt).sort((a,b)=>a.date.localeCompare(b.date));
+  const future=active.find(t=>daysUntil(t.date)>=0);
+  const nextPart=future||active[0];
 
-  tasks.filter(t=>!t.completedAt && t.date).forEach(t=>{
-    items.push({
-      kind:'Parti',
-      title:t.type,
-      sub:t.location||`${Number(t.hours||0).toLocaleString('it-IT')} h previste`,
-      date:t.date,
-      section:'parts'
-    });
+  if(nextPart){
+    $('dashNextPart').innerHTML=`
+      <div class="dash-row">
+        <div>
+          <strong>${esc(nextPart.type)}</strong>
+          <small>${nextPart.location?'📍 '+esc(nextPart.location):'Tempo previsto: '+Number(nextPart.hours).toLocaleString('it-IT')+' h'}</small>
+        </div>
+        <div class="dash-date ${dashDateClass(nextPart.date)}">${esc(dashDateLabel(nextPart.date))}</div>
+      </div>
+      <div class="dash-stats">
+        <div class="dash-stat"><span>Data</span><strong style="font-size:14px">${esc(fmt(nextPart.date))}</strong></div>
+        <div class="dash-stat"><span>Previsto</span><strong>${Number(nextPart.hours).toLocaleString('it-IT')} h</strong></div>
+        <div class="dash-stat"><span>Effettivo</span><strong>${durationText(actualTotalMs(nextPart))}</strong></div>
+      </div>`;
+  }else{
+    $('dashNextPart').innerHTML='<div class="dash-empty">Nessuna parte in programma.</div>';
+  }
+
+  // Tempo del mese
+  const monthHistory=reportHistory.filter(x=>{
+    const d=new Date(Number(x.start));
+    return d.getFullYear()===year && d.getMonth()===month;
   });
+  const actualMs=monthHistory.reduce((s,x)=>s+Number(x.durationMs||0),0);
+  const plannedHours=tasks.filter(t=>{
+    const d=dObj(t.date);
+    return d.getFullYear()===year && d.getMonth()===month;
+  }).reduce((s,t)=>s+Number(t.hours||0),0);
+  const plannedMs=plannedHours*3600000;
+  const delta=actualMs-plannedMs;
+  $('dashMonthLabel').textContent=`${now.toLocaleDateString('it-IT',{month:'long',year:'numeric'})}`;
+  $('dashMonthActual').textContent=dashDuration(actualMs);
+  $('dashMonthPlanned').textContent=`${plannedHours.toLocaleString('it-IT',{maximumFractionDigits:1})} h`;
+  $('dashMonthDelta').textContent=(delta>0?'+':delta<0?'−':'')+dashDuration(Math.abs(delta));
+  $('dashMonthSessions').textContent=monthHistory.length;
 
-  validActivities.filter(a=>!a.completedAt).forEach(a=>{
-    items.push({
-      kind:a.status==='waiting'?'In attesa':'Cose da fare',
-      title:a.title,
-      sub:a.status==='waiting'
-        ? (a.delegatedTo?`Delegata a ${a.delegatedTo}`:'Attività delegata')
-        : (a.person?`Con ${a.person}`:'Attività di congregazione'),
-      date:a.dueDate,
-      section:'activities'
-    });
-  });
+  // Attività urgenti
+  const urgent=validActivities
+    .filter(a=>!a.completedAt && a.status!=='waiting')
+    .sort((a,b)=>a.dueDate.localeCompare(b.dueDate))
+    .slice(0,3);
+  $('dashUrgentActivities').innerHTML=urgent.length
+    ? `<div class="dash-list">${urgent.map(a=>`
+      <div class="dash-row">
+        <div><strong>${esc(a.title)}</strong><small>${a.person?'Con '+esc(a.person):'Da gestire personalmente'}</small></div>
+        <div class="dash-date ${dashDateClass(a.dueDate)}">${esc(dashDateLabel(a.dueDate))}</div>
+      </div>`).join('')}</div>`
+    : '<div class="dash-empty">Nessuna attività aperta.</div>';
 
-  validRoutines.filter(r=>r.dueDate).forEach(r=>{
-    items.push({
-      kind:'Routine',
-      title:r.name,
-      sub:(r.text||'').slice(0,80),
-      date:r.dueDate,
-      section:'routine'
-    });
-  });
+  // In attesa
+  const waiting=validActivities
+    .filter(a=>!a.completedAt && a.status==='waiting')
+    .sort((a,b)=>a.dueDate.localeCompare(b.dueDate))
+    .slice(0,3);
+  $('dashWaitingActivities').innerHTML=waiting.length
+    ? `<div class="dash-list">${waiting.map(a=>`
+      <div class="dash-row">
+        <div><strong>${esc(a.title)}</strong><small>${a.delegatedTo?'Delegata a '+esc(a.delegatedTo):'Delegata'}</small></div>
+        <div class="dash-date ${dashDateClass(a.dueDate)}">${esc(dashDateLabel(a.dueDate))}</div>
+      </div>`).join('')}</div>`
+    : '<div class="dash-empty">Nessuna attività in attesa.</div>';
 
-  validSpeakers.filter(s=>s.status==='booked' && s.bookedDate).forEach(s=>{
-    items.push({
-      kind:'GDP',
-      title:s.name,
-      sub:s.congregation||'Oratore prenotato',
-      date:s.bookedDate,
-      section:'gdp'
-    });
-  });
+  // Routine con scadenza
+  const dueRoutines=routines
+    .filter(r=>r && typeof r.name==='string' && r.name.trim() && r.dueDate)
+    .sort((a,b)=>a.dueDate.localeCompare(b.dueDate))
+    .slice(0,3);
 
-  items.sort((a,b)=>String(a.date).localeCompare(String(b.date)));
+  $('dashRoutinesDue').innerHTML=dueRoutines.length
+    ? `<div class="dash-list">${dueRoutines.map(r=>`
+      <div class="dash-row">
+        <div><strong>${esc(r.name)}</strong><small>${esc((r.text||'').slice(0,90))}${(r.text||'').length>90?'…':''}</small></div>
+        <div class="dash-date ${dashDateClass(r.dueDate)}">${esc(dashDateLabel(r.dueDate))}</div>
+      </div>`).join('')}</div>`
+    : '<div class="dash-empty">Nessuna routine con scadenza.</div>';
 
-  const weekItems=items.filter(x=>{
-    const d=daysUntil(x.date);
-    return d>=0 && d<=7;
-  });
+  // GDP
+  const toInvite=validSpeakers.filter(s=>(!s.status||s.status==='recommended')&&!s.followUp&&!speakerLastVisit(s)).length;
+  const booked=validSpeakers.filter(s=>s.status==='booked');
+  const toRecall=validSpeakers.filter(s=>s.status==='recommended'&&s.followUp).length;
+  $('dashGdpInvite').textContent=toInvite;
+  $('dashGdpBooked').textContent=booked.length;
+  $('dashGdpRecall').textContent=toRecall;
 
-  $('dashWeekOverview').textContent=weekItems.length
-    ? `Hai ${weekItems.length} ${weekItems.length===1?'scadenza':'scadenze'} nei prossimi 7 giorni.`
-    : 'Nessuna scadenza nei prossimi 7 giorni.';
-
-  $('dashTodayDate').textContent=now.toLocaleDateString('it-IT',{
-    weekday:'long',day:'numeric',month:'long',year:'numeric'
-  });
-
-  const todayItems=items.filter(x=>daysUntil(x.date)===0).slice(0,3);
-  $('dashToday').innerHTML=todayItems.length
-    ? `<div class="chat-today-list">${todayItems.map(x=>`
-        <button class="chat-today-card" type="button" onclick="switchSection('${x.section}')">
-          <span class="chat-list-icon">${x.kind==='GDP'?'◯':x.kind==='Routine'?'△':x.kind==='Parti'?'□':'✕'}</span>
-          <span class="chat-list-copy">
-            <strong>${esc(x.title)}</strong>
-            <small>${esc(x.sub||x.kind)}</small>
-          </span>
-          <span class="chat-today-badge">Oggi</span>
-        </button>`).join('')}</div>`
-    : '<div class="chat-empty-card">Nessuna scadenza per oggi.</div>';
-
-  const openActivities=validActivities.filter(a=>!a.completedAt && a.status!=='waiting').length;
-  const activeGdp=validSpeakers.filter(s=>s.status!=='archived').length;
-  const activeParts=tasks.filter(t=>!t.completedAt).length;
-
-  $('dashSummaryActivities').textContent=openActivities;
-  $('dashSummaryGdp').textContent=activeGdp;
-  $('dashSummaryParts').textContent=activeParts;
-  $('dashSummaryRoutines').textContent=validRoutines.length;
-
-  const upcoming=items.filter(x=>daysUntil(x.date)>=0).slice(0,5);
-  $('dashUpcoming').innerHTML=upcoming.length
-    ? upcoming.map(x=>`
-      <button class="chat-upcoming-row" type="button" onclick="switchSection('${x.section}')">
-        <span class="chat-list-icon">${x.kind==='GDP'?'◯':x.kind==='Routine'?'△':x.kind==='Parti'?'□':'✕'}</span>
-        <span class="chat-list-copy">
-          <em>${esc(x.kind)}</em>
-          <strong>${esc(x.title)}</strong>
-          <small>${esc(x.sub||'')}</small>
-        </span>
-        <span class="chat-upcoming-date">
-          <strong>${esc(fmt(x.date))}</strong>
-          <small>${esc(dashDateLabel(x.date))}</small>
-        </span>
-        <span class="chat-chevron">›</span>
-      </button>`).join('')
-    : '<div class="chat-empty-card">Nessuna scadenza programmata.</div>';
+  const nextSpeaker=[...booked].filter(s=>s.bookedDate).sort((a,b)=>a.bookedDate.localeCompare(b.bookedDate))[0];
+  $('dashNextSpeaker').innerHTML=nextSpeaker
+    ? `<div class="dash-row">
+        <div><strong>Prossimo prenotato: ${esc(nextSpeaker.name)}</strong><small>${nextSpeaker.congregation?esc(nextSpeaker.congregation):'Congregazione non indicata'}</small></div>
+        <div class="dash-date ${dashDateClass(nextSpeaker.bookedDate)}">${esc(fmt(nextSpeaker.bookedDate))}</div>
+      </div>`
+    : '<div class="dash-empty">Nessun oratore prenotato.</div>';
 }
+
 
 function activityStatus(a){
   const d=daysUntil(a.dueDate);
