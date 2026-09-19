@@ -1066,6 +1066,145 @@ body:before{display:none!important}
   }
 }
 
+
+/* Uniforma Home e Parti alle altre icone */
+#showHomeBtn:before{font-size:23px!important;top:6px!important}
+#showPartsBtn:before{font-size:23px!important;top:6px!important}
+#showActivitiesBtn:before{font-size:23px!important;top:6px!important}
+#showGdpBtn:before{font-size:23px!important;top:6px!important}
+
+
+/* =========================================================
+   Liste pulite + contatori numerici + contatti compatti
+   ========================================================= */
+
+/* Contatori GDP: solo numero, centrato */
+#gdpSection .summary .pill{
+  width:52px!important;
+  height:52px!important;
+  min-width:52px!important;
+  padding:0!important;
+  display:grid!important;
+  place-items:center!important;
+  border-radius:50%!important;
+  font-size:0!important;
+  text-align:center!important;
+}
+#gdpSection .summary .pill strong{
+  font-size:20px!important;
+  line-height:1!important;
+  margin:0!important;
+}
+
+/* Contatori attività singoli: più compatti */
+#activitiesSection .summary .pill{
+  min-height:42px!important;
+  padding:8px 13px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:5px!important;
+}
+
+/* Righe GDP più compatte */
+#gdpSection .speaker-item,
+#gdpSection .speaker-booked,
+#gdpSection .speaker-archive{
+  min-height:0!important;
+  padding-top:11px!important;
+  padding-bottom:11px!important;
+}
+#gdpSection .speaker-name{
+  font-size:16px!important;
+  line-height:1.15!important;
+}
+#gdpSection .speaker-sub,
+#gdpSection .speaker-cong,
+#gdpSection .speaker-last{
+  font-size:12px!important;
+  line-height:1.25!important;
+}
+#gdpSection .speaker-actions{
+  margin-top:3px!important;
+  gap:5px!important;
+}
+#gdpSection .speaker-actions .btn{
+  min-height:34px!important;
+  padding:6px 10px!important;
+  font-size:12px!important;
+}
+#gdpSection .speaker-actions .iconbtn{
+  width:34px!important;
+  height:34px!important;
+  min-width:34px!important;
+}
+#gdpSection .callback-tag,
+#gdpSection .never-tag,
+#gdpSection .archive-tag,
+#gdpSection .booked-tag{
+  padding:4px 7px!important;
+  font-size:10px!important;
+}
+
+/* Righe attività più compatte */
+#activitiesSection .activity-item,
+#activitiesSection .activity-waiting,
+#activitiesSection .activity-completed{
+  min-height:0!important;
+  padding-top:11px!important;
+  padding-bottom:11px!important;
+}
+#activitiesSection .activity-title{
+  font-size:16px!important;
+  line-height:1.15!important;
+}
+#activitiesSection .activity-person,
+#activitiesSection .datebox,
+#activitiesSection .waiting-meta{
+  font-size:12px!important;
+  line-height:1.25!important;
+}
+#activitiesSection .activity-actions{
+  margin-top:3px!important;
+  gap:5px!important;
+}
+#activitiesSection .activity-actions .iconbtn{
+  width:34px!important;
+  height:34px!important;
+  min-width:34px!important;
+}
+
+/* Mobile: usa lo spazio orizzontale e riduci i vuoti */
+@media(max-width:820px){
+  #gdpSection .gdp-list,
+  #activitiesSection .activity-list{
+    padding-left:14px!important;
+    padding-right:14px!important;
+  }
+
+  #gdpSection .speaker-item,
+  #gdpSection .speaker-booked,
+  #gdpSection .speaker-archive,
+  #activitiesSection .activity-item,
+  #activitiesSection .activity-waiting,
+  #activitiesSection .activity-completed{
+    padding-left:24px!important;
+    padding-right:8px!important;
+    row-gap:4px!important;
+  }
+
+  #gdpSection .speaker-actions,
+  #activitiesSection .activity-actions{
+    justify-self:end!important;
+    margin-top:2px!important;
+  }
+
+  #gdpSection .tasks-head,
+  #gdpSection .completed-head{
+    align-items:center!important;
+  }
+}
+
 </style>
 
 <style>
@@ -1332,7 +1471,7 @@ select { -webkit-appearance: auto; appearance: auto; }
             <div class="muted">Seleziona un oratore, indica la data e spostalo in Prenotati.</div>
           </div>
           <div class="summary">
-            <span class="pill">Da invitare <strong id="speakerRecommendedCount">0</strong></span>
+            <span class="pill" title="Da invitare"><strong id="speakerRecommendedCount">0</strong></span>
           </div>
         </div>
 
@@ -1368,7 +1507,7 @@ select { -webkit-appearance: auto; appearance: auto; }
             <div class="muted">Oratori già invitati che devono ancora venire.</div>
           </div>
           <div class="summary">
-            <span class="pill">Prenotati <strong id="speakerBookedCount">0</strong></span>
+            <span class="pill" title="Prenotati"><strong id="speakerBookedCount">0</strong></span>
           </div>
         </div>
         <div class="gdp-list" id="speakerBookedList"></div>
@@ -1381,7 +1520,7 @@ select { -webkit-appearance: auto; appearance: auto; }
             <div class="muted">Oratori già venuti che vuoi invitare nuovamente.</div>
           </div>
           <div class="summary">
-            <span class="pill">Da richiamare <strong id="speakerCallbackCount">0</strong></span>
+            <span class="pill" title="Da richiamare"><strong id="speakerCallbackCount">0</strong></span>
           </div>
         </div>
         <div class="gdp-list" id="speakerCallbackList"></div>
@@ -1393,7 +1532,7 @@ select { -webkit-appearance: auto; appearance: auto; }
             <h3>Non da richiamare</h3>
             <div class="muted">Oratori già venuti che non vuoi richiamare per ora.</div>
           </div>
-          <span class="pill">Non da richiamare <strong id="speakerArchiveCount">0</strong></span>
+          <span class="pill" title="Non da richiamare"><strong id="speakerArchiveCount">0</strong></span>
         </div>
         <div class="gdp-list" id="speakerArchiveList"></div>
       </section>
@@ -1921,7 +2060,7 @@ function renderDashboard(){
     : '<div class="dash-empty">Nessuna attività aperta.</div>';
 
   // In attesa
-  const waiting=activities
+  const waiting=validActivities
     .filter(a=>!a.completedAt && a.status==='waiting')
     .sort((a,b)=>a.dueDate.localeCompare(b.dueDate))
     .slice(0,3);
@@ -1965,7 +2104,8 @@ let activeDelegatedActivityId=null;
 function renderActivities(filter=''){
   const q=String(filter||'').trim().toLowerCase();
 
-  const open=activities
+  const validActivities=activities.filter(a=>a && typeof a==='object' && typeof a.title==='string' && a.title.trim() && typeof a.dueDate==='string' && a.dueDate);
+  const open=validActivities
     .filter(a=>!a.completedAt && a.status!=='waiting')
     .filter(a=>!q||[a.title,a.person,a.dueDate,a.delegatedTo].join(' ').toLowerCase().includes(q))
     .sort((a,b)=>a.dueDate.localeCompare(b.dueDate)||Number(a.createdAt)-Number(b.createdAt));
@@ -1975,10 +2115,10 @@ function renderActivities(filter=''){
     .filter(a=>!q||[a.title,a.person,a.delegatedTo,a.delegateNote,a.dueDate].join(' ').toLowerCase().includes(q))
     .sort((a,b)=>a.dueDate.localeCompare(b.dueDate)||String(a.delegatedAt||'').localeCompare(String(b.delegatedAt||'')));
 
-  $('activityOpenCount').textContent=activities.filter(a=>!a.completedAt && a.status!=='waiting').length;
-  $('activityWaitingCount').textContent=activities.filter(a=>!a.completedAt && a.status==='waiting').length;
+  $('activityOpenCount').textContent=validActivities.filter(a=>!a.completedAt && a.status!=='waiting').length;
+  $('activityWaitingCount').textContent=validActivities.filter(a=>!a.completedAt && a.status==='waiting').length;
 
-  const next=activities
+  const next=validActivities
     .filter(a=>!a.completedAt && a.status!=='waiting')
     .sort((a,b)=>a.dueDate.localeCompare(b.dueDate))[0];
   $('activityNextDue').textContent=next?fmt(next.dueDate):'—';
@@ -2034,12 +2174,13 @@ function renderActivities(filter=''){
 
 function renderCompletedActivities(filter=''){
   const q=String(filter||'').trim().toLowerCase();
-  const completed=activities
+  const validActivities=activities.filter(a=>a && typeof a==='object' && typeof a.title==='string' && a.title.trim() && typeof a.dueDate==='string' && a.dueDate);
+  const completed=validActivities
     .filter(a=>a.completedAt)
     .filter(a=>!q||[a.title,a.person,a.delegatedTo,a.dueDate].join(' ').toLowerCase().includes(q))
     .sort((a,b)=>Number(b.completedAt)-Number(a.completedAt));
 
-  $('activityCompletedCount').textContent=activities.filter(a=>a.completedAt).length;
+  $('activityCompletedCount').textContent=validActivities.filter(a=>a.completedAt).length;
   $('activityCompletedList').innerHTML=completed.length?completed.map(a=>`
     <div class="activity-completed">
       <div class="activity-icon">✓</div>
@@ -2173,6 +2314,7 @@ $('activityForm').addEventListener('submit',e=>{
 
   activities.push({
     id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),
+    recordType:'activity',
     title,dueDate,person,
     status:'open',
     delegatedTo:'',
@@ -2201,18 +2343,19 @@ function speakerLastVisit(s){
 }
 function renderSpeakers(filter=''){
   const q=String(filter||'').trim().toLowerCase();
+  const validSpeakers=speakers.filter(s=>s && typeof s==='object' && typeof s.name==='string' && s.name.trim() && !('title' in s && 'dueDate' in s));
 
-  const recommended=speakers
+  const recommended=validSpeakers
     .filter(s=>(!s.status || s.status==='recommended') && !s.followUp && !speakerLastVisit(s))
     .filter(s=>!q||[s.name,s.congregation,s.note,s.lastVisitDate,s.bookedDate].join(' ').toLowerCase().includes(q))
     .sort((a,b)=>a.name.localeCompare(b.name,'it'));
 
-  const booked=speakers
+  const booked=validSpeakers
     .filter(s=>s.status==='booked')
     .filter(s=>!q||[s.name,s.congregation,s.note,s.bookedDate].join(' ').toLowerCase().includes(q))
     .sort((a,b)=>(a.bookedDate||'9999-12-31').localeCompare(b.bookedDate||'9999-12-31'));
 
-  const callbacks=speakers
+  const callbacks=validSpeakers
     .filter(s=>s.status==='recommended' && s.followUp)
     .filter(s=>!q||[s.name,s.congregation,s.note,s.lastVisitDate].join(' ').toLowerCase().includes(q))
     .sort((a,b)=>{
@@ -2220,7 +2363,7 @@ function renderSpeakers(filter=''){
       return ad.localeCompare(bd) || a.name.localeCompare(b.name,'it');
     });
 
-  const archived=speakers
+  const archived=validSpeakers
     .filter(s=>s.status==='archived')
     .filter(s=>!q||[s.name,s.congregation,s.note,s.lastVisitDate].join(' ').toLowerCase().includes(q))
     .sort((a,b)=>(speakerLastVisit(b)||'').localeCompare(speakerLastVisit(a)||''));
@@ -2316,6 +2459,7 @@ $('speakerForm').addEventListener('submit',e=>{
   if(!name)return;
   speakers.push({
     id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),
+    recordType:'speaker',
     name,congregation,note,status:'recommended',followUp:false,lastVisitDate:'',
     bookedDate:'',bookingNote:'',visits:[],createdAt:Date.now()
   });
