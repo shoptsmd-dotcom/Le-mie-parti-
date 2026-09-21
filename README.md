@@ -1,3 +1,3 @@
-JW TIZI — V25 Google Calendar Style
+JW TIZI — V26 Google Calendar Style
 
-Versione grafica ispirata a Google Calendar su iPhone: superfici bianche, blu Google, card morbide, ricerca arrotondata, pulsanti Material, navigazione inferiore leggera e form più puliti. Tutte le funzioni e i dati della V24 restano invariati.
+Correzione iPhone: tutti i campi di input, select e textarea usano almeno 16 px su mobile per evitare lo zoom automatico di Safari durante la compilazione. Lo zoom manuale resta disponibile.

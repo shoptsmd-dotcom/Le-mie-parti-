@@ -4609,6 +4609,40 @@ body.home-mode .topbar .search{display:flex!important}
 }
 </style>
 
+
+<style id="v26-ios-no-auto-zoom">
+/* V26 — evita lo zoom automatico di Safari iOS sui campi di inserimento.
+   Non disabilita il pinch-to-zoom manuale: rende semplicemente i controlli
+   abbastanza grandi da non innescare lo zoom al focus. */
+html{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
+@media(max-width:900px){
+  input,
+  select,
+  textarea,
+  .search input,
+  .prompt-search input,
+  .mobile-prompt-search input,
+  .field input,
+  .field select,
+  .field textarea,
+  .service-time-pop input,
+  .report-entry input,
+  .report-entry select,
+  #promptDialog input,
+  #promptDialog textarea,
+  #taskPromptDialog input,
+  #taskPromptDialog textarea,
+  .routine-edit-dialog input,
+  .routine-edit-dialog textarea{
+    font-size:16px!important;
+  }
+  .service-time-pop input{
+    width:58px!important;
+    min-height:34px!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="shell">
