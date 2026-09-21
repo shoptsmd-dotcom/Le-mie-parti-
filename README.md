@@ -1,3 +1,3 @@
-JW TIZI — Google Calendar V28
+Ciao Tiziano — V30 Google Calendar style
 
-Correzione viewport iPhone: impedisce lo zoom automatico dei campi, elimina overflow orizzontali dopo il salvataggio e riallinea la pagina alla larghezza del dispositivo senza alterare lo scroll verticale.
+Il simbolo accanto a “Ciao Tiziano” è stato avvicinato alla scritta e ridimensionato per formare un logo più compatto e armonioso. Tutto il resto resta invariato rispetto alla V29.

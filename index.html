@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>JW TIZI</title>
+<title>Ciao Tiziano</title>
 
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#ffffff">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="JW TIZI">
+<meta name="apple-mobile-web-app-title" content="Ciao Tiziano">
 <link rel="apple-touch-icon" href="icon-180.png">
 
 <style>
@@ -4887,12 +4887,62 @@ body{
 })();
 </script>
 
+
+<style id="ciao-tiziano-v30-brand-lockup">
+/* V30 — logo Ciao Tiziano più compatto: simbolo accostato alla scritta */
+.topbar{
+  grid-template-columns:max-content max-content minmax(180px,1fr)!important;
+  column-gap:5px!important;
+  row-gap:10px!important;
+}
+.brand-mark{
+  align-self:center!important;
+  white-space:nowrap!important;
+}
+.quiet-prompt-btn{
+  justify-self:start!important;
+  width:30px!important;
+  height:30px!important;
+  min-width:30px!important;
+  margin-left:0!important;
+  background:transparent!important;
+}
+.quiet-prompt-btn:before{
+  font-size:14px!important;
+}
+.topbar .search{
+  grid-column:3!important;
+  grid-row:1!important;
+}
+@media(max-width:720px){
+  .topbar{
+    grid-template-columns:max-content max-content 1fr!important;
+    column-gap:4px!important;
+    row-gap:8px!important;
+  }
+  .brand-mark{font-size:21px!important}
+  .quiet-prompt-btn{
+    grid-column:2!important;
+    grid-row:1!important;
+    justify-self:start!important;
+    width:28px!important;
+    height:28px!important;
+    min-width:28px!important;
+  }
+  .quiet-prompt-btn:before{font-size:13px!important}
+  .topbar .search{
+    grid-column:1/-1!important;
+    grid-row:2!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="shell">
   <main class="main">
     <div class="topbar">
-      <div class="brand-mark" aria-label="JW TIZI">JW TIZI</div>
+      <div class="brand-mark" aria-label="Ciao Tiziano">Ciao Tiziano</div>
       <div class="search">⌕ <input id="globalSearch" placeholder="Cerca parti, luoghi, date..." /></div>
       <button class="quiet-prompt-btn" id="quietPromptBtn" aria-label="Apri pannello secondario" title="">◇</button>
       <button class="btn btn-soft" id="reportBtn">▥ Report annuale</button>
@@ -7739,7 +7789,7 @@ $('importBackupFile').addEventListener('change',async e=>{
 });
 
 
-$('exportBtn').onclick=()=>{const blob=new Blob([JSON.stringify({backupVersion:9,exportedAt:new Date().toISOString(),tasks,prompts,savedTypes,scrumConfig,reportHistory,activities,serviceEntries,speakers,congregationSpeakers,routines},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='jw-tizi-backup.json';a.click();URL.revokeObjectURL(url)};
+$('exportBtn').onclick=()=>{const blob=new Blob([JSON.stringify({backupVersion:9,exportedAt:new Date().toISOString(),tasks,prompts,savedTypes,scrumConfig,reportHistory,activities,serviceEntries,speakers,congregationSpeakers,routines},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='ciao-tiziano-backup.json';a.click();URL.revokeObjectURL(url)};
 $('dashExportBackup').onclick=()=>$('exportBtn').click();
 
 setInterval(()=>{

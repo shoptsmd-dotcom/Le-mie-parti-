@@ -1,4 +1,4 @@
-const CACHE = 'jw-tizi-google-calendar-v28';
+const CACHE = 'ciao-tiziano-google-calendar-v30';
 const ASSETS = [
   './',
   './index.html',
@@ -16,7 +16,7 @@ self.addEventListener('install', event => {
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys => Promise.all(
-      keys.filter(key => key.startsWith('jw-tizi-') && key !== CACHE).map(key => caches.delete(key))
+      keys.filter(key => (key.startsWith('jw-tizi-') || key.startsWith('ciao-tiziano-')) && key !== CACHE).map(key => caches.delete(key))
     ))
   );
   self.clients.claim();
