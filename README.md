@@ -1,3 +1,3 @@
-JW TIZI — Dieter Rams V22
+JW TIZI — Dieter Rams V23
 
-I menu a tre punti ora usano un vero select nativo, lo stesso tipo di controllo utilizzato dal filtro di ordinamento degli Oratori graditi. Su iPhone il popup viene quindi disegnato e animato direttamente da iOS; cambiano soltanto le opzioni disponibili.
+Rifinitura delle azioni operative con icone lineari sottili: play/stop nelle Parti, orologio nel Servizio, calendario+ per prenotare gli oratori e spunta fine per confermare.

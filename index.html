@@ -3930,6 +3930,90 @@ dialog[open]::backdrop{animation:ramsBackdropIn 190ms ease-out both}
 }
 </style>
 
+
+<style id="rams-v23-thin-icons">
+/* V23 — icone operative più piccole, fini e coerenti */
+.thin-icon-button{
+  width:32px!important;
+  min-width:32px!important;
+  height:32px!important;
+  min-height:32px!important;
+  padding:0!important;
+  display:inline-grid!important;
+  place-items:center!important;
+  border-radius:999px!important;
+  background:transparent!important;
+  color:#252722!important;
+  border:1px solid #c9cac3!important;
+  box-shadow:none!important;
+}
+.thin-action-icon{
+  width:15px!important;
+  height:15px!important;
+  display:block!important;
+  fill:none!important;
+  stroke:currentColor!important;
+  stroke-width:1.45!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+}
+.thin-icon-button:hover,
+.thin-icon-button:focus{background:#ecece6!important}
+.thin-icon-button:active{transform:scale(.95)!important}
+
+/* Il play resta delineato, non pieno */
+.thin-icon-button .thin-action-icon path,
+.thin-icon-button .thin-action-icon rect,
+.thin-icon-button .thin-action-icon circle{vector-effect:non-scaling-stroke}
+
+/* Tempo servizio: quando è già registrato resta una piccola etichetta testuale */
+.service-time-details:not(.has-time)>summary.thin-icon-button{
+  color:#0a64d8!important;
+  border-color:#aabbd4!important;
+}
+.service-time-details.has-time>summary{
+  min-width:0!important;
+  height:30px!important;
+  min-height:30px!important;
+  padding:0 8px!important;
+  font-size:10px!important;
+  font-weight:650!important;
+}
+
+/* Prenotazione GDP: neutra e sottile, blu solo al passaggio/focus */
+#speakerCallbackList .clean-primary-action.thin-icon-button,
+.liked-book-btn.thin-icon-button{
+  color:#252722!important;
+  background:transparent!important;
+  border-color:#c9cac3!important;
+}
+#speakerCallbackList .clean-primary-action.thin-icon-button:hover,
+#speakerCallbackList .clean-primary-action.thin-icon-button:focus,
+.liked-book-btn.thin-icon-button:hover,
+.liked-book-btn.thin-icon-button:focus{color:#0a64d8!important;border-color:#9fb8dc!important}
+
+#confirmSpeakerInlineBooking.thin-icon-button{
+  width:34px!important;
+  min-width:34px!important;
+  height:34px!important;
+  min-height:34px!important;
+  border-radius:999px!important;
+  background:#0a64d8!important;
+  border-color:#0a64d8!important;
+  color:#fff!important;
+}
+
+@media(max-width:720px){
+  .thin-icon-button{
+    width:30px!important;
+    min-width:30px!important;
+    height:30px!important;
+    min-height:30px!important;
+  }
+  .thin-action-icon{width:14px!important;height:14px!important;stroke-width:1.35!important}
+}
+</style>
+
 </head>
 <body>
 <div class="shell">
@@ -4272,7 +4356,7 @@ dialog[open]::backdrop{animation:ramsBackdropIn 190ms ease-out both}
               <label>Nota prenotazione</label>
               <input id="speakerInlineBookingNote" placeholder="Facoltativo" />
             </div>
-            <button type="button" class="btn btn-primary" id="confirmSpeakerInlineBooking" title="Conferma prenotazione" aria-label="Conferma prenotazione">✓</button>
+            <button type="button" class="btn btn-primary thin-icon-button" id="confirmSpeakerInlineBooking" title="Conferma prenotazione" aria-label="Conferma prenotazione"><svg class="thin-action-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6.7 12.4 3.3 3.3 7.3-7.3"/></svg></button>
           </div>
         </div>
 
@@ -5635,7 +5719,7 @@ function renderSpeakers(filter=''){
         ${s.note?`<div class="liked-speaker-note">${esc(s.note)}</div>`:''}
       </div>
       <div class="speaker-actions liked-speaker-actions">
-        <button class="btn btn-soft liked-book-btn" title="Prenota oratore" aria-label="Prenota oratore" onclick="openSpeakerBooking('${s.id}')">＋</button>
+        <button class="btn btn-soft liked-book-btn thin-icon-button" title="Prenota oratore" aria-label="Prenota oratore" onclick="openSpeakerBooking('${s.id}')"><svg class="thin-action-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5.2" y="6.5" width="13.6" height="12" rx="2"/><path d="M8.3 4.8v3.1M15.7 4.8v3.1M5.4 9.8h13.2M12 12.2v4.2M9.9 14.3h4.2"/></svg></button>
         <button class="iconbtn" title="Modifica" onclick="editSpeaker('${s.id}')">✎</button>
         <button class="iconbtn" title="Elimina" onclick="deleteSpeaker('${s.id}')">✕</button>
       </div>
@@ -6841,7 +6925,7 @@ migrateTasks();migrateSectionData();migrateReportHistory();renderPrompts();rende
         <div class="clean-row-main"><div class="clean-title-line"><div class="clean-title">${esc(t.type)}</div><span class="clean-tag">${effort(t.hours)}</span></div>
         <div class="clean-meta"><span>${esc(fmt(t.date))}</span><span>${esc(label)}</span>${t.location?`<span>${esc(t.location)}</span>`:''}</div>
         <div class="clean-submeta">Prev. ${Number(t.hours).toLocaleString('it-IT')} h · Eff. <span data-actual-id="${t.id}">${durationText(actualTotalMs(t))}</span>${running?` · <span data-live-id="${t.id}">● ${durationText(currentTimerMs(t),true)}</span>`:''}</div></div>
-        <button class="clean-primary-action" title="${running?'Ferma timer':'Avvia timer'}" aria-label="${running?'Ferma timer':'Avvia timer'}" onclick="${running?'stopTimer':'startTimer'}('${t.id}')">${running?'■':'▶'}</button>
+        <button class="clean-primary-action thin-icon-button" title="${running?'Ferma timer':'Avvia timer'}" aria-label="${running?'Ferma timer':'Avvia timer'}" onclick="${running?'stopTimer':'startTimer'}('${t.id}')">${running?`<svg class="thin-action-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="7.5" y="7.5" width="9" height="9" rx="1"/></svg>`:`<svg class="thin-action-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 6.8 17 12l-8.5 5.2Z"/></svg>`}</button>
         ${menuHtml([menuBtn('Dettagli tempo',`openTimeDialog('${t.id}')`),menuBtn('Completa',`completeTask('${t.id}')`),menuBtn('Prompt GPT',`openTaskPrompt('${t.id}')`),menuBtn('Elimina',`deleteTask('${t.id}')`,'danger')])}
       </div>`;
     }).join(''):'<div class="empty">Nessuna parte trovata.</div>';
@@ -6892,7 +6976,7 @@ migrateTasks();migrateSectionData();migrateReportHistory();renderPrompts();rende
     $('serviceList').innerHTML=shown.length?shown.map(e=>{
       const mins=Number(e.durationMinutes||0), has=mins>0;
       return `<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(e.person)}</div><div class="clean-meta"><span>${esc(fmt(e.date))}</span>${e.time?`<span>${esc(e.time)}</span>`:''}</div></div>
-      <details class="service-time-details ${has?'has-time':''}"><summary title="${has?'Tempo registrato':'Registra tempo'}" aria-label="${has?'Tempo registrato':'Registra tempo'}">${has?esc(serviceDurationLabel(mins)):'◷'}</summary><div class="service-time-pop"><div><label>Ore</label><input id="serviceRowHours_${e.id}" type="number" min="0" max="24" step="1" inputmode="numeric" value="${Math.floor(mins/60)||''}" placeholder="0"></div><div><label>Min</label><input id="serviceRowMinutes_${e.id}" type="number" min="0" max="59" step="1" inputmode="numeric" value="${mins%60||''}" placeholder="0"></div><button class="small" onclick="saveServiceTime('${e.id}')">Salva</button></div></details>
+      <details class="service-time-details ${has?'has-time':''}"><summary class="${has?'':'thin-icon-button'}" title="${has?'Tempo registrato':'Registra tempo'}" aria-label="${has?'Tempo registrato':'Registra tempo'}">${has?esc(serviceDurationLabel(mins)):`<svg class="thin-action-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7.2"/><path d="M12 8.2v4.1l2.9 1.8"/></svg>`}</summary><div class="service-time-pop"><div><label>Ore</label><input id="serviceRowHours_${e.id}" type="number" min="0" max="24" step="1" inputmode="numeric" value="${Math.floor(mins/60)||''}" placeholder="0"></div><div><label>Min</label><input id="serviceRowMinutes_${e.id}" type="number" min="0" max="59" step="1" inputmode="numeric" value="${mins%60||''}" placeholder="0"></div><button class="small" onclick="saveServiceTime('${e.id}')">Salva</button></div></details>
       ${menuHtml([menuBtn('Modifica appuntamento',`editServiceEntry('${e.id}');document.getElementById('serviceFormCard').classList.add('is-open');document.getElementById('serviceFormCard').scrollIntoView({behavior:'smooth',block:'start'})`),menuBtn('Elimina',`deleteServiceEntry('${e.id}')`,'danger')])}</div>`;
     }).join(''):'<div class="empty">Nessun appuntamento in questo mese.</div>';
   };
@@ -6948,7 +7032,7 @@ migrateTasks();migrateSectionData();migrateReportHistory();renderPrompts();rende
 
     $('speakerBookedList').innerHTML=booked.length?booked.map(s=>`<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(s.name)}</div><div class="clean-meta">${s.congregation?`<span>${esc(s.congregation)}</span>`:''}${s.bookedDate?`<span>${esc(fmt(s.bookedDate))}</span>`:''}</div>${(s.bookingNote||s.note)?`<div class="clean-submeta">${esc(s.bookingNote||s.note)}</div>`:''}</div><button class="clean-primary-action" onclick="openSpeakerVisit('${s.id}')">È venuto</button>${menuHtml([menuBtn('Annulla prenotazione',`cancelSpeakerBookingEntry('${s.id}')`),menuBtn('Modifica',`editSpeaker('${s.id}')`)])}</div>`).join(''):'<div class="empty">Nessun oratore prenotato.</div>';
 
-    $('speakerCallbackList').innerHTML=liked.length?liked.map(s=>{const last=speakerLastVisit(s);return `<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(s.name)}</div><div class="clean-meta">${s.congregation?`<span>${esc(s.congregation)}</span>`:''}<span>${last?'Ultima '+esc(fmt(last)):'Mai registrato'}</span>${s.expiryDate?`<span>Scad. ${esc(fmt(s.expiryDate))}</span>`:''}</div>${s.note?`<div class="clean-submeta">${esc(s.note)}</div>`:''}</div><button class="clean-primary-action" title="Prenota oratore" aria-label="Prenota oratore" onclick="openSpeakerBooking('${s.id}')">＋</button>${menuHtml([menuBtn('Modifica',`editSpeaker('${s.id}')`),menuBtn('Elimina',`deleteSpeaker('${s.id}')`,'danger')])}</div>`}).join(''):'<div class="empty">Nessun oratore gradito ancora registrato.</div>';
+    $('speakerCallbackList').innerHTML=liked.length?liked.map(s=>{const last=speakerLastVisit(s);return `<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(s.name)}</div><div class="clean-meta">${s.congregation?`<span>${esc(s.congregation)}</span>`:''}<span>${last?'Ultima '+esc(fmt(last)):'Mai registrato'}</span>${s.expiryDate?`<span>Scad. ${esc(fmt(s.expiryDate))}</span>`:''}</div>${s.note?`<div class="clean-submeta">${esc(s.note)}</div>`:''}</div><button class="clean-primary-action thin-icon-button" title="Prenota oratore" aria-label="Prenota oratore" onclick="openSpeakerBooking('${s.id}')"><svg class="thin-action-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5.2" y="6.5" width="13.6" height="12" rx="2"/><path d="M8.3 4.8v3.1M15.7 4.8v3.1M5.4 9.8h13.2M12 12.2v4.2M9.9 14.3h4.2"/></svg></button>${menuHtml([menuBtn('Modifica',`editSpeaker('${s.id}')`),menuBtn('Elimina',`deleteSpeaker('${s.id}')`,'danger')])}</div>`}).join(''):'<div class="empty">Nessun oratore gradito ancora registrato.</div>';
 
     $('speakerArchiveList').innerHTML=archived.length?archived.map(s=>{const last=speakerLastVisit(s);return `<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(s.name)}</div><div class="clean-meta">${s.congregation?`<span>${esc(s.congregation)}</span>`:''}${last?`<span>Ultima ${esc(fmt(last))}</span>`:''}</div>${s.note?`<div class="clean-submeta">${esc(s.note)}</div>`:''}</div><span class="clean-tag">Non chiamare</span>${menuHtml([menuBtn('Sposta tra graditi',`restoreSpeaker('${s.id}')`),menuBtn('Modifica',`editSpeaker('${s.id}')`),menuBtn('Elimina',`deleteSpeaker('${s.id}')`,'danger')])}</div>`}).join(''):'<div class="empty">Nessun oratore in “Non chiamare più”.</div>';
     renderCongregationSpeakers(qv);
