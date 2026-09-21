@@ -3838,6 +3838,98 @@ dialog[open]::backdrop{animation:ramsBackdropIn 190ms ease-out both}
 })();
 </script>
 
+
+<style id="rams-v21-symbol-actions">
+/* V21: azioni con simboli per start, tempo servizio e prenotazione */
+.clean-primary-action{
+  min-width:38px!important;
+  text-align:center!important;
+  font-size:18px!important;
+  line-height:1!important;
+  padding-left:0!important;
+  padding-right:0!important;
+}
+.service-time-details summary{
+  min-width:40px!important;
+  text-align:center!important;
+  font-size:18px!important;
+  line-height:1!important;
+}
+.service-time-details.has-time summary{
+  font-size:12px!important;
+  line-height:1.2!important;
+  padding-left:8px!important;
+  padding-right:8px!important;
+}
+#confirmSpeakerInlineBooking,
+.liked-book-btn{
+  min-width:40px!important;
+  text-align:center!important;
+  padding-left:0!important;
+  padding-right:0!important;
+  font-size:18px!important;
+  line-height:1!important;
+}
+@media(max-width:720px){
+  .clean-primary-action{min-width:36px!important;font-size:17px!important}
+  .service-time-details summary{min-width:36px!important;font-size:17px!important}
+}
+</style>
+
+
+<style id="rams-v22-native-three-dot-menu">
+/* V22 — il menu ••• usa lo stesso select nativo del filtro GDP */
+.native-row-menu{
+  position:relative!important;
+  display:inline-grid!important;
+  place-items:center!important;
+  width:36px!important;
+  height:36px!important;
+  min-width:36px!important;
+  border:1px solid #c9cac3!important;
+  border-radius:999px!important;
+  background:#fbfbf7!important;
+  color:#4f514b!important;
+  overflow:hidden!important;
+  vertical-align:middle!important;
+}
+.native-row-menu>span{
+  position:absolute!important;
+  inset:0!important;
+  display:grid!important;
+  place-items:center!important;
+  pointer-events:none!important;
+  font-size:18px!important;
+  line-height:1!important;
+  letter-spacing:.04em!important;
+  color:#4f514b!important;
+}
+.native-row-menu>select{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:999px!important;
+  opacity:0!important;
+  cursor:pointer!important;
+  -webkit-appearance:menulist-button!important;
+  appearance:auto!important;
+}
+.native-row-menu:active{
+  background:#ecece6!important;
+  border-color:#b8bab4!important;
+  transform:scale(.97)!important;
+}
+/* I vecchi menu custom non vengono più usati */
+.row-menu,.row-menu-pop{display:none!important}
+@media(max-width:720px){
+  .native-row-menu{width:36px!important;height:36px!important;min-width:36px!important}
+}
+</style>
+
 </head>
 <body>
 <div class="shell">
@@ -4180,7 +4272,7 @@ dialog[open]::backdrop{animation:ramsBackdropIn 190ms ease-out both}
               <label>Nota prenotazione</label>
               <input id="speakerInlineBookingNote" placeholder="Facoltativo" />
             </div>
-            <button type="button" class="btn btn-primary" id="confirmSpeakerInlineBooking">Prenota</button>
+            <button type="button" class="btn btn-primary" id="confirmSpeakerInlineBooking" title="Conferma prenotazione" aria-label="Conferma prenotazione">✓</button>
           </div>
         </div>
 
@@ -5543,7 +5635,7 @@ function renderSpeakers(filter=''){
         ${s.note?`<div class="liked-speaker-note">${esc(s.note)}</div>`:''}
       </div>
       <div class="speaker-actions liked-speaker-actions">
-        <button class="btn btn-soft liked-book-btn" onclick="openSpeakerBooking('${s.id}')">Prenota</button>
+        <button class="btn btn-soft liked-book-btn" title="Prenota oratore" aria-label="Prenota oratore" onclick="openSpeakerBooking('${s.id}')">＋</button>
         <button class="iconbtn" title="Modifica" onclick="editSpeaker('${s.id}')">✎</button>
         <button class="iconbtn" title="Elimina" onclick="deleteSpeaker('${s.id}')">✕</button>
       </div>
@@ -6649,11 +6741,18 @@ migrateTasks();migrateSectionData();migrateReportHistory();renderPrompts();rende
   const qa=(s,r=document)=>Array.from(r.querySelectorAll(s));
 
   function menuHtml(items){
-    return `<details class="row-menu"><summary aria-label="Altre azioni">•••</summary><div class="row-menu-pop">${items.join('')}</div></details>`;
+    return `<label class="native-row-menu" aria-label="Altre azioni"><span aria-hidden="true">•••</span><select aria-label="Altre azioni" onchange="runNativeRowMenu(this)"><option value="" selected disabled hidden></option>${items.join('')}</select></label>`;
   }
   function menuBtn(label,action,cls=''){
-    return `<button type="button" class="${cls}" onclick="${action}">${label}</button>`;
+    return `<option value="${encodeURIComponent(action)}">${esc(label)}</option>`;
   }
+  window.runNativeRowMenu=function(select){
+    const encoded=select.value;
+    if(!encoded)return;
+    select.selectedIndex=0;
+    try{ window.eval(decodeURIComponent(encoded)); }
+    catch(err){ console.error(err); toast('Azione non disponibile'); }
+  };
 
   /* ---------- DOM: form a scomparsa ---------- */
   function setupForm(sectionId,cardId,formId,focusId){
@@ -6742,7 +6841,7 @@ migrateTasks();migrateSectionData();migrateReportHistory();renderPrompts();rende
         <div class="clean-row-main"><div class="clean-title-line"><div class="clean-title">${esc(t.type)}</div><span class="clean-tag">${effort(t.hours)}</span></div>
         <div class="clean-meta"><span>${esc(fmt(t.date))}</span><span>${esc(label)}</span>${t.location?`<span>${esc(t.location)}</span>`:''}</div>
         <div class="clean-submeta">Prev. ${Number(t.hours).toLocaleString('it-IT')} h · Eff. <span data-actual-id="${t.id}">${durationText(actualTotalMs(t))}</span>${running?` · <span data-live-id="${t.id}">● ${durationText(currentTimerMs(t),true)}</span>`:''}</div></div>
-        <button class="clean-primary-action" onclick="${running?'stopTimer':'startTimer'}('${t.id}')">${running?'Stop':'Start'}</button>
+        <button class="clean-primary-action" title="${running?'Ferma timer':'Avvia timer'}" aria-label="${running?'Ferma timer':'Avvia timer'}" onclick="${running?'stopTimer':'startTimer'}('${t.id}')">${running?'■':'▶'}</button>
         ${menuHtml([menuBtn('Dettagli tempo',`openTimeDialog('${t.id}')`),menuBtn('Completa',`completeTask('${t.id}')`),menuBtn('Prompt GPT',`openTaskPrompt('${t.id}')`),menuBtn('Elimina',`deleteTask('${t.id}')`,'danger')])}
       </div>`;
     }).join(''):'<div class="empty">Nessuna parte trovata.</div>';
@@ -6793,7 +6892,7 @@ migrateTasks();migrateSectionData();migrateReportHistory();renderPrompts();rende
     $('serviceList').innerHTML=shown.length?shown.map(e=>{
       const mins=Number(e.durationMinutes||0), has=mins>0;
       return `<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(e.person)}</div><div class="clean-meta"><span>${esc(fmt(e.date))}</span>${e.time?`<span>${esc(e.time)}</span>`:''}</div></div>
-      <details class="service-time-details ${has?'has-time':''}"><summary>${has?esc(serviceDurationLabel(mins)):'+ tempo'}</summary><div class="service-time-pop"><div><label>Ore</label><input id="serviceRowHours_${e.id}" type="number" min="0" max="24" step="1" inputmode="numeric" value="${Math.floor(mins/60)||''}" placeholder="0"></div><div><label>Min</label><input id="serviceRowMinutes_${e.id}" type="number" min="0" max="59" step="1" inputmode="numeric" value="${mins%60||''}" placeholder="0"></div><button class="small" onclick="saveServiceTime('${e.id}')">Salva</button></div></details>
+      <details class="service-time-details ${has?'has-time':''}"><summary title="${has?'Tempo registrato':'Registra tempo'}" aria-label="${has?'Tempo registrato':'Registra tempo'}">${has?esc(serviceDurationLabel(mins)):'◷'}</summary><div class="service-time-pop"><div><label>Ore</label><input id="serviceRowHours_${e.id}" type="number" min="0" max="24" step="1" inputmode="numeric" value="${Math.floor(mins/60)||''}" placeholder="0"></div><div><label>Min</label><input id="serviceRowMinutes_${e.id}" type="number" min="0" max="59" step="1" inputmode="numeric" value="${mins%60||''}" placeholder="0"></div><button class="small" onclick="saveServiceTime('${e.id}')">Salva</button></div></details>
       ${menuHtml([menuBtn('Modifica appuntamento',`editServiceEntry('${e.id}');document.getElementById('serviceFormCard').classList.add('is-open');document.getElementById('serviceFormCard').scrollIntoView({behavior:'smooth',block:'start'})`),menuBtn('Elimina',`deleteServiceEntry('${e.id}')`,'danger')])}</div>`;
     }).join(''):'<div class="empty">Nessun appuntamento in questo mese.</div>';
   };
@@ -6849,7 +6948,7 @@ migrateTasks();migrateSectionData();migrateReportHistory();renderPrompts();rende
 
     $('speakerBookedList').innerHTML=booked.length?booked.map(s=>`<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(s.name)}</div><div class="clean-meta">${s.congregation?`<span>${esc(s.congregation)}</span>`:''}${s.bookedDate?`<span>${esc(fmt(s.bookedDate))}</span>`:''}</div>${(s.bookingNote||s.note)?`<div class="clean-submeta">${esc(s.bookingNote||s.note)}</div>`:''}</div><button class="clean-primary-action" onclick="openSpeakerVisit('${s.id}')">È venuto</button>${menuHtml([menuBtn('Annulla prenotazione',`cancelSpeakerBookingEntry('${s.id}')`),menuBtn('Modifica',`editSpeaker('${s.id}')`)])}</div>`).join(''):'<div class="empty">Nessun oratore prenotato.</div>';
 
-    $('speakerCallbackList').innerHTML=liked.length?liked.map(s=>{const last=speakerLastVisit(s);return `<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(s.name)}</div><div class="clean-meta">${s.congregation?`<span>${esc(s.congregation)}</span>`:''}<span>${last?'Ultima '+esc(fmt(last)):'Mai registrato'}</span>${s.expiryDate?`<span>Scad. ${esc(fmt(s.expiryDate))}</span>`:''}</div>${s.note?`<div class="clean-submeta">${esc(s.note)}</div>`:''}</div><button class="clean-primary-action" onclick="openSpeakerBooking('${s.id}')">Prenota</button>${menuHtml([menuBtn('Modifica',`editSpeaker('${s.id}')`),menuBtn('Elimina',`deleteSpeaker('${s.id}')`,'danger')])}</div>`}).join(''):'<div class="empty">Nessun oratore gradito ancora registrato.</div>';
+    $('speakerCallbackList').innerHTML=liked.length?liked.map(s=>{const last=speakerLastVisit(s);return `<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(s.name)}</div><div class="clean-meta">${s.congregation?`<span>${esc(s.congregation)}</span>`:''}<span>${last?'Ultima '+esc(fmt(last)):'Mai registrato'}</span>${s.expiryDate?`<span>Scad. ${esc(fmt(s.expiryDate))}</span>`:''}</div>${s.note?`<div class="clean-submeta">${esc(s.note)}</div>`:''}</div><button class="clean-primary-action" title="Prenota oratore" aria-label="Prenota oratore" onclick="openSpeakerBooking('${s.id}')">＋</button>${menuHtml([menuBtn('Modifica',`editSpeaker('${s.id}')`),menuBtn('Elimina',`deleteSpeaker('${s.id}')`,'danger')])}</div>`}).join(''):'<div class="empty">Nessun oratore gradito ancora registrato.</div>';
 
     $('speakerArchiveList').innerHTML=archived.length?archived.map(s=>{const last=speakerLastVisit(s);return `<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(s.name)}</div><div class="clean-meta">${s.congregation?`<span>${esc(s.congregation)}</span>`:''}${last?`<span>Ultima ${esc(fmt(last))}</span>`:''}</div>${s.note?`<div class="clean-submeta">${esc(s.note)}</div>`:''}</div><span class="clean-tag">Non chiamare</span>${menuHtml([menuBtn('Sposta tra graditi',`restoreSpeaker('${s.id}')`),menuBtn('Modifica',`editSpeaker('${s.id}')`),menuBtn('Elimina',`deleteSpeaker('${s.id}')`,'danger')])}</div>`}).join(''):'<div class="empty">Nessun oratore in “Non chiamare più”.</div>';
     renderCongregationSpeakers(qv);

@@ -1,3 +1,3 @@
-JW TIZI — Dieter Rams V20
+JW TIZI — Dieter Rams V22
 
-Questa versione rifinisce tutti i menu a tre punti: compatti, morbidi, con apertura vicina al pulsante e animazione più naturale, nello stesso stile percepito del menu di ordinamento GDP.
+I menu a tre punti ora usano un vero select nativo, lo stesso tipo di controllo utilizzato dal filtro di ordinamento degli Oratori graditi. Su iPhone il popup viene quindi disegnato e animato direttamente da iOS; cambiano soltanto le opzioni disponibili.
