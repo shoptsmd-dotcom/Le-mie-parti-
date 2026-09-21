@@ -4014,6 +4014,49 @@ dialog[open]::backdrop{animation:ramsBackdropIn 190ms ease-out both}
 }
 </style>
 
+
+<style id="rams-v24-menu-and-done-fix">
+/* V24 — nessuna riga vuota nei menu nativi e spunta blu per Fatto */
+.native-row-menu>select option{
+  color:initial;
+}
+.activity-done-icon{
+  width:32px!important;
+  min-width:32px!important;
+  height:32px!important;
+  min-height:32px!important;
+  padding:0!important;
+  border:1px solid #b9cce8!important;
+  background:transparent!important;
+  color:#0a64d8!important;
+  display:grid!important;
+  place-items:center!important;
+}
+.activity-done-icon .thin-action-icon{
+  width:16px!important;
+  height:16px!important;
+  fill:none!important;
+  stroke:#0a64d8!important;
+  stroke-width:1.7!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+}
+.activity-done-icon:hover,
+.activity-done-icon:focus{
+  background:#eef4fd!important;
+  border-color:#8eb0df!important;
+}
+@media(max-width:720px){
+  .activity-done-icon{
+    width:30px!important;
+    min-width:30px!important;
+    height:30px!important;
+    min-height:30px!important;
+  }
+  .activity-done-icon .thin-action-icon{width:15px!important;height:15px!important}
+}
+</style>
+
 </head>
 <body>
 <div class="shell">
@@ -6825,15 +6868,15 @@ migrateTasks();migrateSectionData();migrateReportHistory();renderPrompts();rende
   const qa=(s,r=document)=>Array.from(r.querySelectorAll(s));
 
   function menuHtml(items){
-    return `<label class="native-row-menu" aria-label="Altre azioni"><span aria-hidden="true">•••</span><select aria-label="Altre azioni" onchange="runNativeRowMenu(this)"><option value="" selected disabled hidden></option>${items.join('')}</select></label>`;
+    return `<label class="native-row-menu" aria-label="Altre azioni"><span aria-hidden="true">•••</span><select aria-label="Altre azioni" onpointerdown="this.selectedIndex=-1" onfocus="this.selectedIndex=-1" onchange="runNativeRowMenu(this)">${items.join('')}</select></label>`;
   }
   function menuBtn(label,action,cls=''){
     return `<option value="${encodeURIComponent(action)}">${esc(label)}</option>`;
   }
   window.runNativeRowMenu=function(select){
     const encoded=select.value;
-    if(!encoded)return;
-    select.selectedIndex=0;
+    if(!encoded){select.selectedIndex=-1;return;}
+    select.selectedIndex=-1;
     try{ window.eval(decodeURIComponent(encoded)); }
     catch(err){ console.error(err); toast('Azione non disponibile'); }
   };
@@ -6951,8 +6994,8 @@ migrateTasks();migrateSectionData();migrateReportHistory();renderPrompts();rende
     $('activityOpenCount').textContent=valid.filter(a=>!a.completedAt&&a.status!=='waiting').length;
     $('activityWaitingCount').textContent=valid.filter(a=>!a.completedAt&&a.status==='waiting').length;
     const next=open[0]; $('activityNextDue').textContent=next?fmt(next.dueDate):'—';
-    $('activityList').innerHTML=open.length?open.map(a=>{const [,label]=activityStatus(a);return `<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(a.title)}</div><div class="clean-meta"><span>${esc(fmt(a.dueDate))}</span><span>${esc(label)}</span>${a.person?`<span>Con ${esc(a.person)}</span>`:''}</div></div><button class="clean-primary-action" onclick="completeActivity('${a.id}')">Fatto</button>${menuHtml([menuBtn('Metti in attesa',`openDelegateActivity('${a.id}')`),menuBtn('Elimina',`deleteActivity('${a.id}')`,'danger')])}</div>`}).join(''):'<div class="empty">Nessuna attività da fare.</div>';
-    $('activityWaitingList').innerHTML=waiting.length?waiting.map(a=>{const [,label]=activityStatus(a);return `<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(a.title)}</div><div class="clean-meta"><span>${esc(fmt(a.dueDate))}</span><span>${esc(label)}</span>${a.delegatedTo?`<span>${esc(a.delegatedTo)}</span>`:''}</div>${a.delegateNote?`<div class="clean-submeta">${esc(a.delegateNote)}</div>`:''}</div><button class="clean-primary-action" onclick="completeActivity('${a.id}')">Fatto</button>${menuHtml([menuBtn('Riprendi',`resumeActivity('${a.id}')`),menuBtn('Elimina',`deleteActivity('${a.id}')`,'danger')])}</div>`}).join(''):'<div class="empty">Nessuna attività in attesa.</div>';
+    $('activityList').innerHTML=open.length?open.map(a=>{const [,label]=activityStatus(a);return `<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(a.title)}</div><div class="clean-meta"><span>${esc(fmt(a.dueDate))}</span><span>${esc(label)}</span>${a.person?`<span>Con ${esc(a.person)}</span>`:''}</div></div><button class="clean-primary-action activity-done-icon" title="Segna come completata" aria-label="Segna come completata" onclick="completeActivity('${a.id}')"><svg class="thin-action-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6.8 12.4 3.2 3.2 7.2-7.2"/></svg></button>${menuHtml([menuBtn('Metti in attesa',`openDelegateActivity('${a.id}')`),menuBtn('Elimina',`deleteActivity('${a.id}')`,'danger')])}</div>`}).join(''):'<div class="empty">Nessuna attività da fare.</div>';
+    $('activityWaitingList').innerHTML=waiting.length?waiting.map(a=>{const [,label]=activityStatus(a);return `<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(a.title)}</div><div class="clean-meta"><span>${esc(fmt(a.dueDate))}</span><span>${esc(label)}</span>${a.delegatedTo?`<span>${esc(a.delegatedTo)}</span>`:''}</div>${a.delegateNote?`<div class="clean-submeta">${esc(a.delegateNote)}</div>`:''}</div><button class="clean-primary-action activity-done-icon" title="Segna come completata" aria-label="Segna come completata" onclick="completeActivity('${a.id}')"><svg class="thin-action-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6.8 12.4 3.2 3.2 7.2-7.2"/></svg></button>${menuHtml([menuBtn('Riprendi',`resumeActivity('${a.id}')`),menuBtn('Elimina',`deleteActivity('${a.id}')`,'danger')])}</div>`}).join(''):'<div class="empty">Nessuna attività in attesa.</div>';
     renderCompletedActivities(qv);
   };
   renderCompletedActivities=function(filter=''){

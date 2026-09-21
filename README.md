@@ -1,3 +1,3 @@
-JW TIZI — Dieter Rams V23
+JW TIZI — Dieter Rams V24
 
-Rifinitura delle azioni operative con icone lineari sottili: play/stop nelle Parti, orologio nel Servizio, calendario+ per prenotare gli oratori e spunta fine per confermare.
+Rimossa la riga vuota da tutti i menu nativi a tre punti. I pulsanti Fatto nelle attività sono ora piccole spunte lineari blu.
