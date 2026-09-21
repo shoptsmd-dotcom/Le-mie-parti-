@@ -2242,7 +2242,6 @@ button,input,select,textarea{font:inherit;color:inherit}
 }
 </style>
 
-\n<style id="dieter-rams-v2-cleanup">\n/* ==========================================================\n   JW TIZI — RAMS V2\n   Uniforma tutte le viste e neutralizza le tracce dei temi\n   precedenti. Un solo sistema: griglia, linee, contrasto,\n   un piccolo accento giallo.\n   ========================================================== */\n:root{\n  --r-bg:#f3f3ee;\n  --r-paper:#fbfbf7;\n  --r-white:#ffffff;\n  --r-ink:#12120f;\n  --r-muted:#6e706a;\n  --r-line:#c9cac3;\n  --r-line-strong:#9c9e97;\n  --r-yellow:#f2c800;\n  --r-red:#a63b2c;\n  --r-green:#3f6c50;\n  --r-amber:#8b641c;\n}\nhtml,body{background:var(--r-bg)!important}\nbody{\n  color:var(--r-ink)!important;\n  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif!important;\n  font-size:14px!important;\n  line-height:1.4!important;\n}\nbody:before,body:after{display:none!important}\n\n/* Layout: l'archivio dei prompt passa al pulsante ◇, quindi nessuna colonna vuota */\n.shell{\n  max-width:1120px!important;\n  display:block!important;\n  padding:22px!important;\n  margin:0 auto!important;\n}\n.main{width:100%!important}\n.rightbar{display:none!important}\n\n/* Testata */\n.topbar{\n  display:grid!important;\n  grid-template-columns:auto minmax(180px,1fr) auto auto auto auto!important;\n  gap:8px!important;\n  align-items:center!important;\n  min-height:58px!important;\n  padding:0 0 14px!important;\n  margin:0 0 14px!important;\n  border:0!important;\n  border-bottom:1px solid var(--r-ink)!important;\n  background:transparent!important;\n  box-shadow:none!important;\n}\n.brand-mark{\n  margin-right:16px!important;\n  color:var(--r-ink)!important;\n  font-size:25px!important;\n  line-height:1!important;\n  font-weight:700!important;\n  letter-spacing:-.045em!important;\n}\n.search{\n  min-height:38px!important;\n  padding:0 11px!important;\n  border:1px solid var(--r-line)!important;\n  border-radius:0!important;\n  background:var(--r-paper)!important;\n  box-shadow:none!important;\n}\n.search input{font-size:13px!important;background:transparent!important}\n.topbar .btn,.topbar .iconbtn,.topbar .quiet-prompt-btn{\n  min-height:38px!important;\n  height:38px!important;\n  border:1px solid var(--r-line)!important;\n  border-radius:0!important;\n  background:transparent!important;\n  color:var(--r-ink)!important;\n  box-shadow:none!important;\n  font-size:11px!important;\n}\n.topbar .quiet-prompt-btn,.topbar .iconbtn{width:38px!important;min-width:38px!important;padding:0!important}\n.topbar .btn:hover,.topbar .iconbtn:hover,.topbar .quiet-prompt-btn:hover{background:#e9e9e3!important}\n\n/* Navigazione */\n.section-switch{\n  display:flex!important;\n  width:100%!important;\n  margin:0 0 28px!important;\n  padding:0!important;\n  gap:0!important;\n  border:0!important;\n  border-bottom:1px solid var(--r-line)!important;\n  border-radius:0!important;\n  background:transparent!important;\n  box-shadow:none!important;\n}\n.section-switch button{\n  min-width:96px!important;\n  padding:10px 16px 11px!important;\n  border:0!important;\n  border-bottom:3px solid transparent!important;\n  border-radius:0!important;\n  background:transparent!important;\n  color:var(--r-muted)!important;\n  box-shadow:none!important;\n  font-size:13px!important;\n  font-weight:500!important;\n}\n.section-switch button:before{display:none!important}\n.section-switch button.active{\n  color:var(--r-ink)!important;\n  border-bottom-color:var(--r-ink)!important;\n  background:transparent!important;\n  box-shadow:none!important;\n  font-weight:700!important;\n}\n\n/* Titoli di pagina: tutti identici */\n.hero,.dashboard-hero,.activity-hero,.gdp-hero,.routine-hero{\n  margin:0 0 22px!important;\n  padding:0!important;\n  border:0!important;\n  border-radius:0!important;\n  background:transparent!important;\n  box-shadow:none!important;\n  color:var(--r-ink)!important;\n}\n.hero:before,.hero:after,.dashboard-hero:before,.dashboard-hero:after,\n.activity-hero:before,.activity-hero:after,.gdp-hero:before,.gdp-hero:after,\n.routine-hero:before,.routine-hero:after{display:none!important}\n.eyebrow,.hero .eyebrow,.dashboard-hero .eyebrow,.activity-hero .eyebrow,.gdp-hero .eyebrow,.routine-hero .eyebrow{\n  margin:0 0 6px!important;\n  color:var(--r-muted)!important;\n  font-size:10px!important;\n  line-height:1.2!important;\n  font-weight:700!important;\n  letter-spacing:.16em!important;\n  text-transform:uppercase!important;\n}\n.hero h2,.dashboard-hero h2,.activity-hero h2,.gdp-hero h2,.routine-hero h2{\n  margin:0!important;\n  color:var(--r-ink)!important;\n  font-size:29px!important;\n  line-height:1.04!important;\n  font-weight:500!important;\n  letter-spacing:-.035em!important;\n}\n\n/* Pannelli */\n.card,.dashboard-card,.speaker-booking-panel{\n  margin-bottom:18px!important;\n  border:1px solid var(--r-line)!important;\n  border-radius:0!important;\n  background:var(--r-paper)!important;\n  box-shadow:none!important;\n  overflow:hidden!important;\n}\n.card-head,.tasks-head,.completed-head{\n  padding:17px 18px 13px!important;\n  border:0!important;\n}\n.card-head h3,.tasks-head h3,.completed-head h3,.dash-head h3{\n  margin:0!important;\n  color:var(--r-ink)!important;\n  font-size:15px!important;\n  line-height:1.2!important;\n  font-weight:700!important;\n  letter-spacing:0!important;\n}\n.card-head p,.tasks-head .muted,.completed-head .muted,.dash-sub{\n  margin-top:4px!important;\n  color:var(--r-muted)!important;\n  font-size:11px!important;\n  line-height:1.4!important;\n}\n.add-wrap{padding:13px 18px 18px!important}\n\n/* Form */\n.add-form,.activity-form,.gdp-form,.routine-form,.report-add-grid{gap:10px!important}\n.field{gap:5px!important}\n.field label{\n  color:var(--r-muted)!important;\n  font-size:10px!important;\n  font-weight:700!important;\n  letter-spacing:.07em!important;\n  text-transform:uppercase!important;\n}\n.field input,.field select,.field textarea{\n  min-height:40px!important;\n  padding:9px 10px!important;\n  border:1px solid var(--r-line-strong)!important;\n  border-radius:0!important;\n  background:var(--r-white)!important;\n  color:var(--r-ink)!important;\n  box-shadow:none!important;\n  font-size:14px!important;\n}\n.field textarea{min-height:110px!important}\n.field input:focus,.field select:focus,.field textarea:focus{\n  outline:0!important;\n  border-color:var(--r-ink)!important;\n  box-shadow:inset 0 -3px 0 var(--r-yellow)!important;\n}\n\n/* Pulsanti */\n.btn,.small,.mini-btn{\n  border:1px solid var(--r-line-strong)!important;\n  border-radius:0!important;\n  background:transparent!important;\n  color:var(--r-ink)!important;\n  box-shadow:none!important;\n  font-size:12px!important;\n  font-weight:600!important;\n}\n.btn{min-height:40px!important;padding:9px 12px!important}\n.btn:hover,.small:hover,.mini-btn:hover{background:#e9e9e3!important}\n.btn-primary{border-color:var(--r-ink)!important;background:var(--r-ink)!important;color:#fff!important}\n.btn-primary:hover{background:#2a2a26!important}\n.btn-soft{background:#ecece6!important}\n.btn-ghost{border-color:transparent!important;color:var(--r-muted)!important;background:transparent!important}\n.btn-danger,.btn-stop{background:#f6efec!important;color:var(--r-red)!important;border-color:#d7aaa2!important}\n.btn-start{background:#eef4ef!important;color:var(--r-green)!important;border-color:#a9c0b0!important}\n.iconbtn{border-radius:0!important;box-shadow:none!important}\n\n/* Dashboard */\n.dashboard-grid{\n  display:grid!important;\n  grid-template-columns:repeat(2,minmax(0,1fr))!important;\n  gap:10px!important;\n  margin-bottom:20px!important;\n}\n.dashboard-card{\n  min-height:128px!important;\n  padding:16px 17px!important;\n  position:relative!important;\n}\n.dashboard-card.wide{grid-column:1/-1!important}\n.dashboard-card:before,.dashboard-card:after{display:none!important}\n.dash-head{margin:0 0 10px!important}\n.dash-head .dash-ico{\n  width:27px!important;height:27px!important;\n  display:grid!important;place-items:center!important;\n  border:1px solid var(--r-line-strong)!important;\n  border-radius:50%!important;\n  background:transparent!important;\n  color:var(--r-ink)!important;\n  font-size:11px!important;\n}\n.dash-big{color:var(--r-ink)!important;font-size:27px!important;font-weight:400!important;letter-spacing:-.04em!important}\n.dash-list{display:grid!important;gap:0!important;margin-top:5px!important}\n.dash-row{\n  display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;\n  gap:10px!important;align-items:center!important;\n  padding:9px 0!important;\n  border:0!important;border-top:1px solid var(--r-line)!important;border-radius:0!important;\n  background:transparent!important;box-shadow:none!important;\n}\n.dash-row strong{font-size:12px!important;font-weight:600!important}\n.dash-row small{font-size:10px!important;color:var(--r-muted)!important}\n.dash-date{font-size:10px!important;color:var(--r-ink)!important;font-weight:700!important}\n.dash-date.urgent{color:var(--r-amber)!important}.dash-date.overdue{color:var(--r-red)!important}\n.dash-empty{\n  padding:11px 0!important;\n  border:0!important;border-top:1px solid var(--r-line)!important;border-radius:0!important;\n  background:transparent!important;color:var(--r-muted)!important;text-align:left!important;font-size:11px!important;\n}\n.dash-stats{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:0!important;margin-top:10px!important;border-top:1px solid var(--r-line)!important}\n.dash-stat{padding:9px 9px 0 0!important;border:0!important;border-right:1px solid var(--r-line)!important;border-radius:0!important;background:transparent!important}\n.dash-stat:nth-child(2),.dash-stat:nth-child(3){padding-left:9px!important}\n.dash-stat:last-child{border-right:0!important}\n.dash-stat span{font-size:9px!important;letter-spacing:.07em!important;text-transform:uppercase!important;color:var(--r-muted)!important}\n.dash-stat strong{font-size:15px!important;font-weight:500!important;color:var(--r-ink)!important}\n.quick-actions{\n  display:grid!important;\n  grid-template-columns:repeat(4,minmax(0,1fr))!important;\n  gap:7px!important;\n  margin-top:11px!important;\n}\n.quick-actions .btn{min-height:46px!important;text-align:left!important}\n#dashImportBackup{box-shadow:inset 0 -3px 0 var(--r-yellow)!important}\n\n/* Testate con contatori */\n.tasks-head,.completed-head{display:flex!important;align-items:flex-start!important;justify-content:space-between!important;gap:14px!important}\n.summary{display:flex!important;gap:5px!important;flex-wrap:wrap!important;justify-content:flex-end!important}\n.pill,.badge,.days,.callback-tag,.never-tag,.archive-tag,.booked-tag,.waiting-tag,.activity-done-tag,.completed-badge,.routine-date{\n  display:inline-flex!important;align-items:center!important;gap:5px!important;\n  min-height:0!important;width:auto!important;min-width:0!important;max-width:none!important;\n  padding:4px 6px!important;\n  border:1px solid var(--r-line)!important;border-radius:0!important;\n  background:transparent!important;color:var(--r-muted)!important;box-shadow:none!important;\n  font-size:10px!important;line-height:1.2!important;font-weight:600!important;white-space:nowrap!important;\n}\n.pill strong{display:inline!important;margin:0!important;color:var(--r-ink)!important;font-size:11px!important;line-height:1!important}\n.b-xs,.b-s,.b-m,.b-l,.b-xl{background:transparent!important}\n.b-xs{color:#315d72!important}.b-s{color:var(--r-green)!important}.b-m,.b-l{color:var(--r-amber)!important}.b-xl{color:var(--r-red)!important}\n\n/* Liste: Parti / Attività / GDP */\n.tasks,.completed-list,.activity-list,.gdp-list,.routine-list{padding:0 18px 18px!important}\n.task,.completed-task,.activity-item,.activity-completed,.activity-waiting,.speaker-item,.speaker-booked,.speaker-archive{\n  position:relative!important;\n  margin:0!important;\n  padding:12px 3px!important;\n  border:0!important;border-top:1px solid var(--r-line)!important;border-left:0!important;border-radius:0!important;\n  background:transparent!important;box-shadow:none!important;\n}\n.task:before,.completed-task:before,.activity-item:before,.activity-completed:before,.activity-waiting:before,\n.speaker-item:before,.speaker-booked:before,.speaker-archive:before{display:none!important}\n.task.running{background:#f0f3ed!important}\n.task.overdue,.activity-item.overdue{box-shadow:inset 3px 0 0 var(--r-red)!important}\n.task.soon,.activity-item.soon{box-shadow:inset 3px 0 0 var(--r-yellow)!important}\n.completed-task,.activity-completed{box-shadow:inset 3px 0 0 var(--r-green)!important}\n.activity-waiting{box-shadow:inset 3px 0 0 var(--r-amber)!important}\n.task-icon,.activity-icon,.speaker-icon{\n  width:31px!important;height:31px!important;\n  border:1px solid var(--r-line-strong)!important;border-radius:50%!important;\n  background:transparent!important;color:var(--r-ink)!important;box-shadow:none!important;font-size:12px!important;\n}\n.task-title,.activity-title,.speaker-name,.routine-name{color:var(--r-ink)!important;font-size:14px!important;line-height:1.25!important;font-weight:650!important}\n.muted,.completed-meta,.waiting-meta,.speaker-sub,.speaker-cong,.speaker-last,.activity-person,.routine-text{color:var(--r-muted)!important;font-size:11px!important;line-height:1.35!important}\n.datebox{font-size:11px!important}.datebox strong{font-size:12px!important}\n.timebox,.timer-panel{border:1px solid var(--r-line)!important;border-radius:0!important;background:#f6f6f1!important;box-shadow:none!important}\n.actual-time{color:var(--r-ink)!important;font-size:12px!important}.timer-live{font-size:10px!important;color:var(--r-green)!important}\n.actions,.activity-actions,.speaker-actions,.routine-actions{gap:4px!important}\n.actions .iconbtn,.activity-actions .iconbtn,.speaker-actions .iconbtn,.routine-actions .iconbtn{\n  width:34px!important;height:34px!important;min-width:34px!important;\n  border:1px solid var(--r-line)!important;border-radius:0!important;background:transparent!important;\n}\n\n/* GDP */\n.speaker-booking-panel{margin:0 18px 14px!important;padding:14px!important}\n.speaker-booking-panel-head{padding:0 0 12px!important;border-bottom:1px solid var(--r-line)!important}\n.speaker-booking-panel-head strong{color:var(--r-ink)!important;font-size:14px!important}\n.speaker-booking-panel-head small{color:var(--r-muted)!important}\n.speaker-booking-fields{gap:9px!important;padding-top:12px!important}\n.speaker-selected{background:#f8f4dc!important;box-shadow:inset 4px 0 0 var(--r-yellow)!important}\n.speaker-selected:before{display:none!important}\n.visit-summary{display:grid!important;grid-template-columns:1fr 1fr!important;gap:0!important;border:1px solid var(--r-line)!important}\n.visit-card{padding:11px!important;border:0!important;border-right:1px solid var(--r-line)!important;border-radius:0!important;background:transparent!important}\n.visit-card:last-child{border-right:0!important}\n.visit-card span{color:var(--r-muted)!important;font-size:10px!important}.visit-card strong{color:var(--r-ink)!important;font-weight:600!important}\n\n/* Routine: rimuove le ultime tracce colorate della vecchia versione */\n.routine-list{padding-top:0!important}\n.routine-item{\n  position:relative!important;\n  margin:0!important;\n  padding:13px 3px!important;\n  border:0!important;border-top:1px solid var(--r-line)!important;border-radius:0!important;\n  background:transparent!important;box-shadow:none!important;\n}\n.routine-item:before{display:none!important}\n.routine-row{gap:12px!important}\n.routine-text{margin-top:5px!important;white-space:pre-wrap!important}\n.routine-meta{margin-top:8px!important;gap:5px!important}\n.routine-date{color:var(--r-muted)!important}\n.routine-item.overdue .routine-date{color:var(--r-red)!important;border-color:#d7aaa2!important}\n.routine-item.soon .routine-date{color:var(--r-amber)!important;border-bottom:3px solid var(--r-yellow)!important}\n\n/* Archivio prompt */\n.mobile-prompt-dialog,.modal{\n  border:1px solid var(--r-ink)!important;border-radius:0!important;\n  background:var(--r-paper)!important;box-shadow:0 18px 50px rgba(0,0,0,.16)!important;\n}\n.modal::backdrop,.mobile-prompt-dialog::backdrop{background:rgba(18,18,15,.32)!important;backdrop-filter:none!important}\n.modal-head,.mobile-prompt-head,.mobile-prompt-footer{background:var(--r-paper)!important;border-color:var(--r-line)!important}\n.modal-head{padding:15px 17px!important}.modal-body{padding:17px!important}.modal-actions{padding:0 17px 17px!important;gap:7px!important}\n.mobile-prompt-shell{background:var(--r-paper)!important}.mobile-prompt-body{padding:13px!important}\n.mobile-prompt-search{padding:8px 9px!important;border:1px solid var(--r-line-strong)!important;border-radius:0!important;background:#fff!important}\n.mobile-prompt-footer{justify-content:space-between!important;gap:8px!important}\n.prompt-card{\n  margin:0!important;padding:12px 0!important;\n  border:0!important;border-top:1px solid var(--r-line)!important;border-radius:0!important;\n  background:transparent!important;box-shadow:none!important;\n}\n.prompt-name{color:var(--r-ink)!important;font-size:13px!important;font-weight:700!important}\n.prompt-text{color:var(--r-muted)!important;font-size:11px!important;line-height:1.45!important}\n.prompt-actions{gap:5px!important;margin-top:8px!important}\n.empty{padding:22px 0!important;color:var(--r-muted)!important;text-align:left!important}\n\n/* Timer + report */\n.timer-display{color:var(--r-ink)!important;font-size:34px!important;font-weight:400!important;letter-spacing:-.03em!important}\n.manual-row{gap:8px!important}.session-list{gap:0!important}\n.session,.compare-card,.report-kpi,.month-card,.type-row,.report-entry{\n  border:1px solid var(--r-line)!important;border-radius:0!important;background:var(--r-white)!important;box-shadow:none!important;\n}\n.session{border-bottom:0!important}.session:last-child{border-bottom:1px solid var(--r-line)!important}\n.compare{gap:7px!important}.compare-card{padding:10px!important}\n.compare-card span,.report-kpi span,.type-meta{font-size:10px!important;color:var(--r-muted)!important}.compare-card strong{font-size:15px!important;font-weight:600!important}\n.report-toolbar{gap:10px!important}.report-summary{gap:7px!important}.report-kpi{padding:13px!important}.report-kpi strong{color:var(--r-ink)!important;font-size:22px!important;font-weight:500!important}\n.report-section{border-color:var(--r-line)!important}.month-grid{gap:7px!important}.month-card{padding:10px!important}.month-value,.type-hours{color:var(--r-ink)!important;font-size:13px!important;font-weight:650!important}\n.bar-track{height:4px!important;border-radius:0!important;background:#deded8!important}.bar-fill{border-radius:0!important;background:var(--r-ink)!important}\n.type-list{gap:6px!important}.type-row{padding:10px!important}.type-rank{background:var(--r-yellow)!important;color:var(--r-ink)!important}\n.report-note{border:1px solid var(--r-line)!important;border-radius:0!important;background:#f2f0e5!important;color:#55564f!important}\n.report-empty{padding:20px!important;border:1px solid var(--r-line)!important;border-radius:0!important;background:transparent!important;text-align:left!important}\n.report-editor{border-color:var(--r-line)!important}\n\n/* Toast */\n.toast{\n  right:18px!important;bottom:18px!important;\n  padding:9px 12px!important;border:1px solid #000!important;border-radius:0!important;\n  background:var(--r-ink)!important;color:#fff!important;box-shadow:none!important;font-size:12px!important;\n}\n\n/* Telefoni / tablet */\n@media(max-width:900px){\n  .shell{padding:12px!important}\n  .topbar{\n    grid-template-columns:auto 1fr auto auto auto!important;\n    gap:5px!important;\n    min-height:50px!important;\n    padding-bottom:10px!important;\n    margin-bottom:8px!important;\n  }\n  .brand-mark{font-size:23px!important;margin-right:4px!important}\n  .topbar .search{grid-column:1/-1!important;grid-row:2!important;margin-top:5px!important}\n  body.home-mode .topbar .search{display:none!important}\n  .topbar #reportBtn{display:none!important}\n  .topbar #importBackupBtn{\n    display:inline-flex!important;align-items:center!important;justify-content:center!important;\n    width:38px!important;min-width:38px!important;padding:0!important;font-size:0!important;\n  }\n  .topbar #importBackupBtn:before{content:"↥";font-size:17px!important}\n  .topbar #exportBtn,.topbar .quiet-prompt-btn{display:grid!important;place-items:center!important}\n  .section-switch{overflow-x:auto!important;margin-bottom:22px!important}\n  .section-switch button{flex:1 0 auto!important;min-width:72px!important;padding:9px 10px 10px!important;font-size:12px!important}\n  .hero h2,.dashboard-hero h2,.activity-hero h2,.gdp-hero h2,.routine-hero h2{font-size:26px!important}\n\n  /* Home: elenco calmo, come l'anteprima scelta */\n  .dashboard-grid{display:block!important;border-top:1px solid var(--r-ink)!important;margin-bottom:20px!important}\n  .dashboard-card,.dashboard-card.wide{\n    min-height:0!important;margin:0!important;padding:15px 3px!important;\n    border:0!important;border-bottom:1px solid var(--r-line)!important;border-radius:0!important;background:transparent!important;\n  }\n  .dash-head{margin-bottom:6px!important}\n  .dash-head h3{font-size:10px!important;color:var(--r-muted)!important;text-transform:uppercase!important;letter-spacing:.08em!important}\n  .dash-sub{display:none!important}\n  .dash-head .dash-ico{width:24px!important;height:24px!important;font-size:10px!important}\n  .dash-big{font-size:24px!important}\n  .dash-stats{margin-top:7px!important}.dash-stat strong{font-size:14px!important}\n  .quick-actions{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important}\n  .quick-actions .btn{min-height:45px!important;font-size:11px!important}\n\n  .add-form,.activity-form,.gdp-form,.routine-form,.report-add-grid{grid-template-columns:1fr!important}\n  .add-form .btn,.activity-form .btn,.gdp-form .btn,.routine-form .btn,.report-add-grid .btn{grid-column:auto!important;width:100%!important}\n  .tasks-head,.completed-head{display:block!important}\n  .summary{justify-content:flex-start!important;margin-top:9px!important}\n  .tasks,.completed-list,.activity-list,.gdp-list,.routine-list{padding-left:13px!important;padding-right:13px!important}\n  .task,.completed-task,.activity-item,.activity-completed,.activity-waiting,.speaker-item,.speaker-booked,.speaker-archive{\n    grid-template-columns:32px minmax(0,1fr) auto!important;gap:8px!important;padding:11px 2px!important;\n  }\n  .task .location,.task .datebox,.task .estimate,.task .timebox,\n  .completed-task .location,.completed-task .datebox,.completed-task .completed-meta,\n  .activity-item .activity-person,.activity-item .datebox,.activity-waiting .activity-person,.activity-waiting .datebox,\n  .speaker-item .speaker-cong,.speaker-item .speaker-last,.speaker-booked .speaker-cong,.speaker-booked .speaker-last,\n  .speaker-archive .speaker-cong,.speaker-archive .speaker-last{grid-column:2/-1!important}\n  .routine-row{grid-template-columns:1fr!important}.routine-actions{justify-self:end!important}\n  .speaker-booking-panel{margin-left:13px!important;margin-right:13px!important}\n  .speaker-booking-fields{grid-template-columns:1fr!important}.speaker-booking-fields .btn{width:100%!important}\n  .report-summary,.month-grid,.compare{grid-template-columns:1fr!important}\n  .report-entry{grid-template-columns:1fr!important}.report-entry-actions{grid-column:auto!important}\n}\n\n@media(max-width:560px){\n  body{font-size:13px!important}\n  .shell{padding:9px!important}\n  .topbar{grid-template-columns:auto 1fr auto auto auto!important}\n  .brand-mark{font-size:22px!important}\n  .topbar #importBackupBtn,.topbar #exportBtn,.topbar .quiet-prompt-btn{width:35px!important;min-width:35px!important;height:35px!important;min-height:35px!important}\n  .section-switch button{min-width:68px!important;font-size:11px!important;padding-left:8px!important;padding-right:8px!important}\n  .card-head,.tasks-head,.completed-head{padding:14px 13px 10px!important}\n  .add-wrap{padding:11px 13px 13px!important}\n  .quick-actions{grid-template-columns:1fr 1fr!important}\n  .visit-summary{grid-template-columns:1fr!important}.visit-card{border-right:0!important;border-bottom:1px solid var(--r-line)!important}.visit-card:last-child{border-bottom:0!important}\n  .modal-actions{flex-wrap:wrap!important}.modal-actions .btn{flex:1 1 auto!important}\n}\n\n@media(display-mode:standalone){\n  .shell{padding-top:max(10px,env(safe-area-inset-top))!important;padding-bottom:max(12px,env(safe-area-inset-bottom))!important}\n}\n</style>\n\n<style id="rams-v2-specificity-fixes">\n/* Reset di vecchie regole ad alta specificità rimaste dalle versioni precedenti */\n#gdpSection .summary .pill,\n#gdpSection .tasks-head .summary .pill,\n#gdpSection .completed-head > .pill,\n#gdpSection .completed-card .completed-head > .pill,\n#activitiesSection .summary .pill{\n  width:auto!important;min-width:0!important;max-width:none!important;min-height:0!important;height:auto!important;\n  padding:4px 6px!important;display:inline-flex!important;align-items:center!important;justify-content:flex-start!important;gap:5px!important;\n  border:1px solid var(--r-line)!important;border-radius:0!important;background:transparent!important;color:var(--r-muted)!important;\n  font-size:10px!important;line-height:1.2!important;text-align:left!important;white-space:nowrap!important;\n}\n#gdpSection .summary .pill strong,\n#gdpSection .tasks-head .summary .pill strong,\n#gdpSection .completed-head > .pill strong,\n#gdpSection .completed-card .completed-head > .pill strong{\n  display:inline!important;margin:0!important;color:var(--r-ink)!important;font-size:11px!important;font-weight:700!important;line-height:1!important;\n}\n#gdpSection .completed-card .completed-head{\n  display:flex!important;grid-template-columns:none!important;align-items:flex-start!important;justify-content:space-between!important;gap:14px!important;\n}\n#gdpSection .speaker-item,#gdpSection .speaker-booked,#gdpSection .speaker-archive,\n#activitiesSection .activity-item,#activitiesSection .activity-waiting,#activitiesSection .activity-completed{\n  min-height:0!important;padding:12px 3px!important;\n}\n#gdpSection .speaker-name,#activitiesSection .activity-title{\n  font-size:14px!important;line-height:1.25!important;font-weight:650!important;\n}\n#gdpSection .speaker-sub,#gdpSection .speaker-cong,#gdpSection .speaker-last,\n#activitiesSection .activity-person,#activitiesSection .datebox,#activitiesSection .waiting-meta{\n  font-size:11px!important;line-height:1.35!important;color:var(--r-muted)!important;\n}\n#gdpSection .speaker-actions,#activitiesSection .activity-actions{margin-top:0!important;gap:4px!important}\n#gdpSection .speaker-actions .btn{min-height:34px!important;padding:6px 9px!important;font-size:11px!important;border-radius:0!important}\n#gdpSection .speaker-actions .iconbtn,#activitiesSection .activity-actions .iconbtn{\n  width:34px!important;height:34px!important;min-width:34px!important;border-radius:0!important;\n}\n#gdpSection .callback-tag,#gdpSection .never-tag,#gdpSection .archive-tag,#gdpSection .booked-tag{\n  padding:4px 6px!important;border-radius:0!important;background:transparent!important;font-size:10px!important;\n}\n@media(max-width:820px){\n  #gdpSection .gdp-list,#activitiesSection .activity-list{padding-left:13px!important;padding-right:13px!important}\n  #gdpSection .speaker-item,#gdpSection .speaker-booked,#gdpSection .speaker-archive,\n  #activitiesSection .activity-item,#activitiesSection .activity-waiting,#activitiesSection .activity-completed{\n    padding-left:2px!important;padding-right:2px!important;row-gap:5px!important;\n  }\n  #gdpSection .speaker-actions,#activitiesSection .activity-actions{justify-self:end!important;margin-top:0!important}\n  #gdpSection .tasks-head,#gdpSection .completed-head{align-items:flex-start!important}\n}\n@media(max-width:560px){\n  #gdpSection .completed-card .completed-head{display:block!important}\n  #gdpSection .completed-card .completed-head > .pill{margin-top:9px!important}\n}\n</style>\n
 <style id="rams-v3-neutral-patch">
 /* ==========================================================
    JW TIZI — RAMS V3 PATCH
@@ -2945,6 +2944,65 @@ button,input,select,textarea{font:inherit;color:inherit}
 }
 </style>
 
+
+
+<style id="rams-v11-photo-import">
+/* V11 — importazione OCR nella rubrica Oratori graditi */
+.gdp-photo-import{
+  min-height:30px!important;height:30px!important;padding:4px 8px!important;
+  border:1px solid var(--r-line-strong)!important;border-radius:0!important;
+  background:transparent!important;color:var(--r-ink)!important;font-size:10px!important;
+}
+.gdp-photo-import:hover{background:#e9e9e3!important}
+.liked-photo-body{gap:12px!important}
+.liked-photo-picker{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;gap:10px!important;align-items:end!important}
+.liked-photo-status{padding:9px 10px!important;border:1px solid var(--r-line)!important;background:transparent!important;color:var(--r-muted)!important;font-size:11px!important}
+.liked-photo-progress{height:4px!important;background:#deded8!important;overflow:hidden!important}
+.liked-photo-progress>div{width:0;height:100%;background:var(--r-ink)!important;transition:width .15s linear}
+.liked-photo-raw-wrap textarea{font-family:ui-monospace,SFMono-Regular,Menlo,monospace!important;font-size:11px!important;line-height:1.4!important}
+.liked-photo-preview-head{display:flex!important;justify-content:space-between!important;align-items:center!important;gap:10px!important;padding:10px 0 8px!important;border-bottom:1px solid var(--r-line)!important}
+.liked-photo-rows{display:grid!important;gap:0!important}
+.liked-photo-row{display:grid!important;grid-template-columns:minmax(180px,1.4fr) 150px auto!important;gap:8px!important;align-items:end!important;padding:9px 0!important;border-bottom:1px solid var(--r-line)!important}
+.liked-photo-row .field input{min-height:34px!important;height:34px!important;padding:6px 8px!important;font-size:12px!important}
+.liked-photo-row .iconbtn{width:34px!important;height:34px!important;min-width:34px!important;border:1px solid var(--r-line)!important}
+.liked-expiry{display:block!important;margin-top:3px!important;color:var(--r-muted)!important;font-size:10px!important}
+@media(max-width:620px){
+  .liked-photo-picker{grid-template-columns:1fr!important}
+  .liked-photo-picker .btn{width:100%!important}
+  .liked-photo-row{grid-template-columns:minmax(0,1fr) 132px auto!important;gap:5px!important}
+  .liked-photo-row .field label{font-size:8px!important}
+  .gdp-liked-summary{flex-wrap:wrap!important;justify-content:flex-end!important}
+}
+</style>
+
+<style id="rams-v10-topbar-cleanup">
+/* V10: rimuove il testo spurio 
+
+
+ e semplifica la testata */
+#exportBtn,
+#importBackupBtn{
+  display:none!important;
+}
+.topbar{
+  grid-template-columns:auto minmax(180px,1fr) auto auto!important;
+}
+@media(max-width:900px){
+  .topbar{
+    grid-template-columns:auto 1fr auto!important;
+  }
+  .topbar #exportBtn,
+  .topbar #importBackupBtn{
+    display:none!important;
+  }
+}
+@media(max-width:560px){
+  .topbar{
+    grid-template-columns:auto 1fr auto!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="shell">
@@ -3315,6 +3373,7 @@ button,input,select,textarea{font:inherit;color:inherit}
           </div>
           <div class="summary gdp-liked-summary">
             <span class="pill">Graditi <strong id="speakerCallbackCount">0</strong></span>
+            <button type="button" class="small gdp-photo-import" id="importLikedPhotoBtn" title="Importa oratori graditi da una foto">Foto</button>
             <button type="button" class="iconbtn gdp-liked-add" id="addLikedSpeakerBtn" title="Aggiungi direttamente un oratore gradito" aria-label="Aggiungi direttamente un oratore gradito">＋</button>
           </div>
         </div>
@@ -3513,6 +3572,10 @@ button,input,select,textarea{font:inherit;color:inherit}
       <input id="likedSpeakerLastVisit" type="date" />
     </div>
     <div class="field">
+      <label>Scadenza</label>
+      <input id="likedSpeakerExpiry" type="date" />
+    </div>
+    <div class="field">
       <label>Nota</label>
       <input id="likedSpeakerNote" placeholder="Facoltativo" />
     </div>
@@ -3520,6 +3583,47 @@ button,input,select,textarea{font:inherit;color:inherit}
   <div class="modal-actions">
     <button class="btn btn-ghost" id="cancelLikedSpeaker">Annulla</button>
     <button class="btn btn-primary" id="saveLikedSpeaker">Aggiungi ai graditi</button>
+  </div>
+</dialog>
+
+
+<dialog id="likedPhotoDialog" class="modal large">
+  <div class="modal-head">
+    <div>
+      <strong>Importa graditi da foto</strong>
+      <div class="muted">Seleziona o scatta una foto con nomi e scadenze. La foto viene letta nel browser e nulla viene caricato nel backup finché non confermi.</div>
+    </div>
+    <button class="iconbtn" id="closeLikedPhoto">✕</button>
+  </div>
+  <div class="modal-body liked-photo-body">
+    <div class="liked-photo-picker">
+      <div class="field">
+        <label>Foto elenco</label>
+        <input id="likedPhotoFile" type="file" accept="image/*" capture="environment" />
+      </div>
+      <button type="button" class="btn btn-primary" id="scanLikedPhotoBtn">Leggi foto</button>
+    </div>
+    <div id="likedPhotoStatus" class="liked-photo-status">Seleziona una foto per iniziare.</div>
+    <div class="liked-photo-progress" aria-hidden="true"><div id="likedPhotoProgressBar"></div></div>
+    <div class="field liked-photo-raw-wrap" id="likedPhotoRawWrap" hidden>
+      <label>Testo riconosciuto</label>
+      <textarea id="likedPhotoRawText" rows="6" placeholder="Qui apparirà il testo letto dalla foto."></textarea>
+      <button type="button" class="btn btn-soft" id="reparseLikedPhotoBtn">Rileggi questo testo</button>
+    </div>
+    <div id="likedPhotoPreviewWrap" hidden>
+      <div class="liked-photo-preview-head">
+        <div>
+          <strong>Anteprima</strong>
+          <div class="muted">Controlla i nomi e le scadenze prima di importarli.</div>
+        </div>
+        <button type="button" class="small" id="addLikedPhotoRowBtn">＋ Riga</button>
+      </div>
+      <div id="likedPhotoRows" class="liked-photo-rows"></div>
+    </div>
+  </div>
+  <div class="modal-actions">
+    <button class="btn btn-ghost" id="cancelLikedPhoto">Annulla</button>
+    <button class="btn btn-primary" id="confirmLikedPhotoImport" disabled>Importa nei graditi</button>
   </div>
 </dialog>
 
@@ -4500,7 +4604,7 @@ function renderSpeakers(filter=''){
 
   const likedSpeakers=validSpeakers
     .filter(s=>s.status==='recommended' && s.followUp)
-    .filter(s=>!q||[s.name,s.congregation,s.note,s.lastVisitDate].join(' ').toLowerCase().includes(q))
+    .filter(s=>!q||[s.name,s.congregation,s.note,s.lastVisitDate,s.expiryDate].join(' ').toLowerCase().includes(q))
     .sort((a,b)=>{
       const ad=speakerLastVisit(a)||'0000-00-00', bd=speakerLastVisit(b)||'0000-00-00';
       return ad.localeCompare(bd) || a.name.localeCompare(b.name,'it');
@@ -4562,6 +4666,7 @@ function renderSpeakers(filter=''){
       <div class="speaker-cong">${s.congregation?esc(s.congregation):'—'}</div>
       <div class="speaker-last">
         ${last?`Ultima volta: <strong>${esc(fmt(last))}</strong>`:'Ultima volta non registrata'}
+        ${s.expiryDate?`<span class="liked-expiry">Scadenza: <strong>${esc(fmt(s.expiryDate))}</strong></span>`:''}
         <div style="margin-top:6px"><span class="callback-tag">Gradito</span></div>
       </div>
       <div class="speaker-actions">
@@ -4768,6 +4873,7 @@ $('addLikedSpeakerBtn').onclick=()=>{
   $('likedSpeakerName').value='';
   $('likedSpeakerCongregation').value='';
   $('likedSpeakerLastVisit').value='';
+  $('likedSpeakerExpiry').value='';
   $('likedSpeakerNote').value='';
   $('likedSpeakerDialog').showModal();
   setTimeout(()=>$('likedSpeakerName').focus(),0);
@@ -4777,18 +4883,185 @@ $('saveLikedSpeaker').onclick=()=>{
   const name=$('likedSpeakerName').value.trim();
   const congregation=$('likedSpeakerCongregation').value.trim();
   const lastVisitDate=$('likedSpeakerLastVisit').value;
+  const expiryDate=$('likedSpeakerExpiry').value;
   const note=$('likedSpeakerNote').value.trim();
   if(!name){toast('Inserisci il nome dell’oratore');$('likedSpeakerName').focus();return;}
   speakers.push({
     id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),
     name,congregation,note,
     status:'recommended',followUp:true,manualLiked:true,
-    lastVisitDate:lastVisitDate||'',visits:[],bookedDate:'',bookingNote:'',createdAt:Date.now()
+    lastVisitDate:lastVisitDate||'',expiryDate:expiryDate||'',visits:[],bookedDate:'',bookingNote:'',createdAt:Date.now()
   });
   save();
   $('likedSpeakerDialog').close();
   renderSpeakers($('globalSearch').value);
   toast('Oratore aggiunto direttamente ai graditi');
+};
+
+
+let likedPhotoParsedRows=[];
+function normalizeSpeakerNameKey(name){
+  return String(name||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+}
+function isoDateFromParts(day,month,year){
+  let d=Number(day),m=Number(month),y=Number(year);
+  if(y<100)y+=2000;
+  if(!d||!m||m>12||d>31||y<2000||y>2100)return '';
+  return `${String(y).padStart(4,'0')}-${String(m).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+}
+function extractPhotoDate(text){
+  const s=String(text||'');
+  let m=s.match(/\b([0-3]?\d)[\/.\-]([01]?\d)[\/.\-]((?:20)?\d{2})\b/);
+  if(m)return isoDateFromParts(m[1],m[2],m[3]);
+  const months={gen:1,gennaio:1,feb:2,febbraio:2,mar:3,marzo:3,apr:4,aprile:4,mag:5,maggio:5,giu:6,giugno:6,lug:7,luglio:7,ago:8,agosto:8,set:9,settembre:9,ott:10,ottobre:10,nov:11,novembre:11,dic:12,dicembre:12};
+  m=s.toLowerCase().match(/\b([0-3]?\d)\s+(gen(?:naio)?|feb(?:braio)?|mar(?:zo)?|apr(?:ile)?|mag(?:gio)?|giu(?:gno)?|lug(?:lio)?|ago(?:sto)?|set(?:tembre)?|ott(?:obre)?|nov(?:embre)?|dic(?:embre)?)\s+((?:20)?\d{2})\b/i);
+  if(m)return isoDateFromParts(m[1],months[m[2].toLowerCase()],m[3]);
+  return '';
+}
+function stripPhotoDate(text){
+  return String(text||'')
+    .replace(/\b[0-3]?\d[\/.\-][01]?\d[\/.\-](?:20)?\d{2}\b/g,' ')
+    .replace(/\b[0-3]?\d\s+(?:gen(?:naio)?|feb(?:braio)?|mar(?:zo)?|apr(?:ile)?|mag(?:gio)?|giu(?:gno)?|lug(?:lio)?|ago(?:sto)?|set(?:tembre)?|ott(?:obre)?|nov(?:embre)?|dic(?:embre)?)\s+(?:20)?\d{2}\b/gi,' ');
+}
+function cleanPhotoSpeakerName(line){
+  let s=stripPhotoDate(line)
+    .replace(/^\s*\d+\s*[.)\-:]?\s*/,'')
+    .replace(/\b(?:scadenza|scad\.?|data|nome|nominativo|oratore|oratori|elenco)\b\s*[:\-]?/gi,' ')
+    .replace(/[|_;]+/g,' ')
+    .replace(/\s{2,}/g,' ')
+    .trim();
+  s=s.replace(/^[\-–—:,.\s]+|[\-–—:,.\s]+$/g,'').trim();
+  return s;
+}
+function plausibleSpeakerName(name){
+  const s=String(name||'').trim();
+  if(s.length<3 || s.length>80)return false;
+  if(!/[A-Za-zÀ-ÖØ-öø-ÿ]/.test(s))return false;
+  if(/^(nome|nominativo|oratore|oratori|scadenza|data|elenco|graditi)$/i.test(s))return false;
+  const letters=(s.match(/[A-Za-zÀ-ÖØ-öø-ÿ]/g)||[]).length;
+  return letters>=Math.max(3,Math.floor(s.length*.45));
+}
+function parseLikedPhotoText(raw){
+  const lines=String(raw||'').split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
+  const allDates=lines.map(extractPhotoDate).filter(Boolean);
+  const uniqueDates=[...new Set(allDates)];
+  const globalDate=uniqueDates.length===1?uniqueDates[0]:'';
+  const rows=[];
+  for(const line of lines){
+    const date=extractPhotoDate(line);
+    const name=cleanPhotoSpeakerName(line);
+    if(plausibleSpeakerName(name)){
+      rows.push({name,expiryDate:date||''});
+    }else if(date && rows.length && !rows[rows.length-1].expiryDate){
+      rows[rows.length-1].expiryDate=date;
+    }
+  }
+  if(globalDate) rows.forEach(r=>{if(!r.expiryDate)r.expiryDate=globalDate;});
+  const seen=new Set();
+  return rows.filter(r=>{const k=normalizeSpeakerNameKey(r.name);if(!k||seen.has(k))return false;seen.add(k);return true;});
+}
+function renderLikedPhotoRows(){
+  const wrap=$('likedPhotoPreviewWrap'),box=$('likedPhotoRows'),confirmBtn=$('confirmLikedPhotoImport');
+  wrap.hidden=false;
+  if(!likedPhotoParsedRows.length){
+    box.innerHTML='<div class="empty">Nessun nominativo riconosciuto. Puoi correggere il testo sopra oppure aggiungere una riga manualmente.</div>';
+    confirmBtn.disabled=true;
+    return;
+  }
+  box.innerHTML=likedPhotoParsedRows.map((r,i)=>`<div class="liked-photo-row" data-liked-photo-row="${i}">
+    <div class="field"><label>Nome</label><input class="liked-photo-name" data-i="${i}" value="${esc(r.name)}" /></div>
+    <div class="field"><label>Scadenza</label><input class="liked-photo-expiry" data-i="${i}" type="date" value="${esc(r.expiryDate||'')}" /></div>
+    <button type="button" class="iconbtn" title="Rimuovi" onclick="removeLikedPhotoRow(${i})">✕</button>
+  </div>`).join('');
+  box.querySelectorAll('.liked-photo-name').forEach(el=>el.oninput=()=>{likedPhotoParsedRows[Number(el.dataset.i)].name=el.value});
+  box.querySelectorAll('.liked-photo-expiry').forEach(el=>el.oninput=()=>{likedPhotoParsedRows[Number(el.dataset.i)].expiryDate=el.value});
+  confirmBtn.disabled=false;
+  confirmBtn.textContent=`Importa ${likedPhotoParsedRows.length} ${likedPhotoParsedRows.length===1?'oratore':'oratori'}`;
+}
+window.removeLikedPhotoRow=i=>{likedPhotoParsedRows.splice(Number(i),1);renderLikedPhotoRows();};
+function reparseLikedPhotoText(){
+  likedPhotoParsedRows=parseLikedPhotoText($('likedPhotoRawText').value);
+  renderLikedPhotoRows();
+  $('likedPhotoStatus').textContent=likedPhotoParsedRows.length?`Trovati ${likedPhotoParsedRows.length} nominativi. Controlla l’anteprima.`:'Non ho trovato nominativi sicuri: correggi il testo o aggiungi righe.';
+}
+async function ensureTesseractLoaded(){
+  if(window.Tesseract)return window.Tesseract;
+  await new Promise((resolve,reject)=>{
+    const existing=document.querySelector('script[data-jw-tesseract]');
+    if(existing){existing.addEventListener('load',resolve,{once:true});existing.addEventListener('error',reject,{once:true});return;}
+    const s=document.createElement('script');
+    s.src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js';
+    s.async=true;s.dataset.jwTesseract='1';s.onload=resolve;s.onerror=reject;document.head.appendChild(s);
+  });
+  if(!window.Tesseract)throw new Error('OCR non disponibile');
+  return window.Tesseract;
+}
+$('importLikedPhotoBtn').onclick=()=>{
+  likedPhotoParsedRows=[];
+  $('likedPhotoFile').value='';
+  $('likedPhotoRawText').value='';
+  $('likedPhotoRawWrap').hidden=true;
+  $('likedPhotoPreviewWrap').hidden=true;
+  $('likedPhotoRows').innerHTML='';
+  $('likedPhotoProgressBar').style.width='0%';
+  $('likedPhotoStatus').textContent='Seleziona una foto per iniziare.';
+  $('confirmLikedPhotoImport').disabled=true;
+  $('confirmLikedPhotoImport').textContent='Importa nei graditi';
+  $('likedPhotoDialog').showModal();
+};
+$('closeLikedPhoto').onclick=$('cancelLikedPhoto').onclick=()=>$('likedPhotoDialog').close();
+$('likedPhotoFile').onchange=()=>{if($('likedPhotoFile').files&&$('likedPhotoFile').files[0])$('scanLikedPhotoBtn').click();};
+$('scanLikedPhotoBtn').onclick=async()=>{
+  const file=$('likedPhotoFile').files&&$('likedPhotoFile').files[0];
+  if(!file)return toast('Seleziona prima una foto');
+  const btn=$('scanLikedPhotoBtn');btn.disabled=true;
+  $('likedPhotoStatus').textContent='Preparo il riconoscimento del testo…';
+  $('likedPhotoProgressBar').style.width='4%';
+  try{
+    const T=await ensureTesseractLoaded();
+    const result=await T.recognize(file,'ita',{logger:m=>{
+      if(m.status==='recognizing text'){
+        const p=Math.max(5,Math.round((m.progress||0)*100));
+        $('likedPhotoProgressBar').style.width=p+'%';
+        $('likedPhotoStatus').textContent=`Lettura foto… ${p}%`;
+      }else if(m.status){$('likedPhotoStatus').textContent='Lettura foto…';}
+    }});
+    const text=result&&result.data?String(result.data.text||''):'';
+    $('likedPhotoRawText').value=text;
+    $('likedPhotoRawWrap').hidden=false;
+    $('likedPhotoProgressBar').style.width='100%';
+    reparseLikedPhotoText();
+  }catch(err){
+    console.error(err);
+    $('likedPhotoStatus').textContent='Non riesco a leggere la foto. Verifica la connessione oppure trascrivi/incolla il testo nel riquadro.';
+    $('likedPhotoRawWrap').hidden=false;
+    $('likedPhotoProgressBar').style.width='0%';
+  }finally{btn.disabled=false;}
+};
+$('reparseLikedPhotoBtn').onclick=reparseLikedPhotoText;
+$('addLikedPhotoRowBtn').onclick=()=>{likedPhotoParsedRows.push({name:'',expiryDate:''});renderLikedPhotoRows();setTimeout(()=>{const els=$('likedPhotoRows').querySelectorAll('.liked-photo-name');els[els.length-1]?.focus();},0);};
+$('confirmLikedPhotoImport').onclick=()=>{
+  const rows=likedPhotoParsedRows.map(r=>({name:String(r.name||'').trim(),expiryDate:String(r.expiryDate||'').trim()})).filter(r=>r.name);
+  if(!rows.length)return toast('Non ci sono nominativi da importare');
+  let added=0,updated=0;
+  for(const row of rows){
+    const key=normalizeSpeakerNameKey(row.name);
+    let existing=speakers.find(s=>normalizeSpeakerNameKey(s.name)===key);
+    if(existing){
+      existing.status='recommended';existing.followUp=true;existing.manualLiked=true;
+      if(row.expiryDate)existing.expiryDate=row.expiryDate;
+      updated++;
+    }else{
+      speakers.push({
+        id:crypto.randomUUID?crypto.randomUUID():String(Date.now()+Math.random()),
+        name:row.name,congregation:'',note:'',status:'recommended',followUp:true,manualLiked:true,
+        lastVisitDate:'',expiryDate:row.expiryDate||'',visits:[],bookedDate:'',bookingNote:'',createdAt:Date.now()
+      });
+      added++;
+    }
+  }
+  save();renderSpeakers($('globalSearch').value);renderDashboard();$('likedPhotoDialog').close();
+  toast(`Foto importata: ${added} nuovi, ${updated} aggiornati`);
 };
 
 window.cancelSpeakerBookingEntry=id=>{
@@ -4855,8 +5128,15 @@ window.editSpeaker=id=>{
   const name=prompt('Nome oratore:',s.name);if(name===null)return;
   const congregation=prompt('Congregazione:',s.congregation||'');if(congregation===null)return;
   const note=prompt('Nota:',s.note||'');if(note===null)return;
+  let expiry=s.expiryDate||'';
+  if(s.followUp){
+    const expiryInput=prompt('Scadenza (AAAA-MM-GG, facoltativa):',expiry);
+    if(expiryInput===null)return;
+    expiry=expiryInput.trim();
+    if(expiry && !/^\d{4}-\d{2}-\d{2}$/.test(expiry)) return toast('Usa il formato AAAA-MM-GG per la scadenza');
+  }
   if(!name.trim())return toast('Il nome non può essere vuoto');
-  s.name=name.trim();s.congregation=congregation.trim();s.note=note.trim();
+  s.name=name.trim();s.congregation=congregation.trim();s.note=note.trim();s.expiryDate=expiry;
   save();renderSpeakers($('globalSearch').value);toast('Oratore aggiornato');
 };
 
@@ -5414,7 +5694,7 @@ async function importBackupFile(file){
     reportHistory=importedReport;
     activities=importedActivities.map(a=>({...a,completedAt:a.completedAt||null,status:a.status||'open',delegatedTo:a.delegatedTo||'',delegatedAt:a.delegatedAt||'',delegateNote:a.delegateNote||''}));
     serviceEntries=importedService.map(e=>({...e,recordType:'service',person:String(e.person||''),date:String(e.date||''),time:String(e.time||''),durationMinutes:Math.max(0,Number(e.durationMinutes||0)),createdAt:Number(e.createdAt||Date.now()),updatedAt:Number(e.updatedAt||e.createdAt||Date.now())})).filter(e=>e.person.trim()&&e.date);
-    speakers=importedSpeakers.map(s=>({...s,visits:Array.isArray(s.visits)?s.visits:[],status:s.status||'recommended',followUp:!!s.followUp,lastVisitDate:s.lastVisitDate||'',bookedDate:s.bookedDate||'',bookingNote:s.bookingNote||''}));
+    speakers=importedSpeakers.map(s=>({...s,visits:Array.isArray(s.visits)?s.visits:[],status:s.status||'recommended',followUp:!!s.followUp,lastVisitDate:s.lastVisitDate||'',expiryDate:s.expiryDate||'',bookedDate:s.bookedDate||'',bookingNote:s.bookingNote||''}));
     congregationSpeakers=importedCongregationSpeakers.map(s=>({...s,recordType:'localSpeaker',name:String(s.name||''),lastTalkDate:s.lastTalkDate||'',preference:String(s.preference||''),createdAt:Number(s.createdAt||Date.now()),updatedAt:Number(s.updatedAt||s.createdAt||Date.now())})).filter(s=>s.name.trim());
     routines=importedRoutines.map(r=>({...r,recordType:'routine',name:String(r.name||''),text:String(r.text||''),dueDate:r.dueDate||'',createdAt:Number(r.createdAt||Date.now()),updatedAt:Number(r.updatedAt||r.createdAt||Date.now())}));
 

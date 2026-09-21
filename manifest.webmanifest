@@ -1,12 +1,12 @@
 {
   "name": "JW TIZI",
   "short_name": "JW TIZI",
-  "description": "Parti, attività di congregazione, GDP, routine, timer, report e backup personali.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f4f4ef",
   "theme_color": "#f4f4ef",
+  "lang": "it",
   "icons": [
     {
       "src": "icon-192.png",
