@@ -5,7 +5,8 @@ const ASSETS = [
   './manifest.webmanifest',
   './icon-180.png',
   './icon-192.png',
-  './icon-512.png'
+  './icon-512.png',
+  './home-hero-google.jpg'
 ];
 
 self.addEventListener('install', event => {

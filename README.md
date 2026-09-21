@@ -1,3 +1,3 @@
-JW TIZI — V29 Google Calendar
+JW TIZI — Google Calendar V29
 
-Rifiniture: CIAO TIZIANO più grande e in maiuscolo nella Home, routine allineate come le Attività, filtro GDP 'Da più tempo' completamente leggibile, voce Gestisci elenco senza icona e piccoli accenti grafici colorati in stile Google Calendar.
+Correzione viewport iPhone: impedisce lo zoom automatico dei campi, elimina overflow orizzontali dopo il salvataggio e riallinea la pagina alla larghezza del dispositivo senza alterare lo scroll verticale.
