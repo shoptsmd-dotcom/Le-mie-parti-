@@ -1,3 +1,3 @@
-JW TIZI — Dieter Rams Clean V16
+JW TIZI — Dieter Rams V17
 
-Interfaccia semplificata: dashboard essenziale, form a scomparsa, liste compatte uniformi, GDP a schede, Servizio in stile agenda, menu azioni ••• e navigazione inferiore minimale.
+Prompt GPT reso più leggibile e menu ••• trasformato in dropdown ancorato al pulsante, nello stile del selettore GDP.

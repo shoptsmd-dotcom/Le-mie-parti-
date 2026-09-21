@@ -3369,6 +3369,195 @@ body{padding-bottom:74px!important}
 }
 </style>
 
+
+<style id="rams-v17-prompt-menu-fix">
+/* ==========================================================
+   V17 — Prompt GPT leggibile + menu ••• ancorato alla riga
+   ========================================================== */
+
+/* Prompt GPT: contrasto e leggibilità */
+.mobile-prompt-dialog,
+#promptDialog,
+#taskPromptDialog{
+  background:#f7f7f3!important;
+  color:#111!important;
+}
+.mobile-prompt-shell,
+.mobile-prompt-head,
+.mobile-prompt-body,
+.mobile-prompt-footer,
+#promptDialog .modal-head,
+#promptDialog .modal-body,
+#promptDialog .modal-actions,
+#taskPromptDialog .modal-head,
+#taskPromptDialog .modal-body,
+#taskPromptDialog .modal-actions{
+  background:#f7f7f3!important;
+  color:#111!important;
+}
+.mobile-prompt-head strong,
+#promptDialog .modal-head strong,
+#taskPromptDialog .modal-head strong{
+  color:#111!important;
+  font-size:15px!important;
+  font-weight:700!important;
+}
+.mobile-prompt-search{
+  margin-bottom:10px!important;
+  background:#fff!important;
+  border:1px solid #9c9e97!important;
+}
+.mobile-prompt-search input{
+  color:#111!important;
+  font-size:13px!important;
+  line-height:1.35!important;
+}
+#mobilePromptList,
+#promptList{
+  display:block!important;
+  background:#fff!important;
+  border-top:1px solid #c9cac3!important;
+}
+.prompt-card{
+  display:block!important;
+  margin:0!important;
+  padding:13px 10px!important;
+  background:#fff!important;
+  color:#111!important;
+  border:0!important;
+  border-bottom:1px solid #c9cac3!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+.prompt-card .top{
+  display:flex!important;
+  align-items:flex-start!important;
+  gap:10px!important;
+}
+.prompt-card .top>div{
+  min-width:0!important;
+  flex:1 1 auto!important;
+}
+.prompt-name{
+  color:#111!important;
+  font-size:13.5px!important;
+  line-height:1.3!important;
+  font-weight:700!important;
+}
+.prompt-text{
+  display:block!important;
+  margin-top:5px!important;
+  color:#262622!important;
+  font-size:12.5px!important;
+  line-height:1.5!important;
+  font-weight:400!important;
+  white-space:pre-wrap!important;
+  overflow-wrap:anywhere!important;
+  word-break:normal!important;
+  opacity:1!important;
+  max-height:none!important;
+  overflow:visible!important;
+}
+.prompt-actions{
+  display:flex!important;
+  gap:5px!important;
+  margin-top:9px!important;
+}
+.prompt-card .small,
+.prompt-card .iconbtn,
+.mobile-prompt-footer .btn{
+  color:#111!important;
+  border-color:#9c9e97!important;
+  background:#fff!important;
+  opacity:1!important;
+}
+.prompt-card .small{
+  min-height:31px!important;
+  padding:5px 9px!important;
+  font-size:10.5px!important;
+}
+.prompt-card .iconbtn{
+  flex:0 0 31px!important;
+  width:31px!important;
+  height:31px!important;
+}
+#promptDialog textarea,
+#taskPromptDialog textarea{
+  min-height:210px!important;
+  padding:11px!important;
+  background:#fff!important;
+  color:#111!important;
+  border:1px solid #9c9e97!important;
+  font-size:14px!important;
+  line-height:1.55!important;
+  opacity:1!important;
+  -webkit-text-fill-color:#111!important;
+}
+#promptDialog input,
+#taskPromptDialog input{
+  background:#fff!important;
+  color:#111!important;
+  -webkit-text-fill-color:#111!important;
+  opacity:1!important;
+}
+#taskPromptDialog input:disabled{
+  color:#4f504b!important;
+  -webkit-text-fill-color:#4f504b!important;
+  opacity:1!important;
+}
+
+/* Il menu ••• si comporta come un vero dropdown ancorato al pulsante */
+.row-menu{
+  position:relative!important;
+  overflow:visible!important;
+  z-index:20!important;
+}
+.row-menu[open]{z-index:5000!important}
+.row-menu-pop{
+  position:fixed!important;
+  top:var(--row-menu-top,0px)!important;
+  left:var(--row-menu-left,0px)!important;
+  right:auto!important;
+  bottom:auto!important;
+  width:max-content!important;
+  min-width:155px!important;
+  max-width:min(230px,calc(100vw - 16px))!important;
+  padding:4px!important;
+  border:1px solid #9c9e97!important;
+  background:#fbfbf7!important;
+  color:#111!important;
+  box-shadow:0 7px 20px rgba(0,0,0,.13)!important;
+  z-index:9999!important;
+}
+.row-menu-pop button{
+  min-height:35px!important;
+  padding:8px 10px!important;
+  color:#111!important;
+  background:transparent!important;
+  font-size:11px!important;
+  line-height:1.25!important;
+  white-space:nowrap!important;
+}
+.row-menu-pop button:hover,
+.row-menu-pop button:focus{background:#ecece6!important}
+.row-menu-pop .danger{color:#8f3027!important}
+
+/* annulla la vecchia posizione fissa in basso a destra */
+@media(max-width:720px){
+  .row-menu-pop{
+    right:auto!important;
+    bottom:auto!important;
+  }
+  .mobile-prompt-dialog{
+    width:calc(100vw - 18px)!important;
+    max-height:92dvh!important;
+  }
+  .mobile-prompt-body{padding:10px!important}
+  .prompt-card{padding:12px 9px!important}
+  .prompt-text{font-size:12px!important;line-height:1.48!important}
+}
+</style>
+
 </head>
 <body>
 <div class="shell">
@@ -4097,7 +4286,7 @@ body{padding-bottom:74px!important}
 <dialog id="mobilePromptDialog" class="mobile-prompt-dialog">
   <div class="mobile-prompt-shell">
     <div class="mobile-prompt-head">
-      <strong>Archivio</strong>
+      <strong>Prompt GPT</strong>
       <button class="iconbtn" id="closeMobilePrompt">✕</button>
     </div>
     <div class="mobile-prompt-body">
@@ -6411,6 +6600,64 @@ if ('serviceWorker' in navigator && location.protocol !== 'file:') {
     navigator.serviceWorker.register('./service-worker.js').catch(() => {});
   });
 }
+</script>
+
+
+<script id="rams-v17-row-menu-js">
+(function(){
+  function placeRowMenu(details){
+    if(!details || !details.open) return;
+    const summary=details.querySelector(':scope > summary');
+    const pop=details.querySelector(':scope > .row-menu-pop');
+    if(!summary || !pop) return;
+
+    document.querySelectorAll('.row-menu[open]').forEach(function(other){
+      if(other!==details) other.removeAttribute('open');
+    });
+
+    const r=summary.getBoundingClientRect();
+    const margin=8;
+    const gap=4;
+    const width=Math.min(Math.max(pop.offsetWidth||155,155), Math.min(230,window.innerWidth-margin*2));
+    let left=Math.min(window.innerWidth-width-margin, Math.max(margin,r.right-width));
+
+    pop.style.setProperty('--row-menu-left', left+'px');
+    pop.style.setProperty('--row-menu-top', (r.bottom+gap)+'px');
+
+    requestAnimationFrame(function(){
+      const h=pop.getBoundingClientRect().height;
+      let top=r.bottom+gap;
+      if(top+h>window.innerHeight-margin){
+        top=Math.max(margin,r.top-h-gap);
+      }
+      pop.style.setProperty('--row-menu-left', left+'px');
+      pop.style.setProperty('--row-menu-top', top+'px');
+    });
+  }
+
+  document.addEventListener('toggle',function(e){
+    if(e.target && e.target.matches && e.target.matches('.row-menu')) placeRowMenu(e.target);
+  },true);
+
+  document.addEventListener('click',function(e){
+    const action=e.target.closest('.row-menu-pop button');
+    if(action){
+      const d=action.closest('.row-menu');
+      if(d) setTimeout(function(){d.removeAttribute('open')},0);
+      return;
+    }
+    if(!e.target.closest('.row-menu')){
+      document.querySelectorAll('.row-menu[open]').forEach(function(d){d.removeAttribute('open')});
+    }
+  });
+
+  window.addEventListener('resize',function(){
+    document.querySelectorAll('.row-menu[open]').forEach(placeRowMenu);
+  });
+  window.addEventListener('scroll',function(){
+    document.querySelectorAll('.row-menu[open]').forEach(placeRowMenu);
+  },true);
+})();
 </script>
 
 </body>
