@@ -3158,6 +3158,217 @@ button,input,select,textarea{font:inherit;color:inherit}
 body.service-mode .rightbar{display:none!important}
 </style>
 
+
+<style id="rams-v16-clean-ui">
+/* ==========================================================
+   JW TIZI — RAMS CLEAN V16
+   Più gerarchia, meno contenitori, liste dense e coerenti.
+   ========================================================== */
+:root{
+  --clean-blue:#0a64d8;
+  --clean-bg:#f3f3ee;
+  --clean-paper:#fbfbf7;
+  --clean-ink:#12120f;
+  --clean-muted:#73756f;
+  --clean-line:#d1d2cc;
+  --clean-line-strong:#a7a9a2;
+}
+body{padding-bottom:74px!important}
+
+/* Tipografia: tre livelli principali */
+.hero h2,.activity-hero h2,.service-hero h2,.gdp-hero h2,.routine-hero h2,.dashboard-hero h2{
+  font-size:26px!important;line-height:1.05!important;font-weight:500!important;letter-spacing:-.035em!important;
+}
+.clean-title,.task-title,.activity-title,.speaker-name,.routine-name,.service-person{
+  font-size:14px!important;line-height:1.18!important;font-weight:700!important;color:var(--clean-ink)!important;
+}
+.clean-meta,.clean-submeta,.muted,.speaker-sub,.speaker-cong,.speaker-last,.routine-meta,.routine-text,.service-entry-meta{
+  font-size:10.5px!important;line-height:1.35!important;color:var(--clean-muted)!important;
+}
+
+/* Titoli pagina con unico + principale */
+.hero,.activity-hero,.service-hero,.gdp-hero,.routine-hero{
+  position:relative!important;padding-right:46px!important;
+}
+.section-add-btn{
+  position:absolute!important;right:0!important;top:0!important;width:36px!important;height:36px!important;
+  border:0!important;border-radius:0!important;background:var(--clean-blue)!important;color:#fff!important;
+  font-size:23px!important;font-weight:400!important;line-height:1!important;cursor:pointer!important;
+}
+.section-add-btn:hover{filter:brightness(.94)}
+
+/* Form nascosti finché non servono */
+.clean-form-card{display:none!important;margin-bottom:14px!important;border:1px solid var(--clean-line-strong)!important;background:var(--clean-paper)!important}
+.clean-form-card.is-open{display:block!important}
+.clean-form-card .card-head{padding-bottom:6px!important}
+.clean-form-card .card-head h3{font-size:13px!important}
+.clean-form-card .card-head p{font-size:10.5px!important}
+.clean-form-card .add-wrap{padding-top:8px!important}
+
+/* Liste: un contenitore piatto, righe separate */
+.clean-list-card{
+  border:0!important;border-top:1px solid var(--clean-ink)!important;background:transparent!important;box-shadow:none!important;
+  overflow:visible!important;
+}
+.clean-list-card .tasks-head,.clean-list-card .completed-head{
+  padding:11px 2px 8px!important;border:0!important;
+}
+.clean-list-card .tasks,.clean-list-card .completed-list,.clean-list-card .activity-list,.clean-list-card .gdp-list,.clean-list-card .routine-list,.clean-list-card .service-list{
+  padding:0!important;
+}
+.clean-list-card .summary{gap:5px!important}
+.clean-list-card .pill{padding:3px 5px!important;border:0!important;border-left:1px solid var(--clean-line)!important;font-size:9px!important}
+
+/* Riga universale */
+.clean-row{
+  display:grid!important;grid-template-columns:minmax(0,1fr) auto auto!important;align-items:center!important;
+  gap:8px!important;margin:0!important;padding:9px 2px!important;border:0!important;border-bottom:1px solid var(--clean-line)!important;
+  background:transparent!important;box-shadow:none!important;min-height:0!important;
+}
+.clean-row:last-child{border-bottom:0!important}
+.clean-row:before,.clean-row:after{display:none!important}
+.clean-row-main{min-width:0!important}
+.clean-title-line{display:flex!important;align-items:center!important;gap:6px!important;min-width:0!important}
+.clean-title{min-width:0!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important}
+.clean-meta{display:flex!important;gap:4px 9px!important;align-items:center!important;flex-wrap:wrap!important;margin-top:2px!important}
+.clean-meta span{white-space:nowrap!important}
+.clean-submeta{margin-top:2px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+.clean-tag{padding:1px 4px!important;border:1px solid var(--clean-line)!important;font-size:8.5px!important;font-weight:700!important;color:var(--clean-muted)!important;white-space:nowrap!important}
+.clean-primary-action{
+  min-height:29px!important;height:29px!important;padding:4px 8px!important;border:1px solid var(--clean-blue)!important;
+  border-radius:0!important;background:var(--clean-blue)!important;color:#fff!important;font-size:9.5px!important;font-weight:700!important;cursor:pointer!important;white-space:nowrap!important;
+}
+.clean-primary-action.neutral{background:transparent!important;color:var(--clean-ink)!important;border-color:var(--clean-line-strong)!important}
+.clean-primary-action:hover{filter:brightness(.95)}
+
+/* Menu azioni secondarie */
+.row-menu{position:relative!important;justify-self:end!important}
+.row-menu>summary{
+  list-style:none!important;width:30px!important;height:29px!important;display:grid!important;place-items:center!important;
+  border:0!important;background:transparent!important;color:var(--clean-ink)!important;font-size:16px!important;letter-spacing:1px!important;cursor:pointer!important;
+}
+.row-menu>summary::-webkit-details-marker{display:none!important}
+.row-menu-pop{
+  position:absolute!important;right:0!important;top:31px!important;z-index:80!important;min-width:138px!important;
+  display:grid!important;padding:4px!important;border:1px solid var(--clean-line-strong)!important;background:var(--clean-paper)!important;
+  box-shadow:0 8px 22px rgba(0,0,0,.10)!important;
+}
+.row-menu-pop button{
+  width:100%!important;padding:8px 9px!important;border:0!important;background:transparent!important;color:var(--clean-ink)!important;
+  text-align:left!important;font:600 10px/1.2 "Helvetica Neue",Helvetica,Arial,sans-serif!important;cursor:pointer!important;
+}
+.row-menu-pop button:hover{background:#e9e9e3!important}
+.row-menu-pop .danger{color:#8f3027!important}
+
+/* Parti: più dense e identiche alle altre liste */
+#partsSection .clean-row{grid-template-columns:minmax(0,1fr) auto auto!important}
+#partsSection .tasks,#partsSection .completed-list{padding:0!important}
+#partsSection .badge,#partsSection .days{padding:1px 4px!important;font-size:8.5px!important;border:1px solid var(--clean-line)!important;background:transparent!important;color:var(--clean-muted)!important}
+
+/* Attività / Routine */
+#activitiesSection .activity-list,#routineSection .routine-list{padding:0!important}
+.routine-preview{max-width:640px!important}
+
+/* Servizio: agenda, il tempo si apre solo quando serve */
+.service-total-card{
+  margin:0 0 14px!important;padding:12px 2px!important;border:0!important;border-top:1px solid var(--clean-ink)!important;border-bottom:1px solid var(--clean-line)!important;background:transparent!important;
+}
+.service-total-main{align-items:center!important}
+#serviceMonthTotal{font-size:29px!important}
+.service-month-field{width:145px!important}
+.service-total-meta{margin-top:8px!important;padding-top:7px!important}
+.service-time-details{position:relative!important}
+.service-time-details>summary{
+  list-style:none!important;min-width:64px!important;min-height:29px!important;display:grid!important;place-items:center!important;
+  padding:4px 7px!important;border:1px solid var(--clean-line-strong)!important;background:transparent!important;color:var(--clean-ink)!important;
+  font-size:10px!important;font-weight:700!important;cursor:pointer!important;white-space:nowrap!important;
+}
+.service-time-details>summary::-webkit-details-marker{display:none!important}
+.service-time-details:not(.has-time)>summary{border-color:var(--clean-blue)!important;color:var(--clean-blue)!important}
+.service-time-pop{
+  position:absolute!important;right:0!important;top:33px!important;z-index:75!important;width:195px!important;
+  display:grid!important;grid-template-columns:50px 50px auto!important;gap:5px!important;align-items:end!important;
+  padding:8px!important;border:1px solid var(--clean-line-strong)!important;background:var(--clean-paper)!important;box-shadow:0 8px 22px rgba(0,0,0,.10)!important;
+}
+.service-time-pop label{display:block!important;margin-bottom:3px!important;font-size:8px!important;color:var(--clean-muted)!important;text-transform:uppercase!important}
+.service-time-pop input{width:50px!important;height:30px!important;padding:4px!important;border:1px solid var(--clean-line-strong)!important;border-radius:0!important;background:#fff!important}
+.service-time-pop .small{height:30px!important;min-height:30px!important;font-size:9px!important;padding:4px 6px!important}
+
+/* GDP: una rubrica alla volta */
+.gdp-tabs{
+  display:flex!important;gap:0!important;margin:0 0 14px!important;border-bottom:1px solid var(--clean-line)!important;overflow-x:auto!important;
+}
+.gdp-tabs button{
+  flex:0 0 auto!important;padding:8px 11px!important;border:0!important;border-bottom:2px solid transparent!important;background:transparent!important;
+  color:var(--clean-muted)!important;font-size:10px!important;font-weight:600!important;white-space:nowrap!important;cursor:pointer!important;
+}
+.gdp-tabs button.active{color:var(--clean-blue)!important;border-bottom-color:var(--clean-blue)!important}
+.gdp-pane{display:none!important}
+.gdp-pane.gdp-pane-active{display:block!important}
+#gdpSection .speaker-booking-panel{margin:0 0 8px!important;padding:10px!important}
+#gdpSection .liked-speaker-meta{font-size:9.5px!important}
+#gdpSection .gdp-liked-summary{gap:4px!important}
+#gdpSection .gdp-liked-add,#gdpSection .gdp-photo-import{height:28px!important;min-height:28px!important}
+.local-form-wrap{display:none!important}
+.local-form-wrap.is-open{display:block!important}
+.local-speaker-toggle{margin-left:auto!important}
+
+/* Dashboard: quattro informazioni e utilità finali */
+.dashboard-grid.clean-dashboard{
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:0!important;border-top:1px solid var(--clean-ink)!important;margin-bottom:14px!important;
+}
+.clean-dashboard .dashboard-card{
+  min-height:108px!important;margin:0!important;padding:13px 12px!important;border:0!important;border-right:1px solid var(--clean-line)!important;border-bottom:1px solid var(--clean-line)!important;background:transparent!important;
+}
+.clean-dashboard .dashboard-card:nth-child(2n){border-right:0!important}
+.clean-dashboard .dash-head{margin-bottom:5px!important}
+.clean-dashboard .dash-head .dash-ico{display:none!important}
+.clean-dashboard .dash-sub{display:none!important}
+.dashboard-utilities{display:flex!important;gap:6px!important;flex-wrap:wrap!important;margin-top:8px!important;padding-top:10px!important;border-top:1px solid var(--clean-line)!important}
+.dashboard-utilities .btn{min-height:34px!important;height:34px!important;padding:6px 9px!important;font-size:10px!important}
+
+/* Blu solo per navigazione e azioni principali */
+.btn-primary{background:var(--clean-blue)!important;border-color:var(--clean-blue)!important;color:#fff!important}
+
+/* Menu inferiore: solo testo, nessuna pill o icona */
+.section-switch{
+  position:fixed!important;left:0!important;right:0!important;bottom:0!important;transform:none!important;width:100%!important;
+  display:grid!important;grid-template-columns:repeat(6,1fr)!important;gap:0!important;margin:0!important;padding:0 4px max(6px,env(safe-area-inset-bottom))!important;
+  border:0!important;border-top:1px solid var(--clean-line)!important;border-radius:0!important;background:rgba(243,243,238,.97)!important;
+  box-shadow:none!important;backdrop-filter:blur(14px)!important;-webkit-backdrop-filter:blur(14px)!important;
+}
+.section-switch button{
+  min-width:0!important;padding:11px 2px 8px!important;border:0!important;border-radius:0!important;background:transparent!important;
+  color:var(--clean-muted)!important;font-size:10px!important;font-weight:600!important;line-height:1!important;box-shadow:none!important;
+}
+.section-switch button:before{display:none!important}
+.section-switch button.active{color:var(--clean-blue)!important;border:0!important;background:transparent!important;box-shadow:none!important}
+
+/* Prompt GPT resta bianco/nero */
+.mobile-prompt-shell,.mobile-prompt-head,.mobile-prompt-footer,.prompt-card{background:var(--clean-paper)!important}
+.prompt-card{border:0!important;border-bottom:1px solid var(--clean-line)!important;border-radius:0!important;box-shadow:none!important}
+
+@media(max-width:720px){
+  .shell{padding-left:10px!important;padding-right:10px!important}
+  .dashboard-grid.clean-dashboard{grid-template-columns:1fr!important}
+  .clean-dashboard .dashboard-card{border-right:0!important;min-height:0!important;padding:12px 2px!important}
+  .clean-row{grid-template-columns:minmax(0,1fr) auto auto!important;padding:8px 0!important;gap:5px!important}
+  .clean-title{font-size:13px!important}
+  .clean-meta,.clean-submeta{font-size:9.5px!important}
+  .section-switch button{font-size:9px!important;padding-left:0!important;padding-right:0!important}
+  .service-total-main{align-items:flex-start!important}
+  .service-month-field{width:130px!important}
+  #serviceMonthTotal{font-size:27px!important}
+  .gdp-tabs button{padding-left:9px!important;padding-right:9px!important;font-size:9.5px!important}
+  .row-menu-pop,.service-time-pop{position:fixed!important;right:10px!important;left:auto!important;top:auto!important;bottom:58px!important}
+}
+@media(max-width:430px){
+  .section-switch button{font-size:8.3px!important}
+  .clean-primary-action{padding-left:6px!important;padding-right:6px!important;font-size:9px!important}
+  .service-time-details>summary{min-width:58px!important;padding-left:5px!important;padding-right:5px!important;font-size:9px!important}
+}
+</style>
+
 </head>
 <body>
 <div class="shell">
@@ -5949,6 +6160,249 @@ setInterval(()=>{
 },1000);
 
 migrateTasks();migrateSectionData();migrateReportHistory();renderPrompts();renderTypeOptions();updateLocationField();renderScrumLegend();renderTasks();renderActivities();ensureServiceDefaults();renderService();renderSpeakers();renderRoutines();renderDashboard();switchSection('home');
+</script>
+
+
+<script id="rams-v16-clean-js">
+(function(){
+  const BLUE='#0a64d8';
+  const q=(s,r=document)=>r.querySelector(s);
+  const qa=(s,r=document)=>Array.from(r.querySelectorAll(s));
+
+  function menuHtml(items){
+    return `<details class="row-menu"><summary aria-label="Altre azioni">•••</summary><div class="row-menu-pop">${items.join('')}</div></details>`;
+  }
+  function menuBtn(label,action,cls=''){
+    return `<button type="button" class="${cls}" onclick="${action}">${label}</button>`;
+  }
+
+  /* ---------- DOM: form a scomparsa ---------- */
+  function setupForm(sectionId,cardId,formId,focusId){
+    const section=$(sectionId), form=$(formId); if(!section||!form)return;
+    const card=form.closest('.card'); if(!card)return;
+    card.id=cardId; card.classList.add('clean-form-card');
+    const hero=section.querySelector('.hero,.activity-hero,.service-hero,.gdp-hero,.routine-hero');
+    if(hero && !hero.querySelector('.section-add-btn')){
+      const b=document.createElement('button');
+      b.type='button'; b.className='section-add-btn'; b.textContent='＋'; b.title='Aggiungi'; b.setAttribute('aria-label','Aggiungi');
+      b.onclick=()=>toggleForm(cardId,focusId);
+      hero.appendChild(b);
+    }
+    form.addEventListener('submit',()=>setTimeout(()=>card.classList.remove('is-open'),0));
+  }
+  window.toggleForm=(id,focusId)=>{
+    const el=$(id); if(!el)return;
+    const opening=!el.classList.contains('is-open');
+    qa('.clean-form-card.is-open').forEach(x=>{if(x!==el)x.classList.remove('is-open')});
+    el.classList.toggle('is-open',opening);
+    if(opening){setTimeout(()=>{const f=$(focusId); if(f)f.focus(); el.scrollIntoView({behavior:'smooth',block:'start'})},30)}
+  };
+  setupForm('partsSection','partsFormCard','taskForm','taskType');
+  setupForm('activitiesSection','activitiesFormCard','activityForm','activityTitle');
+  setupForm('serviceSection','serviceFormCard','serviceForm','servicePerson');
+  setupForm('gdpSection','gdpFormCard','speakerForm','speakerName');
+  setupForm('routineSection','routineFormCard','routineForm','routineName');
+
+  /* Dashboard: solo 4 blocchi + backup/report */
+  const dashGrid=q('#dashboardSection .dashboard-grid');
+  if(dashGrid){
+    dashGrid.classList.add('clean-dashboard');
+    dashGrid.innerHTML=`
+      <section class="dashboard-card"><div class="dash-head"><div><h3>Prossima parte</h3></div></div><div id="dashNextPart"></div></section>
+      <section class="dashboard-card"><div class="dash-head"><div><h3>Prossima attività</h3></div></div><div id="dashNextActivity"></div></section>
+      <section class="dashboard-card"><div class="dash-head"><div><h3>Servizio del mese</h3></div></div><div class="dash-big" id="dashServiceTotal">0m</div><div class="clean-meta" id="dashServiceMeta"></div></section>
+      <section class="dashboard-card"><div class="dash-head"><div><h3>Prossimo oratore</h3></div></div><div id="dashNextSpeaker"></div></section>
+    `;
+    const util=document.createElement('div');
+    util.className='dashboard-utilities';
+    util.innerHTML=`<button class="btn btn-soft" id="dashImportBackupV16">↥ Carica salvataggio</button><button class="btn btn-soft" id="dashExportBackupV16">⇩ Salva backup</button><button class="btn btn-ghost" id="dashOpenReportV16">▥ Report</button>`;
+    dashGrid.insertAdjacentElement('afterend',util);
+    $('dashImportBackupV16').onclick=()=>$('importBackupFile').click();
+    $('dashExportBackupV16').onclick=()=>$('exportBtn').click();
+    $('dashOpenReportV16').onclick=()=>openAnnualReport();
+  }
+
+  renderDashboard=function(){
+    const active=[...tasks].filter(t=>!t.completedAt).sort((a,b)=>String(a.date).localeCompare(String(b.date)));
+    const nextPart=active.find(t=>daysUntil(t.date)>=0)||active[0];
+    $('dashNextPart').innerHTML=nextPart?`<div class="dash-row"><div><strong>${esc(nextPart.type)}</strong><small>${nextPart.location?esc(nextPart.location):Number(nextPart.hours).toLocaleString('it-IT')+' h previste'}</small></div><div class="dash-date ${dashDateClass(nextPart.date)}">${esc(dashDateLabel(nextPart.date))}</div></div>`:'<div class="dash-empty">Nessuna parte in programma.</div>';
+
+    const validActivities=activities.filter(a=>a&&a.title&&a.dueDate&&!a.completedAt&&a.status!=='waiting').sort((a,b)=>a.dueDate.localeCompare(b.dueDate));
+    const a=validActivities[0];
+    $('dashNextActivity').innerHTML=a?`<div class="dash-row"><div><strong>${esc(a.title)}</strong><small>${a.person?'Con '+esc(a.person):'Da gestire'}</small></div><div class="dash-date ${dashDateClass(a.dueDate)}">${esc(dashDateLabel(a.dueDate))}</div></div>`:'<div class="dash-empty">Nessuna attività aperta.</div>';
+
+    const month=currentMonthISO();
+    const serviceMonth=serviceEntries.filter(e=>String(e.date||'').slice(0,7)===month);
+    const total=serviceMonth.reduce((s,e)=>s+Number(e.durationMinutes||0),0);
+    $('dashServiceTotal').textContent=serviceDurationLabel(total);
+    $('dashServiceMeta').innerHTML=`<span>${serviceMonth.length} appuntamenti</span><span>${serviceMonth.filter(e=>Number(e.durationMinutes||0)>0).length} registrati</span>`;
+
+    const validSpeakers=speakers.filter(s=>s&&s.name&&s.status==='booked'&&s.bookedDate).sort((a,b)=>a.bookedDate.localeCompare(b.bookedDate));
+    const sp=validSpeakers[0];
+    $('dashNextSpeaker').innerHTML=sp?`<div class="dash-row"><div><strong>${esc(sp.name)}</strong><small>${sp.congregation?esc(sp.congregation):'Congregazione non indicata'}</small></div><div class="dash-date ${dashDateClass(sp.bookedDate)}">${esc(fmt(sp.bookedDate))}</div></div>`:'<div class="dash-empty">Nessun oratore prenotato.</div>';
+  };
+
+  /* Applica stile piatto alle card-lista */
+  function markListCards(){
+    ['partsSection','activitiesSection','serviceSection','routineSection'].forEach(id=>{
+      const s=$(id); if(!s)return;
+      qa(':scope > .card',s).forEach(c=>{if(!c.classList.contains('clean-form-card'))c.classList.add('clean-list-card')});
+    });
+  }
+  markListCards();
+
+  /* ---------- Parti ---------- */
+  renderTasks=function(filter=''){
+    tasks.sort((a,b)=>a.date.localeCompare(b.date)||a.createdAt-b.createdAt);
+    const qv=String(filter||'').trim().toLowerCase();
+    const activeTasks=tasks.filter(t=>!t.completedAt);
+    const shown=activeTasks.filter(t=>!qv||[t.type,t.location,t.date,String(t.hours)].join(' ').toLowerCase().includes(qv));
+    $('taskList').innerHTML=shown.length?shown.map(t=>{
+      const [,label]=taskStatus(t), running=!!t.timerStartedAt;
+      return `<div class="clean-row">
+        <div class="clean-row-main"><div class="clean-title-line"><div class="clean-title">${esc(t.type)}</div><span class="clean-tag">${effort(t.hours)}</span></div>
+        <div class="clean-meta"><span>${esc(fmt(t.date))}</span><span>${esc(label)}</span>${t.location?`<span>${esc(t.location)}</span>`:''}</div>
+        <div class="clean-submeta">Prev. ${Number(t.hours).toLocaleString('it-IT')} h · Eff. <span data-actual-id="${t.id}">${durationText(actualTotalMs(t))}</span>${running?` · <span data-live-id="${t.id}">● ${durationText(currentTimerMs(t),true)}</span>`:''}</div></div>
+        <button class="clean-primary-action" onclick="${running?'stopTimer':'startTimer'}('${t.id}')">${running?'Stop':'Start'}</button>
+        ${menuHtml([menuBtn('Dettagli tempo',`openTimeDialog('${t.id}')`),menuBtn('Completa',`completeTask('${t.id}')`),menuBtn('Prompt GPT',`openTaskPrompt('${t.id}')`),menuBtn('Elimina',`deleteTask('${t.id}')`,'danger')])}
+      </div>`;
+    }).join(''):'<div class="empty">Nessuna parte trovata.</div>';
+    $('taskCount').textContent=activeTasks.length;
+    $('totalHours').textContent=activeTasks.reduce((s,t)=>s+Number(t.hours||0),0).toLocaleString('it-IT')+' h';
+    $('actualHours').textContent=durationText(tasks.reduce((s,t)=>s+actualTotalMs(t),0));
+    const n=activeTasks.find(t=>daysUntil(t.date)>=0); $('nextTask').textContent=n?fmt(n.date):'—';
+    renderCompletedTasks(qv);
+  };
+  renderCompletedTasks=function(filter=''){
+    const qv=String(filter||'').trim().toLowerCase();
+    const rows=tasks.filter(t=>t.completedAt).filter(t=>!qv||[t.type,t.location,t.date].join(' ').toLowerCase().includes(qv)).sort((a,b)=>Number(b.completedAt||0)-Number(a.completedAt||0));
+    $('completedCount').textContent=tasks.filter(t=>t.completedAt).length;
+    $('completedList').innerHTML=rows.length?rows.map(t=>`<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(t.type)}</div><div class="clean-meta"><span>${esc(fmt(t.date))}</span>${t.location?`<span>${esc(t.location)}</span>`:''}<span>${durationText(actualTotalMs(t,false))} effettive</span></div></div><span class="clean-tag">Completata</span>${menuHtml([menuBtn('Ripristina',`restoreTask('${t.id}')`),menuBtn('Dettagli tempo',`openTimeDialog('${t.id}')`),menuBtn('Prompt GPT',`openTaskPrompt('${t.id}')`),menuBtn('Elimina',`deleteTask('${t.id}')`,'danger')])}</div>`).join(''):'<div class="empty">Nessuna parte completata.</div>';
+  };
+
+  /* ---------- Attività ---------- */
+  renderActivities=function(filter=''){
+    const qv=String(filter||'').trim().toLowerCase();
+    const valid=activities.filter(a=>a&&a.title&&a.dueDate);
+    const open=valid.filter(a=>!a.completedAt&&a.status!=='waiting').filter(a=>!qv||[a.title,a.person,a.dueDate].join(' ').toLowerCase().includes(qv)).sort((a,b)=>a.dueDate.localeCompare(b.dueDate));
+    const waiting=valid.filter(a=>!a.completedAt&&a.status==='waiting').filter(a=>!qv||[a.title,a.delegatedTo,a.delegateNote,a.dueDate].join(' ').toLowerCase().includes(qv)).sort((a,b)=>a.dueDate.localeCompare(b.dueDate));
+    $('activityOpenCount').textContent=valid.filter(a=>!a.completedAt&&a.status!=='waiting').length;
+    $('activityWaitingCount').textContent=valid.filter(a=>!a.completedAt&&a.status==='waiting').length;
+    const next=open[0]; $('activityNextDue').textContent=next?fmt(next.dueDate):'—';
+    $('activityList').innerHTML=open.length?open.map(a=>{const [,label]=activityStatus(a);return `<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(a.title)}</div><div class="clean-meta"><span>${esc(fmt(a.dueDate))}</span><span>${esc(label)}</span>${a.person?`<span>Con ${esc(a.person)}</span>`:''}</div></div><button class="clean-primary-action" onclick="completeActivity('${a.id}')">Fatto</button>${menuHtml([menuBtn('Metti in attesa',`openDelegateActivity('${a.id}')`),menuBtn('Elimina',`deleteActivity('${a.id}')`,'danger')])}</div>`}).join(''):'<div class="empty">Nessuna attività da fare.</div>';
+    $('activityWaitingList').innerHTML=waiting.length?waiting.map(a=>{const [,label]=activityStatus(a);return `<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(a.title)}</div><div class="clean-meta"><span>${esc(fmt(a.dueDate))}</span><span>${esc(label)}</span>${a.delegatedTo?`<span>${esc(a.delegatedTo)}</span>`:''}</div>${a.delegateNote?`<div class="clean-submeta">${esc(a.delegateNote)}</div>`:''}</div><button class="clean-primary-action" onclick="completeActivity('${a.id}')">Fatto</button>${menuHtml([menuBtn('Riprendi',`resumeActivity('${a.id}')`),menuBtn('Elimina',`deleteActivity('${a.id}')`,'danger')])}</div>`}).join(''):'<div class="empty">Nessuna attività in attesa.</div>';
+    renderCompletedActivities(qv);
+  };
+  renderCompletedActivities=function(filter=''){
+    const qv=String(filter||'').trim().toLowerCase();
+    const rows=activities.filter(a=>a&&a.title&&a.dueDate&&a.completedAt).filter(a=>!qv||[a.title,a.person,a.delegatedTo,a.dueDate].join(' ').toLowerCase().includes(qv)).sort((a,b)=>Number(b.completedAt)-Number(a.completedAt));
+    $('activityCompletedCount').textContent=rows.length;
+    $('activityCompletedList').innerHTML=rows.length?rows.map(a=>`<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(a.title)}</div><div class="clean-meta"><span>Completata ${fmtDateTime(a.completedAt)}</span><span>Scad. ${esc(fmt(a.dueDate))}</span></div></div><span class="clean-tag">Fatto</span>${menuHtml([menuBtn('Ripristina',`restoreActivity('${a.id}')`),menuBtn('Elimina',`deleteActivity('${a.id}')`,'danger')])}</div>`).join(''):'<div class="empty">Nessuna attività completata.</div>';
+  };
+
+  /* ---------- Servizio ---------- */
+  renderService=function(filter=''){
+    ensureServiceDefaults();
+    const month=$('serviceMonth').value||currentMonthISO();
+    const qv=String(filter||'').trim().toLowerCase();
+    const monthEntries=serviceEntries.filter(e=>String(e.date||'').slice(0,7)===month).sort((a,b)=>(a.date+' '+(a.time||'')).localeCompare(b.date+' '+(b.time||'')));
+    const shown=monthEntries.filter(e=>!qv||[e.person,e.date,e.time,serviceDurationLabel(e.durationMinutes)].join(' ').toLowerCase().includes(qv));
+    const total=monthEntries.reduce((s,e)=>s+Number(e.durationMinutes||0),0);
+    $('serviceMonthTotal').textContent=serviceDurationLabel(total);
+    $('serviceAppointmentCount').textContent=monthEntries.length;
+    $('serviceTimedCount').textContent=monthEntries.filter(e=>Number(e.durationMinutes||0)>0).length;
+    $('serviceList').innerHTML=shown.length?shown.map(e=>{
+      const mins=Number(e.durationMinutes||0), has=mins>0;
+      return `<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(e.person)}</div><div class="clean-meta"><span>${esc(fmt(e.date))}</span>${e.time?`<span>${esc(e.time)}</span>`:''}</div></div>
+      <details class="service-time-details ${has?'has-time':''}"><summary>${has?esc(serviceDurationLabel(mins)):'+ tempo'}</summary><div class="service-time-pop"><div><label>Ore</label><input id="serviceRowHours_${e.id}" type="number" min="0" max="24" step="1" inputmode="numeric" value="${Math.floor(mins/60)||''}" placeholder="0"></div><div><label>Min</label><input id="serviceRowMinutes_${e.id}" type="number" min="0" max="59" step="1" inputmode="numeric" value="${mins%60||''}" placeholder="0"></div><button class="small" onclick="saveServiceTime('${e.id}')">Salva</button></div></details>
+      ${menuHtml([menuBtn('Modifica appuntamento',`editServiceEntry('${e.id}');document.getElementById('serviceFormCard').classList.add('is-open');document.getElementById('serviceFormCard').scrollIntoView({behavior:'smooth',block:'start'})`),menuBtn('Elimina',`deleteServiceEntry('${e.id}')`,'danger')])}</div>`;
+    }).join(''):'<div class="empty">Nessun appuntamento in questo mese.</div>';
+  };
+
+  /* ---------- GDP tabs ---------- */
+  const gdp=$('gdpSection');
+  let activeGdpTab=localStorage.getItem('jw_tizi_gdp_tab')||'liked';
+  if(gdp){
+    const hero=q('.gdp-hero',gdp);
+    const cards=qa(':scope > .card',gdp);
+    const formCard=$('gdpFormCard');
+    const paneCards=cards.filter(c=>c!==formCard);
+    const map=['invite','booked','liked','blocked','local'];
+    paneCards.slice(0,5).forEach((c,i)=>{c.dataset.gdpPane=map[i];c.classList.add('gdp-pane','clean-list-card')});
+    const nav=document.createElement('div'); nav.className='gdp-tabs';
+    nav.innerHTML=`<button data-tab="liked">Graditi</button><button data-tab="booked">Prenotati</button><button data-tab="invite">Da invitare</button><button data-tab="blocked">Non chiamare</button><button data-tab="local">Congregazione</button>`;
+    hero.insertAdjacentElement('afterend',nav);
+    window.setGdpTab=(tab)=>{
+      activeGdpTab=tab; localStorage.setItem('jw_tizi_gdp_tab',tab);
+      qa('.gdp-tabs button',gdp).forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
+      qa('.gdp-pane',gdp).forEach(p=>p.classList.toggle('gdp-pane-active',p.dataset.gdpPane===tab));
+    };
+    qa('.gdp-tabs button',gdp).forEach(b=>b.onclick=()=>setGdpTab(b.dataset.tab));
+    setGdpTab(activeGdpTab);
+
+    const localCard=$('localSpeakersCard');
+    if(localCard){
+      const wrap=q('.add-wrap',localCard); if(wrap){wrap.classList.add('local-form-wrap')}
+      const head=q('.card-head',localCard); if(head && !q('.local-speaker-toggle',head)){
+        head.style.display='flex'; head.style.alignItems='center'; head.style.gap='10px';
+        const b=document.createElement('button'); b.type='button'; b.className='iconbtn local-speaker-toggle'; b.textContent='＋'; b.title='Aggiungi oratore locale';
+        b.onclick=()=>{wrap.classList.toggle('is-open');if(wrap.classList.contains('is-open'))setTimeout(()=>$('localSpeakerName').focus(),20)}; head.appendChild(b);
+      }
+      $('localSpeakerForm').addEventListener('submit',()=>setTimeout(()=>wrap.classList.remove('is-open'),0));
+    }
+  }
+
+  renderSpeakers=function(filter=''){
+    const qv=String(filter||'').trim().toLowerCase();
+    const valid=speakers.filter(s=>s&&s.name&&!('title' in s&&'dueDate' in s));
+    const recommended=valid.filter(s=>(!s.status||s.status==='recommended')&&!s.followUp&&!speakerLastVisit(s)).filter(s=>!qv||[s.name,s.congregation,s.note].join(' ').toLowerCase().includes(qv)).sort((a,b)=>a.name.localeCompare(b.name,'it'));
+    const booked=valid.filter(s=>s.status==='booked').filter(s=>!qv||[s.name,s.congregation,s.note,s.bookedDate].join(' ').toLowerCase().includes(qv)).sort((a,b)=>(a.bookedDate||'9999').localeCompare(b.bookedDate||'9999'));
+    const liked=valid.filter(s=>s.status==='recommended'&&s.followUp).filter(s=>!qv||[s.name,s.congregation,s.note,s.lastVisitDate,s.expiryDate].join(' ').toLowerCase().includes(qv)).sort((a,b)=>{
+      if(likedSpeakerSort==='alpha')return a.name.localeCompare(b.name,'it',{sensitivity:'base'});
+      const ad=speakerLastVisit(a)||'',bd=speakerLastVisit(b)||'';
+      if(likedSpeakerSort==='recent'){if(!ad&&!bd)return a.name.localeCompare(b.name,'it');if(!ad)return 1;if(!bd)return -1;return bd.localeCompare(ad)||a.name.localeCompare(b.name,'it')}
+      if(!ad&&!bd)return a.name.localeCompare(b.name,'it');if(!ad)return -1;if(!bd)return 1;return ad.localeCompare(bd)||a.name.localeCompare(b.name,'it');
+    });
+    const archived=valid.filter(s=>s.status==='archived').filter(s=>!qv||[s.name,s.congregation,s.note,s.lastVisitDate].join(' ').toLowerCase().includes(qv)).sort((a,b)=>(speakerLastVisit(b)||'').localeCompare(speakerLastVisit(a)||''));
+    $('speakerRecommendedCount').textContent=recommended.length;$('speakerBookedCount').textContent=booked.length;$('speakerCallbackCount').textContent=liked.length;$('speakerArchiveCount').textContent=archived.length;
+
+    $('speakerList').innerHTML=recommended.length?recommended.map(s=>`<div class="clean-row ${selectedSpeakerBookingId===s.id?'speaker-selected':''}"><div class="clean-row-main"><div class="clean-title">${esc(s.name)}</div><div class="clean-meta">${s.congregation?`<span>${esc(s.congregation)}</span>`:''}${s.note?`<span>${esc(s.note)}</span>`:''}</div></div><button class="clean-primary-action" onclick="selectSpeakerForBooking('${s.id}')">${selectedSpeakerBookingId===s.id?'Scelto':'Seleziona'}</button>${menuHtml([menuBtn('Modifica',`editSpeaker('${s.id}')`),menuBtn('Elimina',`deleteSpeaker('${s.id}')`,'danger')])}</div>`).join(''):'<div class="empty">Nessun oratore da invitare.</div>';
+
+    $('speakerBookedList').innerHTML=booked.length?booked.map(s=>`<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(s.name)}</div><div class="clean-meta">${s.congregation?`<span>${esc(s.congregation)}</span>`:''}${s.bookedDate?`<span>${esc(fmt(s.bookedDate))}</span>`:''}</div>${(s.bookingNote||s.note)?`<div class="clean-submeta">${esc(s.bookingNote||s.note)}</div>`:''}</div><button class="clean-primary-action" onclick="openSpeakerVisit('${s.id}')">È venuto</button>${menuHtml([menuBtn('Annulla prenotazione',`cancelSpeakerBookingEntry('${s.id}')`),menuBtn('Modifica',`editSpeaker('${s.id}')`)])}</div>`).join(''):'<div class="empty">Nessun oratore prenotato.</div>';
+
+    $('speakerCallbackList').innerHTML=liked.length?liked.map(s=>{const last=speakerLastVisit(s);return `<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(s.name)}</div><div class="clean-meta">${s.congregation?`<span>${esc(s.congregation)}</span>`:''}<span>${last?'Ultima '+esc(fmt(last)):'Mai registrato'}</span>${s.expiryDate?`<span>Scad. ${esc(fmt(s.expiryDate))}</span>`:''}</div>${s.note?`<div class="clean-submeta">${esc(s.note)}</div>`:''}</div><button class="clean-primary-action" onclick="openSpeakerBooking('${s.id}')">Prenota</button>${menuHtml([menuBtn('Modifica',`editSpeaker('${s.id}')`),menuBtn('Elimina',`deleteSpeaker('${s.id}')`,'danger')])}</div>`}).join(''):'<div class="empty">Nessun oratore gradito ancora registrato.</div>';
+
+    $('speakerArchiveList').innerHTML=archived.length?archived.map(s=>{const last=speakerLastVisit(s);return `<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(s.name)}</div><div class="clean-meta">${s.congregation?`<span>${esc(s.congregation)}</span>`:''}${last?`<span>Ultima ${esc(fmt(last))}</span>`:''}</div>${s.note?`<div class="clean-submeta">${esc(s.note)}</div>`:''}</div><span class="clean-tag">Non chiamare</span>${menuHtml([menuBtn('Sposta tra graditi',`restoreSpeaker('${s.id}')`),menuBtn('Modifica',`editSpeaker('${s.id}')`),menuBtn('Elimina',`deleteSpeaker('${s.id}')`,'danger')])}</div>`}).join(''):'<div class="empty">Nessun oratore in “Non chiamare più”.</div>';
+    renderCongregationSpeakers(qv);
+    if(window.setGdpTab)setGdpTab(activeGdpTab);
+  };
+
+  renderCongregationSpeakers=function(filter=''){
+    const qv=String(filter||'').trim().toLowerCase();
+    const rows=congregationSpeakers.filter(s=>s&&s.name).filter(s=>!qv||[s.name,s.lastTalkDate,s.preference].join(' ').toLowerCase().includes(qv)).sort((a,b)=>(a.lastTalkDate||'9999').localeCompare(b.lastTalkDate||'9999')||a.name.localeCompare(b.name,'it'));
+    $('localSpeakerCount').textContent=rows.length;
+    $('localSpeakerList').innerHTML=rows.length?rows.map(s=>`<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(s.name)}</div><div class="clean-meta"><span>${s.lastTalkDate?'Ultimo '+esc(fmt(s.lastTalkDate)):'Ultimo discorso —'}</span>${s.preference?`<span>${esc(s.preference)}</span>`:''}</div></div><span class="clean-tag">Locale</span>${menuHtml([menuBtn('Modifica',`editLocalSpeaker('${s.id}')`),menuBtn('Elimina',`deleteLocalSpeaker('${s.id}')`,'danger')])}</div>`).join(''):'<div class="empty">Nessun oratore della congregazione registrato.</div>';
+  };
+
+  /* ---------- Routine ---------- */
+  renderRoutines=function(filter=''){
+    const qv=String(filter||'').trim().toLowerCase();
+    const rows=routines.filter(r=>r&&r.name).filter(r=>!qv||[r.name,r.text,r.dueDate].join(' ').toLowerCase().includes(qv)).sort((a,b)=>{if(a.dueDate&&b.dueDate)return a.dueDate.localeCompare(b.dueDate);if(a.dueDate)return -1;if(b.dueDate)return 1;return Number(b.updatedAt||b.createdAt||0)-Number(a.updatedAt||a.createdAt||0)});
+    $('routineCount').textContent=rows.length;
+    $('routineList').innerHTML=rows.length?rows.map(r=>`<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(r.name)}</div><div class="clean-submeta routine-preview">${esc(r.text||'')}</div><div class="clean-meta">${r.dueDate?`<span>${esc(fmt(r.dueDate))}</span><span>${esc(dashDateLabel(r.dueDate))}</span>`:'<span>Nessuna scadenza</span>'}</div></div>${r.dueDate?'<span class="clean-tag">Scadenza</span>':'<span></span>'}${menuHtml([menuBtn('Modifica',`editRoutine('${r.id}')`),menuBtn('Elimina',`deleteRoutine('${r.id}')`,'danger')])}</div>`).join(''):'<div class="empty">Nessuna routine salvata.</div>';
+  };
+
+  /* Chiude i form dopo salvataggio e rende accessibili i + dalla Dashboard, se usati altrove */
+  if(window.dashAddPart){}
+  ['taskForm','activityForm','serviceForm','speakerForm','routineForm'].forEach(fid=>{const f=$(fid);if(f)f.addEventListener('submit',()=>setTimeout(()=>f.closest('.clean-form-card')?.classList.remove('is-open'),20))});
+
+  /* Rende piatte tutte le card GDP dopo aver creato le tab */
+  qa('#gdpSection .gdp-pane').forEach(c=>c.classList.add('clean-list-card'));
+
+  /* Primo rendering V16 */
+  renderTasks(); renderActivities(); renderService(); renderSpeakers(); renderRoutines(); renderDashboard();
+  if(currentSection==='gdp'&&window.setGdpTab)setGdpTab(activeGdpTab);
+})();
 </script>
 
 <script>

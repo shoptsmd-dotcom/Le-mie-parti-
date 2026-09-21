@@ -1,3 +1,3 @@
-JW TIZI — Dieter Rams V15
+JW TIZI — Dieter Rams Clean V16
 
-Rimosso Indicatore Scrum dalla sezione Servizio. Tutte le altre funzioni restano invariate.
+Interfaccia semplificata: dashboard essenziale, form a scomparsa, liste compatte uniformi, GDP a schede, Servizio in stile agenda, menu azioni ••• e navigazione inferiore minimale.
