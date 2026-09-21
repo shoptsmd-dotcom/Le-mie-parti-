@@ -1,3 +1,5 @@
-CIAO Tiziano — V33 Routine Procedure + Cache Reset
+CIAO Tiziano — V34 HARD RESET
 
-Questa build forza l’aggiornamento su iPhone/GitHub Pages e include il lettore quasi a tutto schermo per procedure lunghe nelle Routine.
+Questa build usa un nuovo URL (app-v34.html) e include reset-v34.html per eliminare service worker e Cache Storage vecchi senza cancellare i dati dell’app in localStorage.
+
+Dopo aver caricato TUTTI i file nella root di GitHub Pages, aprire una volta reset-v34.html da Safari.
