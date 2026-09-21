@@ -1,5 +1,3 @@
-CIAO Tiziano — V34 HARD RESET
+JW TIZI — Dieter Rams V24
 
-Questa build usa un nuovo URL (app-v34.html) e include reset-v34.html per eliminare service worker e Cache Storage vecchi senza cancellare i dati dell’app in localStorage.
-
-Dopo aver caricato TUTTI i file nella root di GitHub Pages, aprire una volta reset-v34.html da Safari.
+Rimossa la riga vuota da tutti i menu nativi a tre punti. I pulsanti Fatto nelle attività sono ora piccole spunte lineari blu.

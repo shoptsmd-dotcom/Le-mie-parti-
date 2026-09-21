@@ -1,14 +1,22 @@
 {
-  "name": "CIAO Tiziano",
-  "short_name": "Tiziano",
-  "id": "./app-v34.html?app=ciao-tiziano-v34",
-  "start_url": "./app-v34.html?build=20260921-1734",
+  "name": "JW TIZI",
+  "short_name": "JW TIZI",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
+  "background_color": "#f4f4ef",
+  "theme_color": "#f4f4ef",
+  "lang": "it",
   "icons": [
-    {"src":"icon-v34-192.png?build=20260921-1734","sizes":"192x192","type":"image/png"},
-    {"src":"icon-v34-512.png?build=20260921-1734","sizes":"512x512","type":"image/png"}
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
   ]
 }

@@ -2,19 +2,16 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8" />
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>CIAO Tiziano</title>
+<title>JW TIZI</title>
 
-<link rel="manifest" href="manifest.webmanifest?v=33">
-<meta name="theme-color" content="#ffffff">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#f4f4ef">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="CIAO Tiziano">
-<link rel="apple-touch-icon" href="icon-180.png?v=33">
+<meta name="apple-mobile-web-app-title" content="JW TIZI">
+<link rel="apple-touch-icon" href="icon-180.png">
 
 <style>
 :root{
@@ -2817,7 +2814,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 }
 .service-total-main{display:flex!important;align-items:flex-end!important;justify-content:space-between!important;gap:20px!important}
 .service-kicker{display:block!important;margin-bottom:3px!important;color:var(--r-muted)!important;font-size:9px!important;font-weight:700!important;letter-spacing:.13em!important}
-#serviceMonthTotal{display:block!important;font-size:36px!important;line-height:1!important;font-weight:500!important;letter-spacing:-.045em!important}
+#serviceMonthTotal{display:block!important;font-size:34px!important;line-height:1!important;font-weight:500!important;letter-spacing:-.045em!important}
 .service-month-field{width:170px!important}
 .service-month-field input{min-height:36px!important}
 .service-total-meta{display:flex!important;gap:18px!important;margin-top:14px!important;padding-top:10px!important;border-top:1px solid var(--r-line)!important;color:var(--r-muted)!important;font-size:10px!important}
@@ -2832,7 +2829,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .service-entry:last-child{border-bottom:0!important}
 .service-person{display:block!important;font-size:13px!important;line-height:1.2!important}
 .service-entry-meta{display:flex!important;gap:8px!important;flex-wrap:wrap!important;margin-top:3px!important;color:var(--r-muted)!important;font-size:10px!important}
-.service-entry-duration span{display:block!important;color:var(--r-muted)!important;font-size:9px!important;text-transform:none!important;letter-spacing:.08em!important}
+.service-entry-duration span{display:block!important;color:var(--r-muted)!important;font-size:9px!important;text-transform:uppercase!important;letter-spacing:.08em!important}
 .service-entry-duration strong{display:block!important;margin-top:2px!important;font-size:14px!important}
 .service-entry-actions{display:flex!important;align-items:center!important;gap:4px!important}
 .service-entry-actions .small{min-height:30px!important;padding:5px 7px!important;font-size:9.5px!important}
@@ -2896,7 +2893,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 }
 .service-time-mini{display:flex!important;flex-direction:column!important;gap:3px!important}
 .service-time-mini label{
-  color:var(--r-muted)!important;font-size:8px!important;font-weight:700!important;letter-spacing:.07em!important;text-transform:none!important;
+  color:var(--r-muted)!important;font-size:8px!important;font-weight:700!important;letter-spacing:.07em!important;text-transform:uppercase!important;
 }
 .service-time-mini input{
   width:58px!important;min-height:30px!important;height:30px!important;padding:4px 6px!important;
@@ -3133,7 +3130,7 @@ button,input,select,textarea{font:inherit;color:inherit}
   min-height:28px!important;padding:0 6px!important;
   border:1px solid var(--r-line)!important;background:transparent!important;
   color:var(--r-muted)!important;font-size:9px!important;font-weight:700!important;
-  letter-spacing:.04em!important;text-transform:none!important;
+  letter-spacing:.04em!important;text-transform:uppercase!important;
 }
 .liked-sort-wrap select{
   appearance:none!important;-webkit-appearance:none!important;
@@ -4060,1064 +4057,12 @@ dialog[open]::backdrop{animation:ramsBackdropIn 190ms ease-out both}
 }
 </style>
 
-
-<style id="google-calendar-v25-theme">
-/* ==========================================================
-   JW TIZI — V25 · Google Calendar inspired
-   Solo presentazione: funzioni e dati restano quelli della V24.
-   ========================================================== */
-:root{
-  --gc-blue:#1a73e8;
-  --gc-blue-dark:#185abc;
-  --gc-blue-soft:#e8f0fe;
-  --gc-blue-soft-2:#d2e3fc;
-  --gc-green:#34a853;
-  --gc-green-soft:#e6f4ea;
-  --gc-red:#ea4335;
-  --gc-red-soft:#fce8e6;
-  --gc-yellow:#fbbc04;
-  --gc-yellow-soft:#fef7e0;
-  --gc-text:#202124;
-  --gc-muted:#5f6368;
-  --gc-muted-2:#80868b;
-  --gc-line:#dadce0;
-  --gc-line-soft:#e8eaed;
-  --gc-bg:#ffffff;
-  --gc-surface:#ffffff;
-  --gc-surface-soft:#f8fafd;
-  --gc-control:#f1f3f4;
-  --gc-shadow:0 1px 2px rgba(60,64,67,.08),0 4px 14px rgba(60,64,67,.08);
-  --gc-shadow-fab:0 4px 10px rgba(60,64,67,.24);
-}
-html,body{background:var(--gc-bg)!important}
-body{
-  color:var(--gc-text)!important;
-  font-family:Roboto,"Google Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif!important;
-  font-size:14px!important;
-  line-height:1.45!important;
-  -webkit-font-smoothing:antialiased!important;
-}
-body:before,body:after{display:none!important}
-.shell{
-  max-width:1040px!important;
-  margin:0 auto!important;
-  padding:18px 18px 92px!important;
-  background:var(--gc-bg)!important;
-}
-.main{width:100%!important}
-
-/* Top app bar */
-.topbar{
-  position:relative!important;
-  display:grid!important;
-  grid-template-columns:auto minmax(180px,1fr) auto!important;
-  gap:10px!important;
-  align-items:center!important;
-  margin:0 0 18px!important;
-  padding:4px 0 8px!important;
-  min-height:54px!important;
-  border:0!important;
-  background:transparent!important;
-  box-shadow:none!important;
-}
-.brand-mark{
-  margin:0!important;
-  color:var(--gc-text)!important;
-  font-size:22px!important;
-  line-height:1!important;
-  font-weight:600!important;
-  letter-spacing:-.02em!important;
-}
-.search{
-  display:flex!important;
-  align-items:center!important;
-  min-height:46px!important;
-  padding:0 16px!important;
-  border:0!important;
-  border-radius:24px!important;
-  background:var(--gc-control)!important;
-  color:var(--gc-muted)!important;
-  box-shadow:none!important;
-}
-.search input{
-  background:transparent!important;
-  color:var(--gc-text)!important;
-  font-size:15px!important;
-}
-.search input::placeholder{color:var(--gc-muted-2)!important}
-.quiet-prompt-btn{
-  width:40px!important;height:40px!important;min-width:40px!important;
-  display:grid!important;place-items:center!important;
-  border:0!important;border-radius:50%!important;
-  background:var(--gc-control)!important;
-  color:var(--gc-muted)!important;
-  font-size:0!important;opacity:1!important;
-}
-.quiet-prompt-btn:before{content:"✦";font-size:16px!important;color:var(--gc-blue)!important}
-.quiet-prompt-btn:hover{background:var(--gc-blue-soft)!important}
-.topbar #reportBtn,.topbar #importBackupBtn,.topbar #exportBtn{display:none!important}
-body.home-mode .topbar .search{display:flex!important}
-
-/* Page headings */
-.hero,.dashboard-hero,.activity-hero,.service-hero,.gdp-hero,.routine-hero{
-  position:relative!important;
-  margin:0 0 18px!important;
-  padding:4px 64px 6px 2px!important;
-  border:0!important;
-  border-radius:0!important;
-  background:transparent!important;
-  box-shadow:none!important;
-}
-.eyebrow,.hero .eyebrow,.dashboard-hero .eyebrow,.activity-hero .eyebrow,.service-hero .eyebrow,.gdp-hero .eyebrow,.routine-hero .eyebrow{
-  margin:0 0 4px!important;
-  color:var(--gc-muted)!important;
-  font-size:11px!important;
-  font-weight:600!important;
-  letter-spacing:.08em!important;
-  text-transform:none!important;
-}
-.hero h2,.dashboard-hero h2,.activity-hero h2,.service-hero h2,.gdp-hero h2,.routine-hero h2{
-  margin:0!important;
-  color:var(--gc-text)!important;
-  font-size:30px!important;
-  line-height:1.1!important;
-  font-weight:500!important;
-  letter-spacing:-.025em!important;
-}
-.section-add-btn{
-  position:absolute!important;
-  right:2px!important;top:0!important;
-  width:52px!important;height:52px!important;
-  border:0!important;border-radius:50%!important;
-  background:var(--gc-blue)!important;
-  color:#fff!important;
-  box-shadow:var(--gc-shadow-fab)!important;
-  font-size:27px!important;
-  font-weight:300!important;
-  line-height:1!important;
-  transition:transform .16s ease,box-shadow .16s ease,background-color .16s ease!important;
-}
-.section-add-btn:active{transform:scale(.95)!important;box-shadow:0 2px 6px rgba(60,64,67,.22)!important}
-.section-add-btn:hover{background:var(--gc-blue-dark)!important}
-
-/* Dashboard */
-.dashboard-grid.clean-dashboard{
-  display:grid!important;
-  grid-template-columns:repeat(2,minmax(0,1fr))!important;
-  gap:12px!important;
-  margin:0 0 16px!important;
-  border:0!important;
-}
-.clean-dashboard .dashboard-card{
-  min-height:126px!important;
-  margin:0!important;
-  padding:16px!important;
-  border:0!important;
-  border-radius:20px!important;
-  background:var(--gc-surface-soft)!important;
-  box-shadow:none!important;
-}
-.clean-dashboard .dashboard-card:nth-child(1){background:var(--gc-blue-soft)!important}
-.clean-dashboard .dashboard-card:nth-child(2){background:var(--gc-green-soft)!important}
-.clean-dashboard .dashboard-card:nth-child(3){background:var(--gc-yellow-soft)!important}
-.clean-dashboard .dashboard-card:nth-child(4){background:#f3e8fd!important}
-.clean-dashboard .dash-head{margin:0 0 8px!important}
-.clean-dashboard .dash-head h3{
-  color:var(--gc-text)!important;font-size:13px!important;font-weight:600!important;
-  text-transform:none!important;letter-spacing:0!important;
-}
-.clean-dashboard .dash-head .dash-ico{display:none!important}
-.clean-dashboard .dash-sub{display:none!important}
-.clean-dashboard .dash-big{color:var(--gc-text)!important;font-size:27px!important;font-weight:500!important}
-.clean-dashboard .dash-row{
-  padding:8px 0!important;border:0!important;background:transparent!important;
-}
-.clean-dashboard .dash-row strong{font-size:13px!important;color:var(--gc-text)!important}
-.clean-dashboard .dash-row small,.clean-dashboard .dash-date{font-size:11px!important;color:var(--gc-muted)!important}
-.dashboard-utilities{
-  display:flex!important;gap:8px!important;flex-wrap:wrap!important;
-  margin:6px 0 0!important;padding:0!important;border:0!important;
-}
-.dashboard-utilities .btn{
-  min-height:38px!important;height:38px!important;
-  padding:0 14px!important;border:0!important;border-radius:20px!important;
-  background:var(--gc-control)!important;color:var(--gc-text)!important;
-  font-size:11px!important;font-weight:600!important;
-}
-.dashboard-utilities .btn:hover{background:var(--gc-blue-soft)!important;color:var(--gc-blue)!important}
-
-/* Cards */
-.card,.clean-list-card,.clean-form-card,.speaker-booking-panel,.service-total-card{
-  border:1px solid var(--gc-line-soft)!important;
-  border-radius:20px!important;
-  background:var(--gc-surface)!important;
-  box-shadow:var(--gc-shadow)!important;
-  overflow:hidden!important;
-}
-.clean-list-card{margin-bottom:14px!important}
-.clean-list-card .tasks-head,.clean-list-card .completed-head,.card-head{
-  padding:16px 16px 10px!important;
-  border:0!important;
-}
-.card-head h3,.tasks-head h3,.completed-head h3{
-  color:var(--gc-text)!important;
-  font-size:15px!important;
-  font-weight:600!important;
-}
-.card-head p,.tasks-head .muted,.completed-head .muted{
-  margin-top:3px!important;color:var(--gc-muted)!important;font-size:11px!important;
-}
-.clean-list-card .tasks,.clean-list-card .completed-list,.clean-list-card .activity-list,.clean-list-card .gdp-list,.clean-list-card .routine-list,.clean-list-card .service-list{
-  padding:0 12px 10px!important;
-}
-.clean-form-card{display:none!important;margin-bottom:14px!important}
-.clean-form-card.is-open{display:block!important;animation:gcCardIn .18s ease both!important}
-.clean-form-card .add-wrap{padding:8px 16px 16px!important}
-@keyframes gcCardIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
-
-/* Universal list rows: Google Calendar agenda-like */
-.clean-row{
-  display:grid!important;
-  grid-template-columns:minmax(0,1fr) auto auto!important;
-  align-items:center!important;
-  gap:8px!important;
-  min-height:54px!important;
-  margin:0!important;
-  padding:11px 4px!important;
-  border:0!important;
-  border-bottom:1px solid var(--gc-line-soft)!important;
-  background:transparent!important;
-  box-shadow:none!important;
-}
-.clean-row:last-child{border-bottom:0!important}
-.clean-row-main{min-width:0!important}
-.clean-title,.task-title,.activity-title,.speaker-name,.routine-name,.service-person{
-  color:var(--gc-text)!important;
-  font-size:14px!important;
-  line-height:1.25!important;
-  font-weight:600!important;
-}
-.clean-meta,.clean-submeta,.muted,.speaker-sub,.speaker-cong,.speaker-last,.routine-meta,.routine-text,.service-entry-meta{
-  color:var(--gc-muted)!important;
-  font-size:11px!important;
-  line-height:1.35!important;
-}
-.clean-meta{gap:4px 10px!important;margin-top:3px!important}
-.clean-submeta{margin-top:2px!important}
-.clean-tag,.pill,.badge,.days,.completed-badge,.activity-done-tag,.callback-tag,.never-tag,.archive-tag,.booked-tag{
-  display:inline-flex!important;align-items:center!important;
-  min-height:24px!important;
-  padding:2px 8px!important;
-  border:0!important;
-  border-radius:12px!important;
-  background:var(--gc-control)!important;
-  color:var(--gc-muted)!important;
-  font-size:9px!important;
-  font-weight:600!important;
-  box-shadow:none!important;
-}
-
-/* Primary actions */
-.clean-primary-action{
-  min-width:36px!important;min-height:36px!important;height:36px!important;
-  padding:0 12px!important;
-  border:0!important;
-  border-radius:18px!important;
-  background:var(--gc-blue)!important;
-  color:#fff!important;
-  font-size:11px!important;
-  font-weight:600!important;
-  box-shadow:none!important;
-}
-.clean-primary-action:hover{background:var(--gc-blue-dark)!important}
-.clean-primary-action.thin-icon-button,.clean-primary-action.activity-done-icon{
-  width:36px!important;min-width:36px!important;padding:0!important;
-  background:var(--gc-blue-soft)!important;
-  color:var(--gc-blue)!important;
-}
-.clean-primary-action.thin-icon-button svg,.clean-primary-action.activity-done-icon svg{
-  width:17px!important;height:17px!important;stroke:var(--gc-blue)!important;stroke-width:1.8!important;
-}
-
-/* Native three-dot trigger */
-.native-row-menu{
-  position:relative!important;
-  width:36px!important;height:36px!important;min-width:36px!important;
-  display:grid!important;place-items:center!important;
-  border:0!important;border-radius:50%!important;
-  background:var(--gc-control)!important;
-  color:var(--gc-muted)!important;
-  box-shadow:none!important;
-}
-.native-row-menu>span{
-  color:var(--gc-muted)!important;
-  font-size:18px!important;
-  line-height:1!important;
-  letter-spacing:1px!important;
-}
-.native-row-menu:active{background:var(--gc-blue-soft)!important}
-.native-row-menu>select{position:absolute!important;inset:0!important;opacity:0!important;width:100%!important;height:100%!important}
-
-/* Forms */
-.field{gap:5px!important}
-.field label{
-  color:var(--gc-muted)!important;
-  font-size:10px!important;
-  font-weight:600!important;
-  letter-spacing:.02em!important;
-  text-transform:none!important;
-}
-.field input,.field select,.field textarea,
-.report-entry .field input,.report-entry .field select{
-  min-height:42px!important;
-  padding:10px 12px!important;
-  border:1px solid transparent!important;
-  border-radius:12px!important;
-  background:var(--gc-control)!important;
-  color:var(--gc-text)!important;
-  box-shadow:none!important;
-  font-size:14px!important;
-}
-.field textarea{min-height:100px!important}
-.field input:focus,.field select:focus,.field textarea:focus{
-  border-color:var(--gc-blue)!important;
-  background:#fff!important;
-  box-shadow:0 0 0 2px rgba(26,115,232,.12)!important;
-  outline:0!important;
-}
-.btn,.small,.mini-btn,.iconbtn{
-  border-radius:18px!important;
-  box-shadow:none!important;
-}
-.btn{
-  min-height:40px!important;
-  padding:8px 14px!important;
-  border:0!important;
-  font-size:12px!important;
-  font-weight:600!important;
-}
-.btn-primary{background:var(--gc-blue)!important;color:#fff!important}
-.btn-primary:hover{background:var(--gc-blue-dark)!important}
-.btn-soft,.small,.mini-btn{background:var(--gc-blue-soft)!important;color:var(--gc-blue)!important;border:0!important}
-.btn-ghost{background:transparent!important;color:var(--gc-muted)!important;border:0!important}
-.btn-danger,.btn-stop{background:var(--gc-red-soft)!important;color:#b3261e!important;border:0!important}
-.btn-start{background:var(--gc-green-soft)!important;color:#137333!important;border:0!important}
-.iconbtn{background:var(--gc-control)!important;color:var(--gc-muted)!important}
-
-/* Service */
-.service-total-card{
-  margin:0 0 14px!important;
-  padding:16px!important;
-  background:var(--gc-blue-soft)!important;
-  border:0!important;
-  box-shadow:none!important;
-}
-#serviceMonthTotal{color:var(--gc-text)!important;font-size:30px!important;font-weight:500!important}
-.service-month-field{width:155px!important}
-.service-time-details>summary{
-  min-width:36px!important;min-height:36px!important;
-  padding:0 10px!important;
-  border:0!important;border-radius:18px!important;
-  background:var(--gc-control)!important;
-  color:var(--gc-muted)!important;
-  font-size:11px!important;
-}
-.service-time-details:not(.has-time)>summary{
-  background:var(--gc-blue-soft)!important;color:var(--gc-blue)!important;
-}
-.service-time-details:not(.has-time)>summary svg{stroke:var(--gc-blue)!important}
-.service-time-details.has-time>summary{background:var(--gc-green-soft)!important;color:#137333!important}
-.service-time-pop{
-  border:1px solid var(--gc-line)!important;
-  border-radius:16px!important;
-  background:#fff!important;
-  box-shadow:0 8px 24px rgba(60,64,67,.18)!important;
-}
-.service-time-pop input{border:0!important;border-radius:10px!important;background:var(--gc-control)!important}
-
-/* GDP tabs + sort */
-.gdp-tabs{
-  display:flex!important;gap:4px!important;
-  margin:0 0 14px!important;
-  padding:4px!important;
-  border:0!important;
-  border-radius:18px!important;
-  background:var(--gc-control)!important;
-  overflow-x:auto!important;
-}
-.gdp-tabs button{
-  flex:0 0 auto!important;
-  padding:8px 12px!important;
-  border:0!important;border-radius:14px!important;
-  background:transparent!important;
-  color:var(--gc-muted)!important;
-  font-size:10px!important;font-weight:600!important;
-}
-.gdp-tabs button.active{
-  background:#fff!important;
-  color:var(--gc-blue)!important;
-  box-shadow:0 1px 3px rgba(60,64,67,.16)!important;
-}
-.liked-sort-wrap{
-  min-height:32px!important;
-  padding:0 10px!important;
-  border:0!important;border-radius:16px!important;
-  background:var(--gc-control)!important;
-  color:var(--gc-muted)!important;
-  text-transform:none!important;letter-spacing:0!important;
-}
-.liked-sort-wrap select{
-  color:var(--gc-text)!important;
-  font-size:11px!important;
-  background-color:transparent!important;
-}
-.gdp-liked-add,.gdp-photo-import{
-  min-height:32px!important;height:32px!important;
-  border:0!important;border-radius:16px!important;
-  background:var(--gc-blue-soft)!important;color:var(--gc-blue)!important;
-}
-
-/* Prompt GPT */
-.mobile-prompt-dialog,#promptDialog,#taskPromptDialog,.modal{
-  border-radius:24px!important;
-  background:#fff!important;
-  box-shadow:0 18px 60px rgba(60,64,67,.26)!important;
-}
-.mobile-prompt-shell,.mobile-prompt-head,.mobile-prompt-body,.mobile-prompt-footer,
-#promptDialog .modal-head,#promptDialog .modal-body,#promptDialog .modal-actions,
-#taskPromptDialog .modal-head,#taskPromptDialog .modal-body,#taskPromptDialog .modal-actions{
-  background:#fff!important;color:var(--gc-text)!important;
-}
-.mobile-prompt-head,.modal-head{border-bottom:1px solid var(--gc-line-soft)!important}
-.mobile-prompt-footer,.modal-actions{border-top:1px solid var(--gc-line-soft)!important}
-.mobile-prompt-search{
-  border:0!important;border-radius:18px!important;background:var(--gc-control)!important;
-}
-#mobilePromptList,#promptList{border:0!important;background:#fff!important}
-.prompt-card{
-  margin:7px 0!important;
-  padding:13px 14px!important;
-  border:1px solid var(--gc-line-soft)!important;
-  border-radius:16px!important;
-  background:#fff!important;
-  box-shadow:none!important;
-}
-.prompt-card .prompt-name{font-size:13px!important;color:var(--gc-text)!important;font-weight:600!important}
-.prompt-card .prompt-text{font-size:12px!important;color:var(--gc-muted)!important;line-height:1.48!important}
-
-/* Reports / timers */
-.timer-panel,.report-kpi,.month-card,.type-row,.report-entry,.session,.compare-card{
-  border:1px solid var(--gc-line-soft)!important;
-  border-radius:16px!important;
-  background:#fff!important;
-  box-shadow:none!important;
-}
-.report-kpi strong,.month-value,.type-hours,.actual-time,.session-duration{color:var(--gc-blue)!important}
-.bar-track{background:var(--gc-control)!important;border-radius:999px!important}
-.bar-fill{background:var(--gc-blue)!important;border-radius:999px!important}
-.type-rank{background:var(--gc-blue-soft)!important;color:var(--gc-blue)!important;border:0!important}
-
-/* Bottom navigation */
-.section-switch{
-  position:fixed!important;
-  left:0!important;right:0!important;bottom:0!important;
-  width:100%!important;
-  display:grid!important;grid-template-columns:repeat(6,1fr)!important;
-  gap:3px!important;
-  margin:0!important;
-  padding:7px 8px max(8px,env(safe-area-inset-bottom))!important;
-  border:0!important;
-  border-top:1px solid var(--gc-line-soft)!important;
-  border-radius:0!important;
-  background:rgba(255,255,255,.96)!important;
-  box-shadow:0 -2px 12px rgba(60,64,67,.08)!important;
-  backdrop-filter:blur(18px)!important;
-  -webkit-backdrop-filter:blur(18px)!important;
-  z-index:3000!important;
-}
-.section-switch button{
-  min-width:0!important;
-  min-height:40px!important;
-  padding:0 4px!important;
-  border:0!important;
-  border-radius:20px!important;
-  background:transparent!important;
-  color:var(--gc-muted)!important;
-  font-size:10px!important;
-  font-weight:600!important;
-  line-height:1!important;
-  box-shadow:none!important;
-  transition:background-color .16s ease,color .16s ease,transform .16s ease!important;
-}
-.section-switch button.active{
-  background:var(--gc-blue-soft)!important;
-  color:var(--gc-blue)!important;
-  border:0!important;
-}
-.section-switch button:active{transform:scale(.96)!important}
-
-/* Toast */
-.toast{
-  right:18px!important;bottom:82px!important;
-  padding:10px 14px!important;
-  border:0!important;border-radius:18px!important;
-  background:#303134!important;color:#fff!important;
-  box-shadow:0 5px 18px rgba(60,64,67,.22)!important;
-  font-size:12px!important;
-}
-
-/* Motion */
-#dashboardSection,#partsSection,#activitiesSection,#serviceSection,#gdpSection,#routineSection{
-  animation-duration:.18s!important;animation-timing-function:cubic-bezier(.2,0,0,1)!important;
-}
-
-@media(max-width:720px){
-  .shell{padding:12px 10px 90px!important}
-  .topbar{
-    grid-template-columns:auto auto!important;
-    gap:8px!important;
-    padding-top:2px!important;
-    margin-bottom:14px!important;
-  }
-  .brand-mark{font-size:21px!important}
-  .topbar .search{
-    grid-column:1/-1!important;
-    grid-row:2!important;
-    min-height:44px!important;
-    margin-top:3px!important;
-  }
-  .quiet-prompt-btn{justify-self:end!important;width:38px!important;height:38px!important;min-width:38px!important}
-  .hero,.dashboard-hero,.activity-hero,.service-hero,.gdp-hero,.routine-hero{
-    margin-bottom:16px!important;padding-right:58px!important;
-  }
-  .hero h2,.dashboard-hero h2,.activity-hero h2,.service-hero h2,.gdp-hero h2,.routine-hero h2{font-size:28px!important}
-  .section-add-btn{width:48px!important;height:48px!important;font-size:25px!important}
-  .dashboard-grid.clean-dashboard{grid-template-columns:1fr 1fr!important;gap:9px!important}
-  .clean-dashboard .dashboard-card{min-height:116px!important;padding:13px!important}
-  .clean-row{padding:10px 2px!important;gap:6px!important}
-  .clean-title{font-size:13px!important}
-  .clean-meta,.clean-submeta{font-size:10px!important}
-  .clean-list-card .tasks-head,.clean-list-card .completed-head,.card-head{padding:14px 14px 9px!important}
-  .clean-list-card .tasks,.clean-list-card .completed-list,.clean-list-card .activity-list,.clean-list-card .gdp-list,.clean-list-card .routine-list,.clean-list-card .service-list{padding:0 10px 8px!important}
-  .gdp-tabs{margin-bottom:12px!important}
-  .gdp-tabs button{padding:7px 10px!important;font-size:9.5px!important}
-  .section-switch{gap:2px!important;padding-left:5px!important;padding-right:5px!important}
-  .section-switch button{font-size:8.8px!important;padding-left:1px!important;padding-right:1px!important}
-}
-@media(max-width:430px){
-  .dashboard-grid.clean-dashboard{grid-template-columns:1fr!important}
-  .clean-dashboard .dashboard-card{min-height:auto!important}
-  .section-switch button{font-size:8.2px!important}
-  .liked-sort-wrap{flex:1 1 150px!important}
-}
-</style>
-
-
-<style id="v26-ios-no-auto-zoom">
-/* V26 — evita lo zoom automatico di Safari iOS sui campi di inserimento.
-   Non disabilita il pinch-to-zoom manuale: rende semplicemente i controlli
-   abbastanza grandi da non innescare lo zoom al focus. */
-html{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
-@media(max-width:900px){
-  input,
-  select,
-  textarea,
-  .search input,
-  .prompt-search input,
-  .mobile-prompt-search input,
-  .field input,
-  .field select,
-  .field textarea,
-  .service-time-pop input,
-  .report-entry input,
-  .report-entry select,
-  #promptDialog input,
-  #promptDialog textarea,
-  #taskPromptDialog input,
-  #taskPromptDialog textarea,
-  .routine-edit-dialog input,
-  .routine-edit-dialog textarea{
-    font-size:16px!important;
-  }
-  .service-time-pop input{
-    width:58px!important;
-    min-height:34px!important;
-  }
-}
-</style>
-
-
-<style id="google-calendar-v27-fixes">
-/* GDP: tutte le 5 schede restano sempre dentro il contenitore su iPhone */
-@media(max-width:700px){
-  .gdp-tabs{
-    display:grid!important;
-    grid-template-columns:.82fr .92fr 1.05fr 1.18fr 1.35fr!important;
-    gap:2px!important;
-    width:100%!important;
-    box-sizing:border-box!important;
-    overflow:hidden!important;
-    padding:4px!important;
-  }
-  .gdp-tabs button{
-    min-width:0!important;
-    width:100%!important;
-    padding:8px 3px!important;
-    font-size:9px!important;
-    letter-spacing:-.01em!important;
-    white-space:nowrap!important;
-    overflow:visible!important;
-    text-align:center!important;
-  }
-}
-@media(max-width:390px){
-  .gdp-tabs button{font-size:8.4px!important;padding-left:2px!important;padding-right:2px!important}
-}
-
-/* Parti e Attività: allineamento interno coerente con titoli/card */
-#partsSection .tasks .clean-row,
-#partsSection .completed-list .clean-row,
-#activitiesSection .activity-list .clean-row,
-#activitiesSection .completed-list .clean-row{
-  padding-left:22px!important;
-  padding-right:18px!important;
-}
-@media(max-width:560px){
-  #partsSection .tasks .clean-row,
-  #partsSection .completed-list .clean-row,
-  #activitiesSection .activity-list .clean-row,
-  #activitiesSection .completed-list .clean-row{
-    padding-left:18px!important;
-    padding-right:14px!important;
-  }
-}
-
-/* Gestione elenco Tipi di parte */
-.task-types-dialog{width:min(520px,calc(100vw - 24px))!important}
-.task-types-manager-list{display:grid!important;gap:7px!important}
-.task-type-manager-row{
-  display:grid!important;
-  grid-template-columns:minmax(0,1fr) 40px!important;
-  gap:7px!important;
-  align-items:center!important;
-}
-.task-type-manager-input{
-  width:100%!important;
-  min-height:44px!important;
-  box-sizing:border-box!important;
-  padding:10px 13px!important;
-  border:1px solid var(--gc-line)!important;
-  border-radius:14px!important;
-  background:var(--gc-control)!important;
-  color:var(--gc-text)!important;
-  font-size:16px!important;
-  outline:none!important;
-}
-.task-type-manager-input:focus{border-color:var(--gc-blue)!important;background:#fff!important;box-shadow:0 0 0 1px var(--gc-blue)!important}
-.task-type-remove{
-  width:40px!important;height:40px!important;min-width:40px!important;
-  border:0!important;border-radius:20px!important;background:var(--gc-control)!important;color:var(--gc-muted)!important;
-}
-.task-types-add{margin-top:10px!important;width:100%!important}
-</style>
-
-
-<style id="google-calendar-v28-viewport-fix">
-/* ==========================================================
-   V28 — iPhone viewport / horizontal overflow fix
-   Mantiene la pagina alla larghezza reale del dispositivo anche
-   dopo input, tastiera, salvataggi e comparsa di riepiloghi lunghi.
-   ========================================================== */
-html{
-  width:100%!important;
-  max-width:100%!important;
-  overflow-x:hidden!important;
-}
-body{
-  width:100%!important;
-  max-width:100vw!important;
-  min-width:0!important;
-  overflow-x:hidden!important;
-  overscroll-behavior-x:none!important;
-}
-.shell,.main,
-#dashboardSection,#partsSection,#activitiesSection,#serviceSection,#gdpSection,#routineSection,
-.card,.clean-list-card,.clean-form-card,
-.hero,.dashboard-hero,.activity-hero,.service-hero,.gdp-hero,.routine-hero{
-  width:100%!important;
-  max-width:100%!important;
-  min-width:0!important;
-  box-sizing:border-box!important;
-}
-.shell,.main{overflow-x:clip!important}
-
-/* Tutti i figli di griglie/flex possono restringersi invece di spingere il viewport */
-.tasks-head,.completed-head,.card-head,
-.tasks-head>*,.completed-head>*,.card-head>*,
-.summary,.summary>*,.clean-row,.clean-row>*,.clean-row-main,
-.add-form,.activity-form,.speaker-form,.routine-form,.service-form,
-.field,.field>*{
-  min-width:0!important;
-  box-sizing:border-box!important;
-}
-
-/* Riepiloghi: mai più larghi della card */
-.summary{
-  max-width:100%!important;
-  flex-wrap:wrap!important;
-}
-.summary .pill{
-  max-width:100%!important;
-  box-sizing:border-box!important;
-}
-.summary .pill strong{
-  max-width:100%!important;
-}
-
-/* Liste salvate sempre dentro la card */
-.clean-row{
-  width:100%!important;
-  max-width:100%!important;
-  box-sizing:border-box!important;
-}
-.clean-title,.clean-meta,.clean-submeta{
-  max-width:100%!important;
-  overflow-wrap:anywhere!important;
-}
-
-@media(max-width:700px){
-  /* Safari non esegue lo zoom automatico se i controlli editabili sono >=16px */
-  input,select,textarea,
-  .field input,.field select,.field textarea,
-  .search input,
-  dialog input,dialog select,dialog textarea{
-    font-size:16px!important;
-  }
-
-  /* Su telefono titolo e riepilogo non competono sulla stessa riga */
-  #partsSection .tasks-head,
-  #activitiesSection .tasks-head,
-  #activitiesSection .completed-head{
-    display:grid!important;
-    grid-template-columns:minmax(0,1fr)!important;
-    align-items:start!important;
-    gap:10px!important;
-  }
-  #partsSection .tasks-head .summary,
-  #activitiesSection .tasks-head .summary,
-  #activitiesSection .completed-head .summary,
-  #activitiesSection .completed-head>.pill{
-    width:100%!important;
-    max-width:100%!important;
-    justify-content:flex-start!important;
-    margin:0!important;
-  }
-
-  /* Le pillole restano compatte ma vanno a capo se necessario */
-  #partsSection .summary .pill,
-  #activitiesSection .summary .pill,
-  #activitiesSection .completed-head>.pill{
-    flex:0 1 auto!important;
-    white-space:normal!important;
-    line-height:1.2!important;
-  }
-
-  /* Azioni a destra non possono spingere la riga fuori schermo */
-  #partsSection .clean-row,
-  #activitiesSection .clean-row{
-    grid-template-columns:minmax(0,1fr) 40px 40px!important;
-    column-gap:7px!important;
-  }
-  #partsSection .clean-primary-action,
-  #activitiesSection .clean-primary-action,
-  #partsSection .native-row-menu,
-  #activitiesSection .native-row-menu{
-    max-width:40px!important;
-  }
-
-  /* FAB sempre dentro il viewport */
-  .section-add-btn,.clean-add-button,.fab,.gdp-add-btn{
-    right:max(14px,env(safe-area-inset-right))!important;
-    max-width:calc(100vw - 28px)!important;
-  }
-}
-
-@media(max-width:390px){
-  #partsSection .summary,
-  #activitiesSection .summary{gap:5px!important}
-  #partsSection .summary .pill,
-  #activitiesSection .summary .pill{
-    padding-left:8px!important;
-    padding-right:8px!important;
-    font-size:10px!important;
-  }
-}
-
-/* === V29 refinements === */
-.home-hero-art{display:none}
-body.home-mode .topbar{
-  display:grid!important;
-  grid-template-columns:minmax(0,1fr) auto!important;
-  gap:12px!important;
-  align-items:start!important;
-  margin:4px 0 18px!important;
-  padding:18px 18px 16px!important;
-  border-radius:28px!important;
-  position:relative!important;
-  background:
-    linear-gradient(180deg,rgba(255,255,255,.26) 0%,rgba(255,255,255,.18) 100%),
-    url('./home-hero-v34.jpg?build=20260921-1734') center center/cover no-repeat!important;
-  box-shadow:var(--gc-shadow)!important;
-  overflow:hidden!important;
-}
-body.home-mode .topbar:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.52));
-  pointer-events:none;
-}
-body.home-mode .topbar>*{position:relative;z-index:1}
-body.home-mode .brand-mark{
-  font-size:36px!important;
-  line-height:1.02!important;
-  font-weight:700!important;
-  letter-spacing:-.03em!important;
-  text-transform:none!important;
-  color:#202124!important;
-  align-self:start!important;
-  margin-top:2px!important;
-}
-body.home-mode .search{
-  grid-column:1 / -1!important;
-  min-height:48px!important;
-  background:rgba(255,255,255,.70)!important;
-  backdrop-filter:blur(8px)!important;
-  -webkit-backdrop-filter:blur(8px)!important;
-}
-body.home-mode .quiet-prompt-btn{
-  background:rgba(255,255,255,.72)!important;
-  backdrop-filter:blur(8px)!important;
-  -webkit-backdrop-filter:blur(8px)!important;
-}
-body.home-mode .quiet-prompt-btn:hover{background:rgba(255,255,255,.82)!important}
-@media(max-width:700px){
-  body.home-mode .topbar{padding:16px 16px 14px!important;border-radius:24px!important;min-height:156px!important}
-  body.home-mode .brand-mark{font-size:33px!important}
-}
-
-.dashboard-utilities .btn{display:inline-flex!important;align-items:center!important;gap:8px!important}
-.dashboard-utilities .btn .util-ico{font-size:15px!important;line-height:1!important;display:inline-block!important;min-width:14px!important}
-.dashboard-utilities--icons .btn{width:54px!important;min-width:54px!important;justify-content:center!important;padding:0!important;gap:0!important}
-.dashboard-utilities--icons .btn .util-ico{font-size:18px!important;min-width:auto!important}
-
-
-/* GDP layout stability */
-#gdpSection .tasks-head,
-#gdpSection .completed-head{
-  display:grid!important;
-  grid-template-columns:minmax(0,1fr) auto!important;
-  align-items:start!important;
-  gap:10px 12px!important;
-}
-#gdpSection .tasks-head>div:first-child,
-#gdpSection .completed-head>div:first-child{min-width:0!important}
-#gdpSection .tasks-head .summary,
-#gdpSection .completed-head .summary,
-#gdpSection .completed-head>.pill{justify-self:end!important;align-self:start!important}
-#gdpSection .gdp-liked-summary{
-  display:grid!important;
-  grid-template-columns:auto auto auto!important;
-  justify-content:end!important;
-  align-items:center!important;
-  gap:8px!important;
-  max-width:100%!important;
-}
-#gdpSection .gdp-liked-summary .pill{justify-self:end!important}
-#gdpSection .liked-sort-wrap{
-  min-width:0!important;
-  width:min(100%,270px)!important;
-  padding-inline:12px!important;
-}
-#gdpSection .liked-sort-wrap span{flex:0 0 auto!important}
-#gdpSection .liked-sort-wrap select{
-  min-width:0!important;
-  width:100%!important;
-  font-size:11px!important;
-}
-#gdpSection .gdp-photo-import,
-#gdpSection .gdp-liked-add{justify-self:end!important}
-#gdpSection .gdp-tabs button{
-  padding:10px 8px!important;
-  font-size:9px!important;
-  line-height:1.15!important;
-}
-
-#localSpeakersCard .card-head{
-  display:grid!important;
-  grid-template-columns:minmax(0,1fr) auto!important;
-  align-items:start!important;
-  gap:10px 12px!important;
-}
-#localSpeakersCard .card-head h3{grid-column:1;grid-row:1;max-width:100%!important}
-#localSpeakersCard .card-head p{
-  grid-column:1 / -1!important;
-  grid-row:2!important;
-  max-width:100%!important;
-  margin-top:0!important;
-}
-#localSpeakersCard .local-speaker-toggle{grid-column:2;grid-row:1 / span 2;align-self:center!important}
-
-/* Routine rows aligned like activities */
-#routineSection .clean-list-card .routine-list{padding:0 16px 10px!important}
-#routineSection .routine-list .clean-row{padding-left:6px!important;padding-right:6px!important}
-
-@media(max-width:700px){
-  #gdpSection .tasks-head,
-  #gdpSection .completed-head,
-  #localSpeakersCard .card-head{
-    grid-template-columns:minmax(0,1fr)!important;
-  }
-  #gdpSection .tasks-head .summary,
-  #gdpSection .completed-head .summary,
-  #gdpSection .completed-head>.pill,
-  #localSpeakersCard .local-speaker-toggle{
-    justify-self:start!important;
-  }
-  #localSpeakersCard .local-speaker-toggle{grid-column:1!important;grid-row:auto!important}
-  #localSpeakersCard .card-head p{grid-row:auto!important}
-  #gdpSection .gdp-liked-summary{
-    grid-template-columns:minmax(0,1fr) auto auto!important;
-    justify-content:start!important;
-    width:100%!important;
-  }
-  #gdpSection .gdp-liked-summary .pill{
-    grid-column:1 / -1!important;
-    justify-self:start!important;
-  }
-  #gdpSection .liked-sort-wrap{
-    grid-column:1 / -1!important;
-    justify-self:stretch!important;
-    width:100%!important;
-  }
-  #gdpSection .gdp-tabs{
-    gap:6px!important;
-    padding:6px!important;
-    overflow-x:auto!important;
-    overscroll-behavior-x:contain!important;
-    scroll-padding:18px!important;
-  }
-  #gdpSection .gdp-tabs button{
-    flex:0 0 auto!important;
-    min-width:max-content!important;
-    white-space:nowrap!important;
-    font-size:11px!important;
-    padding:9px 14px!important;
-  }
-}
-
-</style>
-
-<style id="google-calendar-v31-swipe-css">
-/* V31 — navigazione a pagine con gesto orizzontale */
-.main{touch-action:pan-y!important}
-.gdp-tabs,.section-switch{touch-action:pan-x!important}
-#dashboardSection,#partsSection,#activitiesSection,#serviceSection,#gdpSection,#routineSection{
-  will-change:transform,opacity;
-}
-.screen-swipe-next{
-  animation:gcPageFromRight 245ms cubic-bezier(.22,.72,.22,1) both!important;
-}
-.screen-swipe-prev{
-  animation:gcPageFromLeft 245ms cubic-bezier(.22,.72,.22,1) both!important;
-}
-@keyframes gcPageFromRight{
-  from{opacity:.25;transform:translate3d(28px,0,0)}
-  to{opacity:1;transform:translate3d(0,0,0)}
-}
-@keyframes gcPageFromLeft{
-  from{opacity:.25;transform:translate3d(-28px,0,0)}
-  to{opacity:1;transform:translate3d(0,0,0)}
-}
-.swipe-following{
-  transition:none!important;
-  transform:translate3d(var(--swipe-drag-x,0px),0,0)!important;
-}
-@media(prefers-reduced-motion:reduce){
-  .screen-swipe-next,.screen-swipe-prev{animation:none!important}
-}
-</style>
-
-<script id="google-calendar-v28-viewport-js">
-(function(){
-  function realignViewport(){
-    try{
-      document.documentElement.scrollLeft=0;
-      document.body.scrollLeft=0;
-      if(window.scrollX!==0){
-        window.scrollTo(0,window.scrollY);
-      }
-    }catch(e){}
-  }
-
-  document.addEventListener('focusout',function(e){
-    if(e.target && e.target.matches && e.target.matches('input,select,textarea')){
-      setTimeout(realignViewport,80);
-      setTimeout(realignViewport,320);
-    }
-  },true);
-
-  document.addEventListener('submit',function(){
-    setTimeout(realignViewport,40);
-    setTimeout(realignViewport,260);
-  },true);
-
-  if(window.visualViewport){
-    let lastWidth=window.visualViewport.width;
-    window.visualViewport.addEventListener('resize',function(){
-      const w=window.visualViewport.width;
-      if(w>=lastWidth-1) setTimeout(realignViewport,100);
-      lastWidth=w;
-    });
-  }
-
-  window.addEventListener('pageshow',realignViewport);
-})();
-</script>
-
-
-<style id="google-calendar-v32-routine-reader">
-#routineSection .routine-preview{display:-webkit-box!important;-webkit-box-orient:vertical!important;-webkit-line-clamp:2!important;overflow:hidden!important;white-space:normal!important;max-height:2.8em!important}
-#routineSection .routine-open-target{cursor:pointer!important;border-radius:14px!important;padding:5px 7px!important;margin:-5px -7px!important;transition:background-color .16s ease,transform .16s ease!important;-webkit-tap-highlight-color:transparent!important}
-#routineSection .routine-open-target:active{background:var(--gc-control)!important;transform:scale(.995)!important}
-#routineEditDialog.routine-reader-dialog{width:min(760px,calc(100vw - 18px))!important;max-width:min(760px,calc(100vw - 18px))!important;height:min(92dvh,920px)!important;max-height:min(92dvh,920px)!important;margin:auto!important;padding:0!important;border:0!important;border-radius:28px!important;background:#fff!important;color:var(--gc-text)!important;overflow:hidden!important;box-shadow:0 24px 80px rgba(60,64,67,.28)!important}
-#routineEditDialog.routine-reader-dialog[open]{animation:routineReaderIn .2s cubic-bezier(.2,.8,.2,1) both!important}
-#routineEditDialog.routine-reader-dialog::backdrop{background:rgba(32,33,36,.28)!important;backdrop-filter:blur(5px)!important;-webkit-backdrop-filter:blur(5px)!important;animation:routineBackdropIn .18s ease both!important}
-@keyframes routineReaderIn{from{opacity:0;transform:translateY(14px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
-@keyframes routineBackdropIn{from{opacity:0}to{opacity:1}}
-.routine-reader-shell{height:100%!important;min-height:0!important;display:grid!important;grid-template-rows:auto minmax(0,1fr) auto!important;background:#fff!important}
-.routine-reader-head{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;padding:18px 18px 14px!important;border-bottom:1px solid var(--gc-line-soft)!important;background:rgba(255,255,255,.96)!important;z-index:2!important}
-.routine-reader-head-main{min-width:0!important}.routine-reader-kicker{margin:0 0 3px!important;color:var(--gc-blue)!important;font-size:10px!important;font-weight:700!important;letter-spacing:.08em!important;text-transform:uppercase!important}
-#routineReaderTitle{display:block!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;color:var(--gc-text)!important;font-size:22px!important;line-height:1.15!important;font-weight:600!important;letter-spacing:-.02em!important}
-.routine-reader-head-actions{display:flex!important;align-items:center!important;gap:7px!important;flex:0 0 auto!important}.routine-reader-edit-trigger{min-height:36px!important;padding:0 13px!important;border:0!important;border-radius:18px!important;background:var(--gc-blue-soft)!important;color:var(--gc-blue)!important;font-size:11px!important;font-weight:700!important}
-.routine-reader-scroll{min-height:0!important;overflow-y:auto!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important;padding:22px 20px 32px!important;background:#fff!important}.routine-reader-date{display:inline-flex!important;align-items:center!important;min-height:28px!important;padding:4px 10px!important;margin:0 0 18px!important;border-radius:14px!important;background:var(--gc-control)!important;color:var(--gc-muted)!important;font-size:11px!important;font-weight:600!important}.routine-reader-text{margin:0!important;color:var(--gc-text)!important;font-size:16px!important;line-height:1.65!important;white-space:pre-wrap!important;overflow-wrap:anywhere!important}
-.routine-reader-edit-pane{display:none!important}#routineEditDialog.is-editing .routine-reader-view-pane{display:none!important}#routineEditDialog.is-editing .routine-reader-edit-pane{display:block!important}#routineEditDialog.is-editing #routineReaderEditBtn{display:none!important}.routine-reader-edit-pane .field{margin-bottom:16px!important}.routine-reader-edit-pane textarea{min-height:54dvh!important;resize:none!important;line-height:1.55!important;font-size:16px!important}
-.routine-reader-footer{display:none!important;align-items:center!important;justify-content:flex-end!important;gap:8px!important;padding:12px 18px calc(12px + env(safe-area-inset-bottom))!important;border-top:1px solid var(--gc-line-soft)!important;background:rgba(255,255,255,.97)!important}#routineEditDialog.is-editing .routine-reader-footer{display:flex!important}
-@media(max-width:700px){#routineEditDialog.routine-reader-dialog{width:calc(100vw - 12px)!important;max-width:calc(100vw - 12px)!important;height:calc(100dvh - 20px)!important;max-height:calc(100dvh - 20px)!important;border-radius:26px!important}.routine-reader-head{padding:16px 14px 12px!important}#routineReaderTitle{font-size:20px!important}.routine-reader-scroll{padding:19px 16px 28px!important}.routine-reader-text{font-size:16px!important;line-height:1.62!important}.routine-reader-edit-pane textarea{min-height:58dvh!important}.routine-reader-footer{padding-left:14px!important;padding-right:14px!important}}
-</style>
-
-
-<style id="v33-cache-reset-and-routine-hint">
-.routine-v33-hint{margin-top:6px;color:var(--gc-muted,#5f6368);font-size:12px;line-height:1.35}
-@media(max-width:700px){.routine-v33-hint{font-size:11px;max-width:270px}}
-</style>
-<meta name="app-build" content="V34-20260921-1734">
 </head>
-<body data-build="v33">
+<body>
 <div class="shell">
   <main class="main">
     <div class="topbar">
-      <div class="brand-mark" aria-label="CIAO Tiziano">CIAO Tiziano</div>
+      <div class="brand-mark" aria-label="JW TIZI">JW TIZI</div>
       <div class="search">⌕ <input id="globalSearch" placeholder="Cerca parti, luoghi, date..." /></div>
       <button class="quiet-prompt-btn" id="quietPromptBtn" aria-label="Apri pannello secondario" title="">◇</button>
       <button class="btn btn-soft" id="reportBtn">▥ Report annuale</button>
@@ -5547,7 +4492,7 @@ body.home-mode .quiet-prompt-btn:hover{background:rgba(255,255,255,.82)!importan
     <div id="routineSection" style="display:none">
       <section class="routine-hero">
         <div class="eyebrow">ROUTINE</div>
-        <h2>Routine</h2><div class="routine-v33-hint">Tocca una routine per aprire la procedura completa</div>
+        <h2>Routine</h2>
       </section>
 
       <section class="card">
@@ -5567,7 +4512,7 @@ body.home-mode .quiet-prompt-btn:hover{background:rgba(255,255,255,.82)!importan
             </div>
             <div class="field routine-text-field">
               <label>Testo</label>
-              <textarea id="routineText" required placeholder="Scrivi qui il contenuto della routine o una procedura anche molto lunga..."></textarea>
+              <textarea id="routineText" required placeholder="Scrivi qui il contenuto della routine..."></textarea>
             </div>
             <button class="btn btn-primary" type="submit">＋ Aggiungi</button>
           </form>
@@ -5611,33 +4556,31 @@ body.home-mode .quiet-prompt-btn:hover{background:rgba(255,255,255,.82)!importan
 
 
 
-<dialog id="routineEditDialog" class="modal routine-edit-dialog routine-reader-dialog">
-  <div class="routine-reader-shell">
-    <div class="routine-reader-head">
-      <div class="routine-reader-head-main">
-        <div class="routine-reader-kicker">ROUTINE</div>
-        <strong id="routineReaderTitle">Routine</strong>
-      </div>
-      <div class="routine-reader-head-actions">
-        <button type="button" class="routine-reader-edit-trigger" id="routineReaderEditBtn">Modifica</button>
-        <button type="button" class="iconbtn" id="closeRoutineEdit" aria-label="Chiudi">✕</button>
-      </div>
+<dialog id="routineEditDialog" class="modal routine-edit-dialog">
+  <div class="modal-head">
+    <div>
+      <strong>Modifica routine</strong>
+      <div class="muted">Aggiorna il contenuto e salva le modifiche.</div>
     </div>
-    <div class="routine-reader-scroll" id="routineReaderScroll">
-      <div class="routine-reader-view-pane">
-        <div class="routine-reader-date" id="routineReaderDate">Nessuna scadenza</div>
-        <div class="routine-reader-text" id="routineReaderText"></div>
-      </div>
-      <div class="routine-reader-edit-pane">
-        <div class="field"><label>Nome routine</label><input id="routineEditName" /></div>
-        <div class="field"><label>Scadenza (facoltativa)</label><input id="routineEditDueDate" type="date" /></div>
-        <div class="field"><label>Procedura / testo</label><textarea id="routineEditText" placeholder="Scrivi qui anche procedure molto lunghe..."></textarea></div>
-      </div>
+    <button class="iconbtn" id="closeRoutineEdit">✕</button>
+  </div>
+  <div class="modal-body">
+    <div class="field">
+      <label>Nome routine</label>
+      <input id="routineEditName" />
     </div>
-    <div class="routine-reader-footer">
-      <button type="button" class="btn btn-ghost" id="cancelRoutineEdit">Annulla</button>
-      <button type="button" class="btn btn-primary" id="saveRoutineEdit">Salva modifiche</button>
+    <div class="field">
+      <label>Scadenza (facoltativa)</label>
+      <input id="routineEditDueDate" type="date" />
     </div>
+    <div class="field">
+      <label>Testo</label>
+      <textarea id="routineEditText"></textarea>
+    </div>
+  </div>
+  <div class="modal-actions">
+    <button class="btn btn-ghost" id="cancelRoutineEdit">Annulla</button>
+    <button class="btn btn-primary" id="saveRoutineEdit">Salva modifiche</button>
   </div>
 </dialog>
 
@@ -6005,22 +4948,6 @@ body.home-mode .quiet-prompt-btn:hover{background:rgba(255,255,255,.82)!importan
   </div>
 </dialog>
 
-
-<dialog id="taskTypesDialog" class="modal task-types-dialog">
-  <div class="modal-head">
-    <div><strong>Tipi di parte</strong><div class="muted">Modifica, aggiungi o rimuovi le voci disponibili nel menu Parti.</div></div>
-    <button type="button" class="iconbtn" id="closeTaskTypesDialog" aria-label="Chiudi">✕</button>
-  </div>
-  <div class="modal-body">
-    <div id="taskTypesManagerList" class="task-types-manager-list"></div>
-    <button type="button" class="btn btn-soft task-types-add" id="addTaskTypeManagerRow">＋ Aggiungi voce</button>
-  </div>
-  <div class="modal-actions">
-    <button type="button" class="btn btn-ghost" id="cancelTaskTypesDialog">Annulla</button>
-    <button type="button" class="btn btn-primary" id="saveTaskTypesDialog">Salva elenco</button>
-  </div>
-</dialog>
-
 <div class="toast" id="toast">Salvato</div>
 
 <script>
@@ -6099,9 +5026,9 @@ function migrateReportHistory(){
   if(changed)save();
 }
 function esc(v){return String(v??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;')}
-function allTypes(){const a=[...savedTypes].map(x=>String(x||'').trim()).filter(Boolean);return [...new Map(a.map(x=>[x.toLowerCase(),x])).values()].sort((a,b)=>a.localeCompare(b,'it'))}
+function allTypes(){const a=[...savedTypes,...prompts.map(p=>p.type)].map(x=>String(x||'').trim()).filter(Boolean);return [...new Map(a.map(x=>[x.toLowerCase(),x])).values()].sort((a,b)=>a.localeCompare(b,'it'))}
 function addSavedType(t){t=String(t||'').trim();if(!t)return'';if(!savedTypes.some(x=>x.toLowerCase()===t.toLowerCase()))savedTypes.push(t);save();renderTypeOptions(t);return t}
-function renderTypeOptions(sel=''){const s=$('taskType'),cur=sel||s.value||'';s.innerHTML='<option value="">Seleziona una parte…</option>'+allTypes().map(t=>`<option value="${esc(t)}">${esc(t)}</option>`).join('')+'<option value="__add_new__">＋ Aggiungi nuova voce…</option><option value="__manage_types__">Gestisci elenco…</option>';const ex=allTypes().find(t=>t.toLowerCase()===cur.toLowerCase());s.value=ex||''}
+function renderTypeOptions(sel=''){const s=$('taskType'),cur=sel||s.value||'';s.innerHTML='<option value="">Seleziona una parte…</option>'+allTypes().map(t=>`<option value="${esc(t)}">${esc(t)}</option>`).join('')+'<option value="__add_new__">＋ Aggiungi nuova voce…</option>';const ex=allTypes().find(t=>t.toLowerCase()===cur.toLowerCase());s.value=ex||''}
 function isPublicTalk(t){return String(t||'').trim().toLowerCase()==='discorso pubblico'}
 function updateLocationField(){const show=isPublicTalk($('taskType').value);$('locationField').style.display=show?'flex':'none';$('taskLocation').required=show;if(!show)$('taskLocation').value=''}
 function effort(h){h=Number(h);return h<=Number(scrumConfig.XS)?'XS':h<=Number(scrumConfig.S)?'S':h<=Number(scrumConfig.M)?'M':h<=Number(scrumConfig.L)?'L':'XL'}
@@ -6524,7 +5451,7 @@ window.deleteActivity=id=>{
   toast('Attività eliminata');
 };
 
-function switchSection(section, transitionDirection=''){
+function switchSection(section){
   currentSection=section;
   const isHome=section==='home',
         isParts=section==='parts',
@@ -6553,9 +5480,6 @@ function switchSection(section, transitionDirection=''){
   document.body.classList.toggle('gdp-mode',isGdp);
   document.body.classList.toggle('routine-mode',isRoutine);
 
-  const brand=$('.brand-mark');
-  if(brand)brand.textContent='CIAO Tiziano';
-
   $('globalSearch').value='';
   $('globalSearch').disabled=isHome;
   $('globalSearch').placeholder=isActivities
@@ -6566,9 +5490,7 @@ function switchSection(section, transitionDirection=''){
       ?'Cerca oratori, congregazioni, note...'
       :isRoutine
         ?'Cerca nelle routine...'
-        :isHome
-          ?'Cerca parti, luoghi, date...'
-          :'Cerca parti, luoghi, date...';
+        :'Cerca parti, luoghi, date...';
 
   if(isHome)renderDashboard();
   else if(isActivities)renderActivities();
@@ -6577,16 +5499,14 @@ function switchSection(section, transitionDirection=''){
   else if(isRoutine)renderRoutines();
   else renderTasks();
 
-  /* Transizione pagina: direzionale con swipe, neutra con i normali pulsanti */
+  /* V19: anima solo la schermata appena aperta, mantenendo il cambio immediato e reattivo */
   const activeScreen=isHome?$('dashboardSection'):isParts?$('partsSection'):isActivities?$('activitiesSection'):isService?$('serviceSection'):isGdp?$('gdpSection'):$('routineSection');
   if(activeScreen && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    activeScreen.classList.remove('screen-enter','screen-swipe-next','screen-swipe-prev');
-    activeScreen.style.removeProperty('--swipe-drag-x');
+    activeScreen.classList.remove('screen-enter');
     void activeScreen.offsetWidth;
-    const cls=transitionDirection==='next'?'screen-swipe-next':transitionDirection==='prev'?'screen-swipe-prev':'screen-enter';
-    activeScreen.classList.add(cls);
+    activeScreen.classList.add('screen-enter');
     clearTimeout(activeScreen._ramsMotionTimer);
-    activeScreen._ramsMotionTimer=setTimeout(()=>activeScreen.classList.remove(cls),300);
+    activeScreen._ramsMotionTimer=setTimeout(()=>activeScreen.classList.remove('screen-enter'),260);
   }
 }
 $('showHomeBtn').onclick=()=>switchSection('home');
@@ -6703,73 +5623,32 @@ $('routineForm').addEventListener('submit',e=>{
   toast('Routine aggiunta');
 });
 
-function fillRoutineReader(r){
-  if(!r)return;
-  activeRoutineId=r.id;
-  $('routineReaderTitle').textContent=r.name||'Routine';
-  $('routineReaderText').textContent=r.text||'';
-  $('routineReaderDate').textContent=r.dueDate?('Scadenza · '+fmt(r.dueDate)):'Nessuna scadenza';
+window.editRoutine=id=>{
+  const r=routines.find(x=>x.id===id);if(!r)return;
+  activeRoutineId=id;
   $('routineEditName').value=r.name||'';
   $('routineEditText').value=r.text||'';
   $('routineEditDueDate').value=r.dueDate||'';
-}
-
-window.openRoutineReader=(id,editMode=false)=>{
-  const r=routines.find(x=>x.id===id);if(!r)return;
-  const d=$('routineEditDialog');
-  fillRoutineReader(r);
-  d.classList.toggle('is-editing',!!editMode);
-  if(!d.open)d.showModal();
-  requestAnimationFrame(()=>{
-    const sc=$('routineReaderScroll');
-    if(sc)sc.scrollTop=0;
-    if(editMode)setTimeout(()=>$('routineEditText')?.focus({preventScroll:true}),120);
-  });
+  $('routineEditDialog').showModal();
 };
 
-window.editRoutine=id=>openRoutineReader(id,true);
-
-$('routineReaderEditBtn').onclick=()=>{
-  const r=routines.find(x=>x.id===activeRoutineId);if(!r)return;
-  fillRoutineReader(r);
-  $('routineEditDialog').classList.add('is-editing');
-  setTimeout(()=>$('routineEditText')?.focus({preventScroll:true}),100);
-};
-
-$('closeRoutineEdit').onclick=()=>{
-  $('routineEditDialog').classList.remove('is-editing');
-  $('routineEditDialog').close();
-};
-
-$('cancelRoutineEdit').onclick=()=>{
-  const r=routines.find(x=>x.id===activeRoutineId);
-  if(r)fillRoutineReader(r);
-  $('routineEditDialog').classList.remove('is-editing');
-  $('routineReaderScroll').scrollTop=0;
-};
-
-$('routineEditDialog').addEventListener('click',e=>{
-  if(e.target===$('routineEditDialog')){
-    $('routineEditDialog').classList.remove('is-editing');
-    $('routineEditDialog').close();
-  }
-});
+$('closeRoutineEdit').onclick=$('cancelRoutineEdit').onclick=()=>$('routineEditDialog').close();
 
 $('saveRoutineEdit').onclick=()=>{
   const r=routines.find(x=>x.id===activeRoutineId);if(!r)return;
   const name=$('routineEditName').value.trim();
   const text=$('routineEditText').value.trim();
   if(!name||!text)return toast('Nome e testo sono obbligatori');
+
   r.name=name;
   r.text=text;
   r.dueDate=$('routineEditDueDate').value||'';
   r.updatedAt=Date.now();
+
   save();
+  $('routineEditDialog').close();
   renderRoutines($('globalSearch').value);
   renderDashboard();
-  fillRoutineReader(r);
-  $('routineEditDialog').classList.remove('is-editing');
-  $('routineReaderScroll').scrollTop=0;
   toast('Routine aggiornata');
 };
 
@@ -7678,53 +6557,7 @@ $('saveScrumBtn').onclick=()=>{
   toast('Taglie Scrum aggiornate');
 };
 
-
-function taskTypeManagerRow(name='',original=''){
-  const row=document.createElement('div');
-  row.className='task-type-manager-row';
-  row.dataset.original=original||name||'';
-  row.innerHTML=`<input type="text" class="task-type-manager-input" value="${esc(name)}" placeholder="Nome della parte" aria-label="Nome tipo di parte"><button type="button" class="iconbtn task-type-remove" title="Rimuovi" aria-label="Rimuovi">✕</button>`;
-  row.querySelector('.task-type-remove').onclick=()=>row.remove();
-  return row;
-}
-function openTaskTypesDialog(){
-  const list=$('taskTypesManagerList');
-  list.innerHTML='';
-  allTypes().forEach(t=>list.appendChild(taskTypeManagerRow(t,t)));
-  $('taskTypesDialog').showModal();
-}
-$('addTaskTypeManagerRow').onclick=()=>{
-  const row=taskTypeManagerRow('','');
-  $('taskTypesManagerList').appendChild(row);
-  setTimeout(()=>row.querySelector('input')?.focus(),20);
-};
-$('closeTaskTypesDialog').onclick=$('cancelTaskTypesDialog').onclick=()=>$('taskTypesDialog').close();
-$('saveTaskTypesDialog').onclick=()=>{
-  const rows=[...$('taskTypesManagerList').querySelectorAll('.task-type-manager-row')];
-  const next=[];
-  const seen=new Set();
-  rows.forEach(row=>{
-    const input=row.querySelector('input');
-    const value=String(input?.value||'').trim();
-    if(!value)return;
-    const key=value.toLowerCase();
-    if(seen.has(key))return;
-    seen.add(key); next.push(value);
-    const original=String(row.dataset.original||'').trim();
-    if(original && original.toLowerCase()!==key){
-      prompts=prompts.map(p=>String(p.type||'').trim().toLowerCase()===original.toLowerCase()?{...p,type:value}:p);
-    }
-  });
-  if(!next.length){toast('Lascia almeno un tipo di parte');return;}
-  savedTypes=next;
-  save();
-  renderTypeOptions();
-  renderPrompts($('promptSearch')?.value||'');
-  $('taskTypesDialog').close();
-  toast('Elenco parti aggiornato');
-};
-
-$('taskType').addEventListener('change',()=>{if($('taskType').value==='__manage_types__'){$('taskType').value='';openTaskTypesDialog();updateLocationField();return}if($('taskType').value==='__add_new__'){const v=window.prompt('Inserisci il nome della nuova parte:');if(!v||!v.trim()){$('taskType').value='';updateLocationField();return}const s=addSavedType(v);$('taskType').value=s;toast('Nuova voce salvata')}updateLocationField()});
+$('taskType').addEventListener('change',()=>{if($('taskType').value==='__add_new__'){const v=window.prompt('Inserisci il nome della nuova parte:');if(!v||!v.trim()){$('taskType').value='';updateLocationField();return}const s=addSavedType(v);$('taskType').value=s;toast('Nuova voce salvata')}updateLocationField()});
 $('taskForm').addEventListener('submit',e=>{
   e.preventDefault();const type=$('taskType').value.trim(),date=$('taskDate').value,hours=Number($('taskHours').value),location=isPublicTalk(type)?$('taskLocation').value.trim():'';
   if(!type||!date||!hours)return;if(isPublicTalk(type)&&!location){toast('Indica dove farai il discorso');$('taskLocation').focus();return}
@@ -8086,8 +6919,8 @@ migrateTasks();migrateSectionData();migrateReportHistory();renderPrompts();rende
       <section class="dashboard-card"><div class="dash-head"><div><h3>Prossimo oratore</h3></div></div><div id="dashNextSpeaker"></div></section>
     `;
     const util=document.createElement('div');
-    util.className='dashboard-utilities dashboard-utilities--icons';
-    util.innerHTML=`<button class="btn btn-soft" id="dashImportBackupV16" aria-label="Carica salvataggio" title="Carica salvataggio"><span class="util-ico">⤴︎</span></button><button class="btn btn-soft" id="dashExportBackupV16" aria-label="Salva backup" title="Salva backup"><span class="util-ico">⤓</span></button><button class="btn btn-ghost" id="dashOpenReportV16" aria-label="Apri report" title="Apri report"><span class="util-ico">▣</span></button>`;
+    util.className='dashboard-utilities';
+    util.innerHTML=`<button class="btn btn-soft" id="dashImportBackupV16">↥ Carica salvataggio</button><button class="btn btn-soft" id="dashExportBackupV16">⇩ Salva backup</button><button class="btn btn-ghost" id="dashOpenReportV16">▥ Report</button>`;
     dashGrid.insertAdjacentElement('afterend',util);
     $('dashImportBackupV16').onclick=()=>$('importBackupFile').click();
     $('dashExportBackupV16').onclick=()=>$('exportBtn').click();
@@ -8206,13 +7039,7 @@ migrateTasks();migrateSectionData();migrateReportHistory();renderPrompts();rende
     hero.insertAdjacentElement('afterend',nav);
     window.setGdpTab=(tab)=>{
       activeGdpTab=tab; localStorage.setItem('jw_tizi_gdp_tab',tab);
-      qa('.gdp-tabs button',gdp).forEach(b=>{
-        const on=b.dataset.tab===tab;
-        b.classList.toggle('active',on);
-        if(on && b.scrollIntoView){
-          setTimeout(()=>b.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'}),10);
-        }
-      });
+      qa('.gdp-tabs button',gdp).forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
       qa('.gdp-pane',gdp).forEach(p=>p.classList.toggle('gdp-pane-active',p.dataset.gdpPane===tab));
     };
     qa('.gdp-tabs button',gdp).forEach(b=>b.onclick=()=>setGdpTab(b.dataset.tab));
@@ -8222,6 +7049,7 @@ migrateTasks();migrateSectionData();migrateReportHistory();renderPrompts();rende
     if(localCard){
       const wrap=q('.add-wrap',localCard); if(wrap){wrap.classList.add('local-form-wrap')}
       const head=q('.card-head',localCard); if(head && !q('.local-speaker-toggle',head)){
+        head.style.display='flex'; head.style.alignItems='center'; head.style.gap='10px';
         const b=document.createElement('button'); b.type='button'; b.className='iconbtn local-speaker-toggle'; b.textContent='＋'; b.title='Aggiungi oratore locale';
         b.onclick=()=>{wrap.classList.toggle('is-open');if(wrap.classList.contains('is-open'))setTimeout(()=>$('localSpeakerName').focus(),20)}; head.appendChild(b);
       }
@@ -8266,7 +7094,7 @@ migrateTasks();migrateSectionData();migrateReportHistory();renderPrompts();rende
     const qv=String(filter||'').trim().toLowerCase();
     const rows=routines.filter(r=>r&&r.name).filter(r=>!qv||[r.name,r.text,r.dueDate].join(' ').toLowerCase().includes(qv)).sort((a,b)=>{if(a.dueDate&&b.dueDate)return a.dueDate.localeCompare(b.dueDate);if(a.dueDate)return -1;if(b.dueDate)return 1;return Number(b.updatedAt||b.createdAt||0)-Number(a.updatedAt||a.createdAt||0)});
     $('routineCount').textContent=rows.length;
-    $('routineList').innerHTML=rows.length?rows.map(r=>`<div class="clean-row"><div class="clean-row-main routine-open-target" role="button" tabindex="0" aria-label="Apri ${esc(r.name)}" onclick="openRoutineReader('${r.id}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openRoutineReader('${r.id}')}"><div class="clean-title">${esc(r.name)}</div><div class="clean-submeta routine-preview">${esc(r.text||'')}</div><div class="clean-meta">${r.dueDate?`<span>${esc(fmt(r.dueDate))}</span><span>${esc(dashDateLabel(r.dueDate))}</span>`:'<span>Nessuna scadenza</span>'}</div></div>${r.dueDate?'<span class="clean-tag">Scadenza</span>':'<span></span>'}${menuHtml([menuBtn('Modifica',`editRoutine('${r.id}')`),menuBtn('Elimina',`deleteRoutine('${r.id}')`,'danger')])}</div>`).join(''):'<div class="empty">Nessuna routine salvata.</div>';
+    $('routineList').innerHTML=rows.length?rows.map(r=>`<div class="clean-row"><div class="clean-row-main"><div class="clean-title">${esc(r.name)}</div><div class="clean-submeta routine-preview">${esc(r.text||'')}</div><div class="clean-meta">${r.dueDate?`<span>${esc(fmt(r.dueDate))}</span><span>${esc(dashDateLabel(r.dueDate))}</span>`:'<span>Nessuna scadenza</span>'}</div></div>${r.dueDate?'<span class="clean-tag">Scadenza</span>':'<span></span>'}${menuHtml([menuBtn('Modifica',`editRoutine('${r.id}')`),menuBtn('Elimina',`deleteRoutine('${r.id}')`,'danger')])}</div>`).join(''):'<div class="empty">Nessuna routine salvata.</div>';
   };
 
   /* Chiude i form dopo salvataggio e rende accessibili i + dalla Dashboard, se usati altrove */
@@ -8282,93 +7110,12 @@ migrateTasks();migrateSectionData();migrateReportHistory();renderPrompts();rende
 })();
 </script>
 
-
-<script id="google-calendar-v31-swipe-js">
-(function(){
-  const order=['home','parts','activities','service','gdp','routine'];
-  const sectionEl={
-    home:()=>document.getElementById('dashboardSection'),
-    parts:()=>document.getElementById('partsSection'),
-    activities:()=>document.getElementById('activitiesSection'),
-    service:()=>document.getElementById('serviceSection'),
-    gdp:()=>document.getElementById('gdpSection'),
-    routine:()=>document.getElementById('routineSection')
-  };
-  let sx=0,sy=0,lastX=0,lastY=0,startTime=0,tracking=false,horizontal=false,startScreen=null;
-
-  function isBlockedTarget(target){
-    return !!target.closest('input,textarea,select,button,a,summary,details,dialog,[contenteditable="true"],.gdp-tabs,.section-switch,.service-time-pop,.native-row-menu,.row-menu,.liked-sort-wrap');
-  }
-  function clearDrag(){
-    if(startScreen){
-      startScreen.classList.remove('swipe-following');
-      startScreen.style.removeProperty('--swipe-drag-x');
-    }
-    tracking=false; horizontal=false; startScreen=null;
-  }
-
-  document.addEventListener('touchstart',function(e){
-    if(e.touches.length!==1 || document.querySelector('dialog[open]')) return;
-    const t=e.touches[0];
-    /* Lascia liberi i gesti di navigazione Safari ai bordi dello schermo. */
-    if(t.clientX<24 || t.clientX>window.innerWidth-24 || isBlockedTarget(e.target)) return;
-    sx=lastX=t.clientX; sy=lastY=t.clientY; startTime=Date.now();
-    tracking=true; horizontal=false;
-    const getter=sectionEl[window.currentSection||currentSection];
-    startScreen=getter?getter():null;
-  },{passive:true});
-
-  document.addEventListener('touchmove',function(e){
-    if(!tracking || e.touches.length!==1) return;
-    const t=e.touches[0]; lastX=t.clientX; lastY=t.clientY;
-    const dx=lastX-sx, dy=lastY-sy;
-    if(!horizontal && Math.abs(dx)>12 && Math.abs(dx)>Math.abs(dy)*1.2) horizontal=true;
-    if(!horizontal || !startScreen) return;
-    const idx=order.indexOf(window.currentSection||currentSection);
-    const atStart=idx<=0 && dx>0, atEnd=idx>=order.length-1 && dx<0;
-    const resistance=(atStart||atEnd)?0.10:0.24;
-    const drag=Math.max(-34,Math.min(34,dx*resistance));
-    startScreen.classList.add('swipe-following');
-    startScreen.style.setProperty('--swipe-drag-x',drag+'px');
-  },{passive:true});
-
-  document.addEventListener('touchend',function(e){
-    if(!tracking) return;
-    const dx=lastX-sx, dy=lastY-sy, elapsed=Date.now()-startTime;
-    const idx=order.indexOf(window.currentSection||currentSection);
-    const valid=horizontal && Math.abs(dx)>=54 && Math.abs(dx)>Math.abs(dy)*1.25 && elapsed<900;
-    clearDrag();
-    if(!valid || idx<0) return;
-    const nextIndex=dx<0?idx+1:idx-1;
-    if(nextIndex<0 || nextIndex>=order.length) return;
-    const direction=dx<0?'next':'prev';
-    /* Ogni sezione si comporta come una nuova pagina. */
-    window.scrollTo({top:0,left:0,behavior:'auto'});
-    switchSection(order[nextIndex],direction);
-  },{passive:true});
-
-  document.addEventListener('touchcancel',clearDrag,{passive:true});
-})();
-</script>
-
-
-<script id="v34-hard-reset-loader">
-(function(){
-  async function clearOldPwaLayer(){
-    try{
-      if('serviceWorker' in navigator){
-        const regs=await navigator.serviceWorker.getRegistrations();
-        await Promise.all(regs.map(r=>r.unregister()));
-      }
-      if('caches' in window){
-        const keys=await caches.keys();
-        await Promise.all(keys.map(k=>caches.delete(k)));
-      }
-      localStorage.setItem('ciao_tiziano_loaded_build','34');
-    }catch(e){}
-  }
-  window.addEventListener('load',clearOldPwaLayer,{once:true});
-})();
+<script>
+if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./service-worker.js').catch(() => {});
+  });
+}
 </script>
 
 
