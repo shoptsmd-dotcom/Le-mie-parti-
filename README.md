@@ -1,3 +1,3 @@
-JW TIZI — Dieter Rams V24
+JW TIZI — V25 Google Calendar Style
 
-Rimossa la riga vuota da tutti i menu nativi a tre punti. I pulsanti Fatto nelle attività sono ora piccole spunte lineari blu.
+Versione grafica ispirata a Google Calendar su iPhone: superfici bianche, blu Google, card morbide, ricerca arrotondata, pulsanti Material, navigazione inferiore leggera e form più puliti. Tutte le funzioni e i dati della V24 restano invariati.
