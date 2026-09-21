@@ -2,16 +2,19 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>CIAO Tiziano</title>
 
-<link rel="manifest" href="manifest.webmanifest">
+<link rel="manifest" href="manifest.webmanifest?v=33">
 <meta name="theme-color" content="#ffffff">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="CIAO Tiziano">
-<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="apple-touch-icon" href="icon-180.png?v=33">
 
 <style>
 :root{
@@ -5103,8 +5106,13 @@ body.home-mode .quiet-prompt-btn:hover{background:rgba(255,255,255,.82)!importan
 @media(max-width:700px){#routineEditDialog.routine-reader-dialog{width:calc(100vw - 12px)!important;max-width:calc(100vw - 12px)!important;height:calc(100dvh - 20px)!important;max-height:calc(100dvh - 20px)!important;border-radius:26px!important}.routine-reader-head{padding:16px 14px 12px!important}#routineReaderTitle{font-size:20px!important}.routine-reader-scroll{padding:19px 16px 28px!important}.routine-reader-text{font-size:16px!important;line-height:1.62!important}.routine-reader-edit-pane textarea{min-height:58dvh!important}.routine-reader-footer{padding-left:14px!important;padding-right:14px!important}}
 </style>
 
+
+<style id="v33-cache-reset-and-routine-hint">
+.routine-v33-hint{margin-top:6px;color:var(--gc-muted,#5f6368);font-size:12px;line-height:1.35}
+@media(max-width:700px){.routine-v33-hint{font-size:11px;max-width:270px}}
+</style>
 </head>
-<body>
+<body data-build="v33">
 <div class="shell">
   <main class="main">
     <div class="topbar">
@@ -5538,7 +5546,7 @@ body.home-mode .quiet-prompt-btn:hover{background:rgba(255,255,255,.82)!importan
     <div id="routineSection" style="display:none">
       <section class="routine-hero">
         <div class="eyebrow">ROUTINE</div>
-        <h2>Routine</h2>
+        <h2>Routine</h2><div class="routine-v33-hint">Tocca una routine per aprire la procedura completa</div>
       </section>
 
       <section class="card">
@@ -8343,10 +8351,13 @@ migrateTasks();migrateSectionData();migrateReportHistory();renderPrompts();rende
 </script>
 
 
-<script>
+<script id="v33-service-worker-loader">
 if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./service-worker.js').catch(() => {});
+  window.addEventListener('load', async () => {
+    try {
+      const reg = await navigator.serviceWorker.register('./service-worker.js?v=33', {updateViaCache:'none'});
+      await reg.update();
+    } catch(e) {}
   });
 }
 </script>

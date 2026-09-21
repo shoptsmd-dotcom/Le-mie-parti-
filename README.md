@@ -1,3 +1,3 @@
-CIAO Tiziano — V32 Google Calendar style
+CIAO Tiziano — V33 Routine Procedure + Cache Reset
 
-Routine aggiornate per procedure lunghe: un tap sulla routine apre un lettore quasi a tutto schermo, bianco, scorrevole e modificabile direttamente.
+Questa build forza l’aggiornamento su iPhone/GitHub Pages e include il lettore quasi a tutto schermo per procedure lunghe nelle Routine.
