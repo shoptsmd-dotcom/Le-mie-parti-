@@ -1,3 +1,5 @@
-JW TIZI — Dieter Rams V24
+CIAO Tiziano — V35 CLEAN
 
-Rimossa la riga vuota da tutti i menu nativi a tre punti. I pulsanti Fatto nelle attività sono ora piccole spunte lineari blu.
+Base: V32 con Routine/Procedure a tutto schermo.
+Questa build disattiva le vecchie cache/service worker senza cancellare i dati localStorage.
+Per forzare il primo caricamento aprire una volta index.html?v=35 da Safari.
