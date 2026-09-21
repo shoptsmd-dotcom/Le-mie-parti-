@@ -1,3 +1,3 @@
-Ciao Tiziano — V30 Google Calendar style
+JW TIZI — V29 Google Calendar
 
-Il simbolo accanto a “Ciao Tiziano” è stato avvicinato alla scritta e ridimensionato per formare un logo più compatto e armonioso. Tutto il resto resta invariato rispetto alla V29.
+Rifiniture: CIAO TIZIANO più grande e in maiuscolo nella Home, routine allineate come le Attività, filtro GDP 'Da più tempo' completamente leggibile, voce Gestisci elenco senza icona e piccoli accenti grafici colorati in stile Google Calendar.

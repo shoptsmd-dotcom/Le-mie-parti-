@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Ciao Tiziano</title>
+<title>JW TIZI</title>
 
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#ffffff">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Ciao Tiziano">
+<meta name="apple-mobile-web-app-title" content="JW TIZI">
 <link rel="apple-touch-icon" href="icon-180.png">
 
 <style>
@@ -4888,53 +4888,122 @@ body{
 </script>
 
 
-<style id="ciao-tiziano-v30-brand-lockup">
-/* V30 — logo Ciao Tiziano più compatto: simbolo accostato alla scritta */
-.topbar{
-  grid-template-columns:max-content max-content minmax(180px,1fr)!important;
-  column-gap:5px!important;
-  row-gap:10px!important;
+<style id="google-calendar-v29-polish">
+/* V29 — rifiniture richieste */
+
+/* Home: saluto più deciso, in maiuscolo */
+body.home-mode .brand-mark{
+  font-size:27px!important;
+  font-weight:650!important;
+  letter-spacing:-.035em!important;
+  color:var(--gc-text)!important;
 }
-.brand-mark{
-  align-self:center!important;
+@media(max-width:560px){
+  body.home-mode .brand-mark{font-size:25px!important}
+}
+
+/* Routine: stesso allineamento interno di Parti e Attività */
+#routineSection .routine-list .clean-row{
+  padding-left:22px!important;
+  padding-right:18px!important;
+  grid-template-columns:minmax(0,1fr) auto auto!important;
+  column-gap:8px!important;
+}
+#routineSection .routine-list .clean-row-main{
+  min-width:0!important;
+}
+@media(max-width:560px){
+  #routineSection .routine-list .clean-row{
+    padding-left:18px!important;
+    padding-right:14px!important;
+  }
+}
+
+/* GDP: il filtro deve mostrare per intero “Da più tempo” */
+#gdpSection .liked-sort-wrap{
+  min-width:190px!important;
+  width:190px!important;
+  max-width:100%!important;
+  box-sizing:border-box!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:7px!important;
+  overflow:visible!important;
+}
+#gdpSection .liked-sort-wrap>span{
+  flex:0 0 auto!important;
   white-space:nowrap!important;
 }
-.quiet-prompt-btn{
-  justify-self:start!important;
-  width:30px!important;
-  height:30px!important;
-  min-width:30px!important;
-  margin-left:0!important;
-  background:transparent!important;
+#gdpSection .liked-sort-wrap select{
+  flex:1 1 auto!important;
+  width:auto!important;
+  min-width:112px!important;
+  max-width:none!important;
+  padding-right:18px!important;
+  white-space:nowrap!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+  font-size:11px!important;
 }
-.quiet-prompt-btn:before{
-  font-size:14px!important;
-}
-.topbar .search{
-  grid-column:3!important;
-  grid-row:1!important;
-}
-@media(max-width:720px){
-  .topbar{
-    grid-template-columns:max-content max-content 1fr!important;
-    column-gap:4px!important;
-    row-gap:8px!important;
+@media(max-width:560px){
+  #gdpSection .gdp-liked-summary{
+    align-items:flex-end!important;
   }
-  .brand-mark{font-size:21px!important}
-  .quiet-prompt-btn{
-    grid-column:2!important;
-    grid-row:1!important;
-    justify-self:start!important;
-    width:28px!important;
-    height:28px!important;
-    min-width:28px!important;
+  #gdpSection .liked-sort-wrap{
+    min-width:184px!important;
+    width:184px!important;
   }
-  .quiet-prompt-btn:before{font-size:13px!important}
-  .topbar .search{
-    grid-column:1/-1!important;
-    grid-row:2!important;
-  }
+  #gdpSection .liked-sort-wrap select{min-width:108px!important}
 }
+
+/* Un piccolo tocco Google Calendar: marker-evento discreti */
+.dashboard-card .dash-head h3,
+.card .tasks-head h3,
+.card .completed-head h3,
+#routineSection .card-head h3{
+  display:flex!important;
+  align-items:center!important;
+  gap:8px!important;
+}
+.dashboard-card .dash-head h3::before,
+.card .tasks-head h3::before,
+.card .completed-head h3::before,
+#routineSection .card-head h3::before{
+  content:"";
+  width:7px!important;
+  height:7px!important;
+  flex:0 0 7px!important;
+  border-radius:50%!important;
+  background:var(--gc-blue)!important;
+}
+.clean-dashboard .dashboard-card:nth-child(2) .dash-head h3::before{background:#34a853!important}
+.clean-dashboard .dashboard-card:nth-child(3) .dash-head h3::before{background:#fbbc04!important}
+.clean-dashboard .dashboard-card:nth-child(4) .dash-head h3::before{background:#a142f4!important}
+#activitiesSection .tasks-head h3::before{background:#34a853!important}
+#serviceSection .tasks-head h3::before{background:#fbbc04!important}
+#gdpSection .tasks-head h3::before{background:#4285f4!important}
+#routineSection .card-head h3::before{background:#ea4335!important}
+
+/* Piccolo accento “evento” sui titoli pagina, senza appesantire */
+.hero .eyebrow::before,
+.activity-hero .eyebrow::before,
+.service-hero .eyebrow::before,
+.gdp-hero .eyebrow::before,
+.routine-hero .eyebrow::before,
+.dashboard-hero .eyebrow::before{
+  content:"";
+  display:inline-block!important;
+  width:6px!important;
+  height:6px!important;
+  margin-right:7px!important;
+  border-radius:2px!important;
+  background:var(--gc-blue)!important;
+  vertical-align:1px!important;
+}
+.activity-hero .eyebrow::before{background:#34a853!important}
+.service-hero .eyebrow::before{background:#fbbc04!important}
+.gdp-hero .eyebrow::before{background:#4285f4!important}
+.routine-hero .eyebrow::before{background:#ea4335!important}
 </style>
 
 </head>
@@ -4942,7 +5011,7 @@ body{
 <div class="shell">
   <main class="main">
     <div class="topbar">
-      <div class="brand-mark" aria-label="Ciao Tiziano">Ciao Tiziano</div>
+      <div class="brand-mark" aria-label="JW TIZI">JW TIZI</div>
       <div class="search">⌕ <input id="globalSearch" placeholder="Cerca parti, luoghi, date..." /></div>
       <button class="quiet-prompt-btn" id="quietPromptBtn" aria-label="Apri pannello secondario" title="">◇</button>
       <button class="btn btn-soft" id="reportBtn">▥ Report annuale</button>
@@ -5924,7 +5993,7 @@ function migrateReportHistory(){
 function esc(v){return String(v??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;')}
 function allTypes(){const a=[...savedTypes].map(x=>String(x||'').trim()).filter(Boolean);return [...new Map(a.map(x=>[x.toLowerCase(),x])).values()].sort((a,b)=>a.localeCompare(b,'it'))}
 function addSavedType(t){t=String(t||'').trim();if(!t)return'';if(!savedTypes.some(x=>x.toLowerCase()===t.toLowerCase()))savedTypes.push(t);save();renderTypeOptions(t);return t}
-function renderTypeOptions(sel=''){const s=$('taskType'),cur=sel||s.value||'';s.innerHTML='<option value="">Seleziona una parte…</option>'+allTypes().map(t=>`<option value="${esc(t)}">${esc(t)}</option>`).join('')+'<option value="__add_new__">＋ Aggiungi nuova voce…</option><option value="__manage_types__">⚙ Gestisci elenco…</option>';const ex=allTypes().find(t=>t.toLowerCase()===cur.toLowerCase());s.value=ex||''}
+function renderTypeOptions(sel=''){const s=$('taskType'),cur=sel||s.value||'';s.innerHTML='<option value="">Seleziona una parte…</option>'+allTypes().map(t=>`<option value="${esc(t)}">${esc(t)}</option>`).join('')+'<option value="__add_new__">＋ Aggiungi nuova voce…</option><option value="__manage_types__">Gestisci elenco…</option>';const ex=allTypes().find(t=>t.toLowerCase()===cur.toLowerCase());s.value=ex||''}
 function isPublicTalk(t){return String(t||'').trim().toLowerCase()==='discorso pubblico'}
 function updateLocationField(){const show=isPublicTalk($('taskType').value);$('locationField').style.display=show?'flex':'none';$('taskLocation').required=show;if(!show)$('taskLocation').value=''}
 function effort(h){h=Number(h);return h<=Number(scrumConfig.XS)?'XS':h<=Number(scrumConfig.S)?'S':h<=Number(scrumConfig.M)?'M':h<=Number(scrumConfig.L)?'L':'XL'}
@@ -6375,6 +6444,12 @@ function switchSection(section){
   document.body.classList.toggle('service-mode',isService);
   document.body.classList.toggle('gdp-mode',isGdp);
   document.body.classList.toggle('routine-mode',isRoutine);
+
+  const brand=document.querySelector('.brand-mark');
+  if(brand){
+    brand.textContent=isHome?'CIAO TIZIANO':'JW TIZI';
+    brand.setAttribute('aria-label',brand.textContent);
+  }
 
   $('globalSearch').value='';
   $('globalSearch').disabled=isHome;
@@ -7789,7 +7864,7 @@ $('importBackupFile').addEventListener('change',async e=>{
 });
 
 
-$('exportBtn').onclick=()=>{const blob=new Blob([JSON.stringify({backupVersion:9,exportedAt:new Date().toISOString(),tasks,prompts,savedTypes,scrumConfig,reportHistory,activities,serviceEntries,speakers,congregationSpeakers,routines},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='ciao-tiziano-backup.json';a.click();URL.revokeObjectURL(url)};
+$('exportBtn').onclick=()=>{const blob=new Blob([JSON.stringify({backupVersion:9,exportedAt:new Date().toISOString(),tasks,prompts,savedTypes,scrumConfig,reportHistory,activities,serviceEntries,speakers,congregationSpeakers,routines},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='jw-tizi-backup.json';a.click();URL.revokeObjectURL(url)};
 $('dashExportBackup').onclick=()=>$('exportBtn').click();
 
 setInterval(()=>{
