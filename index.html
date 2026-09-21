@@ -3631,6 +3631,85 @@ body{padding-bottom:74px!important}
 }
 </style>
 
+
+<style id="rams-v19-motion">
+/* ==========================================================
+   V19 — micro-transizioni leggere e coerenti
+   ========================================================== */
+:root{--motion-fast:150ms;--motion-page:210ms;--motion-ease:cubic-bezier(.22,.72,.22,1)}
+
+/* Sezioni principali: entrata morbida senza rallentare la UI */
+#dashboardSection,#partsSection,#activitiesSection,#serviceSection,#gdpSection,#routineSection{
+  transform-origin:50% 0;
+}
+.screen-enter{
+  animation:ramsScreenIn var(--motion-page) var(--motion-ease) both!important;
+}
+@keyframes ramsScreenIn{
+  0%{opacity:0;transform:translate3d(0,7px,0)}
+  100%{opacity:1;transform:translate3d(0,0,0)}
+}
+
+/* GDP: passaggio tra rubriche */
+.gdp-pane.gdp-pane-active{
+  animation:ramsPaneIn 180ms var(--motion-ease) both!important;
+}
+@keyframes ramsPaneIn{
+  from{opacity:0;transform:translate3d(6px,0,0)}
+  to{opacity:1;transform:translate3d(0,0,0)}
+}
+
+/* Form che si aprono dal + */
+.clean-form-card.is-open,.local-form-wrap.is-open{
+  animation:ramsFormIn 180ms var(--motion-ease) both!important;
+}
+@keyframes ramsFormIn{
+  from{opacity:0;transform:translate3d(0,-5px,0)}
+  to{opacity:1;transform:translate3d(0,0,0)}
+}
+
+/* Menu contestuali */
+.row-menu[open]>.row-menu-pop,
+.service-time-details[open]>.service-time-pop{
+  animation:ramsMenuIn var(--motion-fast) var(--motion-ease) both!important;
+  transform-origin:top right;
+}
+@keyframes ramsMenuIn{
+  from{opacity:0;transform:scale(.97) translate3d(0,-3px,0)}
+  to{opacity:1;transform:scale(1) translate3d(0,0,0)}
+}
+
+/* Dialog / finestre */
+dialog[open]{animation:ramsDialogIn 190ms var(--motion-ease) both}
+dialog[open]::backdrop{animation:ramsBackdropIn 190ms ease-out both}
+@keyframes ramsDialogIn{
+  from{opacity:0;transform:translate3d(0,8px,0) scale(.985)}
+  to{opacity:1;transform:translate3d(0,0,0) scale(1)}
+}
+@keyframes ramsBackdropIn{from{opacity:0}to{opacity:1}}
+
+/* Menu inferiore: colore/indicatore non scattano */
+.section-switch button{
+  transition:color var(--motion-fast) ease,border-color var(--motion-fast) ease,background-color var(--motion-fast) ease!important;
+}
+
+/* Pulsanti e righe: feedback più naturale */
+.btn,.small,.mini-btn,.iconbtn,.gdp-tabs button,.row-menu>summary{
+  transition:background-color 120ms ease,color 120ms ease,border-color 120ms ease,transform 100ms ease,opacity 120ms ease!important;
+}
+.btn:active,.small:active,.mini-btn:active,.iconbtn:active,.row-menu>summary:active{
+  transform:scale(.97)!important;
+}
+.clean-row,.compact-task,.speaker-item,.speaker-booked,.speaker-archive,.activity-item,.activity-waiting,.activity-completed,.routine-row{
+  transition:background-color 140ms ease,opacity 140ms ease!important;
+}
+
+/* Rispetta le preferenze di accessibilità */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+</style>
+
 </head>
 <body>
 <div class="shell">
@@ -5072,6 +5151,16 @@ function switchSection(section){
   else if(isGdp)renderSpeakers();
   else if(isRoutine)renderRoutines();
   else renderTasks();
+
+  /* V19: anima solo la schermata appena aperta, mantenendo il cambio immediato e reattivo */
+  const activeScreen=isHome?$('dashboardSection'):isParts?$('partsSection'):isActivities?$('activitiesSection'):isService?$('serviceSection'):isGdp?$('gdpSection'):$('routineSection');
+  if(activeScreen && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    activeScreen.classList.remove('screen-enter');
+    void activeScreen.offsetWidth;
+    activeScreen.classList.add('screen-enter');
+    clearTimeout(activeScreen._ramsMotionTimer);
+    activeScreen._ramsMotionTimer=setTimeout(()=>activeScreen.classList.remove('screen-enter'),260);
+  }
 }
 $('showHomeBtn').onclick=()=>switchSection('home');
 $('showPartsBtn').onclick=()=>switchSection('parts');

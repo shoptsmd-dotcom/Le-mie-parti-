@@ -1,3 +1,3 @@
-JW TIZI — Dieter Rams V18
+JW TIZI — Dieter Rams V19
 
-Questa versione uniforma tutti i menu a tre punti (•••) allo stile del menu mostrato nel filtro GDP: pannello scuro arrotondato, testo bianco, comparsa ancorata al pulsante e layout più leggibile su iPhone.
+Questa versione aggiunge micro-transizioni fluide tra le sezioni principali, le sottosezioni GDP, i form, i menu contestuali e i dialog. Le animazioni sono brevi e rispettano prefers-reduced-motion.
