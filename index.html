@@ -3003,6 +3003,16 @@ button,input,select,textarea{font:inherit;color:inherit}
 }
 </style>
 
+
+<style id="rams-v12-photo-source">
+.liked-photo-source-actions{display:flex;gap:8px;flex-wrap:wrap}
+.liked-photo-source-actions .btn{min-height:38px!important}
+#likedPhotoFileName{margin-top:6px!important}
+@media(max-width:560px){
+  .liked-photo-source-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .liked-photo-source-actions .btn{width:100%!important;padding-left:8px!important;padding-right:8px!important}
+}
+</style>
 </head>
 <body>
 <div class="shell">
@@ -3599,7 +3609,13 @@ button,input,select,textarea{font:inherit;color:inherit}
     <div class="liked-photo-picker">
       <div class="field">
         <label>Foto elenco</label>
-        <input id="likedPhotoFile" type="file" accept="image/*" capture="environment" />
+        <div class="liked-photo-source-actions">
+          <button type="button" class="btn btn-soft" id="chooseLikedPhotoLibraryBtn">Scegli dalla libreria</button>
+          <button type="button" class="btn btn-soft" id="takeLikedPhotoBtn">Scatta foto</button>
+        </div>
+        <div id="likedPhotoFileName" class="muted">Nessuna foto selezionata.</div>
+        <input id="likedPhotoFile" type="file" accept="image/*" style="display:none" />
+        <input id="likedPhotoCameraFile" type="file" accept="image/*" capture="environment" style="display:none" />
       </div>
       <button type="button" class="btn btn-primary" id="scanLikedPhotoBtn">Leggi foto</button>
     </div>
@@ -4900,6 +4916,7 @@ $('saveLikedSpeaker').onclick=()=>{
 
 
 let likedPhotoParsedRows=[];
+let likedPhotoSelectedFile=null;
 function normalizeSpeakerNameKey(name){
   return String(name||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
 }
@@ -4998,7 +5015,10 @@ async function ensureTesseractLoaded(){
 }
 $('importLikedPhotoBtn').onclick=()=>{
   likedPhotoParsedRows=[];
+  likedPhotoSelectedFile=null;
   $('likedPhotoFile').value='';
+  $('likedPhotoCameraFile').value='';
+  $('likedPhotoFileName').textContent='Nessuna foto selezionata.';
   $('likedPhotoRawText').value='';
   $('likedPhotoRawWrap').hidden=true;
   $('likedPhotoPreviewWrap').hidden=true;
@@ -5010,9 +5030,19 @@ $('importLikedPhotoBtn').onclick=()=>{
   $('likedPhotoDialog').showModal();
 };
 $('closeLikedPhoto').onclick=$('cancelLikedPhoto').onclick=()=>$('likedPhotoDialog').close();
-$('likedPhotoFile').onchange=()=>{if($('likedPhotoFile').files&&$('likedPhotoFile').files[0])$('scanLikedPhotoBtn').click();};
+$('chooseLikedPhotoLibraryBtn').onclick=()=>$('likedPhotoFile').click();
+$('takeLikedPhotoBtn').onclick=()=>$('likedPhotoCameraFile').click();
+const setLikedPhotoSelectedFile=file=>{
+  if(!file)return;
+  likedPhotoSelectedFile=file;
+  $('likedPhotoFileName').textContent=file.name||'Foto selezionata';
+  $('likedPhotoStatus').textContent='Foto pronta. Avvio la lettura…';
+  $('scanLikedPhotoBtn').click();
+};
+$('likedPhotoFile').onchange=()=>setLikedPhotoSelectedFile($('likedPhotoFile').files&&$('likedPhotoFile').files[0]);
+$('likedPhotoCameraFile').onchange=()=>setLikedPhotoSelectedFile($('likedPhotoCameraFile').files&&$('likedPhotoCameraFile').files[0]);
 $('scanLikedPhotoBtn').onclick=async()=>{
-  const file=$('likedPhotoFile').files&&$('likedPhotoFile').files[0];
+  const file=likedPhotoSelectedFile;
   if(!file)return toast('Seleziona prima una foto');
   const btn=$('scanLikedPhotoBtn');btn.disabled=true;
   $('likedPhotoStatus').textContent='Preparo il riconoscimento del testo…';
