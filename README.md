@@ -1,3 +1,3 @@
-CIAO Tiziano — V31 Google Calendar style
+CIAO Tiziano — V33 Routine Procedure + Cache Reset
 
-Aggiunta navigazione swipe tra Home, Parti, Attività, Servizio, GDP e Routine, con transizione orizzontale morbida e protezione dei controlli interattivi.
+Questa build forza l’aggiornamento su iPhone/GitHub Pages e include il lettore quasi a tutto schermo per procedure lunghe nelle Routine.
