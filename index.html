@@ -3558,6 +3558,79 @@ body{padding-bottom:74px!important}
 }
 </style>
 
+
+<style id="rams-v18-dot-menu-style">
+/* V18: tutti i menu ••• adottano lo stile del selettore GDP */
+.row-menu{position:relative!important;overflow:visible!important;z-index:20!important}
+.row-menu[open]{z-index:7000!important}
+.row-menu>summary{
+  display:grid!important;place-items:center!important;
+  width:34px!important;height:34px!important;
+  border:1px solid #c9cac3!important;
+  border-radius:999px!important;
+  background:#fbfbf7!important;
+  color:#5f625b!important;
+  font-size:17px!important;
+  line-height:1!important;
+  list-style:none!important;
+}
+.row-menu>summary::-webkit-details-marker{display:none!important}
+.row-menu[open]>summary{background:#ecece6!important;color:#111!important}
+.row-menu-pop{
+  position:fixed!important;
+  top:var(--row-menu-top,0px)!important;
+  left:var(--row-menu-left,0px)!important;
+  right:auto!important;bottom:auto!important;
+  width:min(280px,calc(100vw - 22px))!important;
+  min-width:220px!important;
+  max-width:min(320px,calc(100vw - 22px))!important;
+  padding:10px 0!important;
+  border:0!important;
+  border-radius:34px!important;
+  background:rgba(84,84,82,.94)!important;
+  color:#fff!important;
+  box-shadow:0 18px 40px rgba(0,0,0,.22)!important;
+  backdrop-filter:blur(14px)!important;
+  -webkit-backdrop-filter:blur(14px)!important;
+  overflow:hidden!important;
+}
+.row-menu-pop button{
+  display:block!important;
+  width:100%!important;
+  min-height:58px!important;
+  padding:0 24px!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  color:#fff!important;
+  text-align:left!important;
+  font-size:17px!important;
+  font-weight:500!important;
+  line-height:1.25!important;
+  white-space:normal!important;
+}
+.row-menu-pop button + button{
+  border-top:1px solid rgba(255,255,255,.09)!important;
+}
+.row-menu-pop button:hover,
+.row-menu-pop button:focus{
+  background:rgba(255,255,255,.08)!important;
+}
+.row-menu-pop .danger{color:#fff!important}
+@media(max-width:720px){
+  .row-menu-pop{
+    width:min(300px,calc(100vw - 20px))!important;
+    min-width:210px!important;
+    border-radius:30px!important;
+  }
+  .row-menu-pop button{
+    min-height:56px!important;
+    font-size:16px!important;
+    padding:0 22px!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="shell">

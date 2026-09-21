@@ -1,3 +1,3 @@
-JW TIZI — Dieter Rams V17
+JW TIZI — Dieter Rams V18
 
-Prompt GPT reso più leggibile e menu ••• trasformato in dropdown ancorato al pulsante, nello stile del selettore GDP.
+Questa versione uniforma tutti i menu a tre punti (•••) allo stile del menu mostrato nel filtro GDP: pannello scuro arrotondato, testo bianco, comparsa ancorata al pulsante e layout più leggibile su iPhone.
