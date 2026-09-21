@@ -1,3 +1,3 @@
-JW TIZI — V27 Google Calendar Style
+JW TIZI — Google Calendar V28
 
-Correzioni: scheda Congregazione sempre dentro il menu GDP su iPhone; gestione modificabile dei tipi di parte con aggiunta/rinomina/rimozione; righe salvate di Parti e Attività riallineate dentro le card.
+Correzione viewport iPhone: impedisce lo zoom automatico dei campi, elimina overflow orizzontali dopo il salvataggio e riallinea la pagina alla larghezza del dispositivo senza alterare lo scroll verticale.

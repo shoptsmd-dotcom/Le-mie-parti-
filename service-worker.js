@@ -1,4 +1,4 @@
-const CACHE = 'jw-tizi-google-calendar-v27';
+const CACHE = 'jw-tizi-google-calendar-v28';
 const ASSETS = [
   './',
   './index.html',
