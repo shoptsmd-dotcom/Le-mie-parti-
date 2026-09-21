@@ -3013,6 +3013,151 @@ button,input,select,textarea{font:inherit;color:inherit}
   .liked-photo-source-actions .btn{width:100%!important;padding-left:8px!important;padding-right:8px!important}
 }
 </style>
+
+<style id="rams-v13-liked-compact">
+/* V13 — rubrica Oratori graditi più compatta e consultabile */
+#speakerCallbackList{
+  padding:0 14px 8px!important;
+}
+#speakerCallbackList .liked-speaker-item{
+  display:grid!important;
+  grid-template-columns:24px minmax(0,1fr) auto!important;
+  align-items:center!important;
+  gap:8px!important;
+  min-height:0!important;
+  margin:0!important;
+  padding:7px 2px!important;
+  border:0!important;
+  border-bottom:1px solid var(--r-line)!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+#speakerCallbackList .liked-speaker-item:last-child{border-bottom:0!important}
+#speakerCallbackList .liked-speaker-item:before{display:none!important}
+#speakerCallbackList .liked-speaker-icon{
+  width:22px!important;
+  height:22px!important;
+  min-width:22px!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  color:var(--r-ink)!important;
+  font-size:12px!important;
+}
+#speakerCallbackList .liked-speaker-main{
+  min-width:0!important;
+}
+#speakerCallbackList .speaker-name{
+  margin:0!important;
+  font-size:14px!important;
+  line-height:1.15!important;
+  font-weight:700!important;
+}
+#speakerCallbackList .liked-speaker-meta{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:1px 10px!important;
+  margin-top:2px!important;
+  color:var(--r-muted)!important;
+  font-size:10px!important;
+  line-height:1.25!important;
+}
+#speakerCallbackList .liked-speaker-meta span{white-space:nowrap!important}
+#speakerCallbackList .liked-speaker-meta strong{
+  color:var(--r-ink)!important;
+  font-weight:600!important;
+}
+#speakerCallbackList .liked-speaker-note{
+  max-width:100%!important;
+  margin-top:2px!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+  white-space:nowrap!important;
+  color:var(--r-muted)!important;
+  font-size:10px!important;
+  line-height:1.2!important;
+}
+#speakerCallbackList .liked-speaker-actions{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  gap:3px!important;
+  margin:0!important;
+}
+#speakerCallbackList .liked-speaker-actions .liked-book-btn{
+  min-height:28px!important;
+  height:28px!important;
+  padding:4px 7px!important;
+  font-size:10px!important;
+}
+#speakerCallbackList .liked-speaker-actions .iconbtn{
+  width:28px!important;
+  height:28px!important;
+  min-width:28px!important;
+  padding:0!important;
+  border:0!important;
+  font-size:14px!important;
+}
+@media(max-width:620px){
+  #speakerCallbackList{padding-left:10px!important;padding-right:10px!important}
+  #speakerCallbackList .liked-speaker-item{
+    grid-template-columns:20px minmax(0,1fr) auto!important;
+    gap:6px!important;
+    padding:6px 0!important;
+  }
+  #speakerCallbackList .liked-speaker-icon{
+    width:18px!important;height:18px!important;min-width:18px!important;font-size:10px!important;
+  }
+  #speakerCallbackList .speaker-name{font-size:13px!important}
+  #speakerCallbackList .liked-speaker-meta{font-size:9px!important;gap:1px 7px!important}
+  #speakerCallbackList .liked-speaker-note{font-size:9px!important}
+  #speakerCallbackList .liked-speaker-actions{gap:1px!important}
+  #speakerCallbackList .liked-speaker-actions .liked-book-btn{
+    min-height:26px!important;height:26px!important;padding:3px 6px!important;font-size:9px!important;
+  }
+  #speakerCallbackList .liked-speaker-actions .iconbtn{
+    width:25px!important;height:25px!important;min-width:25px!important;font-size:12px!important;
+  }
+}
+</style>
+
+
+<style id="rams-v14-liked-sort">
+/* V14 — filtri di ordinamento per Oratori graditi */
+.gdp-liked-summary{align-items:center!important}
+.liked-sort-wrap{
+  display:inline-flex!important;align-items:center!important;gap:5px!important;
+  min-height:28px!important;padding:0 6px!important;
+  border:1px solid var(--r-line)!important;background:transparent!important;
+  color:var(--r-muted)!important;font-size:9px!important;font-weight:700!important;
+  letter-spacing:.04em!important;text-transform:uppercase!important;
+}
+.liked-sort-wrap select{
+  appearance:none!important;-webkit-appearance:none!important;
+  min-height:26px!important;height:26px!important;
+  max-width:126px!important;padding:0 16px 0 3px!important;
+  border:0!important;border-radius:0!important;outline:0!important;
+  background:transparent!important;color:var(--r-ink)!important;
+  font:600 10px/1 "Helvetica Neue",Helvetica,Arial,sans-serif!important;
+  text-transform:none!important;letter-spacing:0!important;
+  background-image:linear-gradient(45deg,transparent 50%,var(--r-muted) 50%),linear-gradient(135deg,var(--r-muted) 50%,transparent 50%)!important;
+  background-position:calc(100% - 7px) 11px,calc(100% - 4px) 11px!important;
+  background-size:3px 3px,3px 3px!important;background-repeat:no-repeat!important;
+}
+@media(max-width:560px){
+  .gdp-liked-summary{display:flex!important;flex-wrap:wrap!important;gap:5px!important;margin-top:8px!important}
+  .liked-sort-wrap{order:2!important;flex:1 1 150px!important}
+  .liked-sort-wrap select{max-width:none!important;flex:1!important;width:100%!important}
+  .gdp-liked-summary .gdp-photo-import,.gdp-liked-summary .gdp-liked-add{order:3!important}
+}
+</style>
+
+
+<style id="rams-v15-service-no-scrum">
+/* V15: in Servizio nascondi il pannello Indicatore Scrum */
+body.service-mode .rightbar{display:none!important}
+</style>
+
 </head>
 <body>
 <div class="shell">
@@ -3379,10 +3524,18 @@ button,input,select,textarea{font:inherit;color:inherit}
         <div class="tasks-head">
           <div>
             <h3>Oratori graditi</h3>
-            <div class="muted">Gli oratori che vuoi invitare ancora. Sono ordinati da chi non viene da più tempo.</div>
+            <div class="muted">Gli oratori che vuoi invitare ancora. Usa il filtro per cambiare rapidamente l’ordine.</div>
           </div>
           <div class="summary gdp-liked-summary">
             <span class="pill">Graditi <strong id="speakerCallbackCount">0</strong></span>
+            <label class="liked-sort-wrap" for="likedSpeakerSort">
+              <span>Ordina</span>
+              <select id="likedSpeakerSort" aria-label="Ordina oratori graditi">
+                <option value="oldest">Da più tempo</option>
+                <option value="recent">Più recente</option>
+                <option value="alpha">A–Z</option>
+              </select>
+            </label>
             <button type="button" class="small gdp-photo-import" id="importLikedPhotoBtn" title="Importa oratori graditi da una foto">Foto</button>
             <button type="button" class="iconbtn gdp-liked-add" id="addLikedSpeakerBtn" title="Aggiungi direttamente un oratore gradito" aria-label="Aggiungi direttamente un oratore gradito">＋</button>
           </div>
@@ -3900,6 +4053,9 @@ button,input,select,textarea{font:inherit;color:inherit}
 
 <script>
 const STORAGE_TASKS='congregazione_tasks_v1', STORAGE_PROMPTS='congregazione_prompts_v1', STORAGE_TYPES='congregazione_types_v1', STORAGE_SCRUM='congregazione_scrum_v1', STORAGE_REPORT='congregazione_report_history_v1', STORAGE_ACTIVITIES='congregazione_activities_v1', STORAGE_SERVICE='congregazione_service_v1', STORAGE_GDP='congregazione_gdp_v1', STORAGE_GDP_LOCAL='congregazione_gdp_local_v1', STORAGE_ROUTINES='congregazione_routines_v1';
+const STORAGE_GDP_LIKED_SORT='congregazione_gdp_liked_sort_v1';
+let likedSpeakerSort=localStorage.getItem(STORAGE_GDP_LIKED_SORT)||'oldest';
+if(!['oldest','recent','alpha'].includes(likedSpeakerSort))likedSpeakerSort='oldest';
 const defaultPrompts=[
 {type:'Discorso pubblico',prompt:'Aiutami a preparare un discorso pubblico chiaro e coinvolgente. Organizza il materiale in introduzione, punti principali, illustrazioni pratiche e conclusione. Mantieni uno stile naturale e semplice da esporre.'},
 {type:"Parte all'adunanza infrasettimanale",prompt:"Aiutami a preparare questa parte per l'adunanza infrasettimanale. Crea una scaletta breve, fedele al materiale di partenza, con un'apertura efficace, passaggi logici e una conclusione pratica."},
@@ -4622,8 +4778,19 @@ function renderSpeakers(filter=''){
     .filter(s=>s.status==='recommended' && s.followUp)
     .filter(s=>!q||[s.name,s.congregation,s.note,s.lastVisitDate,s.expiryDate].join(' ').toLowerCase().includes(q))
     .sort((a,b)=>{
-      const ad=speakerLastVisit(a)||'0000-00-00', bd=speakerLastVisit(b)||'0000-00-00';
-      return ad.localeCompare(bd) || a.name.localeCompare(b.name,'it');
+      if(likedSpeakerSort==='alpha') return a.name.localeCompare(b.name,'it',{sensitivity:'base'});
+      const ad=speakerLastVisit(a)||'', bd=speakerLastVisit(b)||'';
+      if(likedSpeakerSort==='recent'){
+        if(!ad && !bd) return a.name.localeCompare(b.name,'it',{sensitivity:'base'});
+        if(!ad) return 1;
+        if(!bd) return -1;
+        return bd.localeCompare(ad) || a.name.localeCompare(b.name,'it',{sensitivity:'base'});
+      }
+      /* Da più tempo: chi non ha ancora una visita registrata compare per primo. */
+      if(!ad && !bd) return a.name.localeCompare(b.name,'it',{sensitivity:'base'});
+      if(!ad) return -1;
+      if(!bd) return 1;
+      return ad.localeCompare(bd) || a.name.localeCompare(b.name,'it',{sensitivity:'base'});
     });
 
   const archived=validSpeakers
@@ -4673,20 +4840,20 @@ function renderSpeakers(filter=''){
 
   $('speakerCallbackList').innerHTML=likedSpeakers.length?likedSpeakers.map(s=>{
     const last=speakerLastVisit(s);
-    return `<div class="speaker-item">
-      <div class="speaker-icon">★</div>
-      <div>
+    const meta=[
+      s.congregation?esc(s.congregation):'',
+      last?`Ultima: <strong>${esc(fmt(last))}</strong>`:'Mai registrato',
+      s.expiryDate?`Scad.: <strong>${esc(fmt(s.expiryDate))}</strong>`:''
+    ].filter(Boolean).map(x=>`<span>${x}</span>`).join('');
+    return `<div class="speaker-item liked-speaker-item">
+      <div class="speaker-icon liked-speaker-icon">★</div>
+      <div class="liked-speaker-main">
         <div class="speaker-name">${esc(s.name)}</div>
-        <div class="speaker-sub">${esc(s.note||'Nessuna nota')}</div>
+        <div class="liked-speaker-meta">${meta}</div>
+        ${s.note?`<div class="liked-speaker-note">${esc(s.note)}</div>`:''}
       </div>
-      <div class="speaker-cong">${s.congregation?esc(s.congregation):'—'}</div>
-      <div class="speaker-last">
-        ${last?`Ultima volta: <strong>${esc(fmt(last))}</strong>`:'Ultima volta non registrata'}
-        ${s.expiryDate?`<span class="liked-expiry">Scadenza: <strong>${esc(fmt(s.expiryDate))}</strong></span>`:''}
-        <div style="margin-top:6px"><span class="callback-tag">Gradito</span></div>
-      </div>
-      <div class="speaker-actions">
-        <button class="btn btn-soft" style="padding:8px 10px" onclick="openSpeakerBooking('${s.id}')">Prenota</button>
+      <div class="speaker-actions liked-speaker-actions">
+        <button class="btn btn-soft liked-book-btn" onclick="openSpeakerBooking('${s.id}')">Prenota</button>
         <button class="iconbtn" title="Modifica" onclick="editSpeaker('${s.id}')">✎</button>
         <button class="iconbtn" title="Elimina" onclick="deleteSpeaker('${s.id}')">✕</button>
       </div>
@@ -5608,6 +5775,17 @@ window.deleteServiceEntry=id=>{
   if(editingServiceId===id)resetServiceForm();
   save();renderService($('globalSearch').value);toast('Appuntamento eliminato');
 };
+
+
+const likedSortEl=$('likedSpeakerSort');
+if(likedSortEl){
+  likedSortEl.value=likedSpeakerSort;
+  likedSortEl.addEventListener('change',e=>{
+    likedSpeakerSort=e.target.value;
+    localStorage.setItem(STORAGE_GDP_LIKED_SORT,likedSpeakerSort);
+    renderSpeakers($('globalSearch').value);
+  });
+}
 
 $('globalSearch').addEventListener('input',e=>{if(currentSection==='activities')renderActivities(e.target.value);else if(currentSection==='service')renderService(e.target.value);else if(currentSection==='gdp')renderSpeakers(e.target.value);else if(currentSection==='routine')renderRoutines(e.target.value);else if(currentSection==='parts')renderTasks(e.target.value)});$('promptSearch').addEventListener('input',e=>renderPrompts(e.target.value));
 
