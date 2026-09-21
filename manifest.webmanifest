@@ -1,12 +1,10 @@
 {
-  "name": "JW TIZI",
-  "short_name": "JW TIZI",
+  "name": "CIAO Tiziano",
+  "short_name": "Tiziano",
   "start_url": "./",
-  "scope": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
-  "lang": "it",
   "icons": [
     {
       "src": "icon-192.png",
