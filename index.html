@@ -4643,6 +4643,81 @@ html{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
 }
 </style>
 
+
+<style id="google-calendar-v27-fixes">
+/* GDP: tutte le 5 schede restano sempre dentro il contenitore su iPhone */
+@media(max-width:700px){
+  .gdp-tabs{
+    display:grid!important;
+    grid-template-columns:.82fr .92fr 1.05fr 1.18fr 1.35fr!important;
+    gap:2px!important;
+    width:100%!important;
+    box-sizing:border-box!important;
+    overflow:hidden!important;
+    padding:4px!important;
+  }
+  .gdp-tabs button{
+    min-width:0!important;
+    width:100%!important;
+    padding:8px 3px!important;
+    font-size:9px!important;
+    letter-spacing:-.01em!important;
+    white-space:nowrap!important;
+    overflow:visible!important;
+    text-align:center!important;
+  }
+}
+@media(max-width:390px){
+  .gdp-tabs button{font-size:8.4px!important;padding-left:2px!important;padding-right:2px!important}
+}
+
+/* Parti e Attività: allineamento interno coerente con titoli/card */
+#partsSection .tasks .clean-row,
+#partsSection .completed-list .clean-row,
+#activitiesSection .activity-list .clean-row,
+#activitiesSection .completed-list .clean-row{
+  padding-left:22px!important;
+  padding-right:18px!important;
+}
+@media(max-width:560px){
+  #partsSection .tasks .clean-row,
+  #partsSection .completed-list .clean-row,
+  #activitiesSection .activity-list .clean-row,
+  #activitiesSection .completed-list .clean-row{
+    padding-left:18px!important;
+    padding-right:14px!important;
+  }
+}
+
+/* Gestione elenco Tipi di parte */
+.task-types-dialog{width:min(520px,calc(100vw - 24px))!important}
+.task-types-manager-list{display:grid!important;gap:7px!important}
+.task-type-manager-row{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) 40px!important;
+  gap:7px!important;
+  align-items:center!important;
+}
+.task-type-manager-input{
+  width:100%!important;
+  min-height:44px!important;
+  box-sizing:border-box!important;
+  padding:10px 13px!important;
+  border:1px solid var(--gc-line)!important;
+  border-radius:14px!important;
+  background:var(--gc-control)!important;
+  color:var(--gc-text)!important;
+  font-size:16px!important;
+  outline:none!important;
+}
+.task-type-manager-input:focus{border-color:var(--gc-blue)!important;background:#fff!important;box-shadow:0 0 0 1px var(--gc-blue)!important}
+.task-type-remove{
+  width:40px!important;height:40px!important;min-width:40px!important;
+  border:0!important;border-radius:20px!important;background:var(--gc-control)!important;color:var(--gc-muted)!important;
+}
+.task-types-add{margin-top:10px!important;width:100%!important}
+</style>
+
 </head>
 <body>
 <div class="shell">
@@ -5534,6 +5609,22 @@ html{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
   </div>
 </dialog>
 
+
+<dialog id="taskTypesDialog" class="modal task-types-dialog">
+  <div class="modal-head">
+    <div><strong>Tipi di parte</strong><div class="muted">Modifica, aggiungi o rimuovi le voci disponibili nel menu Parti.</div></div>
+    <button type="button" class="iconbtn" id="closeTaskTypesDialog" aria-label="Chiudi">✕</button>
+  </div>
+  <div class="modal-body">
+    <div id="taskTypesManagerList" class="task-types-manager-list"></div>
+    <button type="button" class="btn btn-soft task-types-add" id="addTaskTypeManagerRow">＋ Aggiungi voce</button>
+  </div>
+  <div class="modal-actions">
+    <button type="button" class="btn btn-ghost" id="cancelTaskTypesDialog">Annulla</button>
+    <button type="button" class="btn btn-primary" id="saveTaskTypesDialog">Salva elenco</button>
+  </div>
+</dialog>
+
 <div class="toast" id="toast">Salvato</div>
 
 <script>
@@ -5612,9 +5703,9 @@ function migrateReportHistory(){
   if(changed)save();
 }
 function esc(v){return String(v??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;')}
-function allTypes(){const a=[...savedTypes,...prompts.map(p=>p.type)].map(x=>String(x||'').trim()).filter(Boolean);return [...new Map(a.map(x=>[x.toLowerCase(),x])).values()].sort((a,b)=>a.localeCompare(b,'it'))}
+function allTypes(){const a=[...savedTypes].map(x=>String(x||'').trim()).filter(Boolean);return [...new Map(a.map(x=>[x.toLowerCase(),x])).values()].sort((a,b)=>a.localeCompare(b,'it'))}
 function addSavedType(t){t=String(t||'').trim();if(!t)return'';if(!savedTypes.some(x=>x.toLowerCase()===t.toLowerCase()))savedTypes.push(t);save();renderTypeOptions(t);return t}
-function renderTypeOptions(sel=''){const s=$('taskType'),cur=sel||s.value||'';s.innerHTML='<option value="">Seleziona una parte…</option>'+allTypes().map(t=>`<option value="${esc(t)}">${esc(t)}</option>`).join('')+'<option value="__add_new__">＋ Aggiungi nuova voce…</option>';const ex=allTypes().find(t=>t.toLowerCase()===cur.toLowerCase());s.value=ex||''}
+function renderTypeOptions(sel=''){const s=$('taskType'),cur=sel||s.value||'';s.innerHTML='<option value="">Seleziona una parte…</option>'+allTypes().map(t=>`<option value="${esc(t)}">${esc(t)}</option>`).join('')+'<option value="__add_new__">＋ Aggiungi nuova voce…</option><option value="__manage_types__">⚙ Gestisci elenco…</option>';const ex=allTypes().find(t=>t.toLowerCase()===cur.toLowerCase());s.value=ex||''}
 function isPublicTalk(t){return String(t||'').trim().toLowerCase()==='discorso pubblico'}
 function updateLocationField(){const show=isPublicTalk($('taskType').value);$('locationField').style.display=show?'flex':'none';$('taskLocation').required=show;if(!show)$('taskLocation').value=''}
 function effort(h){h=Number(h);return h<=Number(scrumConfig.XS)?'XS':h<=Number(scrumConfig.S)?'S':h<=Number(scrumConfig.M)?'M':h<=Number(scrumConfig.L)?'L':'XL'}
@@ -7143,7 +7234,53 @@ $('saveScrumBtn').onclick=()=>{
   toast('Taglie Scrum aggiornate');
 };
 
-$('taskType').addEventListener('change',()=>{if($('taskType').value==='__add_new__'){const v=window.prompt('Inserisci il nome della nuova parte:');if(!v||!v.trim()){$('taskType').value='';updateLocationField();return}const s=addSavedType(v);$('taskType').value=s;toast('Nuova voce salvata')}updateLocationField()});
+
+function taskTypeManagerRow(name='',original=''){
+  const row=document.createElement('div');
+  row.className='task-type-manager-row';
+  row.dataset.original=original||name||'';
+  row.innerHTML=`<input type="text" class="task-type-manager-input" value="${esc(name)}" placeholder="Nome della parte" aria-label="Nome tipo di parte"><button type="button" class="iconbtn task-type-remove" title="Rimuovi" aria-label="Rimuovi">✕</button>`;
+  row.querySelector('.task-type-remove').onclick=()=>row.remove();
+  return row;
+}
+function openTaskTypesDialog(){
+  const list=$('taskTypesManagerList');
+  list.innerHTML='';
+  allTypes().forEach(t=>list.appendChild(taskTypeManagerRow(t,t)));
+  $('taskTypesDialog').showModal();
+}
+$('addTaskTypeManagerRow').onclick=()=>{
+  const row=taskTypeManagerRow('','');
+  $('taskTypesManagerList').appendChild(row);
+  setTimeout(()=>row.querySelector('input')?.focus(),20);
+};
+$('closeTaskTypesDialog').onclick=$('cancelTaskTypesDialog').onclick=()=>$('taskTypesDialog').close();
+$('saveTaskTypesDialog').onclick=()=>{
+  const rows=[...$('taskTypesManagerList').querySelectorAll('.task-type-manager-row')];
+  const next=[];
+  const seen=new Set();
+  rows.forEach(row=>{
+    const input=row.querySelector('input');
+    const value=String(input?.value||'').trim();
+    if(!value)return;
+    const key=value.toLowerCase();
+    if(seen.has(key))return;
+    seen.add(key); next.push(value);
+    const original=String(row.dataset.original||'').trim();
+    if(original && original.toLowerCase()!==key){
+      prompts=prompts.map(p=>String(p.type||'').trim().toLowerCase()===original.toLowerCase()?{...p,type:value}:p);
+    }
+  });
+  if(!next.length){toast('Lascia almeno un tipo di parte');return;}
+  savedTypes=next;
+  save();
+  renderTypeOptions();
+  renderPrompts($('promptSearch')?.value||'');
+  $('taskTypesDialog').close();
+  toast('Elenco parti aggiornato');
+};
+
+$('taskType').addEventListener('change',()=>{if($('taskType').value==='__manage_types__'){$('taskType').value='';openTaskTypesDialog();updateLocationField();return}if($('taskType').value==='__add_new__'){const v=window.prompt('Inserisci il nome della nuova parte:');if(!v||!v.trim()){$('taskType').value='';updateLocationField();return}const s=addSavedType(v);$('taskType').value=s;toast('Nuova voce salvata')}updateLocationField()});
 $('taskForm').addEventListener('submit',e=>{
   e.preventDefault();const type=$('taskType').value.trim(),date=$('taskDate').value,hours=Number($('taskHours').value),location=isPublicTalk(type)?$('taskLocation').value.trim():'';
   if(!type||!date||!hours)return;if(isPublicTalk(type)&&!location){toast('Indica dove farai il discorso');$('taskLocation').focus();return}
