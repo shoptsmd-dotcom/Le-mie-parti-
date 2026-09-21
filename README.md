@@ -1,3 +1,3 @@
-JW TIZI — Dieter Rams V19
+JW TIZI — Dieter Rams V20
 
-Questa versione aggiunge micro-transizioni fluide tra le sezioni principali, le sottosezioni GDP, i form, i menu contestuali e i dialog. Le animazioni sono brevi e rispettano prefers-reduced-motion.
+Questa versione rifinisce tutti i menu a tre punti: compatti, morbidi, con apertura vicina al pulsante e animazione più naturale, nello stesso stile percepito del menu di ordinamento GDP.

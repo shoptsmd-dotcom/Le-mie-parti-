@@ -3710,6 +3710,134 @@ dialog[open]::backdrop{animation:ramsBackdropIn 190ms ease-out both}
 }
 </style>
 
+
+<style id="rams-v20-row-menu-refine">
+/* V20: i menu ••• diventano piccoli, morbidi e ancorati come il filtro GDP */
+.row-menu{position:relative!important;overflow:visible!important;z-index:20!important}
+.row-menu[open]{z-index:7000!important}
+.row-menu>summary{
+  display:grid!important;
+  place-items:center!important;
+  width:36px!important;
+  height:36px!important;
+  min-width:36px!important;
+  border:1px solid #c9cac3!important;
+  border-radius:999px!important;
+  background:#fbfbf7!important;
+  color:#4f514b!important;
+  font-size:18px!important;
+  line-height:1!important;
+  list-style:none!important;
+  transition:background-color .18s ease,color .18s ease,border-color .18s ease,transform .18s ease!important;
+}
+.row-menu>summary::-webkit-details-marker{display:none!important}
+.row-menu>summary:active{transform:scale(.97)!important}
+.row-menu[open]>summary{
+  background:#ecece6!important;
+  color:#111!important;
+  border-color:#b8bab4!important;
+}
+.row-menu-pop{
+  position:fixed!important;
+  top:var(--row-menu-top,0px)!important;
+  left:var(--row-menu-left,0px)!important;
+  right:auto!important;
+  bottom:auto!important;
+  width:max-content!important;
+  min-width:170px!important;
+  max-width:min(210px,calc(100vw - 18px))!important;
+  padding:6px 0!important;
+  border:0!important;
+  border-radius:24px!important;
+  background:rgba(84,84,82,.94)!important;
+  color:#fff!important;
+  box-shadow:0 14px 28px rgba(0,0,0,.18)!important;
+  backdrop-filter:blur(14px)!important;
+  -webkit-backdrop-filter:blur(14px)!important;
+  overflow:hidden!important;
+  opacity:0!important;
+  transform:translateY(6px) scale(.97)!important;
+  transform-origin:top right!important;
+  transition:opacity .18s ease,transform .18s ease!important;
+  pointer-events:none!important;
+}
+.row-menu[open]>.row-menu-pop{
+  opacity:1!important;
+  transform:translateY(0) scale(1)!important;
+  pointer-events:auto!important;
+}
+.row-menu-pop button{
+  display:block!important;
+  width:100%!important;
+  min-height:46px!important;
+  padding:0 18px!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  color:#fff!important;
+  text-align:left!important;
+  font-size:15px!important;
+  font-weight:500!important;
+  line-height:1.2!important;
+  white-space:nowrap!important;
+}
+.row-menu-pop button+button{border-top:1px solid rgba(255,255,255,.08)!important}
+.row-menu-pop button:hover,
+.row-menu-pop button:focus{background:rgba(255,255,255,.08)!important}
+.row-menu-pop .danger{color:#fff!important}
+@media(max-width:720px){
+  .row-menu-pop{
+    min-width:160px!important;
+    max-width:min(195px,calc(100vw - 16px))!important;
+    border-radius:22px!important;
+  }
+  .row-menu-pop button{
+    min-height:44px!important;
+    font-size:14px!important;
+    padding:0 16px!important;
+  }
+}
+</style>
+<script id="rams-v20-row-menu-js">
+(function(){
+  function placeRowMenuV20(details){
+    if(!details || !details.open) return;
+    const summary=details.querySelector(':scope > summary');
+    const pop=details.querySelector(':scope > .row-menu-pop');
+    if(!summary || !pop) return;
+    const r=summary.getBoundingClientRect();
+    const margin=8;
+    const gap=6;
+    const width=Math.min(Math.max(pop.offsetWidth||170,160), Math.min(210,window.innerWidth-margin*2));
+    let left=Math.max(margin, Math.min(r.right-width, window.innerWidth-width-margin));
+    let top=r.bottom+gap;
+    pop.style.setProperty('--row-menu-left', left+'px');
+    pop.style.setProperty('--row-menu-top', top+'px');
+    requestAnimationFrame(function(){
+      const rect=pop.getBoundingClientRect();
+      const finalWidth=Math.min(rect.width||width, window.innerWidth-margin*2);
+      left=Math.max(margin, Math.min(r.right-finalWidth, window.innerWidth-finalWidth-margin));
+      top=r.bottom+gap;
+      if(top+rect.height>window.innerHeight-margin){
+        top=Math.max(margin, r.top-rect.height-gap);
+      }
+      pop.style.setProperty('--row-menu-left', left+'px');
+      pop.style.setProperty('--row-menu-top', top+'px');
+    });
+  }
+  document.addEventListener('toggle',function(e){
+    if(e.target && e.target.matches && e.target.matches('.row-menu')){
+      if(e.target.open){
+        document.querySelectorAll('.row-menu[open]').forEach(function(other){if(other!==e.target) other.removeAttribute('open');});
+      }
+      placeRowMenuV20(e.target);
+    }
+  },true);
+  window.addEventListener('resize',function(){document.querySelectorAll('.row-menu[open]').forEach(placeRowMenuV20);});
+  window.addEventListener('scroll',function(){document.querySelectorAll('.row-menu[open]').forEach(placeRowMenuV20);},true);
+})();
+</script>
+
 </head>
 <body>
 <div class="shell">
